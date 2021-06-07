@@ -42,6 +42,14 @@ public class Bus {
 	public Bus() {
 		super();
 	}
+	
+
+	public Bus(Float fare, Long totalCapacity) {
+		super();
+		this.fare = fare;
+		this.totalCapacity = totalCapacity;
+	}
+
 
 	public Bus(Long busId, Float fare, Long totalCapacity, BusType busType) {
 		super();
