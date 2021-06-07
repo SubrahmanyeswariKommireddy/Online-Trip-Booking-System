@@ -54,6 +54,12 @@ public class Booking {
 		this.bus = bus;
 	}
 
+	public Booking(int seatsBooked, LocalDateTime dateAndTimeOfTravel) {
+		super();
+		this.seatsBooked = seatsBooked;
+		this.dateAndTimeOfTravel = dateAndTimeOfTravel;
+	}
+
 	public Long getBookingId() {
 		return bookingId;
 	}
