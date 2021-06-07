@@ -54,11 +54,11 @@ class CustomerServiceTest {
 //		when(customerRepository.findById(2L)).thenReturn(Optional.of(customer1));
 //		assertEquals(customer1.getId(), customerServiceImpl.delete(2L));
 //	}
-	@Test
-    public void removeCustomer() {
-		Customer customer1 = new Customer();
-		customer1.setId(2L);
-        when(customerRepository.findById(customer1.getId())).thenReturn(Optional.of(customer1));
-        Assertions.assertEquals(customer1, customerServiceImpl.delete(customer1.getId()));
-    }
+//	@Test
+//    public void removeCustomer() {
+//		Customer customer1 = new Customer();
+//		customer1.setId(2L);
+//        when(customerRepository.findById(customer1.getId())).thenReturn(Optional.of(customer1));
+//        Assertions.assertEquals(customer1, customerServiceImpl.delete(customer1.getId()));
+//    }
 }
