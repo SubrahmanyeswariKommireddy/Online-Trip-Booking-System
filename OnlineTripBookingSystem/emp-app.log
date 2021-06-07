@@ -449,3 +449,27 @@ Caused by: java.sql.SQLException: ORA-01017: invalid username/password; logon de
 2021-06-06 18:34:39.486  INFO 8512 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
 2021-06-06 18:49:18.468  INFO 8512 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
 2021-06-06 18:49:18.469  INFO 8512 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-07 09:54:31.815  INFO 8312 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-2QBADCP with PID 8312 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by DHASARI in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-07 09:54:31.825  INFO 8312 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-07 09:54:33.136  INFO 8312 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-07 09:54:33.223  INFO 8312 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2021-06-07 09:54:34.332  INFO 8312 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-07 09:54:34.359  INFO 8312 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-07 09:54:34.360  INFO 8312 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-07 09:54:34.565  INFO 8312 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-07 09:54:34.565  INFO 8312 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2489 ms
+2021-06-07 09:54:34.937  INFO 8312 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-07 09:54:35.024  INFO 8312 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-07 09:54:35.244  INFO 8312 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-07 09:54:35.456  INFO 8312 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-07 09:54:36.700  INFO 8312 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-07 09:54:36.718  INFO 8312 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-07 09:54:41.040  INFO 8312 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-07 09:54:41.064  INFO 8312 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-07 09:54:41.176  WARN 8312 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-07 09:54:41.832  INFO 8312 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-07 09:54:41.857  INFO 8312 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 10.946 seconds (JVM running for 12.623)
+2021-06-07 09:54:41.861  INFO 8312 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-07 09:54:41.863  INFO 8312 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-07 11:08:13.091  INFO 8312 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-07 11:08:13.167  INFO 8312 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC

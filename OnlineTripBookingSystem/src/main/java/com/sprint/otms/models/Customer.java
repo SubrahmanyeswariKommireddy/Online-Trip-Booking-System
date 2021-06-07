@@ -15,6 +15,7 @@ public class Customer extends User {
 	public Customer() {
 		super();
 	}
+
 	
 	public Customer(Long id, String userName, String password, String email, Long mobileNumber, Booking booking) {
 		super(id, userName, password, email, mobileNumber);
@@ -32,6 +33,11 @@ public class Customer extends User {
 		super();
 		this.booking = booking;
 	}
+
+	public Customer(String string, String string2) {
+		// TODO Auto-generated constructor stub
+	}
+
 
 	public Booking getBooking() {
 		return booking;

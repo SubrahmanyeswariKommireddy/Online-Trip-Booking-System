@@ -67,6 +67,11 @@ public class User {
 		this.email = email;
 		this.mobileNumber = mobileNumber;
 	}
+	public User( String userName, String password) {
+		super();
+		this.userName = userName;
+		this.password = password;
+	}
 
 	public Long getId() {
 		return id;
