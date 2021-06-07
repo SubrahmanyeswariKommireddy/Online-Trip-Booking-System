@@ -18,7 +18,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="travel_details")
+@Table(name="travel_otms_details")
 public class Travel {
 	
 	@Id
@@ -33,7 +33,7 @@ public class Travel {
 	private List<Bus> buses;
 	
 	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)  
-	@JoinColumn(name="admin_travel", nullable=false)
+	//@JoinColumn(name="admin_travel", nullable=false)
 	private Admin admin;
 
 	public Travel() {

@@ -13,6 +13,8 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
+import com.sun.istack.NotNull;
+
 @Entity
 @Table(name="user_otms_details")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
@@ -20,9 +22,12 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	
 	private Long id;
 	private String userName;
+	@NotNull
 	private String password;
+	@NotNull
 	private String email;
 	private Long mobileNumber;
 	

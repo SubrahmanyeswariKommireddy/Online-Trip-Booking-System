@@ -15,7 +15,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="bus_details")
+@Table(name="bus_otms_details")
 public class Bus {
 	
 	@Id

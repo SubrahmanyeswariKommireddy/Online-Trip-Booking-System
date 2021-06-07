@@ -22,6 +22,12 @@ public class Customer extends User {
 		this.booking = booking;
 	}
 
+	public Customer(String userName, String password, String email, Long mobileNumber, User_Type userType,
+			Booking booking) {
+		super(userName, password, email, mobileNumber, userType);
+		this.booking = booking;
+	}
+
 	public Customer(Booking booking) {
 		super();
 		this.booking = booking;

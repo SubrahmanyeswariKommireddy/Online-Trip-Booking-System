@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="route_details")
+@Table(name="route_otms_details")
 public class Route {
 	
 	@Id
