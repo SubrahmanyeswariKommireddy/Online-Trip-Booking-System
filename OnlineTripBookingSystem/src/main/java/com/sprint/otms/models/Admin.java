@@ -5,14 +5,15 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="admin_otms_details")
+@Table(name="admin_details")
 public class Admin extends User{
 	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
 	private List<Travel> travels;
 
 	public Admin() {
