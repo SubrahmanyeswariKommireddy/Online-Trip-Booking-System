@@ -2,7 +2,10 @@ package com.sprint.otms.services;
 
 import java.util.List;
 
+<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
+=======
+>>>>>>> 7d6e68e752165ed2ff64803dd6d28e8f0c176ded
 import org.springframework.stereotype.Service;
 
 import com.sprint.otms.models.Travel;

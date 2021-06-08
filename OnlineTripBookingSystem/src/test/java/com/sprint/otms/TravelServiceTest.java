@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -21,6 +23,7 @@ import com.sprint.otms.services.TravelServiceImpl;
 @SpringBootTest
 class TravelServiceTest {
 
+<<<<<<< HEAD
 	@MockBean
 	private ITravelRepository travelRepository;
 	
@@ -59,11 +62,19 @@ class TravelServiceTest {
 	}
 	
 
+=======
+	@Mock
+	TravelServiceImpl travelService;
+
+	@InjectMocks
+	ITravelRepository travelRepository;
+>>>>>>> 7d6e68e752165ed2ff64803dd6d28e8f0c176ded
 
 	@Test
 	void testNotGetAllTravels() {
 		List<Travel>list = new ArrayList<>();
 		Travel t = new Travel();
+<<<<<<< HEAD
 		t.setTravelAgentName(TravelAgentName.GREENLINE);
 		Travel t1 = new Travel();
 		t1.setTravelAgentName(TravelAgentName.GREENLINE);
@@ -71,6 +82,11 @@ class TravelServiceTest {
 		list.add(t1);
 		when(travelRepository.findAll()).thenReturn(list);
 		assertNotEquals(list.size(), travelServiceImpl.getAllTravel().size());
+=======
+		t.setTravelAgentName(TravelAgentName.ORANGE);
+		when(travelRepository.save(t)).thenReturn(t);
+		assertEquals(t, travelService.addTravel(t));
+>>>>>>> 7d6e68e752165ed2ff64803dd6d28e8f0c176ded
 	}
 	
 //	@Test
