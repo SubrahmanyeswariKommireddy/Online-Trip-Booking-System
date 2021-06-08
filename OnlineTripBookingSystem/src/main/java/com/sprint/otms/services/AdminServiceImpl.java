@@ -15,13 +15,13 @@ public class AdminServiceImpl implements IAdminService{
 	@Override
 	public Admin addAdmin(Admin admin) {
 		// TODO Auto-generated method stub
-		return adminRepository.saveAndFlush(admin);
+		return adminRepository.save(admin);
 	}
 
 	@Override
 	public Admin updateAdmin(Admin admin) {
 		// TODO Auto-generated method stub
-		return null;
+		return adminRepository.saveAndFlush(admin);
 	}
 
 	@Override
