@@ -32,13 +32,11 @@ public class Travel {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="travel", fetch=FetchType.LAZY)
 	private List<Bus> buses;
 	
-<<<<<<< Updated upstream
-	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)  
-	//@JoinColumn(name="admin_travel", nullable=false)
-=======
+
+
+
 	@ManyToOne(cascade = CascadeType.ALL,fetch=FetchType.LAZY)  
 	@JoinColumn(name="admin_travel", nullable=false)
->>>>>>> Stashed changes
 	private Admin admin;
 
 	public Travel() {

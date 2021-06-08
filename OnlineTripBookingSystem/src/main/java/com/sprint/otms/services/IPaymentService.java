@@ -10,7 +10,7 @@ public interface IPaymentService {
 
 	public List<Payment> getAllPayments();
 
-	public Optional<Payment> getPaymentById(Long BookingiId);
+	public Optional<Payment> getPaymentById(Long BookingId);
 
 	public Optional<Payment> getPaymentsByCustomerId(Long id);
 

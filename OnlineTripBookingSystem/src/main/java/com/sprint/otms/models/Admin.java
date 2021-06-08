@@ -44,13 +44,10 @@ public class Admin extends User{
 	}
 
 	public Admin(String userName, String password) {
-<<<<<<< HEAD
+
 		// TODO Auto-generated constructor stub
 		super(userName,password);
-=======
-		super(userName, password);
-		// TODO Auto-generated constructor stub
->>>>>>> 7d6e68e752165ed2ff64803dd6d28e8f0c176ded
+
 	}
 
 	public List<Travel> getTravels() {

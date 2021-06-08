@@ -23,9 +23,9 @@ private IPaymentRepository paymentRepository;
 	}
 
 	@Override
-	public Optional<Payment> getPaymentById(Long BookingiId) {
+	public Optional<Payment> getPaymentById(Long BookingId) {
 		// TODO Auto-generated method stub
-		return paymentRepository.getById(BookingiId);
+		return paymentRepository.findById(BookingId);
 	}
 
 	@Override
