@@ -1,6 +1,7 @@
 package com.sprint.otms.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -34,7 +35,7 @@ public class RouteServiceImpl implements IRouteService{
 	}
 
 	@Override
-	public Route getRouteById(Long routeId) {
+	public Optional<Route> getRouteById(Long routeId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.sprint.otms.models.Bus;
+import com.sprint.otms.models.Customer;
 import com.sprint.otms.repositories.IBusRepository;
 import com.sprint.otms.services.BusServiceImpl;
 
@@ -29,6 +30,7 @@ class BusServiceTest {
 		when(busRepository.save(b)).thenReturn(b);
 		assertEquals(b, busService.addBus(b));
 	}
+
 	
 	@Test
 	void testUpdateBus() {
@@ -72,4 +74,13 @@ class BusServiceTest {
 		when(busRepository.findById(10L)).thenReturn(Optional.of(bus));
 		Assertions.assertThrows(ObjectNotFoundException.class, () -> busService.getBusById(20L));
 	}
+
+//	@Test
+//	void testUpdateBus() {
+//		Bus bus = new Bus();
+//		bus.setBusId(1L);
+//		when(busRepository.save(bus)).thenReturn(bus);
+//		assertEquals(bus, busService.updateBus(bus));
+//
+//	}
 }

@@ -1,6 +1,7 @@
 package com.sprint.otms.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -17,7 +18,7 @@ public interface IRouteService {
 
 	public void  delete(Long routeId);
 
-	public Route getRouteById(Long routeId);
+	public Optional<Route> getRouteById(Long routeId);
 
 	public List<Route> getRouteBySourceStation(String source);
 

@@ -42,6 +42,7 @@ class CustomerServiceTest {
 		when(customerRepository.findAll()).thenReturn(list);
 		assertEquals(list.size(), customerServiceImpl.getAllCustomer().size());	
 	}
+
 	
 	@Test
 	void testUpdateCustomer() {

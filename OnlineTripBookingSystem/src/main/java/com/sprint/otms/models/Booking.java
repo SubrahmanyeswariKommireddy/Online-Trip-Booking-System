@@ -59,6 +59,12 @@ public class Booking {
 		this.seatsBooked = seatsBooked;
 		this.dateAndTimeOfTravel = dateAndTimeOfTravel;
 	}
+	public Booking(Long bookingId,int seatsBooked, LocalDateTime dateAndTimeOfTravel) {
+		super();
+		this.bookingId = bookingId;
+		this.seatsBooked = seatsBooked;
+		this.dateAndTimeOfTravel = dateAndTimeOfTravel;
+	}
 
 	public Long getBookingId() {
 		return bookingId;
