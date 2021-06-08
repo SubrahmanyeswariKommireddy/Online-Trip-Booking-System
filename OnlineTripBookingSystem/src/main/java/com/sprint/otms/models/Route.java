@@ -43,6 +43,21 @@ public class Route {
 		this.destination = destination;
 		this.buses = buses;
 	}
+	public Route(String source, String destination) {
+		super();
+		this.source = source;
+		this.destination = destination;
+	}
+
+	public Route(Long routeId) {
+		this.routeId = routeId;
+		// TODO Auto-generated constructor stub
+	}
+
+	public Route(String source) {
+		this.source = source;
+		// TODO Auto-generated constructor stub
+	}
 
 	public Long getRouteId() {
 		return routeId;

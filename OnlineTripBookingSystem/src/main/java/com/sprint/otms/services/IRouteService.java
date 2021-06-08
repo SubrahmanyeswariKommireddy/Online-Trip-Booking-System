@@ -18,12 +18,12 @@ public interface IRouteService {
 
 	public void  delete(Long routeId);
 
-	public Optional<Route> getRouteById(Long routeId);
+	public Route getRouteByRouteId(Long routeId);
 
-	public List<Route> getRouteBySourceStation(String source);
+	public List<Route> getRouteBySource(String source);
 
-	public List<Route> getRouteByDestinationtation(String destination);
+	public List<Route> getRouteByDestination(String destination);
 
-	public List<Route> getRouteBySourceAndDestinationStation(String source, String destination);
+	public List<Route> getRouteBySourceAndDestination(String source, String destination);
 
 }

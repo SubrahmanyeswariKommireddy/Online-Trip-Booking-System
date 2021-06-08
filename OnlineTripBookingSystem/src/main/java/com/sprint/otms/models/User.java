@@ -39,6 +39,11 @@ public class User {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	public User(Long id) {
+		super();
+		this.id = id;
+		// TODO Auto-generated constructor stub
+	}
 
 	public User(Long id, String userName, String password, String email, Long mobileNumber, User_Type userType) {
 		super();

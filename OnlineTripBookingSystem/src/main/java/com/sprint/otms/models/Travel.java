@@ -6,9 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
 import java.util.*;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,25 +16,22 @@ import javax.persistence.FetchType;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="travel_otms_details")
+@Table(name = "travel_otms_details")
 public class Travel {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long travelId;
-	
+
 	@Enumerated(value = EnumType.STRING)
 	@Column(name = "Travel_Agent_Name")
 	private TravelAgentName travelAgentName;
-	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="travel", fetch=FetchType.LAZY)
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "travel", fetch = FetchType.LAZY)
 	private List<Bus> buses;
-	
 
-
-
-	@ManyToOne(cascade = CascadeType.ALL,fetch=FetchType.LAZY)  
-	@JoinColumn(name="admin_travel", nullable=false)
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "admin_travel", nullable = false)
 	private Admin admin;
 
 	public Travel() {
@@ -54,6 +49,23 @@ public class Travel {
 		super();
 		this.travelAgentName = travelAgentName;
 		this.buses = buses;
+	}
+
+	public Travel(TravelAgentName travelAgentName) {
+		super();
+		this.travelAgentName = travelAgentName;
+	}
+
+	public Travel(List<Bus> buses) {
+		super();
+		this.buses = buses;
+		// TODO Auto-generated constructor stub
+	}
+
+	public Travel(long travelId) {
+		super();
+		this.travelId = travelId;
+		// TODO Auto-generated constructor stub
 	}
 
 	public Long getTravelId() {

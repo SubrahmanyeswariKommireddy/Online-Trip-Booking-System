@@ -34,8 +34,12 @@ public class Customer extends User {
 		this.booking = booking;
 	}
 
-	public Customer(String string, String string2) {
+	public Customer(String userName, String password) {
 		// TODO Auto-generated constructor stub
+		super(userName, password);
+	}
+	public Customer(Long id) {
+		super(id);
 	}
 
 

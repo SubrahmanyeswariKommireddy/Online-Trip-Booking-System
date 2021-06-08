@@ -66,6 +66,13 @@ public class Bus {
 		this.busType = busType;
 	}
 
+	public Bus(float fare) {
+		super();
+		this.fare = fare;
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public Long getBusId() {
 		return busId;
 	}

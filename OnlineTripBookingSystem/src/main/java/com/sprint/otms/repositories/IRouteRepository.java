@@ -10,11 +10,11 @@ import com.sprint.otms.models.Route;
 @Repository
 public interface IRouteRepository extends JpaRepository<Route, Long> {
 
-	public Route findRouteById(Long routeId);
+	public Route findRouteByRouteId(Long routeId);
 
-	public List<Route> findBySourceName(String name);
+	public List<Route> getBySource(String source);
 
-	public List<Route> findByDestinationName(String name);
+	public List<Route> getByDestination(String destination);
 
-	public List<Route> findBySourceNameAndDestinationName(String source, String destination);
+	public List<Route> getBySourceAndDestination(String source, String destination);
 }

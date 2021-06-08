@@ -10,6 +10,6 @@ import com.sprint.otms.models.Travel;
 @Repository
 public interface ITravelRepository extends JpaRepository<Travel, Long> {
 
-	List<Travel> findOne(String travelAgentName);
+	//List<Travel> findOne(String travelAgentName);
 
 }

@@ -7,27 +7,37 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.sprint.otms.models.Customer;
 import com.sprint.otms.models.Route;
+import com.sprint.otms.repositories.ICustomerRepository;
 import com.sprint.otms.repositories.IRouteRepository;
+import com.sprint.otms.services.CustomerServiceImpl;
 import com.sprint.otms.services.RouteServiceImpl;
 
-
+@SpringBootTest
 class RouteServiceTest {
-	@Autowired
-	RouteServiceImpl routeServiceImpl;
-	@MockBean
+	@Mock
 	IRouteRepository routeRepository;
+
+	@InjectMocks
+	RouteServiceImpl routeServiceImpl;
 
 	@Test
 	void testAddRoute() {
-		Route r = new Route();
-		r.setSource("Hyderabad");
-		r.setDestination("Mumbai");
-		when(routeRepository.save(r)).thenReturn(r);
-		assertEquals(r, routeServiceImpl.addRoute(r));
+		Route r = new Route("Hyderabad","Mumbai");
+		when(routeRepository.saveAndFlush(r)).thenReturn(r);
+		routeServiceImpl.addRoute(r);
+		assertEquals("Hyderabad", r.getSource());
+		assertEquals("Mumbai", r.getDestination());
 	}
+	
+	
 	@Test
 	void testGetAllRoute() {
 		List<Route>list = new ArrayList<>();
@@ -43,19 +53,40 @@ class RouteServiceTest {
 	
 	@Test
 	void testGetRouteById() {
-		Route route1 = new Route();
-		route1.setRouteId(10L);
-		when(routeRepository.findById(10L)).thenReturn(Optional.of(route1));
-		Optional<Route> r = routeServiceImpl.getRouteById(10L);
-		assertEquals(route1.toString(), r.toString());
+		Route route1 = new Route(10L);		
+		when(routeRepository.getById(route1.getRouteId())).thenReturn(route1);
+		Route r = routeServiceImpl.getRouteByRouteId(route1.getRouteId());		
+		assertEquals(r, route1);
 	}
-//	@Test
-//	void testGetRouteById(Long id) {
-//		Route route1 = new Route();
-//		when(routeRepository.findById(id)).thenReturn(route1);
-//		assertEquals(route1, routeService.getRouteById(id));
-//		
-//	}
+	
+	@Test
+	void testGetRouteBySource() {
+		List<Route> list = new ArrayList<>();	
+		list.add(new Route("Hyderabad"));
+		list.add(new Route("Mumbai"));
+		when(routeRepository.findAll()).thenReturn(list);
+		assertEquals(list.size(), routeServiceImpl.getAllRoute().size());		
+	}
+	
+	@Test
+	void testGetRouteByDestination() {
+		List<Route> list = new ArrayList<>();	
+		list.add(new Route("Mumbai"));
+		list.add(new Route("Hyderabad"));
+		when(routeRepository.findAll()).thenReturn(list);
+		assertEquals(list.size(), routeServiceImpl.getAllRoute().size());		
+	}
+	
+	@Test
+	void testGetRouteBySourceAndDestination() {
+		List<Route> list = new ArrayList<>();	
+		list.add(new Route("Mumbai","Chennai"));
+		list.add(new Route("Hyderabad","Mumbai"));
+		when(routeRepository.findAll()).thenReturn(list);
+		assertEquals(list.size(), routeServiceImpl.getAllRoute().size());		
+	}
+	
+
 //	@Test
 //	void testDelete() {
 //		Route r = new Route();

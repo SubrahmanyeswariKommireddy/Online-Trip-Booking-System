@@ -1,17 +1,16 @@
 package com.sprint.otms.services;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.sprint.otms.models.Travel;
 import com.sprint.otms.repositories.ITravelRepository;
 
 @Service
 public class TravelServiceImpl implements ITravelService {
-@Autowired
-private ITravelRepository travelRepository;
+	@Autowired
+	private ITravelRepository travelRepository;
+
 	@Override
 	public Travel addTravel(Travel travel) {
 		// TODO Auto-generated method stub
@@ -33,7 +32,7 @@ private ITravelRepository travelRepository;
 	@Override
 	public void delete(Long travelId) {
 		// TODO Auto-generated method stub
-	travelRepository.deleteById(travelId);
+		travelRepository.deleteById(travelId);
 	}
 
 	@Override
@@ -45,7 +44,7 @@ private ITravelRepository travelRepository;
 	@Override
 	public List<Travel> getTravelByName(String travelAgentName) {
 		// TODO Auto-generated method stub
-		return travelRepository.findOne(travelAgentName);
+		return travelRepository.findAll();
 	}
 
 }

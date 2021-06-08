@@ -38,27 +38,27 @@ private IRouteRepository routeRepository;
 	}
 
 	@Override
-	public Optional<Route> getRouteById(Long routeId) {
+	public Route getRouteByRouteId(Long routeId) {
 		// TODO Auto-generated method stub
-		return routeRepository.findById(routeId);
+		return routeRepository.getById(routeId);
 	}
 
 	@Override
-	public List<Route> getRouteBySourceStation(String source) {
+	public List<Route> getRouteBySource(String source) {
 		// TODO Auto-generated method stub
-		return routeRepository.findBySourceName(source);
+		return routeRepository.getBySource(source);
 	}
 
 	@Override
-	public List<Route> getRouteByDestinationtation(String destination) {
+	public List<Route> getRouteByDestination(String destination) {
 		// TODO Auto-generated method stub
-		return routeRepository.findByDestinationName(destination);
+		return routeRepository.getByDestination(destination);
 	}
 
 	@Override
-	public List<Route> getRouteBySourceAndDestinationStation(String source, String destination) {
+	public List<Route> getRouteBySourceAndDestination(String source, String destination) {
 		// TODO Auto-generated method stub
-		return routeRepository.findBySourceNameAndDestinationName(source, destination);
+		return routeRepository.getBySourceAndDestination(source, destination);
 	}
 
 }

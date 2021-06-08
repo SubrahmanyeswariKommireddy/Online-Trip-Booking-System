@@ -34,9 +34,9 @@ public class BusServiceImpl implements IBusService{
 	}
 
 	@Override
-	public Optional<Bus> getBusById(Long busId) {
+	public Bus getBusById(Long busId) {
 		// TODO Auto-generated method stub
-		return busRepository.findById(busId);
+		return busRepository.getById(busId);
 	}
 
 	@Override

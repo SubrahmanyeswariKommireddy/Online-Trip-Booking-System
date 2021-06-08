@@ -15,7 +15,7 @@ public class AdminServiceImpl implements IAdminService{
 	@Override
 	public Admin addAdmin(Admin admin) {
 		// TODO Auto-generated method stub
-		return adminRepository.save(admin);
+		return adminRepository.saveAndFlush(admin);
 	}
 
 	@Override

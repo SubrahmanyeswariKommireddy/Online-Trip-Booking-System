@@ -16,7 +16,7 @@ public interface IBusService {
 
 	public void delete(Long busId);
 
-	public Optional<Bus> getBusById(Long busId);
+	public Bus getBusById(Long busId);
 
 	public List<Bus> getAllBuses();
 
