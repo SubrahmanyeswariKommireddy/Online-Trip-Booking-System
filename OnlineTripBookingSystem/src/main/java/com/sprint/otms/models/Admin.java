@@ -42,6 +42,11 @@ public class Admin extends User{
 		// TODO Auto-generated constructor stub
 	}
 
+	public Admin(String userName, String password) {
+		// TODO Auto-generated constructor stub
+		super(userName,password);
+	}
+
 	public List<Travel> getTravels() {
 		return travels;
 	}
