@@ -4,35 +4,40 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import com.sprint.otms.models.Payment;
+import com.sprint.otms.repositories.IPaymentRepository;
 
 @Service
 public class PaymentServiceImpl implements IPaymentService {
-
+@Autowired
+private IPaymentRepository paymentRepository;
 	@Override
 	public List<Payment> getAllPayments() {
 		// TODO Auto-generated method stub
-		return null;
+		return paymentRepository.findAll();
 	}
 
 	@Override
 	public Optional<Payment> getPaymentById(Long BookingiId) {
 		// TODO Auto-generated method stub
-		return null;
+		return paymentRepository.getById(BookingiId);
 	}
 
 	@Override
-	public List<Payment> getPaymentsByCustomerId(Long id) {
+	public Optional<Payment> getPaymentsByCustomerId(Long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return paymentRepository.findById(id);
 	}
 
 	@Override
-	public List<Payment> getPaymentByJourneyDate(LocalDateTime dateTime) {
+	public Optional<Payment> getPaymentByJourneyDate(LocalDateTime dateTime) {
 		// TODO Auto-generated method stub
-		return null;
+		return paymentRepository.findOne(dateTime);
 	}
 	
 }

@@ -5,14 +5,15 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="admin_otms_details")
+@Table(name="admin_details")
 public class Admin extends User{
 	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
 	private List<Travel> travels;
 
 	public Admin() {
@@ -43,8 +44,13 @@ public class Admin extends User{
 	}
 
 	public Admin(String userName, String password) {
+<<<<<<< HEAD
+		// TODO Auto-generated constructor stub
+		super(userName,password);
+=======
 		super(userName, password);
 		// TODO Auto-generated constructor stub
+>>>>>>> 7d6e68e752165ed2ff64803dd6d28e8f0c176ded
 	}
 
 	public List<Travel> getTravels() {

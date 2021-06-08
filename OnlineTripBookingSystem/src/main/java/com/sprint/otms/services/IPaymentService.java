@@ -12,8 +12,8 @@ public interface IPaymentService {
 
 	public Optional<Payment> getPaymentById(Long BookingiId);
 
-	public List<Payment> getPaymentsByCustomerId(Long id);
+	public Optional<Payment> getPaymentsByCustomerId(Long id);
 
-	public List<Payment> getPaymentByJourneyDate(LocalDateTime dateTime);
+	public Optional<Payment> getPaymentByJourneyDate(LocalDateTime dateTime);
 
 }
