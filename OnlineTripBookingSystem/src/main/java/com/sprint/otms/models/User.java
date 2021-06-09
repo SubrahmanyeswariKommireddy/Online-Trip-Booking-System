@@ -25,9 +25,9 @@ public class User {
 	
 	private Long id;
 	private String userName;
-	@NotNull
+	//@NotNull
 	private String password;
-	@NotNull
+	//@NotNull
 	private String email;
 	private Long mobileNumber;
 	

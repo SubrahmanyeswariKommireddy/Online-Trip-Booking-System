@@ -12,8 +12,8 @@ public interface IPaymentService {
 
 	public List<Payment> getAllPayments();
 
-	public Payment getPaymentByTransactionId(Long BookingId);
+	public Payment getPaymentByTransactionId(Long transactionId);
 
-	public String delete(Long id);
+	public String delete(Long transactionId);
 
 }

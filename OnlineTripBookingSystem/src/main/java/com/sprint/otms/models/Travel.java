@@ -27,10 +27,10 @@ public class Travel {
 	@Column(name = "Travel_Agent_Name")
 	private TravelAgentName travelAgentName;
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "travel", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "travel", fetch = FetchType.LAZY)
 	private List<Bus> buses;
 
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "admin_travel", nullable = false)
 	private Admin admin;
 

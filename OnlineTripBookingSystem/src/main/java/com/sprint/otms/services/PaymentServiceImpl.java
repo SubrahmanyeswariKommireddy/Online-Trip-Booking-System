@@ -22,14 +22,14 @@ private IPaymentRepository paymentRepository;
 		return paymentRepository.findAll();
 	}
 	@Override
-	public Payment getPaymentByTransactionId(Long bookingId) {
+	public Payment getPaymentByTransactionId(Long transactionId) {
 		// TODO Auto-generated method stub
-		return paymentRepository.getById(bookingId);
+		return paymentRepository.getById(transactionId);
 	}
 	@Override
-	public String delete(Long id) {
+	public String delete(Long transactionId) {
 		// TODO Auto-generated method stub
-		paymentRepository.deleteById(id);
+		paymentRepository.deleteById(transactionId);
 		return "success";
 	}
 

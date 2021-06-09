@@ -39,14 +39,13 @@ public class BookingServiceImpl implements IBookingService {
 		return bookingRepository.getById(transactionId);
 	}
 
+	
 //	@Override
 //	public List<Booking> findByDateAndTimeOfTravel(LocalDateTime dateTime) {
 //		// TODO Auto-generated method stub
 //		return bookingRepository.findAll();
 //	}
 
-
-	
 	
 //	@Override
 //	public List<Booking> getBookingByDateAndTimeOfTravel(LocalDateTime dateTime) {

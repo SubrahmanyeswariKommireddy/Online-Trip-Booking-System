@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Table(name="admin_details")
 public class Admin extends User{
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
+	@OneToMany(fetch=FetchType.LAZY)
 	private List<Travel> travels;
 
 	public Admin() {
