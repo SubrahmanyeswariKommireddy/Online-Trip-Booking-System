@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.sprint.otms.models.Admin;
 import com.sprint.otms.models.Booking;
 import com.sprint.otms.models.Customer;
 import com.sprint.otms.repositories.IBookingRepository;
@@ -34,6 +36,14 @@ class BookingServiceTest {
 		bookingServiceImpl.addBooking(b);
 		assertEquals(5, b.getSeatsBooked());
 	    assertEquals(LocalDateTime.of(2030,01,01,22,22,22), b.getDateAndTimeOfTravel());
+	}
+	
+	@Test
+	void testNotAddBooking() {
+		Booking booking1 = new Booking(5,LocalDateTime.of(2030,01,01,22,22,22));		
+		Booking booking2 = new Booking(7,LocalDateTime.of(2020,01,01,22,22,22));		
+		when(bookingRepository.save(booking1)).thenReturn(booking1);
+		assertNotEquals(booking1, bookingServiceImpl.addBooking(booking2));
 	}
 
 	@Test

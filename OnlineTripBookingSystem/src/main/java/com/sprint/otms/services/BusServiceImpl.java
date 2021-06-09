@@ -44,5 +44,23 @@ public class BusServiceImpl implements IBusService{
 	public List<Bus> getAllBuses() {
 		// TODO Auto-generated method stub
 		return busRepository.findAll();
-	}	
+	}
+
+//	@Override
+//	public List<Bus> getBusesByTravelId(Long travelId) {
+//		// TODO Auto-generated method stub
+//		return busRepository.findAllById(travelId);
+//	}
+//
+//	@Override
+//	public List<Bus> getBusesByRouteId(Long routeId) {
+//		// TODO Auto-generated method stub
+//		return busRepository.findAllById(routeId);
+//	}
+
+//	@Override
+//	public List<Bus> getBusesByTravelAgentName(String travelAgentName) {
+//		// TODO Auto-generated method stub
+//		return busRepository.findAllByTravelAgentName(travelAgentName);
+//	}	
 }

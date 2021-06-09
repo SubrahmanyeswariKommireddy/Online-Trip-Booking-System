@@ -22,14 +22,13 @@ import com.sprint.otms.services.PaymentServiceImpl;
 
 @SpringBootTest
 class PaymentServiceTest {
-	
+
 	@Autowired
 	PaymentServiceImpl paymentServiceImpl;
+
 	@MockBean
 	IPaymentRepository paymentRepository;
 
-
-	
 	@Test
 	void testGetAllPayments() {
 		List<Payment> payment = new ArrayList<Payment>();
@@ -37,26 +36,25 @@ class PaymentServiceTest {
 		payment.add(new Payment(23L));
 		when(paymentRepository.findAll()).thenReturn(payment);
 		assertEquals(payment, paymentServiceImpl.getAllPayments());
-		
+
 	}
-	
 
 	@Test
 	void testGetPaymentById() {
-		Payment payment = new Payment(10L);	
+		Payment payment = new Payment(10L);
 		when(paymentRepository.getById(payment.getTransactionId())).thenReturn(payment);
-		Payment p=paymentServiceImpl.getPaymentByTransactionId(10L);
+		Payment p = paymentServiceImpl.getPaymentByTransactionId(10L);
 		assertEquals(p, payment);
 	}
-	
+
 	@Test
 	void testDelete() {
 		Payment p = new Payment();
 		p.setTransactionId(12L);
 		doNothing().when(paymentRepository).deleteById(12L);
 		when(paymentRepository.getById(12L)).thenReturn(p);
-		assertEquals( "success", paymentServiceImpl.delete(12L));
-		
+		assertEquals("success", paymentServiceImpl.delete(12L));
+
 	}
 
 }

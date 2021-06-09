@@ -17,7 +17,7 @@ public interface IBookingService {
 
 	public String deleteBooking(Long bookingId);
 	
-	 Booking findByBookingId(Long transactionId);
+	 public Booking findByBookingId(Long transactionId);
 
 	//	List<Booking> findByDateAndTimeOfTravel(LocalDateTime dateTime);
 

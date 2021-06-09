@@ -3,11 +3,14 @@ package com.sprint.otms.services;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.sprint.otms.models.Route;
 import com.sprint.otms.models.Travel;
 import com.sprint.otms.repositories.ITravelRepository;
 
 @Service
 public class TravelServiceImpl implements ITravelService {
+	
 	@Autowired
 	private ITravelRepository travelRepository;
 
@@ -48,5 +51,9 @@ public class TravelServiceImpl implements ITravelService {
 		return travelRepository.findAll();
 	}
 
-
+//	@Override
+//	public List<Travel> getRouteByTravelAgentName(String travelAgentName) {
+//		// TODO Auto-generated method stub
+//		return travelRepository.getRouteByTravelAgentName(travelAgentName);
+//	}
 }

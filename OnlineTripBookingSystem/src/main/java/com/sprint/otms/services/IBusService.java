@@ -19,6 +19,12 @@ public interface IBusService {
 	public Bus getBusById(Long busId);
 
 	public List<Bus> getAllBuses();
+	
+//	public List<Bus> getBusesByTravelId(Long travelId);
+//	
+//	public List<Bus> getBusesByRouteId(Long routeId);
+	
+	//public List<Bus> getBusesByTravelAgentName(String travelAgentName);
 
 }
 	

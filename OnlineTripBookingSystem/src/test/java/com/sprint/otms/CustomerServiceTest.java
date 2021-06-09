@@ -33,13 +33,14 @@ class CustomerServiceTest {
 		assertEquals("123", c.getPassword());
 
 	}
-//	@Test
-//	void testNotAddCustomer() {
-//		Customer customer1 = new Customer("xyz","123");		
-//		Customer customer2 = new Customer("abc","1234");		
-//		when(customerRepository.save(customer1)).thenReturn(customer1);
-//		assertNotEquals(customer1, customerServiceImpl.addCustomer(customer2));
-//	}
+	
+	@Test
+	void testNotAddCustomer() {
+		Customer customer1 = new Customer("xyz","123");		
+		Customer customer2 = new Customer("abc","1234");		
+		when(customerRepository.save(customer1)).thenReturn(customer1);
+		assertNotEquals(customer1, customerServiceImpl.addCustomer(customer2));
+	}
 
 	@Test
 	void testGetAllCustomer() {
@@ -66,7 +67,6 @@ class CustomerServiceTest {
 		Customer c = customerServiceImpl.findCustomerById(customer.getId());
 		assertEquals(c, customer);
 	}
-
 
 	@Test
 	public void testDeleteCustomer() {

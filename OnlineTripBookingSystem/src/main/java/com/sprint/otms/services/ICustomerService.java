@@ -19,7 +19,6 @@ public interface ICustomerService {
 
 	public String delete(Long id);
 
-	// public Optional<Customer> getCustomerById(Long id);
 	public Customer findCustomerById(Long id);
 
 //	public Optional<Customer> getCustomersByName(String userName);

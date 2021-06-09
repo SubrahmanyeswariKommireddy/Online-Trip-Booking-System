@@ -10,9 +10,11 @@ import com.sprint.otms.models.Route;
 import com.sprint.otms.repositories.IRouteRepository;
 
 @Service
-public class RouteServiceImpl implements IRouteService{
-@Autowired
-private IRouteRepository routeRepository;
+public class RouteServiceImpl implements IRouteService {
+	
+	@Autowired
+	private IRouteRepository routeRepository;
+
 	@Override
 	public Route addRoute(Route route) {
 		// TODO Auto-generated method stub
@@ -61,5 +63,7 @@ private IRouteRepository routeRepository;
 		// TODO Auto-generated method stub
 		return routeRepository.getBySourceAndDestination(source, destination);
 	}
+
+
 
 }

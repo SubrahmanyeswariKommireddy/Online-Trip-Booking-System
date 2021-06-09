@@ -1,5 +1,7 @@
 package com.sprint.otms.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,5 +30,17 @@ public class AdminServiceImpl implements IAdminService{
 	public boolean changePassword(Long Id, String oldPassword, String newPassword) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public List<Admin> getAdmin() {
+		// TODO Auto-generated method stub
+		return adminRepository.findAll();
+	}
+	
+	@Override
+	public String deleteAdmin(Long id) {
+		 adminRepository.deleteById(id);
+		 return "success";
 	}
 }

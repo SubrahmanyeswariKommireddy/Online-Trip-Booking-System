@@ -22,5 +22,7 @@ public interface ITravelService {
 		public Travel getTravelById(Long travelId);
 
 		public List<Travel> getTravelByName(String travelAgentName);
+		
+		//public List<Travel> getRouteByTravelAgentName(String travelAgentName);
 
 }

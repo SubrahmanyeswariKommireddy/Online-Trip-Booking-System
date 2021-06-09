@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.sprint.otms.models.Customer;
+import com.sprint.otms.models.Route;
 import com.sprint.otms.models.Travel;
 import com.sprint.otms.models.TravelAgentName;
 import com.sprint.otms.repositories.ITravelRepository;
@@ -35,10 +36,17 @@ class TravelServiceTest {
 	@Test
 	public void testAddTravel() {
 		Travel travel = new Travel(TravelAgentName.ORANGE);
-		// travel.setTravelAgentName(TravelAgentName.ORANGE);
 		when(travelRepository.save(travel)).thenReturn(travel);
 		travelServiceImpl.addTravel(travel);
 		assertEquals(TravelAgentName.ORANGE, travel.getTravelAgentName());
+	}
+	
+	@Test
+	void testNotAddRoute() {
+		Travel travel1 = new Travel(TravelAgentName.ORANGE);
+		Travel travel2 = new Travel(TravelAgentName.GREENLINE);
+		when(travelRepository.save(travel1)).thenReturn(travel1);
+		assertNotEquals(travel1, travelServiceImpl.addTravel(travel2));
 	}
 
 	@Test
