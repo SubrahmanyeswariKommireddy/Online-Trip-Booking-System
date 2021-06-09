@@ -17,7 +17,7 @@ public interface ICustomerService {
 
 	public boolean changePassword(String password);
 
-	public void delete(Long id);
+	public String delete(Long id);
 
 	// public Optional<Customer> getCustomerById(Long id);
 	public Customer findCustomerById(Long id);

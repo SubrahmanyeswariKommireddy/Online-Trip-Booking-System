@@ -30,8 +30,9 @@ public class CustomerServiceImpl implements ICustomerService {
 		return customerRepository.save(customer);
 	}
 	
-	public void delete(Long id) {
-		customerRepository.deleteById(id);
+	public String delete(Long id) {
+		 customerRepository.deleteById(id);
+		 return "success";
 	}
 	
 //

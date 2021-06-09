@@ -1,6 +1,7 @@
 package com.sprint.otms;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 import java.util.*;
 
@@ -10,6 +11,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import com.sprint.otms.models.Customer;
+import com.sprint.otms.models.Travel;
 import com.sprint.otms.repositories.ICustomerRepository;
 import com.sprint.otms.services.CustomerServiceImpl;
 
@@ -66,14 +68,13 @@ class CustomerServiceTest {
 	}
 
 
-//	@Test
-//	public void testDeleteCustomer() {
-//		Customer customer1 = new Customer();
-//		customer1.setId(2L);
-//		//doNothing().when(customerRepository).deleteById(2L);
-//		when(customerRepository.getById(customer1.getId())).thenReturn(customer1);
-//		Customer c1 = customerServiceImpl.delete(customer1.getId());
-//		Assertions.assertEquals(customer1,c1);
-//	}
+	@Test
+	public void testDeleteCustomer() {
+		Customer customer1 = new Customer();
+		customer1.setId(2L);
+		doNothing().when(customerRepository).deleteById(2L);
+		when(customerRepository.getById(2L)).thenReturn(customer1);
+		assertEquals( "success", customerServiceImpl.delete(12L));
+	}
 
 }

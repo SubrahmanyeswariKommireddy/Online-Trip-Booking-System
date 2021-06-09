@@ -32,9 +32,10 @@ private IRouteRepository routeRepository;
 	}
 
 	@Override
-	public void delete(Long routeId) {
+	public String delete(Long routeId) {
 		// TODO Auto-generated method stub
 		routeRepository.deleteById(routeId);
+		return "success";
 	}
 
 	@Override

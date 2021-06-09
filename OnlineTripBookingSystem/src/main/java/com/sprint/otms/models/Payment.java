@@ -42,6 +42,11 @@ public class Payment {
 		this.booking = booking;
 	}
 
+	public Payment(Long transactionId) {
+		super();
+		this.transactionId = transactionId;
+	}
+
 	public Long getTransactionId() {
 		return transactionId;
 	}

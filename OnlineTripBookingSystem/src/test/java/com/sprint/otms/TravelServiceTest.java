@@ -1,14 +1,20 @@
 package com.sprint.otms;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import com.sprint.otms.models.Customer;
 import com.sprint.otms.models.Travel;
 import com.sprint.otms.models.TravelAgentName;
 import com.sprint.otms.repositories.ITravelRepository;
@@ -56,6 +62,16 @@ class TravelServiceTest {
 		assertEquals(t, travel);
 	}
 
+
+	@Test
+	void testDelete() {
+		Travel obj = new Travel();
+		obj.setTravelId(12L);
+		doNothing().when(travelRepository).deleteById(12L);
+		when(travelRepository.getById(12L)).thenReturn(obj);
+		assertEquals( "success", travelServiceImpl.delete(12L));
+	}
+
 //	@Test
 //	void testUpdateTravels() {
 //		List<Bus> list = new ArrayList<>();
@@ -96,15 +112,5 @@ class TravelServiceTest {
 //
 //	}
 
-//	@Test
-//	void testDelete() {
-//		Travel t = new Travel();
-//		t.setTravelId(1L);
-//		doNothing().when(travelRepository).delete(t);
-//		when(travelRepository.findOne(t)).thenReturn((List<Travel>) t);
-//		assertEquals(t.getTravelAgentName(), travelServiceImpl.delete(t));
-//		doNothing().when(travelRepository).deleteById(1);
-//		when(travelRepository.findById(1)).thenReturn(Optional.of(t));
-//		assertEquals("Hotel with id: "+t.getId()+" deleted!!", hotelServiceImpl.delete(1));
-	// }
+
 }

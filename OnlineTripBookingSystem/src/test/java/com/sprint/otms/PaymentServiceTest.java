@@ -1,51 +1,62 @@
-//package com.sprint.otms;
-//
-//import static org.junit.jupiter.api.Assertions.*;
-//import static org.mockito.Mockito.when;
-//import java.util.List;
-//import java.util.Optional;
-//import org.junit.jupiter.api.Test;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.test.mock.mockito.MockBean;
-//import com.sprint.otms.models.Payment;
-//import com.sprint.otms.models.TransactionMode;
-//import com.sprint.otms.repositories.IPaymentRepository;
-//import com.sprint.otms.services.PaymentServiceImpl;
-//
-//class PaymentServiceTest {
-//	
-//	@Autowired
-//	PaymentServiceImpl paymentServiceImpl;
-//	@MockBean
-//	IPaymentRepository paymentRepository;
-//
-//
-//	@Test
-//	void testGetPayments() {
-//		Payment payment = new Payment();
-//		payment.setTransactionMode(TransactionMode.UPI);
-//		when(paymentRepository.findAll()).thenReturn((List<Payment>) payment);
-//		assertEquals(payment, paymentServiceImpl.getAllPayments());
-//		
-//	}
-//	
-//	@Test
-//	void testGetRouteById() {
-//		Payment payment1 = new Payment();
-//		payment1.setTransactionId(10L);
-//		when(paymentRepository.findById(10L)).thenReturn(Optional.of(payment1));
-//		Optional<Payment> p = paymentServiceImpl.getPaymentById(10L);
-//		assertEquals(payment1.toString(), p.toString());
-//	}
-////	@Test
-////	void testGetPaymentById(Long id) {
-////		List<Payment> payment1 = new ArrayList<Payment>();
-////		payment1.add(1L); 
-////		Mockito.when(paymentRepository.findById(id)).thenAnswer(x -> payment1)
-////		//when(paymentRepository.findById(id)).thenReturn(id);
-////		assertEquals(payment1, paymentServiceImpl.getPaymentById(id));
-////	
-////	}
-//	
-//
-//}
+package com.sprint.otms;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.sprint.otms.models.Bus;
+import com.sprint.otms.models.Customer;
+import com.sprint.otms.models.Payment;
+import com.sprint.otms.models.Route;
+import com.sprint.otms.models.TransactionMode;
+import com.sprint.otms.repositories.IPaymentRepository;
+import com.sprint.otms.services.PaymentServiceImpl;
+
+@SpringBootTest
+class PaymentServiceTest {
+	
+	@Autowired
+	PaymentServiceImpl paymentServiceImpl;
+	@MockBean
+	IPaymentRepository paymentRepository;
+
+
+	
+	@Test
+	void testGetAllPayments() {
+		List<Payment> payment = new ArrayList<Payment>();
+		payment.add(new Payment(4L));
+		payment.add(new Payment(23L));
+		when(paymentRepository.findAll()).thenReturn(payment);
+		assertEquals(payment, paymentServiceImpl.getAllPayments());
+		
+	}
+	
+
+	@Test
+	void testGetPaymentById() {
+		Payment payment = new Payment(10L);	
+		when(paymentRepository.getById(payment.getTransactionId())).thenReturn(payment);
+		Payment p=paymentServiceImpl.getPaymentByTransactionId(10L);
+		assertEquals(p, payment);
+	}
+	
+	@Test
+	void testDelete() {
+		Payment p = new Payment();
+		p.setTransactionId(12L);
+		doNothing().when(paymentRepository).deleteById(12L);
+		when(paymentRepository.getById(12L)).thenReturn(p);
+		assertEquals( "success", paymentServiceImpl.delete(12L));
+		
+	}
+
+}

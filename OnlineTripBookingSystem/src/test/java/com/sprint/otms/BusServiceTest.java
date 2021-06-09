@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
 import org.hibernate.ObjectNotFoundException;
@@ -19,6 +20,7 @@ import com.sprint.otms.models.Admin;
 import com.sprint.otms.models.Booking;
 import com.sprint.otms.models.Bus;
 import com.sprint.otms.models.Customer;
+import com.sprint.otms.models.Payment;
 import com.sprint.otms.repositories.IBusRepository;
 import com.sprint.otms.repositories.ICustomerRepository;
 import com.sprint.otms.services.BusServiceImpl;
@@ -62,14 +64,15 @@ class BusServiceTest {
 		assertEquals(list.size(), busServiceImpl.getAllBuses().size());	
 	}
 	
-//	@Test
-//	void testDelete() {
-//		Bus bus = new Bus();
-//		bus.setBusId(5L);
-//		doNothing().when(busRepository).deleteById(1);
-//		when(busRepository.findById(5L).thenReturn(Optional.of(bus));
-//		assertEquals("Customer with id: " + bus.getBusId() + " deleted!!", busService.delete(5L));
-//	}
+
+	@Test
+	void testDelete() {
+		Bus bus = new Bus();
+		bus.setBusId(5L);
+		doNothing().when(busRepository).deleteById(5L);
+		when(busRepository.getById(5L)).thenReturn(bus);
+		assertEquals( "success", busServiceImpl.delete(12L));
+	}
 	
 	@Test
 	void testGetBusById() {

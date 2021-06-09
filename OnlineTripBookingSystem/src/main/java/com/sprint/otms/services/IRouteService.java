@@ -16,7 +16,7 @@ public interface IRouteService {
 
 	public Route updateRoute(Route route);
 
-	public void  delete(Long routeId);
+	public String  delete(Long routeId);
 
 	public Route getRouteByRouteId(Long routeId);
 

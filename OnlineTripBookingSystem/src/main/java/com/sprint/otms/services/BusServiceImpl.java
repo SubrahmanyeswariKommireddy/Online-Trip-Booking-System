@@ -28,9 +28,10 @@ public class BusServiceImpl implements IBusService{
 	}
 
 	@Override
-	public void delete(Long busId) {
+	public String delete(Long busId) {
 		// TODO Auto-generated method stub
 		busRepository.deleteById(busId);
+		return "success";
 	}
 
 	@Override

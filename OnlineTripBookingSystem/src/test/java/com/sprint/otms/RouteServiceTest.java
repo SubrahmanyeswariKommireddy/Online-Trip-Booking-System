@@ -1,7 +1,7 @@
 package com.sprint.otms;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +15,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.sprint.otms.models.Customer;
 import com.sprint.otms.models.Route;
+import com.sprint.otms.models.Travel;
 import com.sprint.otms.repositories.ICustomerRepository;
 import com.sprint.otms.repositories.IRouteRepository;
 import com.sprint.otms.services.CustomerServiceImpl;
@@ -87,13 +88,13 @@ class RouteServiceTest {
 	}
 	
 
-//	@Test
-//	void testDelete() {
-//		Route r = new Route();
-//		r.setRouteId(1L);
-//		doNothing().when(routeRepository).deleteById(1L);
-//		when(routeRepository.findRouteById(1L)).thenReturn(Optional.of(r));
-//		assertEquals(r.getRouteId(), routeService.delete(1L));
-//		
-//	}
+	@Test
+	void testDelete() {
+		Route r = new Route();
+		r.setRouteId(1L);
+		doNothing().when(routeRepository).deleteById(1L);
+		when(routeRepository.getById(1L)).thenReturn(r);
+		assertEquals( "success", routeServiceImpl.delete(12L));
+		
+	}
 }

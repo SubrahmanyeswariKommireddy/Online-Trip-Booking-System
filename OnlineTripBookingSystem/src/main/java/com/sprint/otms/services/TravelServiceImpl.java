@@ -30,9 +30,10 @@ public class TravelServiceImpl implements ITravelService {
 	}
 
 	@Override
-	public void delete(Long travelId) {
+	public String delete(Long travelId) {
 		// TODO Auto-generated method stub
 		travelRepository.deleteById(travelId);
+		return "success";
 	}
 
 	@Override
@@ -46,5 +47,6 @@ public class TravelServiceImpl implements ITravelService {
 		// TODO Auto-generated method stub
 		return travelRepository.findAll();
 	}
+
 
 }

@@ -17,7 +17,7 @@ public interface ITravelService {
 
 		public Travel updateTravel(Travel travel);
 
-		public void  delete(Long travelId);
+		public String  delete(Long travelId);
 
 		public Travel getTravelById(Long travelId);
 

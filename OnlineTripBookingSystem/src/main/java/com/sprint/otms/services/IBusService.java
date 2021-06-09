@@ -14,7 +14,7 @@ public interface IBusService {
 
 	public Bus updateBus(Bus bus);
 
-	public void delete(Long busId);
+	public String delete(Long busId);
 
 	public Bus getBusById(Long busId);
 
