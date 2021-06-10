@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,19 +14,24 @@ import com.sprint.otms.models.Payment;
 import com.sprint.otms.repositories.IPaymentRepository;
 
 @Service
+@Transactional
 public class PaymentServiceImpl implements IPaymentService {
-@Autowired
-private IPaymentRepository paymentRepository;
+
+	@Autowired
+	private IPaymentRepository paymentRepository;
+
 	@Override
 	public List<Payment> getAllPayments() {
 		// TODO Auto-generated method stub
 		return paymentRepository.findAll();
 	}
+
 	@Override
 	public Payment getPaymentByTransactionId(Long transactionId) {
 		// TODO Auto-generated method stub
 		return paymentRepository.getById(transactionId);
 	}
+
 	@Override
 	public String delete(Long transactionId) {
 		// TODO Auto-generated method stub
@@ -33,5 +39,4 @@ private IPaymentRepository paymentRepository;
 		return "success";
 	}
 
-	
 }

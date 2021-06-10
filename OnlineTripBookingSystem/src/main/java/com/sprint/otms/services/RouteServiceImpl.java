@@ -3,6 +3,8 @@ package com.sprint.otms.services;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +12,7 @@ import com.sprint.otms.models.Route;
 import com.sprint.otms.repositories.IRouteRepository;
 
 @Service
+@Transactional
 public class RouteServiceImpl implements IRouteService {
 	
 	@Autowired
