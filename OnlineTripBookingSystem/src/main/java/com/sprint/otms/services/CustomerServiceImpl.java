@@ -53,7 +53,7 @@ public class CustomerServiceImpl extends UserServiceImpl implements ICustomerSer
 	@Override
 	public Customer findCustomerById(Long id) {
 		// TODO Auto-generated method stub
-		return customerRepository.findById(id).get();
+		return customerRepository.getById(id);
 	}
 
 	

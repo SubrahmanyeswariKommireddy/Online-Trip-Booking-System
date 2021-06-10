@@ -13,6 +13,9 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+
+import com.sun.istack.NotNull;
 
 @Entity
 @Table(name="bus_otms_details1")
@@ -21,7 +24,9 @@ public class Bus {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long busId;
+	@NotNull
 	private Float fare;
+    @NotNull
 	private Long totalCapacity;
 	
 	@Enumerated(value = EnumType.STRING)

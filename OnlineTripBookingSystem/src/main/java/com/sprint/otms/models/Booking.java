@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+
+import com.sun.istack.NotNull;
 
 @Entity
 @Table(name="booking_otms_details1")
@@ -17,6 +20,7 @@ public class Booking {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long bookingId;
+	@NotNull
 	private int seatsBooked;
 	private LocalDateTime dateAndTimeOfTravel;
 	

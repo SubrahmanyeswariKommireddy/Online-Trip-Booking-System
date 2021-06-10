@@ -5,7 +5,7 @@ public class AdminNotFoundException extends RuntimeException{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -449418051625912141L;
+	//private static final long serialVersionUID = -449418051625912141L;
 
 	public AdminNotFoundException() {
 		super();

@@ -9,9 +9,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="admin_details1")
 public class Admin extends User{
+	
 	
 	@OneToMany(fetch=FetchType.LAZY)
 	private List<Travel> travels;

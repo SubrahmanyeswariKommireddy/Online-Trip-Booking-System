@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 import org.springframework.stereotype.Component;
 
@@ -24,11 +26,14 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	
 	private Long id;
+	
+	@NotBlank(message="Username is mandatory")
 	private String userName;
-	//@NotNull
+	@NotBlank(message="Password is mandatory")
 	private String password;
-	//@NotNull
+	@Pattern(regexp = "\\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}\\b")
 	private String email;
+	@NotNull
 	private Long mobileNumber;
 	
 	@Enumerated(value = EnumType.STRING)

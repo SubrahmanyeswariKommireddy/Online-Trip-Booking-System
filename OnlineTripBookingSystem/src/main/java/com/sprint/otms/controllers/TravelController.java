@@ -2,9 +2,12 @@ package com.sprint.otms.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -36,8 +39,8 @@ public class TravelController {
 		return travelServiceImpl.getAllTravel();
 	}
 	
-	@GetMapping("/getTravelsById/{id}")
-	public ResponseEntity<Travel> getById(@RequestParam Long travelId) {
+	@GetMapping("/getTravelsById/{travelId}")
+	public ResponseEntity<Travel> getById(@Valid @RequestParam Long travelId)throws MethodArgumentNotValidException {
 		return new  ResponseEntity<Travel>(travelServiceImpl.getTravelById(travelId),HttpStatus.OK);
 	}
 //	@GetMapping("/travels/{id}")
@@ -56,7 +59,7 @@ public class TravelController {
 //	}
 
 	@PostMapping("/travel/addBus")
-	public ResponseEntity<Bus> addBus(@RequestBody Bus bus) {
+	public ResponseEntity<Bus> addBus(@Valid @RequestBody Bus bus) throws MethodArgumentNotValidException{
 		return new ResponseEntity<>(busServiceImpl.addBus(bus), HttpStatus.OK);
 	}
 	
@@ -66,24 +69,24 @@ public class TravelController {
 	}
 
 	@GetMapping("/getBus/{id}")
-	public Bus getBusById(@PathVariable Long id) {
+	public Bus getBusById(@PathVariable Long id) throws MethodArgumentNotValidException {
 		return busServiceImpl.getBusById(id);
 	}
 	
 	@PutMapping("/updateBus/{id}")
-	public ResponseEntity<Bus> updateBus(@RequestBody Bus bus) {
+	public ResponseEntity<Bus> updateBus(@Valid @RequestBody Bus bus) throws MethodArgumentNotValidException{
 		Bus newBus = busServiceImpl.updateBus(bus);
 		return new ResponseEntity<>(newBus, HttpStatus.OK);
 	}
 
 	@PatchMapping("/partialUpdateBus/{id}")
-	public ResponseEntity<Bus> partialUpdateBus(@RequestBody Bus bus) {
+	public ResponseEntity<Bus> partialUpdateBus(@Valid @RequestBody Bus bus) throws MethodArgumentNotValidException{
 		Bus newBus = busServiceImpl.updateBus(bus);
 		return new ResponseEntity<>(newBus, HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/bus/{id}")
-	public void deleteBus(@PathVariable Long id) {
+	@DeleteMapping("/bus/{id}") 
+	public void deleteBus(@Valid @PathVariable Long id) throws MethodArgumentNotValidException{
 		busServiceImpl.delete(id);
 	}
 	

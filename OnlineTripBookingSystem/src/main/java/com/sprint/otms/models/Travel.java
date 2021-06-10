@@ -6,6 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
+import java.io.Serializable;
 import java.util.*;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -14,10 +16,13 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "travel_otms_details1")
-public class Travel {
+public class Travel{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,9 +32,11 @@ public class Travel {
 	@Column(name = "Travel_Agent_Name")
 	private TravelAgentName travelAgentName;
 
+	
 	@OneToMany(mappedBy = "travel", fetch = FetchType.LAZY)
 	private List<Bus> buses;
 
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "admin_travel")
 	private Admin admin;

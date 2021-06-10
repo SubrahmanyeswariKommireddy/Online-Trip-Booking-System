@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name="route_otms_details1")
@@ -18,7 +19,9 @@ public class Route {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long routeId;
+	@NotBlank(message="source is mandatory")
 	private String source;
+	@NotBlank(message="destination is mandatory")
 	private String destination;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="route", fetch=FetchType.LAZY)

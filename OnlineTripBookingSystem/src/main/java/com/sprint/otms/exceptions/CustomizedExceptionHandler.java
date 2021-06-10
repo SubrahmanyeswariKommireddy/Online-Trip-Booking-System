@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +23,16 @@ public class CustomizedExceptionHandler extends ExceptionMessage
 		ExceptionMessage exceptionMessage = new ExceptionMessage(new Date(), ex.getMessage(), request.getDescription(false));
 		
 		//returning exception structure and specific status   
-		return new ResponseEntity<>(exceptionMessage, HttpStatus.INTERNAL_SERVER_ERROR);  
+	return new ResponseEntity<>(exceptionMessage, HttpStatus.INTERNAL_SERVER_ERROR);  
+	}
+	
+	@ExceptionHandler(value = MethodArgumentNotValidException.class)
+	public ResponseEntity<Object> MethodArgumentNotValidExceptionHandler(MethodArgumentNotValidException ex, WebRequest request) {
+		//creating exception response structure  
+		ExceptionMessage exceptionMessage = new ExceptionMessage(new Date(), ex.getMessage(), request.getDescription(false));
+
+		//returning exception structure and specific status   
+		return new ResponseEntity<>(exceptionMessage, HttpStatus.BAD_REQUEST); 
 	}
 	
 	@ExceptionHandler(value = AdminNotFoundException.class)   

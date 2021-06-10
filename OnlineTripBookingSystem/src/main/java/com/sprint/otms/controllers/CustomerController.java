@@ -2,9 +2,12 @@ package com.sprint.otms.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -51,18 +54,18 @@ public class CustomerController {
 	private PaymentServiceImpl paymentServiceImpl;
 
 	@PostMapping("customer/login")
-	public ResponseEntity<Customer> LoginCustomer(@RequestBody  Customer customer)
+	public ResponseEntity<Customer> LoginCustomer(@Valid @RequestBody  Customer customer) throws MethodArgumentNotValidException
 	{
 		return new ResponseEntity<Customer>((Customer) customerServiceImpl.Login(customer.getEmail(),customer.getPassword(), customer.getUserType()),HttpStatus.OK);
 	}
 	
 	@PostMapping("/addCustomer")
-	public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer) {
+	public ResponseEntity<Customer> createCustomer(@Valid @RequestBody Customer customer) throws MethodArgumentNotValidException{
 		return new ResponseEntity<>(customerServiceImpl.addCustomer(customer), HttpStatus.OK);
 	}
 
 	@PatchMapping("/updateCustomer/{id}")
-	public ResponseEntity<Customer> updateCustomer(@RequestBody Customer customer) throws CustomerNotFoundException {
+	public ResponseEntity<Customer> updateCustomer(@Valid @RequestBody Customer customer) throws CustomerNotFoundException , MethodArgumentNotValidException{
 		Customer newCustomer = customerServiceImpl.updateCustomer(customer);
 		return new ResponseEntity<>(newCustomer, HttpStatus.OK);
 	}
@@ -74,12 +77,12 @@ public class CustomerController {
 //	}
 
 	@GetMapping("/getCustomer/{id}")
-	public ResponseEntity<Customer> getById(@PathVariable Long id) throws CustomerNotFoundException{
+	public ResponseEntity<Customer> getById(@Valid @PathVariable Long id) throws CustomerNotFoundException , MethodArgumentNotValidException{
 		return new ResponseEntity<Customer>(customerServiceImpl.findCustomerById(id),HttpStatus.OK);
 	}
 
 	@DeleteMapping("/customer/{id}")
-	public void deleteCustomer(@PathVariable Long id) throws CustomerNotFoundException {
+	public void deleteCustomer(@Valid @PathVariable Long id) throws CustomerNotFoundException, MethodArgumentNotValidException {
 		customerServiceImpl.delete(id);
 	}
 
@@ -101,7 +104,7 @@ public class CustomerController {
 //------------------------Booking-------------------------------------------------------
 
 	@PostMapping("/customer/addBooking")
-	public ResponseEntity<Booking> createBooking(@RequestBody Booking booking) {
+	public ResponseEntity<Booking> createBooking(@Valid @RequestBody Booking booking) throws MethodArgumentNotValidException{
 		return new ResponseEntity<>(bookingServiceImpl.addBooking(booking), HttpStatus.OK);
 	}
 	
@@ -111,12 +114,12 @@ public class CustomerController {
 	}
 
 	@GetMapping("/customer/getBookingById/{id}")
-	public Booking getByBookingId(@PathVariable Long Id) throws BookingNotFoundException {
+	public Booking getByBookingId(@Valid @PathVariable Long Id) throws BookingNotFoundException, MethodArgumentNotValidException {
 		return bookingServiceImpl.findByBookingId(Id);
 	}
 
 	@DeleteMapping("/customer/cancelBooking/{id}")
-	public void cancelBooking(@PathVariable Long id) throws BookingNotFoundException {
+	public void cancelBooking(@Valid @PathVariable Long id) throws BookingNotFoundException , MethodArgumentNotValidException{
 		bookingServiceImpl.deleteBooking(id);
 	}
 
@@ -128,7 +131,7 @@ public class CustomerController {
 	}
 
 	@GetMapping("/getPaymentById")
-	public Payment getPaymentById(@PathVariable Long transactionId) throws BookingNotFoundException {
+	public Payment getPaymentById(@Valid @PathVariable Long transactionId) throws BookingNotFoundException ,MethodArgumentNotValidException{
 		return paymentServiceImpl.getPaymentByTransactionId(transactionId);
 	}
 }
