@@ -2,6 +2,8 @@ package com.sprint.otms.controllers;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,14 +18,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sprint.otms.models.Bus;
-import com.sprint.otms.models.Route;
 import com.sprint.otms.models.Travel;
 import com.sprint.otms.services.BusServiceImpl;
-import com.sprint.otms.services.RouteServiceImpl;
 import com.sprint.otms.services.TravelServiceImpl;
 
 @RestController
 public class TravelController {
+	
+	static final Logger LOGGER = LoggerFactory.getLogger(TravelController.class);
 
 	@Autowired
 	private TravelServiceImpl travelServiceImpl;
@@ -33,11 +35,19 @@ public class TravelController {
 	
 	@GetMapping("/travels")
 	public List<Travel> getAllTravels() {
+		
+		LOGGER.info("getAllTravels URL is opened");
+		LOGGER.info("getAllTravels() is initiated");
+		
 		return travelServiceImpl.getAllTravel();
 	}
 	
 	@GetMapping("/getTravelsById/{id}")
 	public ResponseEntity<Travel> getById(@RequestParam Long travelId) {
+		
+		LOGGER.info("getTravelsbyId URL is opened");
+		LOGGER.info("getById() is initiated");
+		
 		return new  ResponseEntity<Travel>(travelServiceImpl.getTravelById(travelId),HttpStatus.OK);
 	}
 //	@GetMapping("/travels/{id}")
@@ -57,33 +67,57 @@ public class TravelController {
 
 	@PostMapping("/travel/addBus")
 	public ResponseEntity<Bus> addBus(@RequestBody Bus bus) {
+		
+		LOGGER.info("addBus URL is opened");
+		LOGGER.info("addBus() is initiated");
+		
 		return new ResponseEntity<>(busServiceImpl.addBus(bus), HttpStatus.OK);
 	}
 	
 	@GetMapping("/getBuses")
 	public List<Bus> get() {
+		
+		LOGGER.info("getBuses URL is opened");
+		LOGGER.info("getBuses() is initiated");
+		
 		return busServiceImpl.getAllBuses();
 	}
 
 	@GetMapping("/getBus/{id}")
 	public Bus getBusById(@PathVariable Long id) {
+		
+		LOGGER.info("getBusById URL is opened");
+		LOGGER.info("getBusById() is initiated");
+		
 		return busServiceImpl.getBusById(id);
 	}
 	
 	@PutMapping("/updateBus/{id}")
 	public ResponseEntity<Bus> updateBus(@RequestBody Bus bus) {
+		
+		LOGGER.info("updateBus URL is opened");
+		LOGGER.info("updateBus() is initiated");
+		
 		Bus newBus = busServiceImpl.updateBus(bus);
 		return new ResponseEntity<>(newBus, HttpStatus.OK);
 	}
 
 	@PatchMapping("/partialUpdateBus/{id}")
 	public ResponseEntity<Bus> partialUpdateBus(@RequestBody Bus bus) {
+		
+		LOGGER.info("partialUpdateBus URL is opened");
+		LOGGER.info("partialUpdateBus() is initiated");
+		
 		Bus newBus = busServiceImpl.updateBus(bus);
 		return new ResponseEntity<>(newBus, HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/bus/{id}")
 	public void deleteBus(@PathVariable Long id) {
+		
+		LOGGER.info("deleteBus URL is opened");
+		LOGGER.info("deleteBus() is initiated");
+		
 		busServiceImpl.delete(id);
 	}
 	

@@ -1,5 +1,7 @@
 package com.sprint.otms.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +35,8 @@ import com.sprint.otms.services.TravelServiceImpl;
 
 @RestController
 public class AdminController {
+	
+	static final Logger LOGGER = LoggerFactory.getLogger(AdminController.class);
 
 	@Autowired
 	private AdminServiceImpl adminServiceImpl;
@@ -51,30 +55,48 @@ public class AdminController {
 
 	
 	@PostMapping("admin/login")
-	public ResponseEntity<Admin> LoginAdmin(@RequestBody Admin admin)
-	{
+	public ResponseEntity<Admin> loginAdmin(@RequestBody Admin admin) {
+		
+		LOGGER.info("adminLogin URL is opened");
+		LOGGER.info("loginAdmin() is initiated");
+		
 		return new ResponseEntity<Admin>((Admin) adminServiceImpl.Login(admin.getEmail(), admin.getPassword(), admin.getUserType()),HttpStatus.OK);
 	}
 	//--------------------------------Admin-------------------------------//
 	
 	@PostMapping("/addAdmin")
 	public ResponseEntity<Admin> createAdmin(@RequestBody Admin admin) {
+		
+		LOGGER.info("addAdmin URL is opened");
+		LOGGER.info("createAdmin() is initiated");
+		
 		return new ResponseEntity<>(adminServiceImpl.addAdmin(admin), HttpStatus.OK);
 	}
 
 	@GetMapping("/getAdmin")
 	public List<Admin> get() {
+		
+		LOGGER.info("getAdmin URL is opened");
+		LOGGER.info("getAdmin() is initiated");
+		
 		return adminServiceImpl.getAdmin();
 	}
 
 	@PatchMapping("/updateAdmin/{id}")
 	public ResponseEntity<Admin> partialUpdateAdmin(@PathVariable Long id, @RequestParam String oldMessage, @RequestParam String newMessage) throws AdminNotFoundException{
 		
+		LOGGER.info("updateAdmin URL is opened");
+		LOGGER.info("updateAdmin() is initiated");
+		
 		return new ResponseEntity<Admin>(adminServiceImpl.updateAdminById(id, oldMessage,newMessage), HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/admin/{id}")
 	public void deleteAdmin(@PathVariable Long id) throws AdminNotFoundException {
+		
+		LOGGER.info("deleteAdmin URL is opened");
+		LOGGER.info("deleteAdmin() is initiated");
+		
 		adminServiceImpl.deleteAdmin(id);
 	}
 	
@@ -83,12 +105,20 @@ public class AdminController {
 
 	@PostMapping("/admin/addTravel")
 	public ResponseEntity<Travel> addTravel(@RequestBody Travel travel) {
+		
+		LOGGER.info("addTravel URL is opened");
+		LOGGER.info("addTravel() is initiated");
+		
 		return new ResponseEntity<>(travelServiceImpl.addTravel(travel), HttpStatus.OK);
 	}
 
 
 	@GetMapping("/admin/getTravels")
 	public List<Travel> getTravels() {
+		
+		LOGGER.info("getTravels URL is opened");
+		LOGGER.info("getTravels() is initiated");
+		
 		return travelServiceImpl.getAllTravel();
 	}
 
@@ -99,22 +129,38 @@ public class AdminController {
 
 	@GetMapping("/admin/travel/{id}/getBuses")
 	public List<Bus> getBusesByTravelId(@PathVariable Long travelId) throws BusNotFoundException, TravelsNotFoundException {
+		
+		LOGGER.info("getBuses URL is opened");
+		LOGGER.info("getBusesByTravelId() is initiated");
+		
 		return busRepository.getBusesByTravelId(travelId);
 	}
 	
 	@GetMapping("/admin/travel/{travelAgentName}/getBuses")
 	public List<Bus> getBusesByTravelAgentName(@PathVariable String travelAgentName) throws BusNotFoundException, TravelsNotFoundException {
+		
+		LOGGER.info("getBusesByTravelAgentName URL is opened");
+		LOGGER.info("getBusesByTravelAgentName() is initiated");
+		
 		return busRepository.getBusesByTravelAgentName(travelAgentName);
 	}
 
 	@PatchMapping("/admin/updateTravel/{id}")
 	public ResponseEntity<Travel> updateTravel(@RequestBody Travel travel) throws TravelsNotFoundException {
+		
+		LOGGER.info("updateTravel URL is opened");
+		LOGGER.info("updateTravel() is initiated");
+		
 		Travel newTravel = travelServiceImpl.updateTravel(travel);
 		return new ResponseEntity<>(newTravel, HttpStatus.OK);
 	}
 
 	@DeleteMapping("/admin/deleteTravel/{id}")
 	public void deleteById(@PathVariable Long id) throws TravelsNotFoundException {
+		
+		LOGGER.info("deleteTravel URL is opened");
+		LOGGER.info("deleteById() is initiated");
+		
 		travelServiceImpl.delete(id);
 	}
 	
@@ -122,43 +168,75 @@ public class AdminController {
 	
 	@PostMapping("/admin/addRoute")
 	public ResponseEntity<Route> addRoute(@RequestBody Route route) {
+		
+		LOGGER.info("addRoute URL is opened");
+		LOGGER.info("addRoute() is initiated");
+		
 		return new ResponseEntity<>(routeServiceImpl.addRoute(route), HttpStatus.OK);
 	}
 
 	@GetMapping("/admin/getRoutes")
 	public List<Route> getRoutes() {
+		
+		LOGGER.info("getRoutes URL is opened");
+		LOGGER.info("getRoutes() is initiated");
+		
 		return routeServiceImpl.getAllRoute();
 	}
 
 	@GetMapping("/admin/getRouteById/{id}")
-	public ResponseEntity<Route> getRouteById(@PathVariable Long id) throws RouteNotFoundException{
+	public ResponseEntity<Route> getRouteById(@PathVariable Long id) throws RouteNotFoundException {
+		
+		LOGGER.info("getRouteById URL is opened");
+		LOGGER.info("getRouteById() is initiated");
+		
 		return new ResponseEntity<Route>(routeServiceImpl.getRouteByRouteId(id),HttpStatus.OK);
 	}
 
 	@GetMapping("/admin/getRouteBySource/{source}")
 	public List<Route> getRoutesBySource(@PathVariable String source) throws RouteNotFoundException {
+		
+		LOGGER.info("getRouteBySource URL is opened");
+		LOGGER.info("getRouteBySource() is initiated");
+		
 		return routeServiceImpl.getRouteBySource(source);
 	}
 	
 	@GetMapping("/admin/getRoute/{source}/{destination}")
 	public List<Route> getRoutesBySourceAndDestination(@PathVariable String source, String Destination) throws RouteNotFoundException {
+		
+		LOGGER.info("getRoute URL is opened");
+		LOGGER.info("getRoutesBySourceAndDestination() is initiated");
+		
 		return routeServiceImpl.getRouteBySourceAndDestination(source, Destination);
 	}
 	
 	@PutMapping("/admin/updateRoute/{id}")
 	public ResponseEntity<Route> updateRoute(@RequestBody Route route) throws RouteNotFoundException {
+		
+		LOGGER.info("updateRoute URL is opened");
+		LOGGER.info("updateRoute() is initiated");
+		
 		Route newRoute = routeServiceImpl.updateRoute(route);
 		return new ResponseEntity<>(newRoute, HttpStatus.OK);
 	}
 
 	@PatchMapping("/admin/partialUpdateRoute/{id}")
 	public ResponseEntity<Route> partialUpdateRoute(@RequestBody Route route) throws RouteNotFoundException {
+		
+		LOGGER.info("partialUpdateRoute URL is opened");
+		LOGGER.info("partialUpdateRoute() is initiated");
+		
 		Route newRoute = routeServiceImpl.updateRoute(route);
 		return new ResponseEntity<>(newRoute, HttpStatus.OK);
 	}
 
 	@DeleteMapping("/admin/deleteRoute/{id}")
 	public void deleteRouteById(@PathVariable Long id) throws RouteNotFoundException {
+		
+		LOGGER.info("deleteRoute URL is opened");
+		LOGGER.info("deleteRouteById() is initiated");
+		
 		routeServiceImpl.delete(id);
 	}
 	
@@ -172,6 +250,10 @@ public class AdminController {
 	
 	@GetMapping("/admin/buses")
 	public List<Bus> getBuses() {
+		
+		LOGGER.info("getBuses URL is opened");
+		LOGGER.info("getBuses() is initiated");
+		
 		return busServiceImpl.getAllBuses();
 	}
 }
