@@ -8,13 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sprint.otms.models.Customer;
+import com.sprint.otms.models.User;
+import com.sprint.otms.models.User_Type;
 import com.sprint.otms.repositories.ICustomerRepository;
 
 @Service
-public class CustomerServiceImpl implements ICustomerService {
+public class CustomerServiceImpl extends UserServiceImpl implements ICustomerService {
 
-
-	
 	@Autowired
 	private ICustomerRepository customerRepository;
 	
@@ -50,7 +50,9 @@ public class CustomerServiceImpl implements ICustomerService {
 	@Override
 	public Customer findCustomerById(Long id) {
 		// TODO Auto-generated method stub
-		return customerRepository.getById(id);
+		return customerRepository.findById(id).get();
 	}
+
+	
 
 }

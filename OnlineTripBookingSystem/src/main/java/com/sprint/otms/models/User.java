@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 import com.sun.istack.NotNull;
 
 @Entity
-@Table(name="user_otms_details")
+@Table(name="user_otms_details1")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class User {
 	

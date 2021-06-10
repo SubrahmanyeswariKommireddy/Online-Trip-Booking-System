@@ -1,8 +1,11 @@
 package com.sprint.otms.services;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 import com.sprint.otms.models.Route;
 import com.sprint.otms.models.Travel;
@@ -42,7 +45,8 @@ public class TravelServiceImpl implements ITravelService {
 	@Override
 	public Travel getTravelById(Long travelId) {
 		// TODO Auto-generated method stub
-		return travelRepository.getById(travelId);
+		Travel t= travelRepository.getById(travelId);
+		 return t;
 	}
 
 	@Override

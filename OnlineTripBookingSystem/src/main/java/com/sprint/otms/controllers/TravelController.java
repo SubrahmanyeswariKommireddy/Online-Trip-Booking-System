@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sprint.otms.models.Bus;
@@ -35,10 +36,14 @@ public class TravelController {
 		return travelServiceImpl.getAllTravel();
 	}
 	
-	@GetMapping("/travels/{id}")
-	public Travel getTravelsById(@PathVariable Long travelId) {
-		return travelServiceImpl.getTravelById(travelId);
+	@GetMapping("/getTravelsById/{id}")
+	public ResponseEntity<Travel> getById(@RequestParam Long travelId) {
+		return new  ResponseEntity<Travel>(travelServiceImpl.getTravelById(travelId),HttpStatus.OK);
 	}
+//	@GetMapping("/travels/{id}")
+//	public Travel getTravelsById(@PathVariable Long travelId) {
+//		return travelServiceImpl.getTravelById(travelId);
+//	}
 	
 //	@GetMapping("/travel/{id}/buses")
 //	public List<Bus> getBusesByTravels(@PathVariable Long travelId) {

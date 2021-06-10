@@ -12,12 +12,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sprint.otms.models.Admin;
 import com.sprint.otms.models.Bus;
+import com.sprint.otms.models.Customer;
 import com.sprint.otms.models.Route;
 import com.sprint.otms.models.Travel;
+import com.sprint.otms.models.User_Type;
 import com.sprint.otms.repositories.IBusRepository;
 import com.sprint.otms.services.AdminServiceImpl;
 import com.sprint.otms.services.BusServiceImpl;
@@ -42,6 +45,13 @@ public class AdminController {
 	@Autowired
 	private IBusRepository busRepository;
 
+	
+	@PostMapping("admin/login")
+	public ResponseEntity<Admin> LoginAdmin(@RequestBody Admin admin)
+	{
+		return new ResponseEntity<Admin>((Admin) adminServiceImpl.Login(admin.getEmail(), admin.getPassword(), admin.getUserType()),HttpStatus.OK);
+	}
+	
 	@PostMapping("/addAdmin")
 	public ResponseEntity<Admin> createAdmin(@RequestBody Admin admin) {
 		return new ResponseEntity<>(adminServiceImpl.addAdmin(admin), HttpStatus.OK);
@@ -53,9 +63,9 @@ public class AdminController {
 	}
 
 	@PatchMapping("/updateAdmin/{id}")
-	public ResponseEntity<Admin> partialUpdateAdmin(@RequestBody Admin admin) {
-		Admin newAdmin = adminServiceImpl.updateAdmin(admin);
-		return new ResponseEntity<>(newAdmin, HttpStatus.OK);
+	public ResponseEntity<Admin> partialUpdateAdmin(@PathVariable Long id, @RequestParam String oldMessage, @RequestParam String newMessage) {
+		
+		return new ResponseEntity<Admin>(adminServiceImpl.updateAdminById(id, oldMessage,newMessage), HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/admin/{id}")
@@ -77,11 +87,11 @@ public class AdminController {
 		return travelServiceImpl.getAllTravel();
 	}
 
-	@GetMapping("/admin/getTravels/{id}")
-	public Travel getById(@PathVariable Long travelId) {
-		return travelServiceImpl.getTravelById(travelId);
-	}
-	
+//	@GetMapping("/admin/getTravelsById/{id}")
+//	public ResponseEntity<Travel> getById(@PathVariable("travelId") Long travelId) {
+//		return new  ResponseEntity<Travel>(travelServiceImpl.getTravelById(travelId),HttpStatus.OK);
+//	}
+
 	@GetMapping("/admin/travel/{id}/getBuses")
 	public List<Bus> getBusesByTravelId(@PathVariable Long travelId) {
 		return busRepository.getBusesByTravelId(travelId);
@@ -117,8 +127,8 @@ public class AdminController {
 	}
 
 	@GetMapping("/admin/getRouteById/{id}")
-	public Route getRouteById(@PathVariable Long id) {
-		return routeServiceImpl.getRouteByRouteId(id);
+	public ResponseEntity<Route> getRouteById(@PathVariable Long id) {
+		return new ResponseEntity<Route>(routeServiceImpl.getRouteByRouteId(id),HttpStatus.OK);
 	}
 
 	@GetMapping("/admin/getRouteBySource/{source}")

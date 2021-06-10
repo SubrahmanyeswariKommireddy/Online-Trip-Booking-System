@@ -9,7 +9,7 @@ import com.sprint.otms.models.Admin;
 import com.sprint.otms.repositories.IAdminRepository;
 
 @Service
-public class AdminServiceImpl implements IAdminService{
+public class AdminServiceImpl extends UserServiceImpl implements IAdminService{
 	
 	@Autowired
 	private IAdminRepository adminRepository;
@@ -42,5 +42,25 @@ public class AdminServiceImpl implements IAdminService{
 	public String deleteAdmin(Long id) {
 		 adminRepository.deleteById(id);
 		 return "success";
+	}
+
+	@Override
+	public Admin updateAdminById(Long id, String oldPassword, String newPassword) {
+		// TODO Auto-generated method stub
+Admin admin = adminRepository.findById(id).get();
+		
+		if(admin.getPassword() == oldPassword)
+		{
+			admin.setPassword(newPassword);
+			adminRepository.save(admin);
+			return admin;
+			
+		}
+		else 
+		{
+			//throw exception
+		}
+		return admin;
+		
 	}
 }

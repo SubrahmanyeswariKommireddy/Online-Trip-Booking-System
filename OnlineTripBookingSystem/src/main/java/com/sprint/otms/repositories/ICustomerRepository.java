@@ -9,6 +9,8 @@ import com.sprint.otms.models.Customer;
 @Repository
 public interface ICustomerRepository extends JpaRepository<Customer, Long> {
 
+	Customer findByEmail(String emailId);
+
 	//Optional<Customer> findOne(String userName);
 
 }

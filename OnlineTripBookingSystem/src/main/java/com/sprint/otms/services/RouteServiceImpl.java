@@ -43,7 +43,7 @@ public class RouteServiceImpl implements IRouteService {
 	@Override
 	public Route getRouteByRouteId(Long routeId) {
 		// TODO Auto-generated method stub
-		return routeRepository.getById(routeId);
+		return routeRepository.findById(routeId).get();
 	}
 
 	@Override

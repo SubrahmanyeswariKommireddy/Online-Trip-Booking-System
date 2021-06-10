@@ -7,9 +7,11 @@ import org.springframework.stereotype.Service;
 import com.sprint.otms.models.Admin;
 
 @Service
-public interface IAdminService {
+public interface IAdminService extends IUserService{
 	
 	public Admin addAdmin(Admin admin);
+	
+	public Admin updateAdminById(Long id,String oldPassword,String newPassword);
 	
 	public List<Admin> getAdmin();
 	

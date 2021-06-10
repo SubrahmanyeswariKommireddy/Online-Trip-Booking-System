@@ -11,6 +11,8 @@ import com.sprint.otms.models.Bus;
 
 @Repository
 public interface IAdminRepository extends JpaRepository<Admin, Long> {
+
+	Admin findByEmail(String emailId);
 	
 	
 }

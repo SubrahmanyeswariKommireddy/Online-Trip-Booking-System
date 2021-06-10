@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sprint.otms.models.Admin;
 import com.sprint.otms.models.Booking;
 import com.sprint.otms.models.Bus;
 import com.sprint.otms.models.Customer;
@@ -47,6 +48,12 @@ public class CustomerController {
 	@Autowired
 	private PaymentServiceImpl paymentServiceImpl;
 
+	@PostMapping("customer/login")
+	public ResponseEntity<Customer> LoginCustomer(@RequestBody  Customer customer)
+	{
+		return new ResponseEntity<Customer>((Customer) customerServiceImpl.Login(customer.getEmail(),customer.getPassword(), customer.getUserType()),HttpStatus.OK);
+	}
+	
 	@PostMapping("/addCustomer")
 	public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer) {
 		return new ResponseEntity<>(customerServiceImpl.addCustomer(customer), HttpStatus.OK);
@@ -58,14 +65,15 @@ public class CustomerController {
 		return new ResponseEntity<>(newCustomer, HttpStatus.OK);
 	}
 
-	@GetMapping("/getCustomers")
-	public List<Customer> get() {
-		return customerServiceImpl.getAllCustomer();
-	}
+//	@GetMapping("admin/securityAlert/{id}")
+//	public ResponseEntity<SecurityAlert> getSecurityAlertById(@PathVariable Long id)
+//	{
+//		return new ResponseEntity<SecurityAlert>(securityAlertService.getSecurityAlertById(id),HttpStatus.OK);
+//	}
 
 	@GetMapping("/getCustomer/{id}")
-	public Customer getById(@PathVariable Long Id) {
-		return customerServiceImpl.findCustomerById(Id);
+	public ResponseEntity<Customer> getById(@PathVariable Long id) {
+		return new ResponseEntity<Customer>(customerServiceImpl.findCustomerById(id),HttpStatus.OK);
 	}
 
 	@DeleteMapping("/customer/{id}")

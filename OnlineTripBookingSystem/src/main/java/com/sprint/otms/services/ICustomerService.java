@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.sprint.otms.models.Customer;
 
 @Service
-public interface ICustomerService {
+public interface ICustomerService extends IUserService{
 
 	public Customer addCustomer(Customer customer);
 

@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="booking_otms_details")
+@Table(name="booking_otms_details1")
 public class Booking {
 
 	@Id
