@@ -2,11 +2,14 @@ package com.sprint.otms.services;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Service;
 
 import com.sprint.otms.models.Admin;
 
 @Service
+@Transactional
 public interface IAdminService {
 	
 	public Admin addAdmin(Admin admin);

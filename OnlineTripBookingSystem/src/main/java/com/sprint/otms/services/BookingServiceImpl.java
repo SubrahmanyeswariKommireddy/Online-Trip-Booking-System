@@ -2,6 +2,9 @@ package com.sprint.otms.services;
 
 import java.time.LocalDateTime;
 import java.util.*;
+
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +12,7 @@ import com.sprint.otms.models.Booking;
 import com.sprint.otms.repositories.IBookingRepository;
 
 @Service
+@Transactional
 public class BookingServiceImpl implements IBookingService {
 
 	@Autowired

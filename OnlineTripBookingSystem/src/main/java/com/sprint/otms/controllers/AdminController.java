@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sprint.otms.exceptions.AdminNotFoundException;
+import com.sprint.otms.exceptions.TravelsNotFoundException;
+import com.sprint.otms.exceptions.RouteNotFoundException;
+import com.sprint.otms.exceptions.BusNotFoundException;
 import com.sprint.otms.models.Admin;
 import com.sprint.otms.models.Bus;
 import com.sprint.otms.models.Route;
@@ -42,6 +46,8 @@ public class AdminController {
 	@Autowired
 	private IBusRepository busRepository;
 
+	//--------------------------------Admin-------------------------------//
+	
 	@PostMapping("/addAdmin")
 	public ResponseEntity<Admin> createAdmin(@RequestBody Admin admin) {
 		return new ResponseEntity<>(adminServiceImpl.addAdmin(admin), HttpStatus.OK);
@@ -53,13 +59,13 @@ public class AdminController {
 	}
 
 	@PatchMapping("/updateAdmin/{id}")
-	public ResponseEntity<Admin> partialUpdateAdmin(@RequestBody Admin admin) {
+	public ResponseEntity<Admin> partialUpdateAdmin(@RequestBody Admin admin) throws AdminNotFoundException {
 		Admin newAdmin = adminServiceImpl.updateAdmin(admin);
 		return new ResponseEntity<>(newAdmin, HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/admin/{id}")
-	public void deleteAdmin(@PathVariable Long id) {
+	public void deleteAdmin(@PathVariable Long id) throws AdminNotFoundException {
 		adminServiceImpl.deleteAdmin(id);
 	}
 	
@@ -78,29 +84,28 @@ public class AdminController {
 	}
 
 	@GetMapping("/admin/getTravels/{id}")
-	public Travel getById(@PathVariable Long travelId) {
+	public Travel getById(@PathVariable Long travelId) throws TravelsNotFoundException {
 		return travelServiceImpl.getTravelById(travelId);
 	}
 	
 	@GetMapping("/admin/travel/{id}/getBuses")
-	public List<Bus> getBusesByTravelId(@PathVariable Long travelId) {
+	public List<Bus> getBusesByTravelId(@PathVariable Long travelId) throws BusNotFoundException, TravelsNotFoundException {
 		return busRepository.getBusesByTravelId(travelId);
 	}
 	
 	@GetMapping("/admin/travel/{travelAgentName}/getBuses")
-	public List<Bus> getBusesByTravelAgentName(@PathVariable String travelAgentName) {
+	public List<Bus> getBusesByTravelAgentName(@PathVariable String travelAgentName) throws BusNotFoundException, TravelsNotFoundException {
 		return busRepository.getBusesByTravelAgentName(travelAgentName);
 	}
 
-
 	@PatchMapping("/admin/updateTravel/{id}")
-	public ResponseEntity<Travel> updateTravel(@RequestBody Travel travel) {
+	public ResponseEntity<Travel> updateTravel(@RequestBody Travel travel) throws TravelsNotFoundException {
 		Travel newTravel = travelServiceImpl.updateTravel(travel);
 		return new ResponseEntity<>(newTravel, HttpStatus.OK);
 	}
 
 	@DeleteMapping("/admin/deleteTravel/{id}")
-	public void deleteById(@PathVariable Long id) {
+	public void deleteById(@PathVariable Long id) throws TravelsNotFoundException {
 		travelServiceImpl.delete(id);
 	}
 	
@@ -117,34 +122,34 @@ public class AdminController {
 	}
 
 	@GetMapping("/admin/getRouteById/{id}")
-	public Route getRouteById(@PathVariable Long id) {
+	public Route getRouteById(@PathVariable Long id) throws RouteNotFoundException {
 		return routeServiceImpl.getRouteByRouteId(id);
 	}
 
 	@GetMapping("/admin/getRouteBySource/{source}")
-	public List<Route> getRoutesBySource(@PathVariable String source) {
+	public List<Route> getRoutesBySource(@PathVariable String source) throws RouteNotFoundException {
 		return routeServiceImpl.getRouteBySource(source);
 	}
 	
 	@GetMapping("/admin/getRoute/{source}/{destination}")
-	public List<Route> getRoutesBySourceAndDestination(@PathVariable String source, String Destination) {
+	public List<Route> getRoutesBySourceAndDestination(@PathVariable String source, String Destination) throws RouteNotFoundException {
 		return routeServiceImpl.getRouteBySourceAndDestination(source, Destination);
 	}
 	
 	@PutMapping("/admin/updateRoute/{id}")
-	public ResponseEntity<Route> updateRoute(@RequestBody Route route) {
+	public ResponseEntity<Route> updateRoute(@RequestBody Route route) throws RouteNotFoundException {
 		Route newRoute = routeServiceImpl.updateRoute(route);
 		return new ResponseEntity<>(newRoute, HttpStatus.OK);
 	}
 
 	@PatchMapping("/admin/partialUpdateRoute/{id}")
-	public ResponseEntity<Route> partialUpdateRoute(@RequestBody Route route) {
+	public ResponseEntity<Route> partialUpdateRoute(@RequestBody Route route) throws RouteNotFoundException {
 		Route newRoute = routeServiceImpl.updateRoute(route);
 		return new ResponseEntity<>(newRoute, HttpStatus.OK);
 	}
 
 	@DeleteMapping("/admin/deleteRoute/{id}")
-	public void deleteRouteById(@PathVariable Long id) {
+	public void deleteRouteById(@PathVariable Long id) throws RouteNotFoundException {
 		routeServiceImpl.delete(id);
 	}
 	

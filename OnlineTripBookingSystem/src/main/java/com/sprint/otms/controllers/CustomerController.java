@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sprint.otms.exceptions.BookingNotFoundException;
+import com.sprint.otms.exceptions.CustomerNotFoundException;
 import com.sprint.otms.models.Booking;
 import com.sprint.otms.models.Bus;
 import com.sprint.otms.models.Customer;
@@ -53,23 +55,23 @@ public class CustomerController {
 	}
 
 	@PatchMapping("/updateCustomer/{id}")
-	public ResponseEntity<Customer> updateCustomer(@RequestBody Customer customer) {
+	public ResponseEntity<Customer> updateCustomer(@RequestBody Customer customer) throws CustomerNotFoundException {
 		Customer newCustomer = customerServiceImpl.updateCustomer(customer);
 		return new ResponseEntity<>(newCustomer, HttpStatus.OK);
 	}
 
-	@GetMapping("/getCustomers")
-	public List<Customer> get() {
-		return customerServiceImpl.getAllCustomer();
-	}
+//	@GetMapping("/getCustomers")
+//	public List<Customer> get() {
+//		return customerServiceImpl.getAllCustomer();
+//	}
 
 	@GetMapping("/getCustomer/{id}")
-	public Customer getById(@PathVariable Long Id) {
+	public Customer getById(@PathVariable Long Id) throws CustomerNotFoundException {
 		return customerServiceImpl.findCustomerById(Id);
 	}
 
 	@DeleteMapping("/customer/{id}")
-	public void deleteCustomer(@PathVariable Long id) {
+	public void deleteCustomer(@PathVariable Long id) throws CustomerNotFoundException {
 		customerServiceImpl.delete(id);
 	}
 
@@ -101,12 +103,12 @@ public class CustomerController {
 	}
 
 	@GetMapping("/customer/getBookingById/{id}")
-	public Booking getByBookingId(@PathVariable Long Id) {
+	public Booking getByBookingId(@PathVariable Long Id) throws BookingNotFoundException {
 		return bookingServiceImpl.findByBookingId(Id);
 	}
 
 	@DeleteMapping("/customer/cancelBooking/{id}")
-	public void cancelBooking(@PathVariable Long id) {
+	public void cancelBooking(@PathVariable Long id) throws BookingNotFoundException {
 		bookingServiceImpl.deleteBooking(id);
 	}
 
@@ -118,7 +120,7 @@ public class CustomerController {
 	}
 
 	@GetMapping("/getPaymentById")
-	public Payment getPaymentById(@PathVariable Long transactionId) {
+	public Payment getPaymentById(@PathVariable Long transactionId) throws BookingNotFoundException {
 		return paymentServiceImpl.getPaymentByTransactionId(transactionId);
 	}
 }

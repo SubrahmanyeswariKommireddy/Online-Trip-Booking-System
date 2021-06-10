@@ -2,6 +2,8 @@ package com.sprint.otms.services;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +11,7 @@ import com.sprint.otms.models.Admin;
 import com.sprint.otms.repositories.IAdminRepository;
 
 @Service
+@Transactional
 public class AdminServiceImpl implements IAdminService{
 	
 	@Autowired
