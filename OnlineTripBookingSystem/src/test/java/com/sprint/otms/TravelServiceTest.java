@@ -14,10 +14,12 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.sprint.otms.models.Bus;
 import com.sprint.otms.models.Customer;
 import com.sprint.otms.models.Route;
 import com.sprint.otms.models.Travel;
 import com.sprint.otms.models.TravelAgentName;
+import com.sprint.otms.repositories.IBusRepository;
 import com.sprint.otms.repositories.ITravelRepository;
 import com.sprint.otms.services.BusServiceImpl;
 import com.sprint.otms.services.TravelServiceImpl;
@@ -30,8 +32,13 @@ class TravelServiceTest {
 
 	@InjectMocks
 	TravelServiceImpl travelServiceImpl;
-	@Autowired
+	
+	@Mock
+	IBusRepository busRepository;
+
+	@InjectMocks
 	BusServiceImpl busServiceImpl;
+
 
 	@Test
 	public void testAddTravel() {
@@ -42,7 +49,7 @@ class TravelServiceTest {
 	}
 	
 	@Test
-	void testNotAddRoute() {
+	void testNotAddTravel() {
 		Travel travel1 = new Travel(TravelAgentName.ORANGE);
 		Travel travel2 = new Travel(TravelAgentName.GREENLINE);
 		when(travelRepository.save(travel1)).thenReturn(travel1);
@@ -50,16 +57,12 @@ class TravelServiceTest {
 	}
 
 	@Test
-	void testGetAllTravels() {
-		List<Travel> list = new ArrayList<>();
-		Travel t = new Travel();
-		t.setTravelAgentName(TravelAgentName.GREENLINE);
-		Travel t1 = new Travel();
-		t1.setTravelAgentName(TravelAgentName.GREENLINE);
-		list.add(t);
-		list.add(t1);
-		when(travelRepository.findAll()).thenReturn(list);
-		assertEquals(list.size(), travelServiceImpl.getAllTravel().size());
+	void testGetAllBuses() {
+		List<Bus> list = new ArrayList<>();
+		list.add(new Bus(320F, 32L));
+		list.add(new Bus(432F, 21L));
+		when(busRepository.findAll()).thenReturn(list);
+		assertEquals(list.size(), busServiceImpl.getAllBuses().size());
 	}
 
 	@Test

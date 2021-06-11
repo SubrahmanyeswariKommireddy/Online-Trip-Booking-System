@@ -42,14 +42,7 @@ class CustomerServiceTest {
 		assertNotEquals(customer1, customerServiceImpl.addCustomer(customer2));
 	}
 
-	@Test
-	void testGetAllCustomer() {
-		List<Customer> list = new ArrayList<>();
-		list.add(new Customer("ramesh", "123"));
-		list.add(new Customer("suresh", "345"));
-		when(customerRepository.findAll()).thenReturn(list);
-		assertEquals(list.size(), customerServiceImpl.getAllCustomer().size());
-	}
+
 
 	@Test
 	void testUpdateCustomer() {
@@ -74,7 +67,7 @@ class CustomerServiceTest {
 		customer1.setId(2L);
 		doNothing().when(customerRepository).deleteById(2L);
 		when(customerRepository.getById(2L)).thenReturn(customer1);
-		assertEquals( "success", customerServiceImpl.delete(12L));
+		assertEquals( "success", customerServiceImpl.delete(2L));
 	}
 
 }

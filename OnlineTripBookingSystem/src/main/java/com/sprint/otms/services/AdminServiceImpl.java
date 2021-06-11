@@ -1,13 +1,15 @@
 package com.sprint.otms.services;
 
 import java.util.List;
-
+import java.util.*;
 import javax.transaction.Transactional;
-import javax.validation.ValidationException;
+
+import javax.xml.bind.ValidationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.common.base.Optional;
 import com.sprint.otms.models.Admin;
 import com.sprint.otms.models.Customer;
 import com.sprint.otms.repositories.IAdminRepository;
@@ -50,6 +52,7 @@ public class AdminServiceImpl extends UserServiceImpl implements IAdminService{
 	}
 
 	@Override
+
 	public Admin updateAdminPasswordById(Long id,String oldPassword,String newPassword) throws ValidationException {
 		// TODO Auto-generated method stub
 		java.util.Optional<Admin> admin = adminRepository.findById(id);
@@ -98,15 +101,18 @@ public class AdminServiceImpl extends UserServiceImpl implements IAdminService{
 			if(admin.get().getEmail().equals(oldEmail))
 			{
 				admin.get().setEmail(newEmail);
+
 				return adminRepository.save(admin.get());
 			}
 			else 
 			{
+
 				throw new ValidationException("Incorrect EmailId");
 			}
 		}
 		return admin.get();
 		
+
 	}
 	
 }

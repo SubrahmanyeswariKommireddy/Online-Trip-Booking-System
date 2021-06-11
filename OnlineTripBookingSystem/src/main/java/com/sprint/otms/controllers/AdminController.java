@@ -5,8 +5,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 import javax.validation.Valid;
-import javax.validation.ValidationException;
-
+import javax.xml.bind.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +30,7 @@ import com.sprint.otms.models.Bus;
 import com.sprint.otms.models.Customer;
 import com.sprint.otms.models.Route;
 import com.sprint.otms.models.Travel;
+import com.sprint.otms.models.TravelAgentName;
 import com.sprint.otms.models.User_Type;
 import com.sprint.otms.repositories.IBusRepository;
 import com.sprint.otms.services.AdminServiceImpl;
@@ -90,8 +90,10 @@ public class AdminController {
 		return adminServiceImpl.getAdmin();
 	}
 
+
 	@PatchMapping("/updateAdminPassword/{id}")
 	public ResponseEntity<Admin> updateAdminPasswordById(@Valid @PathVariable Long id, @RequestParam String oldPassword, @RequestParam String newPassword) throws AdminNotFoundException , MethodArgumentNotValidException{
+
 		
 		LOGGER.info("updateAdminPassword URL is opened");
 		LOGGER.info("updateAdminPassword() is initiated");
@@ -153,31 +155,32 @@ public class AdminController {
 //		return new  ResponseEntity<Travel>(travelServiceImpl.getTravelById(travelId),HttpStatus.OK);
 //	}
 
-	@GetMapping("/admin/travel/{id}/getBuses")
-	public List<Bus> getBusesByTravelId(@Valid @PathVariable Long travelId) throws BusNotFoundException, TravelsNotFoundException ,MethodArgumentNotValidException{
-		
-		LOGGER.info("getBuses URL is opened");
-		LOGGER.info("getBusesByTravelId() is initiated");
-		
-		return busRepository.getBusesByTravelId(travelId);
-	}
+//	@GetMapping("/admin/travel/{id}/getBuses")
+//	public List<Bus> getBusesByTravelId(@Valid @PathVariable Long travelId) throws BusNotFoundException, TravelsNotFoundException ,MethodArgumentNotValidException{
+//		
+//		LOGGER.info("getBuses URL is opened");
+//		LOGGER.info("getBusesByTravelId() is initiated");
+//		
+//		return busRepository.getBusesByTravelId(travelId);
+//	}
 	
-	@GetMapping("/admin/travel/{travelAgentName}/getBuses")
-	public List<Bus> getBusesByTravelAgentName(@Valid @PathVariable String travelAgentName) throws BusNotFoundException, TravelsNotFoundException , MethodArgumentNotValidException{
-		
-		LOGGER.info("getBusesByTravelAgentName URL is opened");
-		LOGGER.info("getBusesByTravelAgentName() is initiated");
-		
-		return busRepository.getBusesByTravelAgentName(travelAgentName);
-	}
+	
+//	@GetMapping("/admin/travel/{travelAgentName}/getBuses")
+//	public List<Bus> getBusesByTravelAgentName(@Valid @PathVariable String travelAgentName) throws BusNotFoundException, TravelsNotFoundException , MethodArgumentNotValidException{
+//		
+//		LOGGER.info("getBusesByTravelAgentName URL is opened");
+//		LOGGER.info("getBusesByTravelAgentName() is initiated");
+//		
+//		return busRepository.getBusesByTravelAgentName(travelAgentName);
+//	}
 
 	@PatchMapping("/admin/updateTravel/{id}")
-	public ResponseEntity<Travel> updateTravel(@Valid @RequestBody Travel travel) throws TravelsNotFoundException ,  MethodArgumentNotValidException{
+	public ResponseEntity<Travel> updateTravel(@Valid @PathVariable Long id,@RequestParam TravelAgentName oldName,TravelAgentName newName) throws TravelsNotFoundException ,  MethodArgumentNotValidException, ValidationException{
 		
 		LOGGER.info("updateTravel URL is opened");
 		LOGGER.info("updateTravel() is initiated");
 		
-		Travel newTravel = travelServiceImpl.updateTravel(travel);
+		Travel newTravel = travelServiceImpl.updateTravelById(id, oldName, newName);
 		return new ResponseEntity<>(newTravel, HttpStatus.OK);
 	}
 

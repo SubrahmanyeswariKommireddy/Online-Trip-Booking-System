@@ -15,5 +15,4 @@ public class OnlineTripBookingSystemApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(OnlineTripBookingSystemApplication.class, args);
 	}
-
 }

@@ -18,7 +18,7 @@ import javax.validation.constraints.NotBlank;
 import com.sun.istack.NotNull;
 
 @Entity
-@Table(name="bus_otms_details1")
+@Table(name="bus_otms_details3")
 public class Bus {
 	
 	@Id
@@ -27,8 +27,10 @@ public class Bus {
 	@NotNull
 	private Float fare;
     @NotNull
-	private Long totalCapacity=30L;
-	
+
+	private Long totalCapacity;
+    private int currentEmptySeat;
+
 	@Enumerated(value = EnumType.STRING)
 	@Column(name = "Bus_Type")
 	private BusType busType;
@@ -78,6 +80,38 @@ public class Bus {
 	}
 
 
+	public Bus(Long busId, Float fare, Long totalCapacity, int currentEmptySeat, BusType busType, Booking booking,
+			Route route, Travel travel) {
+		super();
+		this.busId = busId;
+		this.fare = fare;
+		this.totalCapacity = totalCapacity;
+		this.currentEmptySeat = currentEmptySeat;
+		this.busType = busType;
+		this.booking = booking;
+		this.route = route;
+		this.travel = travel;
+	}
+
+
+	public Bus(Float fare, Long totalCapacity, int currentEmptySeat) {
+		super();
+		this.fare = fare;
+		this.totalCapacity = totalCapacity;
+		this.currentEmptySeat = currentEmptySeat;
+	}
+
+
+	public int getCurrentEmptySeat() {
+		return currentEmptySeat;
+	}
+
+
+	public void setCurrentEmptySeat(int currentEmptySeat) {
+		this.currentEmptySeat = currentEmptySeat;
+	}
+
+
 	public Long getBusId() {
 		return busId;
 	}
@@ -112,7 +146,9 @@ public class Bus {
 
 	@Override
 	public String toString() {
-		return "Bus [busId=" + busId + ", fare=" + fare + ", totalCapacity=" + totalCapacity + ", busType=" + busType
-				+ "]";
+		return "Bus [busId=" + busId + ", fare=" + fare + ", totalCapacity=" + totalCapacity + ", currentEmptySeat="
+				+ currentEmptySeat + ", busType=" + busType + ", booking=" + booking + ", route=" + route + ", travel="
+				+ travel + "]";
 	}
+
 }
