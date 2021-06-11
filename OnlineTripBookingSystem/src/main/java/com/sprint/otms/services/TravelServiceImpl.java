@@ -4,13 +4,15 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
+import javax.xml.bind.ValidationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import com.sprint.otms.models.Admin;
 import com.sprint.otms.models.Route;
 import com.sprint.otms.models.Travel;
+import com.sprint.otms.models.TravelAgentName;
 import com.sprint.otms.repositories.ITravelRepository;
 
 @Service
@@ -57,6 +59,27 @@ public class TravelServiceImpl implements ITravelService {
 		// TODO Auto-generated method stub
 		return travelRepository.findAll();
 	}
+
+	@Override
+	public Travel updateTravelById(Long id, TravelAgentName oldName, TravelAgentName newName) throws ValidationException {
+		// TODO Auto-generated method stub
+		java.util.Optional<Travel> travel = travelRepository.findById(id);
+		if(travel != null)
+		{
+			if(travel.get().getTravelAgentName().equals(oldName))
+			{
+				travel.get().setTravelAgentName(newName);
+				return travelRepository.save(travel.get());
+			}
+			else 
+			{
+				throw new ValidationException("Incorrect name");
+			}
+		}
+		return travel.get();
+	}
+	
+	
 
 //	@Override
 //	public List<Travel> getRouteByTravelAgentName(String travelAgentName) {

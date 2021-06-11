@@ -3,6 +3,7 @@ package com.sprint.otms.services;
 import java.util.List;
 
 import javax.transaction.Transactional;
+import javax.xml.bind.ValidationException;
 
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ public interface IAdminService extends IUserService{
 	
 	public Admin addAdmin(Admin admin);
 	
-	public Admin updateAdminById(Long id,String oldPassword,String newPassword);
+	public Admin updateAdminById(Long id,String oldPassword,String newPassword) throws ValidationException;
 	
 	public List<Admin> getAdmin();
 	
