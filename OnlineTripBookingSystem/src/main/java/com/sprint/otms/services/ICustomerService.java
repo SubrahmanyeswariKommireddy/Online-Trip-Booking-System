@@ -3,6 +3,7 @@ package com.sprint.otms.services;
 import java.util.List;
 
 import javax.transaction.Transactional;
+import javax.validation.ValidationException;
 
 import org.springframework.stereotype.Service;
 
@@ -23,6 +24,12 @@ public interface ICustomerService extends IUserService{
 	public String delete(Long id);
 
 	public Customer findCustomerById(Long id);
+
+	public Customer updateCustomerPasswordById(Long id, String oldPassword, String newPassword) throws ValidationException;
+	
+	public Customer updateCustomerMobileNoById(Long id, Long oldMobileNo, Long newMobileNo) throws ValidationException;
+	
+	public Customer updateCustomerEmailById(Long id, String oldEmail, String newEmail) throws ValidationException;
 
 //	public Optional<Customer> getCustomersByName(String userName);
 

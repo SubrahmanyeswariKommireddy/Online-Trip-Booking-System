@@ -6,7 +6,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 import javax.xml.bind.ValidationException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +24,7 @@ import com.sprint.otms.exceptions.AdminNotFoundException;
 import com.sprint.otms.exceptions.TravelsNotFoundException;
 import com.sprint.otms.exceptions.RouteNotFoundException;
 import com.sprint.otms.exceptions.BusNotFoundException;
+import com.sprint.otms.exceptions.CustomerNotFoundException;
 import com.sprint.otms.models.Admin;
 import com.sprint.otms.models.Bus;
 import com.sprint.otms.models.Customer;
@@ -90,13 +90,33 @@ public class AdminController {
 		return adminServiceImpl.getAdmin();
 	}
 
-	@PatchMapping("/updateAdmin/{id}")
-	public ResponseEntity<Admin> partialUpdateAdmin(@Valid @PathVariable Long id, @RequestParam String oldMessage, @RequestParam String newMessage) throws AdminNotFoundException , MethodArgumentNotValidException, ValidationException{
+
+	@PatchMapping("/updateAdminPassword/{id}")
+	public ResponseEntity<Admin> updateAdminPasswordById(@Valid @PathVariable Long id, @RequestParam String oldPassword, @RequestParam String newPassword) throws AdminNotFoundException , MethodArgumentNotValidException, ValidationException {
+
 		
-		LOGGER.info("updateAdmin URL is opened");
-		LOGGER.info("updateAdmin() is initiated");
+		LOGGER.info("updateAdminPassword URL is opened");
+		LOGGER.info("updateAdminPassword() is initiated");
 		
-		return new ResponseEntity<Admin>(adminServiceImpl.updateAdminById(id, oldMessage,newMessage), HttpStatus.OK);
+		return new ResponseEntity<Admin>(adminServiceImpl.updateAdminPasswordById(id, oldPassword, newPassword), HttpStatus.OK);
+	}
+	
+    @PatchMapping("/updateAdminMobileNo/{id}")
+	
+	public ResponseEntity<Admin> UpdateMobileNo(@Valid @PathVariable Long id, @RequestParam Long oldMobileNo, @RequestParam Long newMobileNo) throws CustomerNotFoundException , MethodArgumentNotValidException, ValidationException{
+		LOGGER.info("updateAdminMobileNo URL is opened");
+		LOGGER.info("updateAdminMobileNo() is initiated");
+		return new ResponseEntity<Admin>(adminServiceImpl.updateAdminMobileNoById(id, oldMobileNo, newMobileNo), HttpStatus.OK);
+		
+	}
+    
+    @PatchMapping("/updateAdminEmail/{id}")
+	
+	public ResponseEntity<Admin> updateEmail(@Valid @PathVariable Long id, @RequestParam String oldEmail, @RequestParam String newEmail) throws CustomerNotFoundException , MethodArgumentNotValidException, ValidationException{
+		LOGGER.info("updateAdminEmail URL is opened");
+		LOGGER.info("updateAdminEmail() is initiated");
+		return new ResponseEntity<Admin>(adminServiceImpl.updateAdminEmailById(id, oldEmail, newEmail), HttpStatus.OK);
+		
 	}
 	
 	@DeleteMapping("/admin/{id}")
@@ -231,15 +251,22 @@ public class AdminController {
 		return new ResponseEntity<>(newRoute, HttpStatus.OK);
 	}
 
-	@PatchMapping("/admin/partialUpdateRoute/{id}")
-	public ResponseEntity<Route> partialUpdateRoute(@Valid @RequestBody Route route) throws RouteNotFoundException,MethodArgumentNotValidException {
+	@PatchMapping("/updateSourceByRouteId/{id}")
+	public ResponseEntity<Route> updateSourceByRouteId(@Valid @PathVariable Long id, @RequestParam String oldSource, @RequestParam String newSource) throws AdminNotFoundException , MethodArgumentNotValidException{
+		
+		LOGGER.info("updateSourceByRouteId URL is opened");
+		LOGGER.info("updateSourceByRouteId() is initiated");
+		
+		return new ResponseEntity<Route>(routeServiceImpl.updateSourceById(id, oldSource, newSource), HttpStatus.OK);
+	}
 	
+	@PatchMapping("/updateDestinationByRouteId/{id}")
+	public ResponseEntity<Route> updateDestinationByRouteId(@Valid @PathVariable Long id, @RequestParam String oldDestination, @RequestParam String newDestination) throws AdminNotFoundException , MethodArgumentNotValidException{
 		
-		LOGGER.info("partialUpdateRoute URL is opened");
-		LOGGER.info("partialUpdateRoute() is initiated");
+		LOGGER.info("updateDestinationByRouteId URL is opened");
+		LOGGER.info("updateDestinationByRouteId() is initiated");
 		
-		Route newRoute = routeServiceImpl.updateRoute(route);
-		return new ResponseEntity<>(newRoute, HttpStatus.OK);
+		return new ResponseEntity<Route>(routeServiceImpl.updateDestinationById(id, oldDestination, newDestination), HttpStatus.OK);
 	}
 
 	@DeleteMapping("/admin/deleteRoute/{id}")

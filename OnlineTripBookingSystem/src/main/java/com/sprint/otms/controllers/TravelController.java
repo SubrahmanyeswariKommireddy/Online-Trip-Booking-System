@@ -1,9 +1,8 @@
 package com.sprint.otms.controllers;
 
 import java.util.List;
-
 import javax.validation.Valid;
-
+import javax.validation.ValidationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+import com.sprint.otms.exceptions.CustomerNotFoundException;
 import com.sprint.otms.models.Bus;
 import com.sprint.otms.models.Travel;
 import com.sprint.otms.services.BusServiceImpl;
@@ -106,15 +105,15 @@ public class TravelController {
 		return new ResponseEntity<>(newBus, HttpStatus.OK);
 	}
 
-	@PatchMapping("/partialUpdateBus/{id}")
-	public ResponseEntity<Bus> partialUpdateBus(@Valid @RequestBody Bus bus) throws MethodArgumentNotValidException{
+    @PatchMapping("/updateFareById/{id}")
+	
+	public ResponseEntity<Bus> updateFare(@Valid @PathVariable Long id, @RequestParam Float oldFare, @RequestParam Float newFare) throws CustomerNotFoundException , MethodArgumentNotValidException, ValidationException{
+		LOGGER.info("updateFare URL is opened");
+		LOGGER.info("updateFare() is initiated");
+		return new ResponseEntity<Bus>(busServiceImpl.updateFareById(id, oldFare, newFare), HttpStatus.OK);
 		
-		LOGGER.info("partialUpdateBus URL is opened");
-		LOGGER.info("partialUpdateBus() is initiated");
-		
-		Bus newBus = busServiceImpl.updateBus(bus);
-		return new ResponseEntity<>(newBus, HttpStatus.OK);
 	}
+
 	
 	@DeleteMapping("/bus/{id}") 
 	public void deleteBus(@Valid @PathVariable Long id) throws MethodArgumentNotValidException{

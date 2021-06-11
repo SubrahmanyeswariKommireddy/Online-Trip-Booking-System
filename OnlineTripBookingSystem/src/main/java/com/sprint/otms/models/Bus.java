@@ -27,6 +27,7 @@ public class Bus {
 	@NotNull
 	private Float fare;
     @NotNull
+
 	private Long totalCapacity;
    private Long currentCapacity;
    

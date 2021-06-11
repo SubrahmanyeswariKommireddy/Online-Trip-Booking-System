@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
+import javax.validation.ValidationException;
 
 import org.aspectj.weaver.patterns.CflowPointcut;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +55,66 @@ public class CustomerServiceImpl extends UserServiceImpl implements ICustomerSer
 	public Customer findCustomerById(Long id) {
 		// TODO Auto-generated method stub
 		return customerRepository.getById(id);
+	}
+	
+	@Override
+	public Customer updateCustomerPasswordById(Long id,String oldPassword,String newPassword) throws ValidationException {
+		// TODO Auto-generated method stub
+		java.util.Optional<Customer> customer = customerRepository.findById(id);
+		if(customer != null)
+		{
+			if(customer.get().getPassword().equals(oldPassword))
+			{
+				customer.get().setPassword(newPassword);
+				return customerRepository.save(customer.get());
+			}
+			else 
+			{
+				throw new ValidationException("Incorrect Password");
+			}
+		}
+		return customer.get();
+		
+	}
+	
+	@Override
+	public Customer updateCustomerMobileNoById(Long id,Long oldMobileNo,Long newMobileNo) throws ValidationException {
+		// TODO Auto-generated method stub
+		java.util.Optional<Customer> customer = customerRepository.findById(id);
+		if(customer != null)
+		{
+			if(customer.get().getMobileNumber().equals(oldMobileNo))
+			{
+				customer.get().setMobileNumber(newMobileNo);
+				return customerRepository.save(customer.get());
+			}
+			else 
+			{
+				throw new ValidationException("Incorrect MobileNumber");
+			}
+		}
+		return customer.get();
+		
+	}
+	
+	@Override
+	public Customer updateCustomerEmailById(Long id,String oldEmail,String newEmail) throws ValidationException {
+		// TODO Auto-generated method stub
+		java.util.Optional<Customer> customer = customerRepository.findById(id);
+		if(customer != null)
+		{
+			if(customer.get().getEmail().equals(oldEmail))
+			{
+				customer.get().setEmail(newEmail);
+				return customerRepository.save(customer.get());
+			}
+			else 
+			{
+				throw new ValidationException("Incorrect EmailId");
+			}
+		}
+		return customer.get();
+		
 	}
 
 	

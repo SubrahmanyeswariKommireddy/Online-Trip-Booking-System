@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
+import javax.validation.ValidationException;
 
 import org.springframework.stereotype.Service;
 
+import com.sprint.otms.models.Admin;
 import com.sprint.otms.models.Bus;
 
 @Service
@@ -23,7 +25,7 @@ public interface IBusService {
 
 	public List<Bus> getAllBuses();
 	
-	//public String updateSeats(Long currentCapacity);
+	public Bus updateFareById(Long id, Float oldFare, Float newFare) throws ValidationException;
 	
 //	public List<Bus> getBusesByTravelId(Long travelId);
 //	

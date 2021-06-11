@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
+import javax.validation.ValidationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sprint.otms.models.Booking;
+import com.sprint.otms.models.Admin;
 import com.sprint.otms.models.Bus;
 import com.sprint.otms.repositories.IBusRepository;
 
@@ -21,6 +23,7 @@ public class BusServiceImpl implements IBusService{
 
 	@Override
 	public Bus addBus(Bus bus) {
+		bus.setTotalCapacity(30L);
 		// TODO Auto-generated method stub
 		//bus.setCurrentCapacity(bus.getTotalCapacity());
 		
@@ -52,18 +55,26 @@ public class BusServiceImpl implements IBusService{
 		// TODO Auto-generated method stub
 		return busRepository.findAll();
 	}
-//
-//	@Override
-//	public String updateSeats(Long currentCapacity) {
-//		// TODO Auto-generated method stub
-//		Bus bus=new Bus();
-//		bus.getCurrentCapacity()++;
-//		Booking b=new Booking();
-//		if(bus.getCurrentCapacity()<=bus.getTotalCapacity()) {
-//			bus.getCurrentCapacity(bus.getCurrentCapacity()-b.getSeatsBooked());
-//		}
-//		return "seats are not available";
-//	}
+	
+	@Override
+	public Bus updateFareById(Long id,Float oldFare,Float newFare) throws ValidationException {
+		// TODO Auto-generated method stub
+		java.util.Optional<Bus> bus = busRepository.findById(id);
+		if(bus != null)
+		{
+			if(bus.get().getFare().equals(oldFare))
+			{
+				bus.get().setFare(newFare);
+				return busRepository.save(bus.get());
+			}
+			else 
+			{
+				throw new ValidationException("Incorrect Fare");
+			}
+		}
+		return bus.get();
+		
+	}
 
 //	@Override
 //	public List<Bus> getBusesByTravelId(Long travelId) {

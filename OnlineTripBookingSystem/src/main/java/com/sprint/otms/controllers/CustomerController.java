@@ -3,6 +3,8 @@ package com.sprint.otms.controllers;
 import java.util.List;
 
 import javax.validation.Valid;
+import javax.validation.Validation;
+import javax.validation.ValidationException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sprint.otms.exceptions.BookingNotFoundException;
@@ -76,21 +79,33 @@ public class CustomerController {
 		return new ResponseEntity<>(customerServiceImpl.addCustomer(customer), HttpStatus.OK);
 	}
 
-	@PatchMapping("/updateCustomer/{id}")
-	public ResponseEntity<Customer> updateCustomer(@Valid @RequestBody Customer customer) throws CustomerNotFoundException , MethodArgumentNotValidException{
+	@PatchMapping("/updateCustomerPassword/{id}")
+	
+	public ResponseEntity<Customer> updatePassword(@Valid @PathVariable Long id, @RequestParam String oldPassword, @RequestParam String newPassword) throws CustomerNotFoundException , MethodArgumentNotValidException, ValidationException{
+		LOGGER.info("updateCustomerPassword URL is opened");
+		LOGGER.info("updateCustomerPassword() is initiated");
+		return new ResponseEntity<Customer>(customerServiceImpl.updateCustomerPasswordById(id, oldPassword, newPassword), HttpStatus.OK);
 		
-		LOGGER.info("updateCustomer URL is opened");
-		LOGGER.info("updateCustomer() is initiated");
+	}
+	
+    @PatchMapping("/updateCustomerMobileNo/{id}")
+	
+	public ResponseEntity<Customer> UpdateMobileNo(@Valid @PathVariable Long id, @RequestParam Long oldMobileNo, @RequestParam Long newMobileNo) throws CustomerNotFoundException , MethodArgumentNotValidException, ValidationException{
+		LOGGER.info("updateCustomerMobileNo URL is opened");
+		LOGGER.info("updateCustomerMobileNo() is initiated");
+		return new ResponseEntity<Customer>(customerServiceImpl.updateCustomerMobileNoById(id, oldMobileNo, newMobileNo), HttpStatus.OK);
 		
-		Customer newCustomer = customerServiceImpl.updateCustomer(customer);
-		return new ResponseEntity<>(newCustomer, HttpStatus.OK);
+	}
+    
+    @PatchMapping("/updateCustomerEmail/{id}")
+	
+	public ResponseEntity<Customer> UpdateEmail(@Valid @PathVariable Long id, @RequestParam String oldEmail, @RequestParam String newEmail) throws CustomerNotFoundException , MethodArgumentNotValidException, ValidationException{
+		LOGGER.info("updateCustomerEmail URL is opened");
+		LOGGER.info("updateCustomerEmail() is initiated");
+		return new ResponseEntity<Customer>(customerServiceImpl.updateCustomerEmailById(id, oldEmail, newEmail), HttpStatus.OK);
+		
 	}
 
-//	@GetMapping("admin/securityAlert/{id}")
-//	public ResponseEntity<SecurityAlert> getSecurityAlertById(@PathVariable Long id)
-//	{
-//		return new ResponseEntity<SecurityAlert>(securityAlertService.getSecurityAlertById(id),HttpStatus.OK);
-//	}
 
 	@GetMapping("/getCustomer/{id}")
 	public ResponseEntity<Customer> getById(@Valid @PathVariable Long id) throws CustomerNotFoundException , MethodArgumentNotValidException{
