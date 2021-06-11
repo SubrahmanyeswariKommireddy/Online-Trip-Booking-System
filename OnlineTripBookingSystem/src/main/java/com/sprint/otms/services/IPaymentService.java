@@ -19,5 +19,9 @@ public interface IPaymentService {
 	public Payment getPaymentByTransactionId(Long transactionId);
 
 	public String delete(Long transactionId);
+	
+	public Payment addPayment(Payment payment, Long bookingId, Long busId);
+	
+	
 
 }

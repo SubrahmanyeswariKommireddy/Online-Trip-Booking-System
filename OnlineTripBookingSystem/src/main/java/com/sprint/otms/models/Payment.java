@@ -22,7 +22,7 @@ public class Payment {
 	@Enumerated(value = EnumType.STRING)
 	@Column(name = "Transaction_Mode")
 	private TransactionMode transactionMode;
-	
+	private Float amount;
 	@OneToOne
 	private Booking booking;
 
@@ -41,6 +41,23 @@ public class Payment {
 		super();
 		this.transactionMode = transactionMode;
 		this.booking = booking;
+	}
+	
+
+	public Payment(Long transactionId, TransactionMode transactionMode, Float amount, Booking booking) {
+		super();
+		this.transactionId = transactionId;
+		this.transactionMode = transactionMode;
+		this.amount = amount;
+		this.booking = booking;
+	}
+
+	public Float getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Float amount) {
+		this.amount = amount;
 	}
 
 	public Payment(Long transactionId) {
@@ -74,7 +91,9 @@ public class Payment {
 
 	@Override
 	public String toString() {
-		return "Payment [transactionId=" + transactionId + ", transactionMode=" + transactionMode + ", booking="
-				+ booking + "]";
-	}	
+		return "Payment [transactionId=" + transactionId + ", transactionMode=" + transactionMode + ", amount=" + amount
+				+ ", booking=" + booking + "]";
+	}
+
+	
 }

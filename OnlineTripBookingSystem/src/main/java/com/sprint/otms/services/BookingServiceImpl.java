@@ -12,8 +12,10 @@ import org.springframework.stereotype.Service;
 import com.sprint.otms.exceptions.BookingNotFoundException;
 import com.sprint.otms.models.Booking;
 import com.sprint.otms.models.Bus;
+import com.sprint.otms.models.Payment;
 import com.sprint.otms.repositories.IBookingRepository;
 import com.sprint.otms.repositories.IBusRepository;
+import com.sprint.otms.repositories.IPaymentRepository;
 
 @Service
 @Transactional
@@ -21,12 +23,18 @@ public class BookingServiceImpl implements IBookingService {
 
 	@Autowired
 	private IBookingRepository bookingRepository;
-static int count=30;
+    static int count=30;
 	@Autowired
 	private BusServiceImpl busServiceImpl;
 	
 	@Autowired
 	private IBusRepository busRepository;
+	
+	@Autowired
+	private IPaymentRepository paymentRepository;
+	
+	@Autowired
+	private PaymentServiceImpl paymentServiceImpl;
 	
 	@Override
 	public Booking addBooking(Booking booking) {
@@ -38,10 +46,19 @@ static int count=30;
 		Long capacity=bus.getCurrentCapacity();
 		bus.setCurrentCapacity(capacity-booking.getSeatsBooked());
 		busRepository.save(bus);
+		//booking.setAmount(booking.getBus().getFare()*booking.getSeatsBooked());	
+		
+//		Payment pay=paymentRepository.getById(booking.getPayment().getTransactionId());
+//		pay.setAmount(booking.getBus().getFare()*booking.getSeatsBooked());	
+		
+		
 			return bookingRepository.saveAndFlush(booking);
+			
 	}
+	
 	return null;
 		}
+	
 	
 //return null;
 //		//total capacity,empty seats,fare

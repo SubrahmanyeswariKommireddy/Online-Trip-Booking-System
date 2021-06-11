@@ -193,6 +193,15 @@ public class CustomerController {
 
 	// ----------------------------------payment------------------------------------
 
+	@PostMapping("/customer/addPayment")
+	public ResponseEntity<Payment> createPayment(@Valid @RequestBody Payment payment, Long bookingId, Long busId) throws MethodArgumentNotValidException{
+		
+		LOGGER.info("addBooking URL is opened");
+		LOGGER.info("createBooking() is initiated");
+		
+		return new ResponseEntity<>(paymentServiceImpl.addPayment(payment,bookingId,busId), HttpStatus.OK);
+	}
+	
 	@GetMapping("/getPayment")
 	public List<Payment> getPayment() {
 		
