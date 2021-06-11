@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sprint.otms.models.Booking;
 import com.sprint.otms.models.Bus;
 import com.sprint.otms.repositories.IBusRepository;
 
@@ -21,12 +22,15 @@ public class BusServiceImpl implements IBusService{
 	@Override
 	public Bus addBus(Bus bus) {
 		// TODO Auto-generated method stub
+		//bus.setCurrentCapacity(bus.getTotalCapacity());
+		
 		return busRepository.saveAndFlush(bus);
 	}
 
 	@Override
 	public Bus updateBus(Bus bus) {
 		// TODO Auto-generated method stub
+		bus.setTotalCapacity(30L);
 		return busRepository.saveAndFlush(bus);
 	}
 
@@ -48,6 +52,18 @@ public class BusServiceImpl implements IBusService{
 		// TODO Auto-generated method stub
 		return busRepository.findAll();
 	}
+//
+//	@Override
+//	public String updateSeats(Long currentCapacity) {
+//		// TODO Auto-generated method stub
+//		Bus bus=new Bus();
+//		bus.getCurrentCapacity()++;
+//		Booking b=new Booking();
+//		if(bus.getCurrentCapacity()<=bus.getTotalCapacity()) {
+//			bus.getCurrentCapacity(bus.getCurrentCapacity()-b.getSeatsBooked());
+//		}
+//		return "seats are not available";
+//	}
 
 //	@Override
 //	public List<Bus> getBusesByTravelId(Long travelId) {

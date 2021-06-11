@@ -18,7 +18,7 @@ import javax.validation.constraints.NotBlank;
 import com.sun.istack.NotNull;
 
 @Entity
-@Table(name="bus_otms_details3")
+@Table(name="bus_details_table1")
 public class Bus {
 	
 	@Id
@@ -28,7 +28,8 @@ public class Bus {
 	private Float fare;
     @NotNull
 	private Long totalCapacity;
-    private int currentEmptySeat;
+   private Long currentCapacity;
+   
 	@Enumerated(value = EnumType.STRING)
 	@Column(name = "Bus_Type")
 	private BusType busType;
@@ -77,14 +78,13 @@ public class Bus {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public Bus(Long busId, Float fare, Long totalCapacity, int currentEmptySeat, BusType busType, Booking booking,
+	public Bus(Long busId, Float fare, Long totalCapacity, Long currentCapacity, BusType busType, Booking booking,
 			Route route, Travel travel) {
 		super();
 		this.busId = busId;
 		this.fare = fare;
 		this.totalCapacity = totalCapacity;
-		this.currentEmptySeat = currentEmptySeat;
+		this.currentCapacity = currentCapacity;
 		this.busType = busType;
 		this.booking = booking;
 		this.route = route;
@@ -92,21 +92,11 @@ public class Bus {
 	}
 
 
-	public Bus(Float fare, Long totalCapacity, int currentEmptySeat) {
+	public Bus(Float fare, Long totalCapacity, Long currentCapacity) {
 		super();
 		this.fare = fare;
 		this.totalCapacity = totalCapacity;
-		this.currentEmptySeat = currentEmptySeat;
-	}
-
-
-	public int getCurrentEmptySeat() {
-		return currentEmptySeat;
-	}
-
-
-	public void setCurrentEmptySeat(int currentEmptySeat) {
-		this.currentEmptySeat = currentEmptySeat;
+		this.currentCapacity = currentCapacity;
 	}
 
 
@@ -142,11 +132,23 @@ public class Bus {
 		this.busType = busType;
 	}
 
+
+	public Long getCurrentCapacity() {
+		return currentCapacity;
+	}
+
+
+	public void setCurrentCapacity(Long currentCapacity) {
+		this.currentCapacity = currentCapacity;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Bus [busId=" + busId + ", fare=" + fare + ", totalCapacity=" + totalCapacity + ", currentEmptySeat="
-				+ currentEmptySeat + ", busType=" + busType + ", booking=" + booking + ", route=" + route + ", travel="
+		return "Bus [busId=" + busId + ", fare=" + fare + ", totalCapacity=" + totalCapacity + ", currentCapacity="
+				+ currentCapacity + ", busType=" + busType + ", booking=" + booking + ", route=" + route + ", travel="
 				+ travel + "]";
 	}
+
 
 }

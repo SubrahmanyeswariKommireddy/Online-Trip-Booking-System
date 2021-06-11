@@ -23,6 +23,8 @@ public interface IBusService {
 
 	public List<Bus> getAllBuses();
 	
+	//public String updateSeats(Long currentCapacity);
+	
 //	public List<Bus> getBusesByTravelId(Long travelId);
 //	
 //	public List<Bus> getBusesByRouteId(Long routeId);

@@ -21,7 +21,7 @@ import javax.validation.constraints.NotBlank;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "travel_otms_details1")
+@Table(name = "travel_details_table1")
 public class Travel{
 
 	@Id

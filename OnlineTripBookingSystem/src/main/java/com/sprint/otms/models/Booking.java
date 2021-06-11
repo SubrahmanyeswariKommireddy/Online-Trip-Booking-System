@@ -14,7 +14,7 @@ import javax.validation.constraints.NotBlank;
 import com.sun.istack.NotNull;
 
 @Entity
-@Table(name="booking_otms_details1")
+@Table(name="booking_details_table1")
 public class Booking {
 
 	@Id
@@ -24,11 +24,11 @@ public class Booking {
 	private int seatsBooked;
 	private LocalDateTime dateAndTimeOfTravel;
 	
-	@OneToOne(mappedBy="booking", fetch=FetchType.LAZY)
-	private Payment payment;
-	
 	@OneToOne
 	private Customer customer;
+	
+	@OneToOne(mappedBy="booking", fetch=FetchType.LAZY)
+	private Payment payment;
 	
 	@OneToOne(mappedBy="booking", fetch=FetchType.LAZY)
 	private Bus bus;

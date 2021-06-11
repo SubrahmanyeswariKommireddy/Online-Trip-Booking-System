@@ -6,7 +6,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="customer_otms_details1")
+@Table(name="customer_details_table1")
 public class Customer extends User {
 	
 	@OneToOne(mappedBy="customer", fetch=FetchType.LAZY)

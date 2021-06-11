@@ -11,9 +11,8 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="admin_details1")
+@Table(name="admin_details_table1")
 public class Admin extends User{
-	
 	
 	@OneToMany(fetch=FetchType.LAZY)
 	private List<Travel> travels;

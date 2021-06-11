@@ -148,6 +148,7 @@ public class CustomerController {
 		return new ResponseEntity<>(bookingServiceImpl.addBooking(booking), HttpStatus.OK);
 	}
 	
+	
 	@GetMapping("/customer/getBooking")
 	public List<Booking> getBooking() {
 		
@@ -158,12 +159,12 @@ public class CustomerController {
 	}
 
 	@GetMapping("/customer/getBookingById/{id}")
-	public Booking getByBookingId(@Valid @PathVariable Long Id) throws BookingNotFoundException, MethodArgumentNotValidException {
+	public Booking getByBookingId(@Valid @PathVariable Long id) throws BookingNotFoundException, MethodArgumentNotValidException {
 		
 		LOGGER.info("getBookingById URL is opened");
 		LOGGER.info("getByBookingId() is initiated");
-		
-		return bookingServiceImpl.findByBookingId(Id);
+		//Booking b=
+		return bookingServiceImpl.findByBookingId(id);
 	}
 
 	@DeleteMapping("/customer/cancelBooking/{id}")

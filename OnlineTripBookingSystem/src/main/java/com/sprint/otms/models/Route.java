@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name="route_otms_details1")
+@Table(name="route_details_table1")
 public class Route {
 	
 	@Id

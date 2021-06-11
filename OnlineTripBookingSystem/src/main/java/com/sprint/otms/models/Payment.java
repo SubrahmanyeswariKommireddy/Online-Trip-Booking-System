@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "payment_otms_details1")
+@Table(name = "payment_details_table1")
 public class Payment {
 
 	@Id

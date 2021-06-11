@@ -22,6 +22,9 @@ public interface IBookingService {
 	
 	 public Booking findByBookingId(Long transactionId);
 
+
 	//	List<Booking> findByDateAndTimeOfTravel(LocalDateTime dateTime);
+
+	Booking findBySeatsBooked(int seatsBooked);
 
 }

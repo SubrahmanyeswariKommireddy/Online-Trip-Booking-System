@@ -13,8 +13,7 @@ public interface IBookingRepository extends JpaRepository <Booking, Long> {
 
 	 Booking findByBookingId(Long transactionId);
 	 
-	 
-	 
+public Booking findByseatsBooked(int seatsBooked);
 //	List<Booking> findByDateAndTimeOfTravel(LocalDateTime dateTime);
 
 
