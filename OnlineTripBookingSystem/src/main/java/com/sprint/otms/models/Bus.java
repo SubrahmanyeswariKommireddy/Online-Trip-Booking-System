@@ -27,7 +27,7 @@ public class Bus {
 	@NotNull
 	private Float fare;
     @NotNull
-	private Long totalCapacity;
+	private Long totalCapacity=30L;
 	
 	@Enumerated(value = EnumType.STRING)
 	@Column(name = "Bus_Type")

@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
+import javax.validation.ValidationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sprint.otms.models.Admin;
 import com.sprint.otms.models.Bus;
 import com.sprint.otms.repositories.IBusRepository;
 
@@ -20,6 +22,7 @@ public class BusServiceImpl implements IBusService{
 
 	@Override
 	public Bus addBus(Bus bus) {
+		bus.setTotalCapacity(30L);
 		// TODO Auto-generated method stub
 		return busRepository.saveAndFlush(bus);
 	}
@@ -47,6 +50,26 @@ public class BusServiceImpl implements IBusService{
 	public List<Bus> getAllBuses() {
 		// TODO Auto-generated method stub
 		return busRepository.findAll();
+	}
+	
+	@Override
+	public Bus updateFareById(Long id,Float oldFare,Float newFare) throws ValidationException {
+		// TODO Auto-generated method stub
+		java.util.Optional<Bus> bus = busRepository.findById(id);
+		if(bus != null)
+		{
+			if(bus.get().getFare().equals(oldFare))
+			{
+				bus.get().setFare(newFare);
+				return busRepository.save(bus.get());
+			}
+			else 
+			{
+				throw new ValidationException("Incorrect Fare");
+			}
+		}
+		return bus.get();
+		
 	}
 
 //	@Override

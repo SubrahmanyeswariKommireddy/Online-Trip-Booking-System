@@ -473,3 +473,642 @@ Caused by: java.sql.SQLException: ORA-01017: invalid username/password; logon de
 2021-06-07 09:54:41.863  INFO 8312 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
 2021-06-07 11:08:13.091  INFO 8312 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
 2021-06-07 11:08:13.167  INFO 8312 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-11 14:37:43.288  INFO 5692 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-2QBADCP with PID 5692 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by DHASARI in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-11 14:37:43.294  INFO 5692 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-11 14:37:44.857  INFO 5692 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-11 14:37:45.020  INFO 5692 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 147 ms. Found 8 JPA repository interfaces.
+2021-06-11 14:37:46.139  INFO 5692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-11 14:37:46.152  INFO 5692 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-11 14:37:46.152  INFO 5692 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-11 14:37:46.326  INFO 5692 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-11 14:37:46.326  INFO 5692 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2904 ms
+2021-06-11 14:37:46.575  INFO 5692 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 14:37:46.644  INFO 5692 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-11 14:37:46.950  INFO 5692 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-11 14:37:47.091  INFO 5692 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-11 14:37:47.914  INFO 5692 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-11 14:37:47.934  INFO 5692 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-11 14:37:50.026  INFO 5692 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 14:37:50.043  INFO 5692 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 14:37:51.624  WARN 5692 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-11 14:37:51.885  INFO 5692 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-11 14:37:52.438  INFO 5692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-11 14:37:52.440  INFO 5692 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-11 14:37:52.463  INFO 5692 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-11 14:37:52.511  INFO 5692 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-11 14:37:52.880  INFO 5692 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-11 14:37:52.895  INFO 5692 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-11 14:37:52.897  INFO 5692 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-11 14:37:52.904  INFO 5692 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: partialUpdateAdminUsingPATCH_1
+2021-06-11 14:37:52.914  INFO 5692 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-11 14:37:52.918  INFO 5692 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-11 14:37:52.958  INFO 5692 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 10.324 seconds (JVM running for 11.713)
+2021-06-11 14:37:52.961  INFO 5692 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-11 14:37:52.966  INFO 5692 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-11 14:38:04.661  INFO 5692 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-11 14:38:04.661  INFO 5692 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-11 14:38:04.665  INFO 5692 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-06-11 14:38:11.220  INFO 5692 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-11 14:38:11.221  INFO 5692 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-11 14:38:21.444  INFO 5260 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-2QBADCP with PID 5260 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by DHASARI in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-11 14:38:21.449  INFO 5260 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-11 14:38:22.775  INFO 5260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-11 14:38:22.912  INFO 5260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 123 ms. Found 8 JPA repository interfaces.
+2021-06-11 14:38:23.968  INFO 5260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-11 14:38:23.980  INFO 5260 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-11 14:38:23.981  INFO 5260 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-11 14:38:24.149  INFO 5260 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-11 14:38:24.150  INFO 5260 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2571 ms
+2021-06-11 14:38:24.390  INFO 5260 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 14:38:24.457  INFO 5260 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-11 14:38:24.744  INFO 5260 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-11 14:38:24.897  INFO 5260 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-11 14:38:25.683  INFO 5260 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-11 14:38:25.705  INFO 5260 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-11 14:38:27.373  INFO 5260 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 14:38:27.387  INFO 5260 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 14:38:28.919  WARN 5260 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-11 14:38:29.128  INFO 5260 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-11 14:38:29.604  INFO 5260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-11 14:38:29.606  INFO 5260 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-11 14:38:29.628  INFO 5260 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-11 14:38:29.672  INFO 5260 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-11 14:38:30.015  INFO 5260 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-11 14:38:30.030  INFO 5260 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-11 14:38:30.032  INFO 5260 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-11 14:38:30.039  INFO 5260 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: partialUpdateAdminUsingPATCH_1
+2021-06-11 14:38:30.050  INFO 5260 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-11 14:38:30.056  INFO 5260 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-11 14:38:30.085  INFO 5260 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 9.288 seconds (JVM running for 10.633)
+2021-06-11 14:38:30.087  INFO 5260 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-11 14:38:30.091  INFO 5260 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-11 14:38:55.264  INFO 5260 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-11 14:38:55.265  INFO 5260 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-11 14:38:55.270  INFO 5260 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2021-06-11 14:41:16.608  INFO 5260 --- [http-nio-9999-exec-1] c.s.otms.controllers.CustomerController  : addCustomer URL is opened
+2021-06-11 14:41:16.609  INFO 5260 --- [http-nio-9999-exec-1] c.s.otms.controllers.CustomerController  : createCustomer() is initiated
+2021-06-11 14:41:41.565  INFO 5260 --- [http-nio-9999-exec-3] c.s.otms.controllers.CustomerController  : updateCustomer URL is opened
+2021-06-11 14:41:41.565  INFO 5260 --- [http-nio-9999-exec-3] c.s.otms.controllers.CustomerController  : updateCustomer() is initiated
+2021-06-11 14:42:28.787  INFO 5260 --- [http-nio-9999-exec-2] c.s.otms.controllers.CustomerController  : updateCustomer URL is opened
+2021-06-11 14:42:28.788  INFO 5260 --- [http-nio-9999-exec-2] c.s.otms.controllers.CustomerController  : updateCustomer() is initiated
+2021-06-11 14:52:49.739  INFO 5260 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-11 14:52:49.742  INFO 5260 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-11 14:55:55.010  INFO 1904 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-2QBADCP with PID 1904 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by DHASARI in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-11 14:55:55.014  INFO 1904 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-11 14:55:56.308  INFO 1904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-11 14:55:56.431  INFO 1904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110 ms. Found 8 JPA repository interfaces.
+2021-06-11 14:55:57.479  INFO 1904 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-11 14:55:57.491  INFO 1904 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-11 14:55:57.492  INFO 1904 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-11 14:55:57.650  INFO 1904 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-11 14:55:57.650  INFO 1904 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2518 ms
+2021-06-11 14:55:57.919  INFO 1904 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 14:55:57.993  INFO 1904 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-11 14:55:58.329  INFO 1904 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-11 14:55:58.476  INFO 1904 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-11 14:55:59.289  INFO 1904 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-11 14:55:59.307  INFO 1904 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-11 14:56:17.966  INFO 3796 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-2QBADCP with PID 3796 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by DHASARI in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-11 14:56:17.971  INFO 3796 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-11 14:56:19.230  INFO 3796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-11 14:56:19.356  INFO 3796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110 ms. Found 8 JPA repository interfaces.
+2021-06-11 14:56:20.394  INFO 3796 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-11 14:56:20.406  INFO 3796 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-11 14:56:20.407  INFO 3796 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-11 14:56:20.572  INFO 3796 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-11 14:56:20.572  INFO 3796 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2490 ms
+2021-06-11 14:56:20.815  INFO 3796 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 14:56:20.884  INFO 3796 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-11 14:56:21.165  INFO 3796 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-11 14:56:21.301  INFO 3796 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-11 14:56:22.087  INFO 3796 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-11 14:56:22.105  INFO 3796 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-11 14:56:23.732  INFO 3796 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 14:56:23.746  INFO 3796 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 14:56:25.256  WARN 3796 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-11 14:56:25.464  INFO 3796 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-11 14:56:25.965  INFO 3796 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-11 14:56:25.967  INFO 3796 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-11 14:56:25.989  INFO 3796 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-11 14:56:26.032  INFO 3796 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-11 14:56:26.365  INFO 3796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-11 14:56:26.380  INFO 3796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-11 14:56:26.382  INFO 3796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-11 14:56:26.397  INFO 3796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-11 14:56:26.402  INFO 3796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-11 14:56:26.437  INFO 3796 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 9.124 seconds (JVM running for 10.499)
+2021-06-11 14:56:26.439  INFO 3796 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-11 14:56:26.442  INFO 3796 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-11 14:57:17.623  INFO 3796 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-11 14:57:17.624  INFO 3796 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-11 14:57:17.626  INFO 3796 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-06-11 14:58:26.486  INFO 3796 --- [http-nio-9999-exec-1] c.s.otms.controllers.CustomerController  : getCustomer URL is opened
+2021-06-11 14:58:26.488  INFO 3796 --- [http-nio-9999-exec-1] c.s.otms.controllers.CustomerController  : getById() is initiated
+2021-06-11 14:59:26.164  INFO 3796 --- [http-nio-9999-exec-3] c.s.otms.controllers.CustomerController  : updateCustomer URL is opened
+2021-06-11 14:59:26.165  INFO 3796 --- [http-nio-9999-exec-3] c.s.otms.controllers.CustomerController  : updateCustomer() is initiated
+2021-06-11 15:05:57.912  INFO 3796 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-11 15:05:57.913  INFO 3796 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-11 15:06:07.659  INFO 7936 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-2QBADCP with PID 7936 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by DHASARI in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-11 15:06:07.664  INFO 7936 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-11 15:06:08.970  INFO 7936 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-11 15:06:09.101  INFO 7936 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 115 ms. Found 8 JPA repository interfaces.
+2021-06-11 15:06:10.191  INFO 7936 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-11 15:06:10.205  INFO 7936 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-11 15:06:10.205  INFO 7936 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-11 15:06:10.372  INFO 7936 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-11 15:06:10.373  INFO 7936 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2590 ms
+2021-06-11 15:06:10.608  INFO 7936 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 15:06:10.672  INFO 7936 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-11 15:06:10.964  INFO 7936 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-11 15:06:11.110  INFO 7936 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-11 15:06:11.861  INFO 7936 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-11 15:06:11.880  INFO 7936 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-11 15:06:13.502  INFO 7936 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 15:06:13.515  INFO 7936 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 15:06:15.025  WARN 7936 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-11 15:06:15.239  INFO 7936 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-11 15:06:15.710  INFO 7936 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-11 15:06:15.712  INFO 7936 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-11 15:06:15.734  INFO 7936 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-11 15:06:15.784  INFO 7936 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-11 15:06:16.141  INFO 7936 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-11 15:06:16.154  INFO 7936 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-11 15:06:16.156  INFO 7936 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-11 15:06:16.173  INFO 7936 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-11 15:06:16.178  INFO 7936 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-11 15:06:16.210  INFO 7936 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 9.197 seconds (JVM running for 10.563)
+2021-06-11 15:06:16.212  INFO 7936 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-11 15:06:16.216  INFO 7936 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-11 15:07:13.768  INFO 7936 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-11 15:07:13.768  INFO 7936 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-11 15:07:13.771  INFO 7936 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-06-11 15:07:29.432  INFO 7936 --- [http-nio-9999-exec-9] c.s.otms.controllers.CustomerController  : getCustomer URL is opened
+2021-06-11 15:07:29.433  INFO 7936 --- [http-nio-9999-exec-9] c.s.otms.controllers.CustomerController  : getById() is initiated
+2021-06-11 15:08:10.690  INFO 7936 --- [http-nio-9999-exec-10] c.s.otms.controllers.CustomerController  : updateCustomerEmail URL is opened
+2021-06-11 15:08:10.692  INFO 7936 --- [http-nio-9999-exec-10] c.s.otms.controllers.CustomerController  : updateCustomerEmail() is initiated
+2021-06-11 15:08:56.436  INFO 7936 --- [http-nio-9999-exec-3] c.s.otms.controllers.CustomerController  : UpdateCustomerMobileNo URL is opened
+2021-06-11 15:08:56.437  INFO 7936 --- [http-nio-9999-exec-3] c.s.otms.controllers.CustomerController  : UpdateCustomerMobileNo() is initiated
+2021-06-11 15:21:06.584  INFO 7936 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-11 15:21:06.585  INFO 7936 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-11 15:25:15.851  INFO 10020 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-2QBADCP with PID 10020 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by DHASARI in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-11 15:25:15.857  INFO 10020 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-11 15:25:17.272  INFO 10020 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-11 15:25:17.408  INFO 10020 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122 ms. Found 8 JPA repository interfaces.
+2021-06-11 15:25:18.661  INFO 10020 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-11 15:25:18.675  INFO 10020 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-11 15:25:18.676  INFO 10020 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-11 15:25:18.871  INFO 10020 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-11 15:25:18.872  INFO 10020 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2889 ms
+2021-06-11 15:25:19.143  INFO 10020 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 15:25:19.210  INFO 10020 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-11 15:25:19.527  INFO 10020 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-11 15:25:19.674  INFO 10020 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-11 15:25:20.514  INFO 10020 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-11 15:25:20.540  INFO 10020 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-11 15:25:22.405  INFO 10020 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 15:25:22.420  INFO 10020 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 15:25:24.276  WARN 10020 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-11 15:25:24.529  INFO 10020 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-11 15:25:25.066  INFO 10020 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-11 15:25:25.068  INFO 10020 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-11 15:25:25.095  INFO 10020 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-11 15:25:25.147  INFO 10020 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-11 15:25:25.524  INFO 10020 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateEmailUsingPATCH_1
+2021-06-11 15:25:25.529  INFO 10020 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-11 15:25:25.554  INFO 10020 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-11 15:25:25.568  INFO 10020 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-11 15:25:25.571  INFO 10020 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-11 15:25:25.590  INFO 10020 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-11 15:25:25.596  INFO 10020 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-11 15:25:25.626  INFO 10020 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 10.53 seconds (JVM running for 12.064)
+2021-06-11 15:25:25.629  INFO 10020 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-11 15:25:25.634  INFO 10020 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-11 15:25:30.403  INFO 10020 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-11 15:25:30.403  INFO 10020 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-11 15:25:30.407  INFO 10020 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-06-11 15:25:42.245  INFO 10020 --- [http-nio-9999-exec-9] c.s.otms.controllers.AdminController     : getAdmin URL is opened
+2021-06-11 15:25:42.246  INFO 10020 --- [http-nio-9999-exec-9] c.s.otms.controllers.AdminController     : getAdmin() is initiated
+2021-06-11 15:26:37.008  INFO 10020 --- [http-nio-9999-exec-1] c.s.otms.controllers.AdminController     : updateAdminEmail URL is opened
+2021-06-11 15:26:37.008  INFO 10020 --- [http-nio-9999-exec-1] c.s.otms.controllers.AdminController     : updateAdminEmail() is initiated
+2021-06-11 15:27:02.829  INFO 10020 --- [http-nio-9999-exec-3] c.s.otms.controllers.AdminController     : updateAdminMobileNo URL is opened
+2021-06-11 15:27:02.830  INFO 10020 --- [http-nio-9999-exec-3] c.s.otms.controllers.AdminController     : updateAdminMobileNo() is initiated
+2021-06-11 15:27:31.663  INFO 10020 --- [http-nio-9999-exec-2] c.s.otms.controllers.AdminController     : updateAdminPassword URL is opened
+2021-06-11 15:27:31.664  INFO 10020 --- [http-nio-9999-exec-2] c.s.otms.controllers.AdminController     : updateAdminPassword() is initiated
+2021-06-11 15:31:47.771  INFO 10020 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-11 15:31:47.772  INFO 10020 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-11 15:31:58.342  INFO 9432 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-2QBADCP with PID 9432 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by DHASARI in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-11 15:31:58.347  INFO 9432 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-11 15:31:59.906  INFO 9432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-11 15:32:00.061  INFO 9432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 140 ms. Found 8 JPA repository interfaces.
+2021-06-11 15:32:01.260  INFO 9432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-11 15:32:01.278  INFO 9432 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-11 15:32:01.279  INFO 9432 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-11 15:32:01.461  INFO 9432 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-11 15:32:01.462  INFO 9432 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2999 ms
+2021-06-11 15:32:01.738  INFO 9432 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 15:32:01.807  INFO 9432 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-11 15:32:02.181  INFO 9432 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-11 15:32:02.338  INFO 9432 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-11 15:32:03.204  INFO 9432 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-11 15:32:03.227  INFO 9432 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-11 15:32:05.139  INFO 9432 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 15:32:05.153  INFO 9432 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 15:32:06.798  WARN 9432 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-11 15:32:07.062  INFO 9432 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-11 15:32:07.614  INFO 9432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-11 15:32:07.616  INFO 9432 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-11 15:32:07.640  INFO 9432 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-11 15:32:07.696  INFO 9432 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-11 15:32:08.093  INFO 9432 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateEmailUsingPATCH_1
+2021-06-11 15:32:08.099  INFO 9432 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-11 15:32:08.129  INFO 9432 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-11 15:32:08.146  INFO 9432 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-11 15:32:08.149  INFO 9432 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-11 15:32:08.166  INFO 9432 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-11 15:32:08.172  INFO 9432 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-11 15:32:08.205  INFO 9432 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 10.575 seconds (JVM running for 12.059)
+2021-06-11 15:32:08.208  INFO 9432 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-11 15:32:08.213  INFO 9432 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-11 15:32:15.864  INFO 9432 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-11 15:32:15.865  INFO 9432 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-11 15:32:15.867  INFO 9432 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-06-11 16:21:00.220  INFO 9432 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-11 16:21:00.233  INFO 9432 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-11 16:21:08.903  INFO 9176 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-2QBADCP with PID 9176 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by DHASARI in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-11 16:21:08.908  INFO 9176 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-11 16:21:10.415  INFO 9176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-11 16:21:10.551  INFO 9176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122 ms. Found 8 JPA repository interfaces.
+2021-06-11 16:21:11.628  INFO 9176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-11 16:21:11.641  INFO 9176 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-11 16:21:11.641  INFO 9176 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-11 16:21:11.812  INFO 9176 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-11 16:21:11.813  INFO 9176 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2780 ms
+2021-06-11 16:21:12.067  INFO 9176 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 16:21:12.131  INFO 9176 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-11 16:21:12.403  INFO 9176 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-11 16:21:12.545  INFO 9176 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-11 16:21:13.333  INFO 9176 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-11 16:21:13.352  INFO 9176 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-11 16:21:15.045  INFO 9176 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 16:21:15.060  INFO 9176 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 16:21:16.330  WARN 9176 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-11 16:21:16.841  INFO 9176 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-11 16:21:17.379  INFO 9176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-11 16:21:17.382  INFO 9176 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-11 16:21:17.405  INFO 9176 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-11 16:21:17.455  INFO 9176 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-11 16:21:17.811  INFO 9176 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateEmailUsingPATCH_1
+2021-06-11 16:21:17.816  INFO 9176 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-11 16:21:17.846  INFO 9176 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-11 16:21:17.860  INFO 9176 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-11 16:21:17.861  INFO 9176 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-11 16:21:17.879  INFO 9176 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-11 16:21:17.886  INFO 9176 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-11 16:21:17.920  INFO 9176 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 9.753 seconds (JVM running for 11.251)
+2021-06-11 16:21:17.927  INFO 9176 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-11 16:21:17.936  INFO 9176 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-11 16:21:40.724  INFO 9176 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-11 16:21:40.725  INFO 9176 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-11 16:21:40.727  INFO 9176 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-06-11 16:21:55.786  INFO 9176 --- [http-nio-9999-exec-9] c.s.otms.controllers.AdminController     : getRoutes URL is opened
+2021-06-11 16:21:55.786  INFO 9176 --- [http-nio-9999-exec-9] c.s.otms.controllers.AdminController     : getRoutes() is initiated
+2021-06-11 16:22:26.989  INFO 9176 --- [http-nio-9999-exec-10] c.s.otms.controllers.AdminController     : addRoute URL is opened
+2021-06-11 16:22:26.990  INFO 9176 --- [http-nio-9999-exec-10] c.s.otms.controllers.AdminController     : addRoute() is initiated
+2021-06-11 16:22:50.443  INFO 9176 --- [http-nio-9999-exec-3] c.s.otms.controllers.AdminController     : updateSourceByRouteId URL is opened
+2021-06-11 16:22:50.443  INFO 9176 --- [http-nio-9999-exec-3] c.s.otms.controllers.AdminController     : updateSourceByRouteId() is initiated
+2021-06-11 16:23:21.162  INFO 9176 --- [http-nio-9999-exec-2] c.s.otms.controllers.AdminController     : updateDestinationByRouteId URL is opened
+2021-06-11 16:23:21.163  INFO 9176 --- [http-nio-9999-exec-2] c.s.otms.controllers.AdminController     : updateDestinationByRouteId() is initiated
+2021-06-11 16:25:12.421  INFO 9176 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-11 16:25:12.422  INFO 9176 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-11 16:25:16.679  INFO 6776 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-2QBADCP with PID 6776 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by DHASARI in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-11 16:25:16.684  INFO 6776 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-11 16:25:17.989  INFO 6776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-11 16:25:18.104  INFO 6776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103 ms. Found 8 JPA repository interfaces.
+2021-06-11 16:25:19.113  INFO 6776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-11 16:25:19.126  INFO 6776 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-11 16:25:19.126  INFO 6776 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-11 16:25:19.273  INFO 6776 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-11 16:25:19.274  INFO 6776 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2481 ms
+2021-06-11 16:25:19.518  INFO 6776 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 16:25:19.583  INFO 6776 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-11 16:25:19.865  INFO 6776 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-11 16:25:20.010  INFO 6776 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-11 16:25:20.769  INFO 6776 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-11 16:25:20.790  INFO 6776 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-11 16:25:22.467  INFO 6776 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 16:25:22.482  INFO 6776 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 16:25:23.819  WARN 6776 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-11 16:25:24.332  INFO 6776 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-11 16:25:24.834  INFO 6776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-11 16:25:24.837  INFO 6776 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-11 16:25:24.868  INFO 6776 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-11 16:25:24.920  INFO 6776 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-11 16:25:25.270  INFO 6776 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateEmailUsingPATCH_1
+2021-06-11 16:25:25.273  INFO 6776 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-11 16:25:25.303  INFO 6776 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-11 16:25:25.315  INFO 6776 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-11 16:25:25.317  INFO 6776 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-11 16:25:25.337  INFO 6776 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-11 16:25:25.343  INFO 6776 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-11 16:25:25.372  INFO 6776 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 9.33 seconds (JVM running for 10.746)
+2021-06-11 16:25:25.375  INFO 6776 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-11 16:25:25.381  INFO 6776 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-11 16:25:29.283  INFO 6776 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-11 16:25:29.283  INFO 6776 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-11 16:25:29.285  INFO 6776 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-06-11 16:25:42.944  INFO 6776 --- [http-nio-9999-exec-9] c.s.otms.controllers.AdminController     : getRoutes URL is opened
+2021-06-11 16:25:42.945  INFO 6776 --- [http-nio-9999-exec-9] c.s.otms.controllers.AdminController     : getRoutes() is initiated
+2021-06-11 16:26:00.405  INFO 6776 --- [http-nio-9999-exec-10] c.s.otms.controllers.AdminController     : updateDestinationByRouteId URL is opened
+2021-06-11 16:26:00.406  INFO 6776 --- [http-nio-9999-exec-10] c.s.otms.controllers.AdminController     : updateDestinationByRouteId() is initiated
+2021-06-11 16:26:28.636  INFO 6776 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-11 16:26:28.637  INFO 6776 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-11 16:26:32.713  INFO 3196 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-2QBADCP with PID 3196 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by DHASARI in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-11 16:26:32.718  INFO 3196 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-11 16:26:34.162  INFO 3196 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-11 16:26:34.303  INFO 3196 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 126 ms. Found 8 JPA repository interfaces.
+2021-06-11 16:26:35.414  INFO 3196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-11 16:26:35.427  INFO 3196 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-11 16:26:35.428  INFO 3196 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-11 16:26:35.583  INFO 3196 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-11 16:26:35.584  INFO 3196 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2746 ms
+2021-06-11 16:26:35.818  INFO 3196 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 16:26:35.883  INFO 3196 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-11 16:26:36.155  INFO 3196 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-11 16:26:36.296  INFO 3196 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-11 16:26:37.070  INFO 3196 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-11 16:26:37.090  INFO 3196 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-11 16:26:38.823  INFO 3196 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 16:26:38.836  INFO 3196 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 16:26:40.300  WARN 3196 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-11 16:26:40.516  INFO 3196 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-11 16:26:40.978  INFO 3196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-11 16:26:40.980  INFO 3196 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-11 16:26:41.001  INFO 3196 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-11 16:26:41.053  INFO 3196 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-11 16:26:41.374  INFO 3196 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateEmailUsingPATCH_1
+2021-06-11 16:26:41.378  INFO 3196 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-11 16:26:41.405  INFO 3196 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-11 16:26:41.420  INFO 3196 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-11 16:26:41.423  INFO 3196 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-11 16:26:41.437  INFO 3196 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-11 16:26:41.442  INFO 3196 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-11 16:26:41.475  INFO 3196 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 9.367 seconds (JVM running for 10.863)
+2021-06-11 16:26:41.477  INFO 3196 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-11 16:26:41.482  INFO 3196 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-11 16:26:43.843  INFO 3196 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-11 16:26:43.844  INFO 3196 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-11 16:26:43.846  INFO 3196 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-06-11 16:27:08.947  INFO 3196 --- [http-nio-9999-exec-9] c.s.otms.controllers.AdminController     : updateDestinationByRouteId URL is opened
+2021-06-11 16:27:08.948  INFO 3196 --- [http-nio-9999-exec-9] c.s.otms.controllers.AdminController     : updateDestinationByRouteId() is initiated
+2021-06-11 16:28:02.658  INFO 3196 --- [http-nio-9999-exec-6] c.s.otms.controllers.AdminController     : updateDestinationByRouteId URL is opened
+2021-06-11 16:28:02.659  INFO 3196 --- [http-nio-9999-exec-6] c.s.otms.controllers.AdminController     : updateDestinationByRouteId() is initiated
+2021-06-11 16:28:47.570  INFO 3196 --- [http-nio-9999-exec-10] c.s.otms.controllers.AdminController     : updateSourceByRouteId URL is opened
+2021-06-11 16:28:47.570  INFO 3196 --- [http-nio-9999-exec-10] c.s.otms.controllers.AdminController     : updateSourceByRouteId() is initiated
+2021-06-11 16:29:12.718  INFO 3196 --- [http-nio-9999-exec-1] c.s.otms.controllers.AdminController     : updateDestinationByRouteId URL is opened
+2021-06-11 16:29:12.719  INFO 3196 --- [http-nio-9999-exec-1] c.s.otms.controllers.AdminController     : updateDestinationByRouteId() is initiated
+2021-06-11 16:31:48.353  INFO 3196 --- [http-nio-9999-exec-10] c.s.otms.controllers.AdminController     : updateDestinationByRouteId URL is opened
+2021-06-11 16:31:48.354  INFO 3196 --- [http-nio-9999-exec-10] c.s.otms.controllers.AdminController     : updateDestinationByRouteId() is initiated
+2021-06-11 16:33:28.675  INFO 3196 --- [http-nio-9999-exec-3] c.s.otms.controllers.AdminController     : getRoutes URL is opened
+2021-06-11 16:33:28.675  INFO 3196 --- [http-nio-9999-exec-3] c.s.otms.controllers.AdminController     : getRoutes() is initiated
+2021-06-11 16:33:44.307  INFO 3196 --- [http-nio-9999-exec-2] c.s.otms.controllers.AdminController     : updateSourceByRouteId URL is opened
+2021-06-11 16:33:44.308  INFO 3196 --- [http-nio-9999-exec-2] c.s.otms.controllers.AdminController     : updateSourceByRouteId() is initiated
+2021-06-11 16:34:05.445  INFO 3196 --- [http-nio-9999-exec-4] c.s.otms.controllers.AdminController     : updateDestinationByRouteId URL is opened
+2021-06-11 16:34:05.445  INFO 3196 --- [http-nio-9999-exec-4] c.s.otms.controllers.AdminController     : updateDestinationByRouteId() is initiated
+2021-06-11 16:36:02.236  INFO 3196 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-11 16:36:02.236  INFO 3196 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-11 16:36:17.601  INFO 6452 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-2QBADCP with PID 6452 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by DHASARI in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-11 16:36:17.608  INFO 6452 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-11 16:36:19.041  INFO 6452 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-11 16:36:19.165  INFO 6452 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110 ms. Found 8 JPA repository interfaces.
+2021-06-11 16:36:20.605  INFO 6452 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-11 16:36:20.629  INFO 6452 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-11 16:36:20.630  INFO 6452 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-11 16:36:20.790  INFO 6452 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-11 16:36:20.791  INFO 6452 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3066 ms
+2021-06-11 16:36:21.103  INFO 6452 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 16:36:21.341  INFO 6452 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-11 16:36:21.761  INFO 6452 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-11 16:36:21.940  INFO 6452 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-11 16:36:22.825  INFO 6452 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-11 16:36:22.865  INFO 6452 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-11 16:36:25.016  INFO 6452 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 16:36:25.035  INFO 6452 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 16:36:26.606  WARN 6452 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-11 16:36:27.611  INFO 6452 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-11 16:36:28.257  INFO 6452 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-11 16:36:28.259  INFO 6452 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-11 16:36:28.290  INFO 6452 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-11 16:36:28.339  INFO 6452 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-11 16:36:28.763  INFO 6452 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateEmailUsingPATCH_1
+2021-06-11 16:36:28.766  INFO 6452 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-11 16:36:28.800  INFO 6452 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-11 16:36:28.819  INFO 6452 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-11 16:36:28.822  INFO 6452 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-11 16:36:28.844  INFO 6452 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-11 16:36:28.848  INFO 6452 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-11 16:36:28.894  INFO 6452 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 11.972 seconds (JVM running for 13.583)
+2021-06-11 16:36:28.898  INFO 6452 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-11 16:36:28.904  INFO 6452 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-11 16:36:43.481  INFO 6452 --- [http-nio-9999-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-11 16:36:43.481  INFO 6452 --- [http-nio-9999-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-11 16:36:43.486  INFO 6452 --- [http-nio-9999-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2021-06-11 16:37:01.882  INFO 6452 --- [http-nio-9999-exec-1] c.s.otms.controllers.AdminController     : getRoutes URL is opened
+2021-06-11 16:37:01.883  INFO 6452 --- [http-nio-9999-exec-1] c.s.otms.controllers.AdminController     : getRoutes() is initiated
+2021-06-11 16:37:30.007  INFO 6452 --- [http-nio-9999-exec-6] c.s.otms.controllers.AdminController     : updateDestinationByRouteId URL is opened
+2021-06-11 16:37:30.008  INFO 6452 --- [http-nio-9999-exec-6] c.s.otms.controllers.AdminController     : updateDestinationByRouteId() is initiated
+2021-06-11 16:38:11.478  INFO 6452 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-11 16:38:11.479  INFO 6452 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-11 16:38:23.574  INFO 7024 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-2QBADCP with PID 7024 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by DHASARI in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-11 16:38:23.580  INFO 7024 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-11 16:38:24.933  INFO 7024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-11 16:38:25.065  INFO 7024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 119 ms. Found 8 JPA repository interfaces.
+2021-06-11 16:38:26.201  INFO 7024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-11 16:38:26.215  INFO 7024 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-11 16:38:26.216  INFO 7024 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-11 16:38:26.401  INFO 7024 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-11 16:38:26.402  INFO 7024 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2711 ms
+2021-06-11 16:38:26.662  INFO 7024 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 16:38:26.734  INFO 7024 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-11 16:38:27.036  INFO 7024 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-11 16:38:27.176  INFO 7024 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-11 16:38:27.971  INFO 7024 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-11 16:38:27.992  INFO 7024 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-11 16:38:30.264  INFO 7024 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 16:38:30.277  INFO 7024 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 16:38:31.818  WARN 7024 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-11 16:38:32.045  INFO 7024 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-11 16:38:32.529  INFO 7024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-11 16:38:32.532  INFO 7024 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-11 16:38:32.554  INFO 7024 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-11 16:38:32.603  INFO 7024 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-11 16:38:33.009  INFO 7024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateEmailUsingPATCH_1
+2021-06-11 16:38:33.015  INFO 7024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-11 16:38:33.049  INFO 7024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-11 16:38:33.062  INFO 7024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-11 16:38:33.065  INFO 7024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-11 16:38:33.080  INFO 7024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-11 16:38:33.086  INFO 7024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-11 16:38:33.116  INFO 7024 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 10.23 seconds (JVM running for 11.691)
+2021-06-11 16:38:33.120  INFO 7024 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-11 16:38:33.125  INFO 7024 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-11 16:38:37.884  INFO 7024 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-11 16:38:37.885  INFO 7024 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-11 16:38:37.887  INFO 7024 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-06-11 16:38:55.819  INFO 7024 --- [http-nio-9999-exec-9] c.s.otms.controllers.AdminController     : updateDestinationByRouteId URL is opened
+2021-06-11 16:38:55.819  INFO 7024 --- [http-nio-9999-exec-9] c.s.otms.controllers.AdminController     : updateDestinationByRouteId() is initiated
+2021-06-11 16:59:55.079  INFO 7024 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-11 16:59:55.080  INFO 7024 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-11 17:01:15.854  INFO 5044 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-2QBADCP with PID 5044 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by DHASARI in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-11 17:01:15.860  INFO 5044 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-11 17:01:17.184  INFO 5044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-11 17:01:17.311  INFO 5044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 8 JPA repository interfaces.
+2021-06-11 17:01:18.377  INFO 5044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-11 17:01:18.397  INFO 5044 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-11 17:01:18.397  INFO 5044 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-11 17:01:18.555  INFO 5044 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-11 17:01:18.555  INFO 5044 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2580 ms
+2021-06-11 17:01:18.814  INFO 5044 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 17:01:18.880  INFO 5044 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-11 17:01:19.167  INFO 5044 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-11 17:01:19.314  INFO 5044 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-11 17:01:20.156  INFO 5044 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-11 17:01:20.178  INFO 5044 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-11 17:01:21.876  INFO 5044 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 17:01:21.890  INFO 5044 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 17:01:23.412  WARN 5044 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-11 17:01:23.646  INFO 5044 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-11 17:01:24.134  INFO 5044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-11 17:01:24.136  INFO 5044 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-11 17:01:24.157  INFO 5044 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-11 17:01:24.203  INFO 5044 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-11 17:01:24.552  INFO 5044 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-11 17:01:24.576  INFO 5044 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-11 17:01:24.589  INFO 5044 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-11 17:01:24.591  INFO 5044 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-11 17:01:24.606  INFO 5044 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-11 17:01:24.614  INFO 5044 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-11 17:01:24.648  INFO 5044 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 9.461 seconds (JVM running for 10.928)
+2021-06-11 17:01:24.650  INFO 5044 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-11 17:01:24.654  INFO 5044 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-11 17:01:49.969  INFO 5044 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-11 17:01:49.969  INFO 5044 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-11 17:01:49.972  INFO 5044 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-06-11 17:02:01.346  INFO 5044 --- [http-nio-9999-exec-9] c.s.otms.controllers.TravelController    : getBuses URL is opened
+2021-06-11 17:02:01.347  INFO 5044 --- [http-nio-9999-exec-9] c.s.otms.controllers.TravelController    : getBuses() is initiated
+2021-06-11 17:02:15.365  INFO 5044 --- [http-nio-9999-exec-10] c.s.otms.controllers.TravelController    : updateFare URL is opened
+2021-06-11 17:02:15.366  INFO 5044 --- [http-nio-9999-exec-10] c.s.otms.controllers.TravelController    : updateFare() is initiated
+2021-06-11 17:08:36.770  INFO 5044 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-11 17:08:36.770  INFO 5044 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-11 17:08:41.030  INFO 200 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-2QBADCP with PID 200 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by DHASARI in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-11 17:08:41.036  INFO 200 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-11 17:08:42.535  INFO 200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-11 17:08:42.684  INFO 200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128 ms. Found 8 JPA repository interfaces.
+2021-06-11 17:08:43.912  INFO 200 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-11 17:08:43.928  INFO 200 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-11 17:08:43.929  INFO 200 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-11 17:08:44.113  INFO 200 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-11 17:08:44.114  INFO 200 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2940 ms
+2021-06-11 17:08:44.411  INFO 200 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 17:08:44.476  INFO 200 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-11 17:08:44.849  INFO 200 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-11 17:08:45.012  INFO 200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-11 17:08:45.859  INFO 200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-11 17:08:45.881  INFO 200 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-11 17:08:47.939  INFO 200 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 17:08:47.953  INFO 200 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 17:08:49.694  WARN 200 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-11 17:08:49.946  INFO 200 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-11 17:08:50.514  INFO 200 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-11 17:08:50.517  INFO 200 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-11 17:08:50.540  INFO 200 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-11 17:08:50.591  INFO 200 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-11 17:08:50.959  INFO 200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-11 17:08:50.987  INFO 200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-11 17:08:51.010  INFO 200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-11 17:08:51.012  INFO 200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-11 17:08:51.033  INFO 200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-11 17:08:51.039  INFO 200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-11 17:08:51.071  INFO 200 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 10.835 seconds (JVM running for 12.493)
+2021-06-11 17:08:51.075  INFO 200 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-11 17:08:51.080  INFO 200 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-11 17:09:02.693  INFO 200 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-11 17:09:02.694  INFO 200 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-11 17:09:02.698  INFO 200 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-06-11 17:11:41.023  INFO 200 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-11 17:11:41.024  INFO 200 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-11 17:11:50.200  INFO 6904 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-2QBADCP with PID 6904 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by DHASARI in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-11 17:11:50.208  INFO 6904 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-11 17:11:51.596  INFO 6904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-11 17:11:51.734  INFO 6904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122 ms. Found 8 JPA repository interfaces.
+2021-06-11 17:11:52.861  INFO 6904 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-11 17:11:52.873  INFO 6904 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-11 17:11:52.874  INFO 6904 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-11 17:11:53.037  INFO 6904 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-11 17:11:53.038  INFO 6904 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2721 ms
+2021-06-11 17:11:53.400  INFO 6904 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 17:11:53.571  INFO 6904 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-11 17:11:53.915  INFO 6904 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-11 17:11:54.074  INFO 6904 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-11 17:11:54.989  INFO 6904 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-11 17:11:55.018  INFO 6904 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-11 17:11:57.021  INFO 6904 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 17:11:57.036  INFO 6904 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 17:11:58.594  WARN 6904 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-11 17:11:58.893  INFO 6904 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-11 17:11:59.445  INFO 6904 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-11 17:11:59.447  INFO 6904 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-11 17:11:59.473  INFO 6904 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-11 17:11:59.539  INFO 6904 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-11 17:11:59.895  INFO 6904 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-11 17:11:59.918  INFO 6904 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-11 17:11:59.933  INFO 6904 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-11 17:11:59.935  INFO 6904 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-11 17:11:59.949  INFO 6904 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-11 17:11:59.955  INFO 6904 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-11 17:11:59.987  INFO 6904 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 10.487 seconds (JVM running for 11.945)
+2021-06-11 17:11:59.990  INFO 6904 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-11 17:11:59.992  INFO 6904 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-11 17:12:03.377  INFO 6904 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-11 17:12:03.377  INFO 6904 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-11 17:12:03.380  INFO 6904 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-06-11 17:12:19.510  INFO 6904 --- [http-nio-9999-exec-9] c.s.otms.controllers.TravelController    : addBus URL is opened
+2021-06-11 17:12:19.511  INFO 6904 --- [http-nio-9999-exec-9] c.s.otms.controllers.TravelController    : addBus() is initiated
+2021-06-11 17:13:06.457  INFO 6904 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-11 17:13:06.458  INFO 6904 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-11 17:13:12.075  INFO 11136 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-2QBADCP with PID 11136 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by DHASARI in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-11 17:13:12.079  INFO 11136 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-11 17:13:13.466  INFO 11136 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-11 17:13:13.599  INFO 11136 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120 ms. Found 8 JPA repository interfaces.
+2021-06-11 17:13:14.767  INFO 11136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-11 17:13:14.781  INFO 11136 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-11 17:13:14.782  INFO 11136 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-11 17:13:14.966  INFO 11136 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-11 17:13:14.967  INFO 11136 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2768 ms
+2021-06-11 17:13:15.228  INFO 11136 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 17:13:15.288  INFO 11136 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-11 17:13:15.603  INFO 11136 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-11 17:13:15.747  INFO 11136 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-11 17:13:16.553  INFO 11136 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-11 17:13:16.575  INFO 11136 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-11 17:13:18.269  INFO 11136 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 17:13:18.284  INFO 11136 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 17:13:19.810  WARN 11136 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-11 17:13:20.035  INFO 11136 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-11 17:13:20.541  INFO 11136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-11 17:13:20.544  INFO 11136 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-11 17:13:20.569  INFO 11136 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-11 17:13:20.614  INFO 11136 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-11 17:13:21.033  INFO 11136 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-11 17:13:21.059  INFO 11136 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-11 17:13:21.072  INFO 11136 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-11 17:13:21.074  INFO 11136 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-11 17:13:21.092  INFO 11136 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-11 17:13:21.096  INFO 11136 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-11 17:13:21.130  INFO 11136 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 9.779 seconds (JVM running for 11.238)
+2021-06-11 17:13:21.132  INFO 11136 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-11 17:13:21.136  INFO 11136 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-11 17:13:25.057  INFO 11136 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-11 17:13:25.057  INFO 11136 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-11 17:13:25.059  INFO 11136 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-06-11 17:13:45.905  INFO 11136 --- [http-nio-9999-exec-9] c.s.otms.controllers.TravelController    : addBus URL is opened
+2021-06-11 17:13:45.906  INFO 11136 --- [http-nio-9999-exec-9] c.s.otms.controllers.TravelController    : addBus() is initiated
