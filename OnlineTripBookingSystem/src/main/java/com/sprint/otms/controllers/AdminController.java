@@ -92,7 +92,7 @@ public class AdminController {
 
 
 	@PatchMapping("/updateAdminPassword/{id}")
-	public ResponseEntity<Admin> updateAdminPasswordById(@Valid @PathVariable Long id, @RequestParam String oldPassword, @RequestParam String newPassword) throws AdminNotFoundException , MethodArgumentNotValidException{
+	public ResponseEntity<Admin> updateAdminPasswordById(@Valid @PathVariable Long id, @RequestParam String oldPassword, @RequestParam String newPassword) throws AdminNotFoundException , MethodArgumentNotValidException, ValidationException {
 
 		
 		LOGGER.info("updateAdminPassword URL is opened");
