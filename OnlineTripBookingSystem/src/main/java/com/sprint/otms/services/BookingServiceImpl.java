@@ -18,7 +18,7 @@ public class BookingServiceImpl implements IBookingService {
 
 	@Autowired
 	private IBookingRepository bookingRepository;
-	static int count = 30;
+
 
 	@Autowired
 	private IBusRepository busRepository;
@@ -32,9 +32,15 @@ public class BookingServiceImpl implements IBookingService {
 
 		if (bus.getCurrentCapacity() <= bus.getTotalCapacity()) {
 			Long capacity = bus.getCurrentCapacity();
-			bus.setCurrentCapacity(capacity - booking.getSeatsBooked());
+			if(capacity - booking.getSeatsBooked()>0 && bus.getCurrentCapacity()>=booking.getSeatsBooked()) {
+			if(bus.getCurrentCapacity()>=0) {
+			bus.setCurrentCapacity(capacity - booking.getSeatsBooked());	
 			busRepository.save(bus);
 			return bookingRepository.saveAndFlush(booking);
+			}
+			
+			}
+			
 		}
 		return null;
 	}

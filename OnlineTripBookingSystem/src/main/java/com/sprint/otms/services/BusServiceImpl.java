@@ -22,9 +22,11 @@ public class BusServiceImpl implements IBusService {
 	public Bus addBus(Bus bus) {
 		bus.setTotalCapacity(30L);
 		// TODO Auto-generated method stub
+		
 		bus.setCurrentCapacity(bus.getTotalCapacity());
 
 		return busRepository.saveAndFlush(bus);
+	
 	}
 
 	@Override
