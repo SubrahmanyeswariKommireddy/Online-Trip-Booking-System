@@ -13,7 +13,7 @@ public interface IBusRepository extends JpaRepository<Bus, Long> {
 
 	@Query("select b from Bus b where b.travel.id = ?1  ")
 	public List<Bus> getBusesByTravelId(Long travelId);
-	
+
 	@Query("select b from Bus b where b.travel.travelAgentName = ?1")
 	public List<Bus> getBusesByTravelAgentName(String travelAgentName);
 }

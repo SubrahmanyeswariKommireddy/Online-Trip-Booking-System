@@ -1,8 +1,6 @@
 package com.sprint.otms.services;
 
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -23,10 +21,10 @@ public class PaymentServiceImpl implements IPaymentService {
 
 	@Autowired
 	private IPaymentRepository paymentRepository;
-	
+
 	@Autowired
 	private IBookingRepository bookingRepository;
-	
+
 	@Autowired
 	private IBusRepository busRepository;
 
@@ -53,11 +51,9 @@ public class PaymentServiceImpl implements IPaymentService {
 	public Payment addPayment(Payment payment, Long bookingId, Long busId) {
 		// TODO Auto-generated method stub
 		Booking b = bookingRepository.getById(bookingId);
-		//Payment pay=paymentRepository.getById(b.getPayment());
-		Bus bus=busRepository.getById(busId);
-		
-		payment.setAmount(bus.getFare()*b.getSeatsBooked());	
+		Bus bus = busRepository.getById(busId);
+
+		payment.setAmount(bus.getFare() * b.getSeatsBooked());
 		return paymentRepository.save(payment);
 	}
-
 }

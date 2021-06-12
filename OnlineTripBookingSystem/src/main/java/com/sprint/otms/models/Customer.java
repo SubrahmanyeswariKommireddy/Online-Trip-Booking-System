@@ -6,17 +6,16 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="customer_details_table1")
+@Table(name = "customer_details_table1")
 public class Customer extends User {
-	
-	@OneToOne(mappedBy="customer", fetch=FetchType.LAZY)
+
+	@OneToOne(mappedBy = "customer", fetch = FetchType.LAZY)
 	private Booking booking;
 
 	public Customer() {
 		super();
 	}
 
-	
 	public Customer(Long id, String userName, String password, String email, Long mobileNumber, Booking booking) {
 		super(id, userName, password, email, mobileNumber);
 		// TODO Auto-generated constructor stub
@@ -38,10 +37,10 @@ public class Customer extends User {
 		// TODO Auto-generated constructor stub
 		super(userName, password);
 	}
+
 	public Customer(Long id) {
 		super(id);
 	}
-
 
 	public Booking getBooking() {
 		return booking;

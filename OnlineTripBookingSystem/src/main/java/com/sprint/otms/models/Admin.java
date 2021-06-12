@@ -2,19 +2,16 @@ package com.sprint.otms.models;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="admin_details_table1")
-public class Admin extends User{
-	
-	@OneToMany(fetch=FetchType.LAZY)
+@Table(name = "admin_details_table1")
+public class Admin extends User {
+
+	@OneToMany(fetch = FetchType.LAZY)
 	private List<Travel> travels;
 
 	public Admin() {
@@ -22,7 +19,8 @@ public class Admin extends User{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Admin(Long id, String userName, String password, String email, Long mobileNumber, User_Type userType, List<Travel> travels) {
+	public Admin(Long id, String userName, String password, String email, Long mobileNumber, User_Type userType,
+			List<Travel> travels) {
 		super(id, userName, password, email, mobileNumber, userType);
 		// TODO Auto-generated constructor stub
 		this.travels = travels;
@@ -45,10 +43,8 @@ public class Admin extends User{
 	}
 
 	public Admin(String userName, String password) {
-
 		// TODO Auto-generated constructor stub
-		super(userName,password);
-
+		super(userName, password);
 	}
 
 	public List<Travel> getTravels() {

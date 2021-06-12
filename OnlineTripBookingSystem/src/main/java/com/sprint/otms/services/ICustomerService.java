@@ -11,7 +11,7 @@ import com.sprint.otms.models.Customer;
 
 @Service
 @Transactional
-public interface ICustomerService extends IUserService{
+public interface ICustomerService extends IUserService {
 
 	public Customer addCustomer(Customer customer);
 
@@ -25,10 +25,11 @@ public interface ICustomerService extends IUserService{
 
 	public Customer findCustomerById(Long id);
 
-	public Customer updateCustomerPasswordById(Long id, String oldPassword, String newPassword) throws ValidationException;
-	
+	public Customer updateCustomerPasswordById(Long id, String oldPassword, String newPassword)
+			throws ValidationException;
+
 	public Customer updateCustomerMobileNoById(Long id, Long oldMobileNo, Long newMobileNo) throws ValidationException;
-	
+
 	public Customer updateCustomerEmailById(Long id, String oldEmail, String newEmail) throws ValidationException;
 
 //	public Optional<Customer> getCustomersByName(String userName);

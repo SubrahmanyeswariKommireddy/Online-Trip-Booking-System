@@ -10,21 +10,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
-@Table(name="route_details_table1")
+@Table(name = "route_details_table1")
 public class Route {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long routeId;
-	@NotBlank(message="source is mandatory")
+
+	@NotBlank(message = "source is mandatory")
 	private String source;
-	@NotBlank(message="destination is mandatory")
+
+	@NotBlank(message = "destination is mandatory")
 	private String destination;
-	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="route", fetch=FetchType.LAZY)
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "route", fetch = FetchType.LAZY)
+	@JsonManagedReference
 	private List<Bus> buses;
 
 	public Route() {
@@ -46,6 +52,7 @@ public class Route {
 		this.destination = destination;
 		this.buses = buses;
 	}
+
 	public Route(String source, String destination) {
 		super();
 		this.source = source;

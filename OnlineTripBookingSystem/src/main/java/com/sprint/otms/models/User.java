@@ -13,29 +13,30 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
-import org.springframework.stereotype.Component;
-
 import com.sun.istack.NotNull;
 
 @Entity
-@Table(name="user_details_table1")
+@Table(name = "user_details_table1")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class User {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	
+
 	private Long id;
-	
-	@NotBlank(message="Username is mandatory")
+
+	@NotBlank(message = "Username is mandatory")
 	private String userName;
-	@NotBlank(message="Password is mandatory")
+
+	@NotBlank(message = "Password is mandatory")
 	private String password;
+
 	@Pattern(regexp = "\\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}\\b")
 	private String email;
+
 	@NotNull
 	private Long mobileNumber;
-	
+
 	@Enumerated(value = EnumType.STRING)
 	@Column(name = "User_Type")
 	private User_Type userType;
@@ -44,6 +45,7 @@ public class User {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
 	public User(Long id) {
 		super();
 		this.id = id;
@@ -77,7 +79,8 @@ public class User {
 		this.email = email;
 		this.mobileNumber = mobileNumber;
 	}
-	public User( String userName, String password) {
+
+	public User(String userName, String password) {
 		super();
 		this.userName = userName;
 		this.password = password;
