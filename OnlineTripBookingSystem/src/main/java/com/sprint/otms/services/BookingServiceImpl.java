@@ -113,5 +113,7 @@ public class BookingServiceImpl implements IBookingService {
 //		return bookingRepository.findByTransactionId(transactionId);
 //	}
 	
-	
+	public Booking createBooking(Booking booking) {
+		return bookingRepository.save(booking);
+	}
 }

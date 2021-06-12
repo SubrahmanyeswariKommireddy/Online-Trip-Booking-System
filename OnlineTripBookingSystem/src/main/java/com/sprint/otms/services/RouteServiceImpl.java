@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sprint.otms.models.Admin;
+import com.sprint.otms.models.Bus;
 import com.sprint.otms.models.Route;
+import com.sprint.otms.repositories.IBusRepository;
 import com.sprint.otms.repositories.IRouteRepository;
 
 @Service
@@ -19,16 +21,23 @@ public class RouteServiceImpl implements IRouteService {
 	
 	@Autowired
 	private IRouteRepository routeRepository;
+	
+	@Autowired
+	private IBusRepository busRepository;
+	
 
 	@Override
 	public Route addRoute(Route route) {
 		// TODO Auto-generated method stub
+		//Bus bus=busRepository.getById(booking.getBus().getBusId());
+		
 		return routeRepository.saveAndFlush(route);
 	}
 
 	@Override
 	public List<Route> getAllRoute() {
 		// TODO Auto-generated method stub
+		
 		return routeRepository.findAll();
 	}
 
@@ -48,6 +57,8 @@ public class RouteServiceImpl implements IRouteService {
 	@Override
 	public Route getRouteByRouteId(Long routeId) {
 		// TODO Auto-generated method stub
+		//List<Bus> bus=routeRepository.getById(routeId).getBuses();
+		
 		return routeRepository.getById(routeId);
 	}
 

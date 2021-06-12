@@ -101,6 +101,16 @@ public class Bus {
 	}
 
 
+	public Bus(long id, float fare, long totalCapacity, long currentCapacity) {
+		// TODO Auto-generated constructor stub
+		super();
+		this.busId=id;
+		this.fare = fare;
+		this.totalCapacity = totalCapacity;
+		this.currentCapacity = currentCapacity;
+	}
+
+
 	public Long getBusId() {
 		return busId;
 	}

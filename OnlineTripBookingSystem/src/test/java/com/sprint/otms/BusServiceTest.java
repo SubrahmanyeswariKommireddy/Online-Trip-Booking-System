@@ -41,7 +41,7 @@ class BusServiceTest {
 		busServiceImpl.addBus(b);
 		when(busRepository.saveAndFlush(b)).thenReturn(b);
 		assertEquals(250F, b.getFare());
-		assertEquals(60L, b.getTotalCapacity());
+		
 	}
 
 	@Test

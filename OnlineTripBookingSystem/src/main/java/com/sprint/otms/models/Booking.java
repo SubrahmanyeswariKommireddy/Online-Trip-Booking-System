@@ -38,6 +38,19 @@ public class Booking {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Booking(int seatsBooked, LocalDateTime dateAndTimeOfTravel, Bus bus) {
+		super();
+		this.seatsBooked = seatsBooked;
+		this.dateAndTimeOfTravel = dateAndTimeOfTravel;
+		this.bus = bus;
+	}
+
+	public Booking(int seatsBooked, Bus bus) {
+		super();
+		this.seatsBooked = seatsBooked;
+		this.bus = bus;
+	}
+
 	public Booking(Long bookingId, int seatsBooked, LocalDateTime dateAndTimeOfTravel, Payment payment,
 			Customer customer, Bus bus) {
 		super();
@@ -72,6 +85,14 @@ public class Booking {
 		this.bookingId = bookingId;
 		this.seatsBooked = seatsBooked;
 		this.dateAndTimeOfTravel = dateAndTimeOfTravel;
+	}
+
+	public Booking(long bookingID, int seatsBooked, Bus bus) {
+		// TODO Auto-generated constructor stub
+		super();
+		this.bookingId=bookingId;
+		this.seatsBooked=seatsBooked;
+		this.bus=bus;
 	}
 
 	public Long getBookingId() {

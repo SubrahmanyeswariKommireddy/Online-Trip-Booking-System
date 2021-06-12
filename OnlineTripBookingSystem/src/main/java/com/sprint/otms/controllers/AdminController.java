@@ -35,6 +35,7 @@ import com.sprint.otms.models.User_Type;
 import com.sprint.otms.repositories.IBusRepository;
 import com.sprint.otms.services.AdminServiceImpl;
 import com.sprint.otms.services.BusServiceImpl;
+import com.sprint.otms.services.CustomerServiceImpl;
 import com.sprint.otms.services.RouteServiceImpl;
 import com.sprint.otms.services.TravelServiceImpl;
 
@@ -57,6 +58,9 @@ public class AdminController {
 	
 	@Autowired
 	private IBusRepository busRepository;
+	
+	@Autowired
+	private CustomerServiceImpl customerServiceImpl;
 
 	//--------------------------------Admin-------------------------------//
 	
@@ -278,6 +282,17 @@ public class AdminController {
 		routeServiceImpl.delete(id);
 	}
 	
+	@PatchMapping("/admin/partialUpdateRoute/{id}")
+	public ResponseEntity<Route> partialUpdateRoute(@Valid @RequestBody Route route) throws RouteNotFoundException,MethodArgumentNotValidException {
+	
+		
+		LOGGER.info("partialUpdateRoute URL is opened");
+		LOGGER.info("partialUpdateRoute() is initiated");
+		
+		Route newRoute = routeServiceImpl.updateRoute(route);
+		return new ResponseEntity<>(newRoute, HttpStatus.OK);
+	}
+	
 //	@GetMapping("/route/{id}/buses")
 //	public List<Bus> getAllBuses(@PathVariable Long routeId) {
 //		return busServiceImpl.getBusesByRouteId(routeId);
@@ -293,6 +308,16 @@ public class AdminController {
 		LOGGER.info("getBuses() is initiated");
 		
 		return busServiceImpl.getAllBuses();
+	}
+	
+	//--------------------------customers-------------------------------------//
+	
+	@GetMapping("/admin/getCustomers")
+	public List<Customer> getCustomers(){
+		LOGGER.info("getCustomers URL is opened");
+		LOGGER.info("getCustomers() is initiated");
+		
+		return customerServiceImpl.getAllCustomer();
 	}
 	
 }

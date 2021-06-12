@@ -15,6 +15,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.sprint.otms.models.Admin;
 import com.sprint.otms.models.Booking;
+import com.sprint.otms.models.Bus;
 import com.sprint.otms.models.Customer;
 import com.sprint.otms.repositories.IBookingRepository;
 import com.sprint.otms.services.BookingServiceImpl;
@@ -33,8 +34,8 @@ class BookingServiceTest {
 	void testAddBooking() {
 		Booking b = new Booking(5,LocalDateTime.of(2030,01,01,22,22,22));
 		when(bookingRepository.save(b)).thenReturn(b);
-		bookingServiceImpl.addBooking(b);
-		assertEquals(5, b.getSeatsBooked());
+		bookingServiceImpl.createBooking(b);
+		assertEquals(5,b.getSeatsBooked());
 	    assertEquals(LocalDateTime.of(2030,01,01,22,22,22), b.getDateAndTimeOfTravel());
 	}
 	
@@ -43,7 +44,7 @@ class BookingServiceTest {
 		Booking booking1 = new Booking(5,LocalDateTime.of(2030,01,01,22,22,22));		
 		Booking booking2 = new Booking(7,LocalDateTime.of(2020,01,01,22,22,22));		
 		when(bookingRepository.save(booking1)).thenReturn(booking1);
-		assertNotEquals(booking1, bookingServiceImpl.addBooking(booking2));
+		assertNotEquals(booking1, bookingServiceImpl.createBooking(booking2));
 	}
 
 	@Test
