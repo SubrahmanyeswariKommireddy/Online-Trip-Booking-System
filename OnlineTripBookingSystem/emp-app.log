@@ -2174,3 +2174,5 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 2021-06-12 15:38:39.043  INFO 9468 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2021-06-12 16:32:11.047  INFO 9468 --- [http-nio-9999-exec-9] c.s.otms.controllers.AdminController     : getCustomers URL is opened
 2021-06-12 16:32:11.189  INFO 9468 --- [http-nio-9999-exec-9] c.s.otms.controllers.AdminController     : getCustomers() is initiated
+2021-06-12 18:21:37.874  INFO 9468 --- [RMI TCP Connection(177)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-12 18:21:39.280  INFO 9468 --- [RMI TCP Connection(177)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
