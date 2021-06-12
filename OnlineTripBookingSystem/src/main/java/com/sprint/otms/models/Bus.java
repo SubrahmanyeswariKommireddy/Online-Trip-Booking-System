@@ -14,6 +14,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.sun.istack.NotNull;
 
 @Entity
@@ -40,6 +41,7 @@ public class Bus {
 
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "bus_route")
+	@JsonBackReference
 	private Route route;
 
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

@@ -13,6 +13,8 @@ import javax.persistence.Table;
 
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "route_details_table1")
 public class Route {
@@ -28,6 +30,7 @@ public class Route {
 	private String destination;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "route", fetch = FetchType.LAZY)
+	@JsonManagedReference
 	private List<Bus> buses;
 
 	public Route() {
