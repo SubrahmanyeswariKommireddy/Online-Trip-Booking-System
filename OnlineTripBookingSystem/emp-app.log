@@ -2172,3 +2172,5 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 2021-06-12 15:38:39.041  INFO 9468 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2021-06-12 15:38:39.041  INFO 9468 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2021-06-12 15:38:39.043  INFO 9468 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-06-12 16:32:11.047  INFO 9468 --- [http-nio-9999-exec-9] c.s.otms.controllers.AdminController     : getCustomers URL is opened
+2021-06-12 16:32:11.189  INFO 9468 --- [http-nio-9999-exec-9] c.s.otms.controllers.AdminController     : getCustomers() is initiated
