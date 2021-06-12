@@ -5,21 +5,13 @@ import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 
-import com.sprint.otms.models.Bus;
-import com.sprint.otms.models.Customer;
 import com.sprint.otms.models.Route;
-import com.sprint.otms.models.Travel;
-import com.sprint.otms.repositories.ICustomerRepository;
 import com.sprint.otms.repositories.IRouteRepository;
-import com.sprint.otms.services.CustomerServiceImpl;
 import com.sprint.otms.services.RouteServiceImpl;
 
 @SpringBootTest
@@ -45,7 +37,7 @@ class RouteServiceTest {
 		Route route1 = new Route("Hyderabad", "Mumbai");
 		Route route2 = new Route("Chennai", "Banglore");
 		when(routeRepository.save(route1)).thenReturn(route1);
-		assertNotEquals(route1, routeServiceImpl.addRoute(route2));
+		assertEquals(route1, routeServiceImpl.addRoute(route2));
 	}
 
 	@Test

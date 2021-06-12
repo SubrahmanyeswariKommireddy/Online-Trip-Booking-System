@@ -1726,8 +1726,8 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 2021-06-12 09:45:20.149  INFO 10792 --- [http-nio-9999-exec-7] c.s.otms.controllers.AdminController     : getBuses() is initiated
 2021-06-12 09:45:34.182  INFO 10792 --- [http-nio-9999-exec-3] c.s.otms.controllers.CustomerController  : getBooking URL is opened
 2021-06-12 09:45:34.183  INFO 10792 --- [http-nio-9999-exec-3] c.s.otms.controllers.CustomerController  : getBooking() is initiated
-2021-06-12 10:27:55.912  WARN 10792 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m29s189ms612µs500ns).
-2021-06-12 11:14:54.957  WARN 10792 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47m21s326ms86µs900ns).
+2021-06-12 10:27:55.912  WARN 10792 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m29s189ms612ï¿½s500ns).
+2021-06-12 11:14:54.957  WARN 10792 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47m21s326ms86ï¿½s900ns).
 2021-06-12 11:23:17.955  INFO 10792 --- [RMI TCP Connection(28)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
 2021-06-12 11:23:17.958  INFO 10792 --- [RMI TCP Connection(28)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
 2021-06-12 14:55:28.659  INFO 9808 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 1.8.0_291 on DESKTOP-CQF31OS with PID 9808 (E:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by sri in E:\Online-Trip-Booking-System\OnlineTripBookingSystem)
@@ -2559,3 +2559,445 @@ org.hibernate.HibernateException: More than one row with the given identifier wa
 
 2021-06-12 18:02:27.269  INFO 9088 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
 2021-06-12 18:02:27.269  INFO 9088 --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-12 12:35:16.416  INFO 8432 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 15.0.2 on LT093 with PID 8432 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by Susmitha in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-12 12:35:16.442  INFO 8432 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-12 12:35:22.187  INFO 8432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 12:35:22.461  INFO 8432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 253 ms. Found 8 JPA repository interfaces.
+2021-06-12 12:35:26.171  INFO 8432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-12 12:35:26.293  INFO 8432 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-12 12:35:26.294  INFO 8432 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-12 12:35:27.205  INFO 8432 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-12 12:35:27.206  INFO 8432 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 10168 ms
+2021-06-12 12:35:28.181  INFO 8432 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 12:35:28.479  INFO 8432 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-12 12:35:30.125  INFO 8432 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 12:35:30.575  INFO 8432 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-12 12:35:32.721  INFO 8432 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-12 12:35:32.990  INFO 8432 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-12 12:35:38.250  INFO 8432 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 12:35:38.291  INFO 8432 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 12:35:41.392  WARN 8432 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 12:35:42.182  INFO 8432 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-12 12:35:43.353  INFO 8432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-12 12:35:43.356  INFO 8432 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-12 12:35:43.458  INFO 8432 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-12 12:35:43.524  INFO 8432 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-12 12:35:44.199  WARN 8432 --- [main] s.d.s.w.r.p.ParameterDataTypeReader      : Trying to infer dataType com.sprint.otms.models.TravelAgentName
+2021-06-12 12:35:44.462  INFO 8432 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-12 12:35:44.534  INFO 8432 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-12 12:35:44.567  INFO 8432 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-12 12:35:44.574  INFO 8432 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-12 12:35:44.648  INFO 8432 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-12 12:35:44.663  INFO 8432 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-12 12:35:44.857  INFO 8432 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 31.003 seconds (JVM running for 37.038)
+2021-06-12 12:35:44.865  INFO 8432 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-12 12:35:44.900  INFO 8432 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-12 12:44:49.837  INFO 5376 --- [main] com.sprint.otms.AdminServiceTest         : Starting AdminServiceTest using Java 15.0.2 on LT093 with PID 5376 (started by Susmitha in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-12 12:44:49.864  INFO 5376 --- [main] com.sprint.otms.AdminServiceTest         : No active profile set, falling back to default profiles: default
+2021-06-12 12:44:57.498  INFO 5376 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 12:44:57.842  INFO 5376 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 303 ms. Found 8 JPA repository interfaces.
+2021-06-12 12:45:03.626  INFO 5376 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 12:45:03.889  INFO 5376 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-12 12:45:04.958  INFO 5376 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 12:45:05.662  INFO 5376 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-12 12:45:06.935  INFO 5376 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-12 12:45:06.984  INFO 5376 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-12 12:45:12.813  INFO 5376 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 12:45:12.850  INFO 5376 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 12:45:24.458  WARN 5376 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 12:45:29.119  INFO 5376 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-12 12:45:38.038  INFO 5376 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-12 12:45:38.583  INFO 5376 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-12 12:45:38.866  INFO 5376 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-12 12:45:41.480  WARN 5376 --- [main] s.d.s.w.r.p.ParameterDataTypeReader      : Trying to infer dataType com.sprint.otms.models.TravelAgentName
+2021-06-12 12:45:43.511  INFO 5376 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-12 12:45:43.789  INFO 5376 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-12 12:45:43.990  INFO 5376 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-12 12:45:43.995  INFO 5376 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-12 12:45:44.246  INFO 5376 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-12 12:45:44.280  INFO 5376 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-12 12:45:44.992  INFO 5376 --- [main] com.sprint.otms.AdminServiceTest         : Started AdminServiceTest in 58.195 seconds (JVM running for 69.798)
+2021-06-12 12:45:44.996  INFO 5376 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-12 12:45:45.009  INFO 5376 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-12 12:49:24.683  INFO 11344 --- [main] com.sprint.otms.AdminServiceTest         : Starting AdminServiceTest using Java 15.0.2 on LT093 with PID 11344 (started by Susmitha in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-12 12:49:24.695  INFO 11344 --- [main] com.sprint.otms.AdminServiceTest         : No active profile set, falling back to default profiles: default
+2021-06-12 12:49:30.485  INFO 11344 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 12:49:30.902  INFO 11344 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 392 ms. Found 8 JPA repository interfaces.
+2021-06-12 12:49:41.625  INFO 11344 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 12:49:42.548  INFO 11344 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-12 12:49:45.490  INFO 11344 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 12:49:46.790  INFO 11344 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-12 12:49:49.391  INFO 11344 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-12 12:49:49.571  INFO 11344 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-12 12:49:57.213  INFO 11344 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 12:49:57.281  INFO 11344 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 12:50:07.663  WARN 11344 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 12:50:10.151  INFO 11344 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-12 12:50:15.674  INFO 11344 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-12 12:50:15.813  INFO 11344 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-12 12:50:16.046  INFO 11344 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-12 12:50:17.999  WARN 11344 --- [main] s.d.s.w.r.p.ParameterDataTypeReader      : Trying to infer dataType com.sprint.otms.models.TravelAgentName
+2021-06-12 12:50:18.582  INFO 11344 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-12 12:50:18.836  INFO 11344 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-12 12:50:18.985  INFO 11344 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-12 12:50:18.994  INFO 11344 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-12 12:50:19.131  INFO 11344 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-12 12:50:19.153  INFO 11344 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-12 12:50:19.607  INFO 11344 --- [main] com.sprint.otms.AdminServiceTest         : Started AdminServiceTest in 56.852 seconds (JVM running for 63.394)
+2021-06-12 12:50:19.612  INFO 11344 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-12 12:50:19.619  INFO 11344 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-12 12:56:43.383  INFO 9744 --- [main] com.sprint.otms.AdminServiceTest         : Starting AdminServiceTest using Java 15.0.2 on LT093 with PID 9744 (started by Susmitha in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-12 12:56:43.393  INFO 9744 --- [main] com.sprint.otms.AdminServiceTest         : No active profile set, falling back to default profiles: default
+2021-06-12 12:56:50.045  INFO 9744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 12:56:50.413  INFO 9744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 336 ms. Found 8 JPA repository interfaces.
+2021-06-12 12:56:57.737  INFO 9744 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 12:56:58.314  INFO 9744 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-12 12:57:00.230  INFO 9744 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 12:57:01.391  INFO 9744 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-12 12:57:02.952  INFO 9744 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-12 12:57:03.071  INFO 9744 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-12 12:57:09.337  INFO 9744 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 12:57:09.363  INFO 9744 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 12:57:17.865  WARN 9744 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 12:57:21.249  INFO 9744 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-12 12:57:27.613  INFO 9744 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-12 12:57:27.815  INFO 9744 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-12 12:57:28.127  INFO 9744 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-12 12:57:30.197  WARN 9744 --- [main] s.d.s.w.r.p.ParameterDataTypeReader      : Trying to infer dataType com.sprint.otms.models.TravelAgentName
+2021-06-12 12:57:30.812  INFO 9744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-12 12:57:31.096  INFO 9744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-12 12:57:31.158  INFO 9744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-12 12:57:31.166  INFO 9744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-12 12:57:31.262  INFO 9744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-12 12:57:31.284  INFO 9744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-12 12:57:31.425  INFO 9744 --- [main] com.sprint.otms.AdminServiceTest         : Started AdminServiceTest in 50.455 seconds (JVM running for 56.788)
+2021-06-12 12:57:31.428  INFO 9744 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-12 12:57:31.437  INFO 9744 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-12 12:57:35.374  INFO 9744 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 12:57:35.379  INFO 9744 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-06-12 14:01:21.396  INFO 11536 --- [main] com.sprint.otms.AdminServiceTest         : Starting AdminServiceTest using Java 15.0.2 on LT093 with PID 11536 (started by Susmitha in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-12 14:01:21.439  INFO 11536 --- [main] com.sprint.otms.AdminServiceTest         : No active profile set, falling back to default profiles: default
+2021-06-12 14:01:27.036  INFO 11536 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 14:01:27.640  INFO 11536 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 519 ms. Found 8 JPA repository interfaces.
+2021-06-12 14:01:33.874  INFO 11536 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 14:01:34.733  INFO 11536 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-12 14:01:36.977  INFO 11536 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 14:01:38.425  INFO 11536 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-12 14:01:40.360  INFO 11536 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-12 14:01:40.514  INFO 11536 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-12 14:01:51.034  INFO 11536 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 14:01:51.069  INFO 11536 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 14:02:01.498  WARN 11536 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 14:02:05.498  INFO 11536 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-12 14:02:14.264  INFO 11536 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-12 14:02:14.489  INFO 11536 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-12 14:02:14.784  INFO 11536 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-12 14:02:16.515  WARN 11536 --- [main] s.d.s.w.r.p.ParameterDataTypeReader      : Trying to infer dataType com.sprint.otms.models.TravelAgentName
+2021-06-12 14:02:17.389  INFO 11536 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-12 14:02:17.660  INFO 11536 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-12 14:02:17.745  INFO 11536 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-12 14:02:17.760  INFO 11536 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-12 14:02:18.001  INFO 11536 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-12 14:02:18.067  INFO 11536 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-12 14:02:18.348  INFO 11536 --- [main] com.sprint.otms.AdminServiceTest         : Started AdminServiceTest in 62.368 seconds (JVM running for 70.672)
+2021-06-12 14:02:18.351  INFO 11536 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-12 14:02:18.359  INFO 11536 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-12 14:03:32.774  INFO 9264 --- [main] com.sprint.otms.CustomerServiceTest      : Starting CustomerServiceTest using Java 15.0.2 on LT093 with PID 9264 (started by Susmitha in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-12 14:03:32.791  INFO 9264 --- [main] com.sprint.otms.CustomerServiceTest      : No active profile set, falling back to default profiles: default
+2021-06-12 14:03:38.191  INFO 9264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 14:03:38.560  INFO 9264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 328 ms. Found 8 JPA repository interfaces.
+2021-06-12 14:03:43.376  INFO 9264 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 14:03:43.949  INFO 9264 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-12 14:03:45.040  INFO 9264 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 14:03:45.797  INFO 9264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-12 14:03:47.037  INFO 9264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-12 14:03:47.081  INFO 9264 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-12 14:03:52.209  INFO 9264 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 14:03:52.239  INFO 9264 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 14:03:59.372  WARN 9264 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 14:04:03.645  INFO 9264 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-12 14:04:11.034  INFO 9264 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-12 14:04:11.134  INFO 9264 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-12 14:04:11.322  INFO 9264 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-12 14:04:12.371  WARN 9264 --- [main] s.d.s.w.r.p.ParameterDataTypeReader      : Trying to infer dataType com.sprint.otms.models.TravelAgentName
+2021-06-12 14:04:12.718  INFO 9264 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-12 14:04:12.925  INFO 9264 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-12 14:04:12.977  INFO 9264 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-12 14:04:12.982  INFO 9264 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-12 14:04:13.092  INFO 9264 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-12 14:04:13.129  INFO 9264 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-12 14:04:13.309  INFO 9264 --- [main] com.sprint.otms.CustomerServiceTest      : Started CustomerServiceTest in 42.402 seconds (JVM running for 47.78)
+2021-06-12 14:04:13.312  INFO 9264 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-12 14:04:13.322  INFO 9264 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-12 14:04:16.199  INFO 9264 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 14:04:16.209  INFO 9264 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-06-12 14:07:35.789  INFO 10560 --- [main] com.sprint.otms.BusServiceTest           : Starting BusServiceTest using Java 15.0.2 on LT093 with PID 10560 (started by Susmitha in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-12 14:07:35.798  INFO 10560 --- [main] com.sprint.otms.BusServiceTest           : No active profile set, falling back to default profiles: default
+2021-06-12 14:07:41.621  INFO 10560 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 14:07:42.014  INFO 10560 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 366 ms. Found 8 JPA repository interfaces.
+2021-06-12 14:07:47.496  INFO 10560 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 14:07:47.696  INFO 10560 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-12 14:07:48.838  INFO 10560 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 14:07:49.772  INFO 10560 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-12 14:07:51.003  INFO 10560 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-12 14:07:51.085  INFO 10560 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-12 14:07:58.882  INFO 10560 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 14:07:58.913  INFO 10560 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 14:08:08.296  WARN 10560 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 14:08:12.195  INFO 10560 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-12 14:08:18.266  INFO 10560 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-12 14:08:18.398  INFO 10560 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-12 14:08:18.594  INFO 10560 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-12 14:08:20.578  WARN 10560 --- [main] s.d.s.w.r.p.ParameterDataTypeReader      : Trying to infer dataType com.sprint.otms.models.TravelAgentName
+2021-06-12 14:08:21.236  INFO 10560 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-12 14:08:21.726  INFO 10560 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-12 14:08:21.777  INFO 10560 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-12 14:08:21.784  INFO 10560 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-12 14:08:21.907  INFO 10560 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-12 14:08:21.945  INFO 10560 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-12 14:08:22.048  INFO 10560 --- [main] com.sprint.otms.BusServiceTest           : Started BusServiceTest in 48.416 seconds (JVM running for 55.129)
+2021-06-12 14:08:22.052  INFO 10560 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-12 14:08:22.076  INFO 10560 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-12 14:11:20.190  INFO 8432 --- [RMI TCP Connection(101)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-12 14:11:21.596  INFO 8432 --- [RMI TCP Connection(101)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-12 14:12:29.897  INFO 9368 --- [main] com.sprint.otms.BusServiceTest           : Starting BusServiceTest using Java 15.0.2 on LT093 with PID 9368 (started by Susmitha in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-12 14:12:29.930  INFO 9368 --- [main] com.sprint.otms.BusServiceTest           : No active profile set, falling back to default profiles: default
+2021-06-12 14:12:39.051  INFO 9368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 14:12:39.516  INFO 9368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 419 ms. Found 8 JPA repository interfaces.
+2021-06-12 14:12:51.669  INFO 9368 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 14:12:53.022  INFO 9368 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-12 14:12:58.013  INFO 9368 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 14:13:03.617  INFO 9368 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-12 14:13:08.007  INFO 9368 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-12 14:13:08.383  INFO 9368 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-12 14:13:22.373  INFO 9368 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 14:13:22.432  INFO 9368 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 14:13:37.414  WARN 9368 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 14:13:41.725  INFO 9368 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-12 14:13:52.626  INFO 9368 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-12 14:13:52.854  INFO 9368 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-12 14:13:53.486  INFO 9368 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-12 14:13:56.564  WARN 9368 --- [main] s.d.s.w.r.p.ParameterDataTypeReader      : Trying to infer dataType com.sprint.otms.models.TravelAgentName
+2021-06-12 14:13:57.024  INFO 9368 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-12 14:13:57.206  INFO 9368 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-12 14:13:57.277  INFO 9368 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-12 14:13:57.283  INFO 9368 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-12 14:13:57.368  INFO 9368 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-12 14:13:57.385  INFO 9368 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-12 14:13:57.567  INFO 9368 --- [main] com.sprint.otms.BusServiceTest           : Started BusServiceTest in 90.125 seconds (JVM running for 99.552)
+2021-06-12 14:13:57.574  INFO 9368 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-12 14:13:57.583  INFO 9368 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-12 14:19:46.336  INFO 10796 --- [main] com.sprint.otms.BusServiceTest           : Starting BusServiceTest using Java 15.0.2 on LT093 with PID 10796 (started by Susmitha in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-12 14:19:46.356  INFO 10796 --- [main] com.sprint.otms.BusServiceTest           : No active profile set, falling back to default profiles: default
+2021-06-12 14:20:00.951  INFO 10796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 14:20:05.470  INFO 10796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4462 ms. Found 8 JPA repository interfaces.
+2021-06-12 14:20:21.475  INFO 10796 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 14:20:22.459  INFO 10796 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-12 14:20:28.000  INFO 10796 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 14:20:30.782  INFO 10796 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-12 14:20:34.016  INFO 10796 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-12 14:20:34.281  INFO 10796 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-12 14:20:49.507  INFO 10796 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 14:20:49.550  INFO 10796 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 14:21:04.800  WARN 10796 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 14:21:09.088  INFO 10796 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-12 14:21:17.807  INFO 10796 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-12 14:21:18.194  INFO 10796 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-12 14:21:18.496  INFO 10796 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-12 14:21:20.428  WARN 10796 --- [main] s.d.s.w.r.p.ParameterDataTypeReader      : Trying to infer dataType com.sprint.otms.models.TravelAgentName
+2021-06-12 14:21:20.812  INFO 10796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-12 14:21:21.176  INFO 10796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-12 14:21:21.220  INFO 10796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-12 14:21:21.227  INFO 10796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-12 14:21:21.405  INFO 10796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-12 14:21:21.515  INFO 10796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-12 14:21:21.799  INFO 10796 --- [main] com.sprint.otms.BusServiceTest           : Started BusServiceTest in 99.074 seconds (JVM running for 109.128)
+2021-06-12 14:21:21.803  INFO 10796 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-12 14:21:21.810  INFO 10796 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-12 14:21:27.177  INFO 10796 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 14:21:27.192  INFO 10796 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-06-12 14:51:44.515  INFO 11052 --- [main] com.sprint.otms.BookingServiceTest       : Starting BookingServiceTest using Java 15.0.2 on LT093 with PID 11052 (started by Susmitha in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-12 14:51:44.548  INFO 11052 --- [main] com.sprint.otms.BookingServiceTest       : No active profile set, falling back to default profiles: default
+2021-06-12 14:51:51.596  INFO 11052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 14:51:51.997  INFO 11052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 372 ms. Found 8 JPA repository interfaces.
+2021-06-12 14:52:09.300  INFO 11052 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 14:52:10.172  INFO 11052 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-12 14:52:10.574  INFO 11052 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 14:52:11.832  INFO 11052 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-12 14:52:13.636  INFO 11052 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-12 14:52:13.782  INFO 11052 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-12 14:52:19.693  INFO 11052 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 14:52:19.858  INFO 11052 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 14:52:34.317  WARN 11052 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 14:52:38.885  INFO 11052 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-12 14:52:50.868  INFO 11052 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-12 14:52:51.217  INFO 11052 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-12 14:52:51.415  INFO 11052 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-12 14:52:53.558  WARN 11052 --- [main] s.d.s.w.r.p.ParameterDataTypeReader      : Trying to infer dataType com.sprint.otms.models.TravelAgentName
+2021-06-12 14:52:54.189  INFO 11052 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-12 14:52:54.319  INFO 11052 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-12 14:52:54.384  INFO 11052 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-12 14:52:54.391  INFO 11052 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-12 14:52:54.528  INFO 11052 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-12 14:52:54.559  INFO 11052 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-12 14:52:54.762  INFO 11052 --- [main] com.sprint.otms.BookingServiceTest       : Started BookingServiceTest in 73.691 seconds (JVM running for 81.479)
+2021-06-12 14:52:54.767  INFO 11052 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-12 14:52:54.774  INFO 11052 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-12 14:54:11.483  INFO 2120 --- [main] com.sprint.otms.BookingServiceTest       : Starting BookingServiceTest using Java 15.0.2 on LT093 with PID 2120 (started by Susmitha in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-12 14:54:11.508  INFO 2120 --- [main] com.sprint.otms.BookingServiceTest       : No active profile set, falling back to default profiles: default
+2021-06-12 14:54:18.771  INFO 2120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 14:54:19.342  INFO 2120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 543 ms. Found 8 JPA repository interfaces.
+2021-06-12 14:54:30.608  INFO 2120 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 14:54:31.224  INFO 2120 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-12 14:54:31.472  INFO 2120 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 14:54:33.545  INFO 2120 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-12 14:54:35.808  INFO 2120 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-12 14:54:36.006  INFO 2120 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-12 14:54:43.057  INFO 2120 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 14:54:43.111  INFO 2120 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 14:54:51.818  WARN 2120 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 14:54:55.554  INFO 2120 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-12 14:55:01.223  INFO 2120 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-12 14:55:01.373  INFO 2120 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-12 14:55:01.623  INFO 2120 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-12 14:55:03.448  WARN 2120 --- [main] s.d.s.w.r.p.ParameterDataTypeReader      : Trying to infer dataType com.sprint.otms.models.TravelAgentName
+2021-06-12 14:55:03.896  INFO 2120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-12 14:55:04.149  INFO 2120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-12 14:55:04.209  INFO 2120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-12 14:55:04.252  INFO 2120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-12 14:55:04.314  INFO 2120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-12 14:55:04.344  INFO 2120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-12 14:55:04.638  INFO 2120 --- [main] com.sprint.otms.BookingServiceTest       : Started BookingServiceTest in 56.507 seconds (JVM running for 68.0)
+2021-06-12 14:55:04.645  INFO 2120 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-12 14:55:04.651  INFO 2120 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-12 15:09:49.559  INFO 4956 --- [main] com.sprint.otms.BookingServiceTest       : Starting BookingServiceTest using Java 15.0.2 on LT093 with PID 4956 (started by Susmitha in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-12 15:09:49.567  INFO 4956 --- [main] com.sprint.otms.BookingServiceTest       : No active profile set, falling back to default profiles: default
+2021-06-12 15:09:56.402  INFO 4956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 15:09:56.916  INFO 4956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 461 ms. Found 8 JPA repository interfaces.
+2021-06-12 15:10:14.381  INFO 4956 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 15:10:15.185  INFO 4956 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-12 15:10:15.401  INFO 4956 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 15:10:16.465  INFO 4956 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-12 15:10:18.602  INFO 4956 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-12 15:10:19.071  INFO 4956 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-12 15:10:26.329  INFO 4956 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 15:10:26.363  INFO 4956 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 15:10:38.260  WARN 4956 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 15:10:41.814  INFO 4956 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-12 15:10:51.030  INFO 4956 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-12 15:10:51.191  INFO 4956 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-12 15:10:51.508  INFO 4956 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-12 15:10:53.339  WARN 4956 --- [main] s.d.s.w.r.p.ParameterDataTypeReader      : Trying to infer dataType com.sprint.otms.models.TravelAgentName
+2021-06-12 15:10:53.714  INFO 4956 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-12 15:10:53.833  INFO 4956 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-12 15:10:53.874  INFO 4956 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-12 15:10:54.032  INFO 4956 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-12 15:10:54.075  INFO 4956 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-12 15:10:54.117  INFO 4956 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-12 15:10:54.358  INFO 4956 --- [main] com.sprint.otms.BookingServiceTest       : Started BookingServiceTest in 66.233 seconds (JVM running for 71.767)
+2021-06-12 15:10:54.368  INFO 4956 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-12 15:10:54.375  INFO 4956 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-12 15:33:22.594  INFO 3608 --- [main] com.sprint.otms.BookingServiceTest       : Starting BookingServiceTest using Java 15.0.2 on LT093 with PID 3608 (started by Susmitha in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-12 15:33:22.641  INFO 3608 --- [main] com.sprint.otms.BookingServiceTest       : No active profile set, falling back to default profiles: default
+2021-06-12 15:33:29.934  INFO 3608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 15:33:30.567  INFO 3608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 574 ms. Found 8 JPA repository interfaces.
+2021-06-12 15:33:40.150  INFO 3608 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 15:33:40.456  INFO 3608 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-12 15:33:40.780  INFO 3608 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 15:33:42.157  INFO 3608 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-12 15:33:43.521  INFO 3608 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-12 15:33:43.592  INFO 3608 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-12 15:33:49.025  INFO 3608 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 15:33:49.111  INFO 3608 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 15:33:58.541  WARN 3608 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 15:34:04.184  INFO 3608 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-12 15:34:11.963  INFO 3608 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-12 15:34:12.048  INFO 3608 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-12 15:34:12.198  INFO 3608 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-12 15:34:14.238  WARN 3608 --- [main] s.d.s.w.r.p.ParameterDataTypeReader      : Trying to infer dataType com.sprint.otms.models.TravelAgentName
+2021-06-12 15:34:14.795  INFO 3608 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-12 15:34:15.145  INFO 3608 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-12 15:34:15.181  INFO 3608 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-12 15:34:15.189  INFO 3608 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-12 15:34:15.282  INFO 3608 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-12 15:34:15.388  INFO 3608 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-12 15:34:15.483  INFO 3608 --- [main] com.sprint.otms.BookingServiceTest       : Started BookingServiceTest in 55.439 seconds (JVM running for 63.909)
+2021-06-12 15:34:15.490  INFO 3608 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-12 15:34:15.497  INFO 3608 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-12 15:35:29.824  INFO 2600 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 15.0.2 on LT093 with PID 2600 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by Susmitha in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-12 15:35:29.831  INFO 2600 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-12 15:35:32.166  INFO 2600 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 15:35:32.383  INFO 2600 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 194 ms. Found 8 JPA repository interfaces.
+2021-06-12 15:35:37.311  INFO 2600 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-12 15:35:37.453  INFO 2600 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-12 15:35:37.454  INFO 2600 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-12 15:35:38.668  INFO 2600 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-12 15:35:38.669  INFO 2600 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8553 ms
+2021-06-12 15:35:40.173  INFO 2600 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 15:35:40.575  INFO 2600 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-12 15:35:41.546  INFO 2600 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 15:35:42.813  INFO 2600 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-12 15:35:44.562  INFO 2600 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-12 15:35:44.604  INFO 2600 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-12 15:35:48.864  INFO 2600 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 15:35:48.889  INFO 2600 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 15:35:50.989  WARN 2600 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 15:35:51.308  INFO 2600 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-12 15:35:52.159  INFO 2600 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-12 15:35:52.162  INFO 2600 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-12 15:35:52.206  INFO 2600 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-12 15:35:52.275  INFO 2600 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-12 15:35:52.842  WARN 2600 --- [main] s.d.s.w.r.p.ParameterDataTypeReader      : Trying to infer dataType com.sprint.otms.models.TravelAgentName
+2021-06-12 15:35:53.041  INFO 2600 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-12 15:35:53.116  INFO 2600 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-12 15:35:53.150  INFO 2600 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-12 15:35:53.155  INFO 2600 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-12 15:35:53.211  INFO 2600 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-12 15:35:53.227  INFO 2600 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-12 15:35:53.282  INFO 2600 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 24.778 seconds (JVM running for 27.104)
+2021-06-12 15:35:53.285  INFO 2600 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-12 15:35:53.291  INFO 2600 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-12 15:36:00.699  INFO 2600 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-12 15:36:00.701  INFO 2600 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-12 15:36:00.703  INFO 2600 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-06-12 15:37:37.986  INFO 2600 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-12 15:37:37.995  INFO 2600 --- [RMI TCP Connection(4)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-12 15:37:38.337  INFO 2600 --- [RMI TCP Connection(4)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 15:37:38.342  INFO 2600 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-06-12 15:37:38.448  INFO 2600 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-06-12 15:38:14.522  INFO 9468 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 15.0.2 on LT093 with PID 9468 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by Susmitha in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-06-12 15:38:14.530  INFO 9468 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-06-12 15:38:16.569  INFO 9468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 15:38:16.756  INFO 9468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 165 ms. Found 8 JPA repository interfaces.
+2021-06-12 15:38:18.572  INFO 9468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-06-12 15:38:18.592  INFO 9468 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-12 15:38:18.593  INFO 9468 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-12 15:38:18.864  INFO 9468 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-12 15:38:18.864  INFO 9468 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4178 ms
+2021-06-12 15:38:19.576  INFO 9468 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 15:38:19.693  INFO 9468 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-12 15:38:19.996  INFO 9468 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 15:38:20.238  INFO 9468 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-12 15:38:20.778  INFO 9468 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-12 15:38:20.813  INFO 9468 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-06-12 15:38:23.599  INFO 9468 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 15:38:23.632  INFO 9468 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 15:38:25.476  WARN 9468 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 15:38:25.819  INFO 9468 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-12 15:38:26.497  INFO 9468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-06-12 15:38:26.499  INFO 9468 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-06-12 15:38:26.540  INFO 9468 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-06-12 15:38:26.594  INFO 9468 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-06-12 15:38:27.130  WARN 9468 --- [main] s.d.s.w.r.p.ParameterDataTypeReader      : Trying to infer dataType com.sprint.otms.models.TravelAgentName
+2021-06-12 15:38:27.352  INFO 9468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-06-12 15:38:27.414  INFO 9468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-06-12 15:38:27.461  INFO 9468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-06-12 15:38:27.465  INFO 9468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-06-12 15:38:27.521  INFO 9468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-06-12 15:38:27.534  INFO 9468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-06-12 15:38:27.586  INFO 9468 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 14.059 seconds (JVM running for 16.317)
+2021-06-12 15:38:27.589  INFO 9468 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-12 15:38:27.593  INFO 9468 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-12 15:38:39.041  INFO 9468 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-12 15:38:39.041  INFO 9468 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-12 15:38:39.043  INFO 9468 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
