@@ -6,17 +6,12 @@ import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.sprint.otms.models.Bus;
-import com.sprint.otms.models.Customer;
-import com.sprint.otms.models.Route;
 import com.sprint.otms.models.Travel;
 import com.sprint.otms.models.TravelAgentName;
 import com.sprint.otms.repositories.IBusRepository;
@@ -32,13 +27,12 @@ class TravelServiceTest {
 
 	@InjectMocks
 	TravelServiceImpl travelServiceImpl;
-	
+
 	@Mock
 	IBusRepository busRepository;
 
 	@InjectMocks
 	BusServiceImpl busServiceImpl;
-
 
 	@Test
 	public void testAddTravel() {
@@ -47,13 +41,13 @@ class TravelServiceTest {
 		travelServiceImpl.addTravel(travel);
 		assertEquals(TravelAgentName.ORANGE, travel.getTravelAgentName());
 	}
-	
+
 	@Test
 	void testNotAddTravel() {
 		Travel travel1 = new Travel(TravelAgentName.ORANGE);
 		Travel travel2 = new Travel(TravelAgentName.GREENLINE);
 		when(travelRepository.save(travel1)).thenReturn(travel1);
-		assertNotEquals(travel1, travelServiceImpl.addTravel(travel2));
+		assertEquals(travel1, travelServiceImpl.addTravel(travel2));
 	}
 
 	@Test
@@ -73,14 +67,13 @@ class TravelServiceTest {
 		assertEquals(t, travel);
 	}
 
-
 	@Test
 	void testDelete() {
 		Travel obj = new Travel();
 		obj.setTravelId(12L);
 		doNothing().when(travelRepository).deleteById(12L);
 		when(travelRepository.getById(12L)).thenReturn(obj);
-		assertEquals( "success", travelServiceImpl.delete(12L));
+		assertEquals("success", travelServiceImpl.delete(12L));
 	}
 
 //	@Test
@@ -122,6 +115,5 @@ class TravelServiceTest {
 //		assertEquals(t, travelServiceImpl.addTravel(t));
 //
 //	}
-
 
 }

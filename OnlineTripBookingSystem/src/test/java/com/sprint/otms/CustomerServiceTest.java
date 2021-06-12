@@ -3,15 +3,12 @@ package com.sprint.otms;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
-import java.util.*;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import com.sprint.otms.models.Customer;
-import com.sprint.otms.models.Travel;
 import com.sprint.otms.repositories.ICustomerRepository;
 import com.sprint.otms.services.CustomerServiceImpl;
 
@@ -33,16 +30,14 @@ class CustomerServiceTest {
 		assertEquals("123", c.getPassword());
 
 	}
-	
+
 	@Test
 	void testNotAddCustomer() {
-		Customer customer1 = new Customer("xyz","123");		
-		Customer customer2 = new Customer("abc","1234");		
+		Customer customer1 = new Customer("xyz", "123");
+		Customer customer2 = new Customer("abc", "1234");
 		when(customerRepository.save(customer1)).thenReturn(customer1);
-		assertNotEquals(customer1, customerServiceImpl.addCustomer(customer2));
+		assertEquals(customer1, customerServiceImpl.addCustomer(customer2));
 	}
-
-
 
 	@Test
 	void testUpdateCustomer() {
@@ -54,11 +49,28 @@ class CustomerServiceTest {
 	}
 
 	@Test
+	void testNotUpdateCustomer() {
+		Customer customer = new Customer();
+		customer.setUserName("Dawid");
+		when(customerRepository.save(customer)).thenReturn(customer);
+		customerServiceImpl.updateCustomer(customer);
+		assertNotEquals("Dawid", customer.getUserName());
+	}
+
+	@Test
 	void testGetCustomerById() {
-		Customer customer = new Customer(10L);	
+		Customer customer = new Customer(10L);
 		when(customerRepository.getById(customer.getId())).thenReturn(customer);
 		Customer c = customerServiceImpl.findCustomerById(customer.getId());
 		assertEquals(c, customer);
+	}
+
+	@Test
+	void testNotGetCustomerById() {
+		Customer customer = new Customer(10L);
+		when(customerRepository.getById(customer.getId())).thenReturn(customer);
+		Customer c = customerServiceImpl.findCustomerById(customer.getId());
+		assertNotEquals(c, customer);
 	}
 
 	@Test
@@ -67,7 +79,16 @@ class CustomerServiceTest {
 		customer1.setId(2L);
 		doNothing().when(customerRepository).deleteById(2L);
 		when(customerRepository.getById(2L)).thenReturn(customer1);
-		assertEquals( "success", customerServiceImpl.delete(2L));
+		assertEquals("success", customerServiceImpl.delete(2L));
+	}
+
+	@Test
+	public void testNotDeleteCustomer() {
+		Customer customer1 = new Customer();
+		customer1.setId(2L);
+		doNothing().when(customerRepository).deleteById(2L);
+		when(customerRepository.getById(2L)).thenReturn(customer1);
+		assertNotEquals("success", customerServiceImpl.delete(2L));
 	}
 
 }

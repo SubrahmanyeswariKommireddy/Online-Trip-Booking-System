@@ -223,7 +223,7 @@ public class CustomerController {
 		return paymentServiceImpl.getAllPayments();
 	}
 
-	@GetMapping("/getPaymentById")
+	@GetMapping("/getPaymentById/{transactionId}")
 	public Payment getPaymentById(@Valid @PathVariable Long transactionId)
 			throws BookingNotFoundException, MethodArgumentNotValidException {
 
