@@ -3,25 +3,25 @@ package com.sprint.otms.exceptions;
 import java.util.Date;
 
 public class ExceptionMessage {
-	
+
 	private Date timestamp;
 	private String message;
 	private String details;
 
-	//Default constructor	
+	// Default constructor
 	public ExceptionMessage() {
 		super();
 	}
-	
-	//Parameterized constructor
+
+	// Parameterized constructor
 	public ExceptionMessage(Date timestamp, String message, String details) {
 		super();
 		this.timestamp = timestamp;
 		this.message = message;
 		this.details = details;
 	}
-	
-	//Getters Setters
+
+	// Getters Setters
 	public Date getTimestamp() {
 		return timestamp;
 	}

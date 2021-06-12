@@ -7,9 +7,6 @@ import javax.xml.bind.ValidationException;
 
 import org.springframework.stereotype.Service;
 
-import com.sprint.otms.models.Admin;
-import com.sprint.otms.models.Bus;
-import com.sprint.otms.models.Route;
 import com.sprint.otms.models.Travel;
 import com.sprint.otms.models.TravelAgentName;
 
@@ -17,22 +14,21 @@ import com.sprint.otms.models.TravelAgentName;
 @Transactional
 public interface ITravelService {
 
-		public Travel addTravel(Travel travel);
+	public Travel addTravel(Travel travel);
 
-		public List<Travel> getAllTravel();
+	public List<Travel> getAllTravel();
 
-		public Travel updateTravel(Travel travel);
-		
-		public Travel updateTravelById(Long id,TravelAgentName oldPassword,TravelAgentName newPassword) throws ValidationException;
+	public Travel updateTravel(Travel travel);
 
-		public String  delete(Long travelId);
+	public Travel updateTravelById(Long id, TravelAgentName oldPassword, TravelAgentName newPassword)
+			throws ValidationException;
 
-		public Travel getTravelById(Long travelId);
+	public String delete(Long travelId);
 
-		public List<Travel> getTravelByName(String travelAgentName);
+	public Travel getTravelById(Long travelId);
 
-		
-		
-		//public List<Travel> getRouteByTravelAgentName(String travelAgentName);
+	public List<Travel> getTravelByName(String travelAgentName);
+
+	// public List<Travel> getRouteByTravelAgentName(String travelAgentName);
 
 }

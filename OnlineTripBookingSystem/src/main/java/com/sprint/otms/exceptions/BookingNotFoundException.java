@@ -17,6 +17,4 @@ public class BookingNotFoundException extends RuntimeException {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
-
 }

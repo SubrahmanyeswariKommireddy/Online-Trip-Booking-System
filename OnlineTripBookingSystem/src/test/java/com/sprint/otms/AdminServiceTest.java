@@ -76,7 +76,6 @@ class AdminServiceTest {
 		when(adminRepository.save(admin)).thenReturn(admin);
 		adminServiceImpl.updateAdmin(admin);
 		assertEquals("John", admin.getUserName());
-
 	}
 	
 	@Test

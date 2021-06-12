@@ -1,7 +1,6 @@
 package com.sprint.otms.services;
 
 import java.util.List;
-import java.util.*;
 import javax.transaction.Transactional;
 
 import javax.xml.bind.ValidationException;
@@ -9,15 +8,13 @@ import javax.xml.bind.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.google.common.base.Optional;
 import com.sprint.otms.models.Admin;
-import com.sprint.otms.models.Customer;
 import com.sprint.otms.repositories.IAdminRepository;
 
 @Service
 @Transactional
-public class AdminServiceImpl extends UserServiceImpl implements IAdminService{
-	
+public class AdminServiceImpl extends UserServiceImpl implements IAdminService {
+
 	@Autowired
 	private IAdminRepository adminRepository;
 
@@ -44,75 +41,57 @@ public class AdminServiceImpl extends UserServiceImpl implements IAdminService{
 		// TODO Auto-generated method stub
 		return adminRepository.findAll();
 	}
-	
+
 	@Override
 	public String deleteAdmin(Long id) {
-		 adminRepository.deleteById(id);
-		 return "success";
+		adminRepository.deleteById(id);
+		return "success";
 	}
 
 	@Override
-
-	public Admin updateAdminPasswordById(Long id,String oldPassword,String newPassword) throws ValidationException {
+	public Admin updateAdminPasswordById(Long id, String oldPassword, String newPassword) throws ValidationException {
 		// TODO Auto-generated method stub
 		java.util.Optional<Admin> admin = adminRepository.findById(id);
-		if(admin != null)
-		{
-			if(admin.get().getPassword().equals(oldPassword))
-			{
+		if (admin != null) {
+			if (admin.get().getPassword().equals(oldPassword)) {
 				admin.get().setPassword(newPassword);
 				return adminRepository.save(admin.get());
-			}
-			else 
-			{
+			} else {
 				throw new ValidationException("Incorrect Password");
 			}
 		}
 		return admin.get();
-		
 	}
-	
+
 	@Override
-	public Admin updateAdminMobileNoById(Long id,Long oldMobileNo,Long newMobileNo) throws ValidationException {
+	public Admin updateAdminMobileNoById(Long id, Long oldMobileNo, Long newMobileNo) throws ValidationException {
 		// TODO Auto-generated method stub
 		java.util.Optional<Admin> admin = adminRepository.findById(id);
-		if(admin != null)
-		{
-			if(admin.get().getMobileNumber().equals(oldMobileNo))
-			{
+		if (admin != null) {
+			if (admin.get().getMobileNumber().equals(oldMobileNo)) {
 				admin.get().setMobileNumber(newMobileNo);
 				return adminRepository.save(admin.get());
-			}
-			else 
-			{
+			} else {
 				throw new ValidationException("Incorrect MobileNumber");
 			}
 		}
 		return admin.get();
-		
 	}
-	
+
 	@Override
-	public Admin updateAdminEmailById(Long id,String oldEmail,String newEmail) throws ValidationException {
+	public Admin updateAdminEmailById(Long id, String oldEmail, String newEmail) throws ValidationException {
 		// TODO Auto-generated method stub
 		java.util.Optional<Admin> admin = adminRepository.findById(id);
-		if(admin != null)
-		{
-			if(admin.get().getEmail().equals(oldEmail))
-			{
+		if (admin != null) {
+			if (admin.get().getEmail().equals(oldEmail)) {
 				admin.get().setEmail(newEmail);
 
 				return adminRepository.save(admin.get());
-			}
-			else 
-			{
+			} else {
 
 				throw new ValidationException("Incorrect EmailId");
 			}
 		}
 		return admin.get();
-		
-
 	}
-	
 }

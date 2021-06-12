@@ -9,28 +9,28 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 
 import com.sun.istack.NotNull;
 
 @Entity
-@Table(name="booking_details_table1")
+@Table(name = "booking_details_table1")
 public class Booking {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long bookingId;
+
 	@NotNull
 	private int seatsBooked;
 	private LocalDateTime dateAndTimeOfTravel;
-	
+
 	@OneToOne
 	private Customer customer;
-	
-	@OneToOne(mappedBy="booking", fetch=FetchType.LAZY)
+
+	@OneToOne(mappedBy = "booking", fetch = FetchType.LAZY)
 	private Payment payment;
-	
-	@OneToOne(mappedBy="booking", fetch=FetchType.LAZY)
+
+	@OneToOne(mappedBy = "booking", fetch = FetchType.LAZY)
 	private Bus bus;
 
 	public Booking() {
@@ -76,23 +76,25 @@ public class Booking {
 		this.seatsBooked = seatsBooked;
 		this.dateAndTimeOfTravel = dateAndTimeOfTravel;
 	}
+
 	public Booking(int seatsBooked) {
 		super();
 		this.seatsBooked = seatsBooked;
 	}
-	public Booking(Long bookingId,int seatsBooked, LocalDateTime dateAndTimeOfTravel) {
+
+	public Booking(Long bookingId, int seatsBooked, LocalDateTime dateAndTimeOfTravel) {
 		super();
 		this.bookingId = bookingId;
 		this.seatsBooked = seatsBooked;
 		this.dateAndTimeOfTravel = dateAndTimeOfTravel;
 	}
 
-	public Booking(long bookingID, int seatsBooked, Bus bus) {
+	public Booking(long bookingId, int seatsBooked, Bus bus) {
 		// TODO Auto-generated constructor stub
 		super();
-		this.bookingId=bookingId;
-		this.seatsBooked=seatsBooked;
-		this.bus=bus;
+		this.bookingId = bookingId;
+		this.seatsBooked = seatsBooked;
+		this.bus = bus;
 	}
 
 	public Long getBookingId() {

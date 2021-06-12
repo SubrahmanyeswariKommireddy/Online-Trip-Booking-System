@@ -13,50 +13,48 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 
 import com.sun.istack.NotNull;
 
 @Entity
-@Table(name="bus_details_table1")
+@Table(name = "bus_details_table1")
 public class Bus {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long busId;
+
 	@NotNull
 	private Float fare;
-    @NotNull
 
+	@NotNull
 	private Long totalCapacity;
-   private Long currentCapacity;
-   
+	private Long currentCapacity;
+
 	@Enumerated(value = EnumType.STRING)
 	@Column(name = "Bus_Type")
 	private BusType busType;
-	
-	@OneToOne(fetch=FetchType.LAZY)
+
+	@OneToOne(fetch = FetchType.LAZY)
 	private Booking booking;
-	
-	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)  
-	@JoinColumn(name="bus_route")
+
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "bus_route")
 	private Route route;
-	
-	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-	@JoinColumn(name="bus_travel")
+
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "bus_travel")
 	private Travel travel;
 
 	public Bus() {
 		super();
 	}
-	
 
 	public Bus(Float fare, Long totalCapacity) {
 		super();
 		this.fare = fare;
 		this.totalCapacity = totalCapacity;
 	}
-
 
 	public Bus(Long busId, Float fare, Long totalCapacity, BusType busType) {
 		super();
@@ -92,7 +90,6 @@ public class Bus {
 		this.travel = travel;
 	}
 
-
 	public Bus(Float fare, Long totalCapacity, Long currentCapacity) {
 		super();
 		this.fare = fare;
@@ -100,16 +97,14 @@ public class Bus {
 		this.currentCapacity = currentCapacity;
 	}
 
-
-	public Bus(long id, float fare, long totalCapacity, long currentCapacity) {
+	public Bus(Long id, float fare, Long totalCapacity, Long currentCapacity) {
 		// TODO Auto-generated constructor stub
 		super();
-		this.busId=id;
+		this.busId = id;
 		this.fare = fare;
 		this.totalCapacity = totalCapacity;
 		this.currentCapacity = currentCapacity;
 	}
-
 
 	public Long getBusId() {
 		return busId;
@@ -143,16 +138,13 @@ public class Bus {
 		this.busType = busType;
 	}
 
-
 	public Long getCurrentCapacity() {
 		return currentCapacity;
 	}
 
-
 	public void setCurrentCapacity(Long currentCapacity) {
 		this.currentCapacity = currentCapacity;
 	}
-
 
 	@Override
 	public String toString() {
@@ -160,6 +152,4 @@ public class Bus {
 				+ currentCapacity + ", busType=" + busType + ", booking=" + booking + ", route=" + route + ", travel="
 				+ travel + "]";
 	}
-
-
 }

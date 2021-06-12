@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "payment_details_table1")
@@ -18,11 +17,12 @@ public class Payment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long transactionId;
-	
+
 	@Enumerated(value = EnumType.STRING)
 	@Column(name = "Transaction_Mode")
 	private TransactionMode transactionMode;
 	private Float amount;
+
 	@OneToOne
 	private Booking booking;
 
@@ -42,7 +42,6 @@ public class Payment {
 		this.transactionMode = transactionMode;
 		this.booking = booking;
 	}
-	
 
 	public Payment(Long transactionId, TransactionMode transactionMode, Float amount, Booking booking) {
 		super();
@@ -94,6 +93,4 @@ public class Payment {
 		return "Payment [transactionId=" + transactionId + ", transactionMode=" + transactionMode + ", amount=" + amount
 				+ ", booking=" + booking + "]";
 	}
-
-	
 }

@@ -16,7 +16,5 @@ public class RouteNotFoundException extends RuntimeException {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
 }

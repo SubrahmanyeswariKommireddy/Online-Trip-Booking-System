@@ -18,26 +18,19 @@ import com.sprint.otms.repositories.IRouteRepository;
 @Service
 @Transactional
 public class RouteServiceImpl implements IRouteService {
-	
+
 	@Autowired
 	private IRouteRepository routeRepository;
-	
-	@Autowired
-	private IBusRepository busRepository;
-	
 
 	@Override
 	public Route addRoute(Route route) {
 		// TODO Auto-generated method stub
-		//Bus bus=busRepository.getById(booking.getBus().getBusId());
-		
 		return routeRepository.saveAndFlush(route);
 	}
 
 	@Override
 	public List<Route> getAllRoute() {
 		// TODO Auto-generated method stub
-		
 		return routeRepository.findAll();
 	}
 
@@ -57,8 +50,6 @@ public class RouteServiceImpl implements IRouteService {
 	@Override
 	public Route getRouteByRouteId(Long routeId) {
 		// TODO Auto-generated method stub
-		//List<Bus> bus=routeRepository.getById(routeId).getBuses();
-		
 		return routeRepository.getById(routeId);
 	}
 
@@ -79,47 +70,35 @@ public class RouteServiceImpl implements IRouteService {
 		// TODO Auto-generated method stub
 		return routeRepository.getBySourceAndDestination(source, destination);
 	}
-	
+
 	@Override
-	public Route updateSourceById(Long id,String oldSource,String newSource) throws ValidationException {
+	public Route updateSourceById(Long id, String oldSource, String newSource) throws ValidationException {
 		// TODO Auto-generated method stub
 		java.util.Optional<Route> route = routeRepository.findById(id);
-		if(route != null)
-		{
-			if(route.get().getSource().equals(oldSource))
-			{
+		if (route != null) {
+			if (route.get().getSource().equals(oldSource)) {
 				route.get().setSource(newSource);
 				return routeRepository.save(route.get());
-			}
-			else 
-			{
+			} else {
 				throw new ValidationException("Incorrect Source");
 			}
 		}
 		return route.get();
-		
 	}
-	
+
 	@Override
-	public Route updateDestinationById(Long id,String oldDestination,String newDestination) throws ValidationException {
+	public Route updateDestinationById(Long id, String oldDestination, String newDestination)
+			throws ValidationException {
 		// TODO Auto-generated method stub
 		java.util.Optional<Route> route = routeRepository.findById(id);
-		if(route != null)
-		{
-			if(route.get().getDestination().equals(oldDestination))
-			{
+		if (route != null) {
+			if (route.get().getDestination().equals(oldDestination)) {
 				route.get().setDestination(newDestination);
 				return routeRepository.save(route.get());
-			}
-			else 
-			{
+			} else {
 				throw new ValidationException("Incorrect Destination");
 			}
 		}
 		return route.get();
-		
 	}
-
-
-
 }
