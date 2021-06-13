@@ -15,6 +15,11 @@ import javax.validation.constraints.Pattern;
 
 import com.sun.istack.NotNull;
 
+/**
+ * 
+ * @author Subrahmanyeswari
+ *
+ */
 @Entity
 @Table(name = "user_details_table1")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)

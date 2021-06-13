@@ -218,7 +218,7 @@ public class CustomerController {
 		return busServiceImpl.getAllBuses();
 	}
 
-//------------------------Booking-------------------------------------------------------
+	//-------------------------------------Booking-------------------------------------//
 
 	/**
 	 * @param booking
@@ -278,7 +278,7 @@ public class CustomerController {
 		bookingServiceImpl.deleteBooking(id);
 	}
 
-	// ----------------------------------payment------------------------------------
+	//-----------------------------------Payment------------------------------------//
 
 	/**
 	 * @param payment

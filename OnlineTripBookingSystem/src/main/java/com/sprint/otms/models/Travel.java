@@ -15,7 +15,14 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.Table;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+/**
+ * 
+ * @author Subrahmanyeswari
+ *
+ */
 
 @Entity
 @Table(name = "travel_details_table1")

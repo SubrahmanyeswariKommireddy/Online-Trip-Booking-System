@@ -12,6 +12,11 @@ import com.sprint.otms.models.Travel;
 import com.sprint.otms.models.TravelAgentName;
 import com.sprint.otms.repositories.ITravelRepository;
 
+/**
+ * 
+ * @author Subrahmanyeswari
+ *
+ */
 @Service
 @Transactional
 public class TravelServiceImpl implements ITravelService {
@@ -72,9 +77,5 @@ public class TravelServiceImpl implements ITravelService {
 		}
 		return travel.get();
 	}
-//	@Override
-//	public List<Travel> getRouteByTravelAgentName(String travelAgentName) {
-//		// TODO Auto-generated method stub
-//		return travelRepository.getRouteByTravelAgentName(travelAgentName);
-//	}
+
 }

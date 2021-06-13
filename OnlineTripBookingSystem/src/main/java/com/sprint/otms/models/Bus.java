@@ -17,6 +17,11 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.sun.istack.NotNull;
 
+/**
+ * 
+ * @author Stephen
+ *
+ */
 @Entity
 @Table(name = "bus_details_table1")
 public class Bus {

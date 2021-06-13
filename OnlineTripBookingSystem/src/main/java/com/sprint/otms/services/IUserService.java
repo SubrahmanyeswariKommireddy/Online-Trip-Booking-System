@@ -5,6 +5,11 @@ import org.springframework.stereotype.Service;
 import com.sprint.otms.models.User;
 import com.sprint.otms.models.User_Type;
 
+/**
+ * 
+ * @author Subrahmanyeswari
+ *
+ */
 @Service
 public interface IUserService {
 

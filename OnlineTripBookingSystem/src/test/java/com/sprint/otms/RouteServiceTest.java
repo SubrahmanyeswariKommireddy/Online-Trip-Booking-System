@@ -14,6 +14,11 @@ import com.sprint.otms.models.Route;
 import com.sprint.otms.repositories.IRouteRepository;
 import com.sprint.otms.services.RouteServiceImpl;
 
+/**
+ * 
+ * @author Subani
+ *
+ */
 @SpringBootTest
 class RouteServiceTest {
 
@@ -51,6 +56,19 @@ class RouteServiceTest {
 		list.add(r2);
 		when(routeRepository.findAll()).thenReturn(list);
 		assertEquals(list.size(), routeServiceImpl.getAllRoute().size());
+	}
+	
+	@Test
+	void testNotGetAllRoute() {
+		List<Route> list = new ArrayList<>();
+		Route r1 = new Route();
+		r1.setRouteId(1L);
+		Route r2 = new Route();
+		r2.setRouteId(2L);
+		list.add(r1);
+		list.add(r2);
+		when(routeRepository.findAll()).thenReturn(list);
+		assertNotEquals(list.size(), routeServiceImpl.getAllRoute().size());
 	}
 
 	@Test
@@ -95,6 +113,14 @@ class RouteServiceTest {
 		doNothing().when(routeRepository).deleteById(1L);
 		when(routeRepository.getById(1L)).thenReturn(r);
 		assertEquals("success", routeServiceImpl.delete(12L));
-
+	}
+	
+	@Test
+	void testNotDelete() {
+		Route r = new Route();
+		r.setRouteId(1L);
+		doNothing().when(routeRepository).deleteById(1L);
+		when(routeRepository.getById(1L)).thenReturn(r);
+		assertNotEquals("success", routeServiceImpl.delete(12L));
 	}
 }

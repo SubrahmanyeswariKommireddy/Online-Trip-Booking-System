@@ -10,6 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author Satish
+ *
+ */
 @Entity
 @Table(name = "payment_details_table1")
 public class Payment {

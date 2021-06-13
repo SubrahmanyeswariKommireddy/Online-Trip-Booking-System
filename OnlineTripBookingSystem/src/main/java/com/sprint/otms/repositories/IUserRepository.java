@@ -5,6 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.sprint.otms.models.User;
 
+/**
+ * 
+ * @author Subrahmanyeswari
+ *
+ */
 @Repository
 public interface IUserRepository extends  JpaRepository<User, Long>{
 

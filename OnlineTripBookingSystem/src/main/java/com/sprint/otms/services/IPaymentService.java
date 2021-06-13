@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 
 import com.sprint.otms.models.Payment;
 
+/**
+ * 
+ * @author Satish
+ *
+ */
 @Service
 @Transactional
 public interface IPaymentService {

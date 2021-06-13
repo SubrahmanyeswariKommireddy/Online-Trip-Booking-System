@@ -1,7 +1,6 @@
 package com.sprint.otms.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import javax.transaction.Transactional;
 import javax.validation.ValidationException;
@@ -9,12 +8,14 @@ import javax.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sprint.otms.models.Admin;
-import com.sprint.otms.models.Bus;
 import com.sprint.otms.models.Route;
-import com.sprint.otms.repositories.IBusRepository;
 import com.sprint.otms.repositories.IRouteRepository;
 
+/**
+ * 
+ * @author Subani
+ *
+ */
 @Service
 @Transactional
 public class RouteServiceImpl implements IRouteService {

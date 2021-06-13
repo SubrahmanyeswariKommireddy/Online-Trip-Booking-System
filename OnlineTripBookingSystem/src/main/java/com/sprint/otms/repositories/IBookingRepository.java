@@ -5,6 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.sprint.otms.models.Booking;
 
+/**
+ * 
+ * @author Satish
+ *
+ */
 @Repository
 public interface IBookingRepository extends JpaRepository<Booking, Long> {
 
@@ -19,7 +24,5 @@ public interface IBookingRepository extends JpaRepository<Booking, Long> {
 	 * @return
 	 */
 	public Booking findByseatsBooked(int seatsBooked);
-
-//	List<Booking> findByDateAndTimeOfTravel(LocalDateTime dateTime);
 
 }

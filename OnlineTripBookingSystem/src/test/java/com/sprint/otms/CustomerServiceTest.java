@@ -4,14 +4,29 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import com.sprint.otms.models.Customer;
+import com.sprint.otms.models.Route;
+import com.sprint.otms.models.Travel;
+import com.sprint.otms.models.TravelAgentName;
 import com.sprint.otms.repositories.ICustomerRepository;
+import com.sprint.otms.repositories.IRouteRepository;
+import com.sprint.otms.repositories.ITravelRepository;
 import com.sprint.otms.services.CustomerServiceImpl;
+import com.sprint.otms.services.RouteServiceImpl;
+import com.sprint.otms.services.TravelServiceImpl;
 
+/**
+ * 
+ * @author Shourya
+ *
+ */
 @SpringBootTest
 class CustomerServiceTest {
 
@@ -20,6 +35,18 @@ class CustomerServiceTest {
 
 	@InjectMocks
 	CustomerServiceImpl customerServiceImpl;
+	
+	@Mock
+	ITravelRepository travelRepository;
+
+	@InjectMocks
+	TravelServiceImpl travelServiceImpl;
+
+	@Mock
+	IRouteRepository routeRepository;
+
+	@InjectMocks
+	RouteServiceImpl routeServiceImpl;
 
 	@Test
 	void testAddCustomer() {
@@ -71,6 +98,58 @@ class CustomerServiceTest {
 		when(customerRepository.getById(customer.getId())).thenReturn(customer);
 		Customer c = customerServiceImpl.findCustomerById(customer.getId());
 		assertNotEquals(c, customer);
+	}
+	
+	@Test
+	void testGetAllTravels() {
+		List<Travel> list = new ArrayList<>();
+		Travel t = new Travel();
+		t.setTravelAgentName(TravelAgentName.GREENLINE);
+		Travel t1 = new Travel();
+		t1.setTravelAgentName(TravelAgentName.GREENLINE);
+		list.add(t);
+		list.add(t1);
+		when(travelRepository.findAll()).thenReturn(list);
+		assertEquals(list.size(), travelServiceImpl.getAllTravel().size());
+	}
+
+	@Test
+	void testNotGetAllTravels() {
+		List<Travel> list = new ArrayList<>();
+		Travel t = new Travel();
+		t.setTravelAgentName(TravelAgentName.GREENLINE);
+		Travel t1 = new Travel();
+		t1.setTravelAgentName(TravelAgentName.GREENLINE);
+		list.add(t);
+		list.add(t1);
+		when(travelRepository.findAll()).thenReturn(list);
+		assertNotEquals(list.size(), travelServiceImpl.getAllTravel().size());
+	}
+
+	@Test
+	void testGetAllRoute() {
+		List<Route> list = new ArrayList<>();
+		Route r1 = new Route();
+		r1.setRouteId(1L);
+		Route r2 = new Route();
+		r2.setRouteId(2L);
+		list.add(r1);
+		list.add(r2);
+		when(routeRepository.findAll()).thenReturn(list);
+		assertEquals(list.size(), routeServiceImpl.getAllRoute().size());
+	}
+
+	@Test
+	void testNotGetAllRoute() {
+		List<Route> list = new ArrayList<>();
+		Route r1 = new Route();
+		r1.setRouteId(1L);
+		Route r2 = new Route();
+		r2.setRouteId(2L);
+		list.add(r1);
+		list.add(r2);
+		when(routeRepository.findAll()).thenReturn(list);
+		assertNotEquals(list.size(), routeServiceImpl.getAllRoute().size());
 	}
 
 	@Test

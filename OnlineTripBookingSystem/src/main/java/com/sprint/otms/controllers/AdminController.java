@@ -38,6 +38,11 @@ import com.sprint.otms.services.CustomerServiceImpl;
 import com.sprint.otms.services.RouteServiceImpl;
 import com.sprint.otms.services.TravelServiceImpl;
 
+/**
+ * 
+ * @author Susmitha
+ *
+ */
 @RestController
 public class AdminController {
 
@@ -206,29 +211,6 @@ public class AdminController {
 
 		return travelServiceImpl.getAllTravel();
 	}
-
-//	@GetMapping("/admin/getTravelsById/{id}")
-//	public ResponseEntity<Travel> getById(@PathVariable("travelId") Long travelId) throws TravelsNotFoundException{
-//		return new  ResponseEntity<Travel>(travelServiceImpl.getTravelById(travelId),HttpStatus.OK);
-//	}
-
-//	@GetMapping("/admin/travel/{id}/getBuses")
-//	public List<Bus> getBusesByTravelId(@Valid @PathVariable Long travelId) throws BusNotFoundException, TravelsNotFoundException ,MethodArgumentNotValidException{
-//		
-//		LOGGER.info("getBuses URL is opened");
-//		LOGGER.info("getBusesByTravelId() is initiated");
-//		
-//		return busRepository.getBusesByTravelId(travelId);
-//	}
-
-//	@GetMapping("/admin/travel/{travelAgentName}/getBuses")
-//	public List<Bus> getBusesByTravelAgentName(@Valid @PathVariable String travelAgentName) throws BusNotFoundException, TravelsNotFoundException , MethodArgumentNotValidException{
-//		
-//		LOGGER.info("getBusesByTravelAgentName URL is opened");
-//		LOGGER.info("getBusesByTravelAgentName() is initiated");
-//		
-//		return busRepository.getBusesByTravelAgentName(travelAgentName);
-//	}
 
 	/**
 	 * @param id
@@ -429,11 +411,6 @@ public class AdminController {
 		Route newRoute = routeServiceImpl.updateRoute(route);
 		return new ResponseEntity<>(newRoute, HttpStatus.OK);
 	}
-
-//	@GetMapping("/route/{id}/buses")
-//	public List<Bus> getAllBuses(@PathVariable Long routeId) {
-//		return busServiceImpl.getBusesByRouteId(routeId);
-//	}
 
 	// -------------------------------Buses----------------------------------//
 

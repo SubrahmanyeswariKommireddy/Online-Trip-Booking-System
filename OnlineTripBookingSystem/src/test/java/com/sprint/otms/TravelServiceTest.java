@@ -19,6 +19,11 @@ import com.sprint.otms.repositories.ITravelRepository;
 import com.sprint.otms.services.BusServiceImpl;
 import com.sprint.otms.services.TravelServiceImpl;
 
+/**
+ * 
+ * @author Subrahmanyeswari
+ *
+ */
 @SpringBootTest
 class TravelServiceTest {
 
@@ -68,6 +73,14 @@ class TravelServiceTest {
 	}
 
 	@Test
+	void testNotGetTravelById() {
+		Travel travel = new Travel(10L);
+		when(travelRepository.getById(travel.getTravelId())).thenReturn(travel);
+		Travel t = travelServiceImpl.getTravelById(travel.getTravelId());
+		assertNotEquals(t, travel);
+	}
+
+	@Test
 	void testDelete() {
 		Travel obj = new Travel();
 		obj.setTravelId(12L);
@@ -76,44 +89,12 @@ class TravelServiceTest {
 		assertEquals("success", travelServiceImpl.delete(12L));
 	}
 
-//	@Test
-//	void testUpdateTravels() {
-//		List<Bus> list = new ArrayList<>();
-//		list.add(new Bus(234F));
-//		list.add(new Bus(340F));
-//		Travel t = new Travel();
-//		when(travelRepository.save(t)).thenReturn(t);		
-//		assertEquals(list, busServiceImpl.getAllBuses());
-//	}
-
-//	@Test
-//	public void testNotAddTravel() {
-//		Travel travel=new Travel();
-//		Travel travel2=new Travel();
-//		travel.setTravelAgentName(TravelAgentName.ORANGE);
-//		travel2.setTravelAgentName(TravelAgentName.ORANGE);
-//		when(travelRepository.save(travel)).thenReturn(travel);
-//		assertEquals(travel, travelServiceImpl.addTravel(travel2));
-//	}
-//
-
-//	@Test
-//	void testNotGetAllTravels() {
-//		List<Travel>list = new ArrayList<>();
-//		Travel t = new Travel();
-//
-//		t.setTravelAgentName(TravelAgentName.GREENLINE);
-//		Travel t1 = new Travel();
-//		t1.setTravelAgentName(TravelAgentName.GREENLINE);
-//		list.add(t);
-//		list.add(t1);
-//		when(travelRepository.findAll()).thenReturn(list);
-//		assertNotEquals(list.size(), travelServiceImpl.getAllTravel().size());
-//
-//		t.setTravelAgentName(TravelAgentName.ORANGE);
-//		when(travelRepository.save(t)).thenReturn(t);
-//		assertEquals(t, travelServiceImpl.addTravel(t));
-//
-//	}
-
+	@Test
+	void testNotDelete() {
+		Travel obj = new Travel();
+		obj.setTravelId(12L);
+		doNothing().when(travelRepository).deleteById(12L);
+		when(travelRepository.getById(12L)).thenReturn(obj);
+		assertNotEquals("success", travelServiceImpl.delete(12L));
+	}
 }

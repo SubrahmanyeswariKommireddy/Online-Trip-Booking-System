@@ -10,6 +10,11 @@ import com.sprint.otms.models.User_Type;
 import com.sprint.otms.repositories.IAdminRepository;
 import com.sprint.otms.repositories.ICustomerRepository;
 
+/**
+ * 
+ * @author Subrahmanyeswari
+ *
+ */
 @Service
 public class UserServiceImpl implements IUserService {
 
@@ -21,7 +26,6 @@ public class UserServiceImpl implements IUserService {
 
 	@Override
 	public User registerUser(User user) {
-		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
 		if (user.getUserType() == User_Type.ADMIN) {
 			Admin adm = new Admin();
