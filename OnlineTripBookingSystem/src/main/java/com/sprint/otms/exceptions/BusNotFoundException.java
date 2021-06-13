@@ -1,5 +1,10 @@
 package com.sprint.otms.exceptions;
 
+/**
+ * 
+ * @author Stephen
+ *
+ */
 public class BusNotFoundException extends RuntimeException {
 
 	/**

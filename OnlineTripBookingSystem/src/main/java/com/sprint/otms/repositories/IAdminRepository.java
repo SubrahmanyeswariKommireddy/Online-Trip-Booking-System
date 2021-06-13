@@ -5,6 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.sprint.otms.models.Admin;
 
+/**
+ * 
+ * @author Susmitha
+ *
+ */
 @Repository
 public interface IAdminRepository extends JpaRepository<Admin, Long> {
 

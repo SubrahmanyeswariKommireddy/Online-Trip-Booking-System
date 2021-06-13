@@ -13,13 +13,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
-import com.sprint.otms.models.Admin;
 import com.sprint.otms.models.Booking;
-import com.sprint.otms.models.Bus;
-import com.sprint.otms.models.Customer;
 import com.sprint.otms.repositories.IBookingRepository;
 import com.sprint.otms.services.BookingServiceImpl;
 
+/**
+ * 
+ * @author Satish
+ *
+ */
 @SpringBootTest
 class BookingServiceTest {
 
@@ -27,7 +29,6 @@ class BookingServiceTest {
 	private IBookingRepository bookingRepository;
 
 	@Autowired
-
 	BookingServiceImpl bookingServiceImpl;
 
 	@Test

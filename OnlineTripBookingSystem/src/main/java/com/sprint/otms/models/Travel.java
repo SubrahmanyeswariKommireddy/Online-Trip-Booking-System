@@ -15,6 +15,11 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author Subrahmanyeswari
+ *
+ */
 @Entity
 @Table(name = "travel_details_table1")
 public class Travel {

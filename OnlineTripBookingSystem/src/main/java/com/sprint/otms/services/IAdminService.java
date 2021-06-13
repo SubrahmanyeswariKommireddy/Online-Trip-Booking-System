@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 
 import com.sprint.otms.models.Admin;
 
+/**
+ * 
+ * @author Susmitha
+ *
+ */
 @Service
 @Transactional
 public interface IAdminService extends IUserService {
@@ -27,7 +32,7 @@ public interface IAdminService extends IUserService {
 	 * @param id
 	 * @param oldPassword
 	 * @param newPassword
-	 * @return 
+	 * @return
 	 * @throws ValidationException
 	 */
 	/**

@@ -12,6 +12,11 @@ import com.sprint.otms.models.Bus;
 import com.sprint.otms.repositories.IBookingRepository;
 import com.sprint.otms.repositories.IBusRepository;
 
+/**
+ * 
+ * @author Satish
+ *
+ */
 @Service
 @Transactional
 public class BookingServiceImpl implements IBookingService {
@@ -19,28 +24,25 @@ public class BookingServiceImpl implements IBookingService {
 	@Autowired
 	private IBookingRepository bookingRepository;
 
-
 	@Autowired
 	private IBusRepository busRepository;
 
 	@Override
 	public Booking addBooking(Booking booking) {
 		// TODO Auto-generated method stub
-		
-		// bus.getCurrentCapacity
 		Bus bus = busRepository.getById(booking.getBus().getBusId());
 
 		if (bus.getCurrentCapacity() <= bus.getTotalCapacity()) {
 			Long capacity = bus.getCurrentCapacity();
-			if(capacity - booking.getSeatsBooked()>0 && bus.getCurrentCapacity()>=booking.getSeatsBooked()) {
-			if(bus.getCurrentCapacity()>=0) {
-			bus.setCurrentCapacity(capacity - booking.getSeatsBooked());	
-			busRepository.save(bus);
-			return bookingRepository.saveAndFlush(booking);
+			if (capacity - booking.getSeatsBooked() > 0 && bus.getCurrentCapacity() >= booking.getSeatsBooked()) {
+				if (bus.getCurrentCapacity() >= 0) {
+					bus.setCurrentCapacity(capacity - booking.getSeatsBooked());
+					busRepository.save(bus);
+					return bookingRepository.saveAndFlush(booking);
+				}
+
 			}
-			
-			}
-			
+
 		}
 		return null;
 	}
@@ -70,24 +72,6 @@ public class BookingServiceImpl implements IBookingService {
 		System.out.println("bookings are not allowed");
 		return null;
 	}
-
-//	@Override
-//	public List<Booking> findByDateAndTimeOfTravel(LocalDateTime dateTime) {
-//		// TODO Auto-generated method stub
-//		return bookingRepository.findAll();
-//	}
-
-//	@Override
-//	public List<Booking> getBookingByDateAndTimeOfTravel(LocalDateTime dateTime) {
-//		// TODO Auto-generated method stub
-//		return bookingRepository.findByDateAndTimeOfTravel(dateTime);
-//	}
-
-//	@Override
-//	public Booking getBookingByPayment(Long transactionId) {
-//		// TODO Auto-generated method stub
-//		return bookingRepository.findByTransactionId(transactionId);
-//	}
 
 	public Booking createBooking(Booking booking) {
 		return bookingRepository.save(booking);

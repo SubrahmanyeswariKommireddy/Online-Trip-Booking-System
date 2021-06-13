@@ -10,10 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sun.istack.NotNull;
 
 /**
- * @author DHASARI
+ * @author Satish
  *
  */
 @Entity
@@ -29,6 +30,7 @@ public class Booking {
 	private LocalDateTime dateAndTimeOfTravel;
 
 	@OneToOne
+	@JsonManagedReference
 	private Customer customer;
 
 	@OneToOne(mappedBy = "booking", fetch = FetchType.LAZY)

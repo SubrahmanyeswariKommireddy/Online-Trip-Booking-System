@@ -11,6 +11,11 @@ import org.springframework.stereotype.Service;
 import com.sprint.otms.models.Admin;
 import com.sprint.otms.repositories.IAdminRepository;
 
+/**
+ * 
+ * @author Susmitha
+ *
+ */
 @Service
 @Transactional
 public class AdminServiceImpl extends UserServiceImpl implements IAdminService {

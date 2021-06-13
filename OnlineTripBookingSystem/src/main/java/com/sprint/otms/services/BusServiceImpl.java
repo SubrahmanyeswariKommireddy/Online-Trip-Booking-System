@@ -11,6 +11,11 @@ import org.springframework.stereotype.Service;
 import com.sprint.otms.models.Bus;
 import com.sprint.otms.repositories.IBusRepository;
 
+/**
+ * 
+ * @author Stephen
+ *
+ */
 @Service
 @Transactional
 public class BusServiceImpl implements IBusService {
@@ -20,13 +25,10 @@ public class BusServiceImpl implements IBusService {
 
 	@Override
 	public Bus addBus(Bus bus) {
-		bus.setTotalCapacity(30L);
 		// TODO Auto-generated method stub
-		
+		bus.setTotalCapacity(30L);
 		bus.setCurrentCapacity(bus.getTotalCapacity());
-
 		return busRepository.saveAndFlush(bus);
-	
 	}
 
 	@Override
@@ -71,21 +73,4 @@ public class BusServiceImpl implements IBusService {
 
 	}
 
-//	@Override
-//	public List<Bus> getBusesByTravelId(Long travelId) {
-//		// TODO Auto-generated method stub
-//		return busRepository.findAllById(travelId);
-//	}
-//
-//	@Override
-//	public List<Bus> getBusesByRouteId(Long routeId) {
-//		// TODO Auto-generated method stub
-//		return busRepository.findAllById(routeId);
-//	}
-
-//	@Override
-//	public List<Bus> getBusesByTravelAgentName(String travelAgentName) {
-//		// TODO Auto-generated method stub
-//		return busRepository.findAllByTravelAgentName(travelAgentName);
-//	}	
 }
