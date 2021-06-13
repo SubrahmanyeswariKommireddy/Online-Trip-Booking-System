@@ -62,7 +62,7 @@ public class AdminController {
 
 	/**
 	 * @param admin
-	 * @return
+	 * @return 
 	 * @throws MethodArgumentNotValidException
 	 */
 	@PostMapping("admin/login")

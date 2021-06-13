@@ -8,6 +8,10 @@ import com.sprint.otms.models.Admin;
 @Repository
 public interface IAdminRepository extends JpaRepository<Admin, Long> {
 
+	/**
+	 * @param emailId
+	 * @return
+	 */
 	Admin findByEmail(String emailId);
 
 }

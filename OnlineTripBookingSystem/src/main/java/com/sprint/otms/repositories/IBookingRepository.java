@@ -8,8 +8,16 @@ import com.sprint.otms.models.Booking;
 @Repository
 public interface IBookingRepository extends JpaRepository<Booking, Long> {
 
+	/**
+	 * @param transactionId
+	 * @return
+	 */
 	Booking findByBookingId(Long transactionId);
 
+	/**
+	 * @param seatsBooked
+	 * @return
+	 */
 	public Booking findByseatsBooked(int seatsBooked);
 
 //	List<Booking> findByDateAndTimeOfTravel(LocalDateTime dateTime);

@@ -12,6 +12,9 @@ public class TravelsNotFoundException extends RuntimeException {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @param message
+	 */
 	public TravelsNotFoundException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub

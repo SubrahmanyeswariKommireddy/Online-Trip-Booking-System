@@ -34,10 +34,18 @@ public class Travel {
 	@JoinColumn(name = "admin_travel")
 	private Admin admin;
 
+	/**
+	 * 
+	 */
 	public Travel() {
 		super();
 	}
 
+	/**
+	 * @param travelId
+	 * @param travelAgentName
+	 * @param buses
+	 */
 	public Travel(Long travelId, TravelAgentName travelAgentName, List<Bus> buses) {
 		super();
 		this.travelId = travelId;
@@ -45,53 +53,87 @@ public class Travel {
 		this.buses = buses;
 	}
 
+	/**
+	 * @param travelAgentName
+	 * @param buses
+	 */
 	public Travel(TravelAgentName travelAgentName, List<Bus> buses) {
 		super();
 		this.travelAgentName = travelAgentName;
 		this.buses = buses;
 	}
 
+	/**
+	 * @param travelAgentName
+	 */
 	public Travel(TravelAgentName travelAgentName) {
 		super();
 		this.travelAgentName = travelAgentName;
 	}
 
+	/**
+	 * @param buses
+	 */
 	public Travel(List<Bus> buses) {
 		super();
 		this.buses = buses;
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @param travelId
+	 */
 	public Travel(long travelId) {
 		super();
 		this.travelId = travelId;
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @return
+	 */
 	public Long getTravelId() {
 		return travelId;
 	}
 
+	/**
+	 * @param travelId
+	 */
 	public void setTravelId(Long travelId) {
 		this.travelId = travelId;
 	}
 
+	/**
+	 * @return
+	 */
 	public TravelAgentName getTravelAgentName() {
 		return travelAgentName;
 	}
 
+	/**
+	 * @param travelAgentName
+	 */
 	public void setTravelAgentName(TravelAgentName travelAgentName) {
 		this.travelAgentName = travelAgentName;
 	}
 
+	/**
+	 * @return
+	 */
 	public List<Bus> getBuses() {
 		return buses;
 	}
 
+	/**
+	 * @param buses
+	 */
 	public void setBuses(List<Bus> buses) {
 		this.buses = buses;
 	}
 
+	/**
+	 *
+	 */
 	@Override
 	public String toString() {
 		return "Travel [travelId=" + travelId + ", travelAgentName=" + travelAgentName + ", buses=" + buses + "]";

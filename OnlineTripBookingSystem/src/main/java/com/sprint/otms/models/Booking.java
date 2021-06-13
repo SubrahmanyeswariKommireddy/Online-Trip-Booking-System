@@ -12,6 +12,10 @@ import javax.persistence.Table;
 
 import com.sun.istack.NotNull;
 
+/**
+ * @author DHASARI
+ *
+ */
 @Entity
 @Table(name = "booking_details_table1")
 public class Booking {
@@ -33,11 +37,19 @@ public class Booking {
 	@OneToOne(mappedBy = "booking", fetch = FetchType.LAZY)
 	private Bus bus;
 
+	/**
+	 * 
+	 */
 	public Booking() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @param seatsBooked
+	 * @param dateAndTimeOfTravel
+	 * @param bus
+	 */
 	public Booking(int seatsBooked, LocalDateTime dateAndTimeOfTravel, Bus bus) {
 		super();
 		this.seatsBooked = seatsBooked;
@@ -45,12 +57,24 @@ public class Booking {
 		this.bus = bus;
 	}
 
+	/**
+	 * @param seatsBooked
+	 * @param bus
+	 */
 	public Booking(int seatsBooked, Bus bus) {
 		super();
 		this.seatsBooked = seatsBooked;
 		this.bus = bus;
 	}
 
+	/**
+	 * @param bookingId
+	 * @param seatsBooked
+	 * @param dateAndTimeOfTravel
+	 * @param payment
+	 * @param customer
+	 * @param bus
+	 */
 	public Booking(Long bookingId, int seatsBooked, LocalDateTime dateAndTimeOfTravel, Payment payment,
 			Customer customer, Bus bus) {
 		super();
@@ -62,6 +86,13 @@ public class Booking {
 		this.bus = bus;
 	}
 
+	/**
+	 * @param seatsBooked
+	 * @param dateAndTimeOfTravel
+	 * @param payment
+	 * @param customer
+	 * @param bus
+	 */
 	public Booking(int seatsBooked, LocalDateTime dateAndTimeOfTravel, Payment payment, Customer customer, Bus bus) {
 		super();
 		this.seatsBooked = seatsBooked;
@@ -71,17 +102,29 @@ public class Booking {
 		this.bus = bus;
 	}
 
+	/**
+	 * @param seatsBooked
+	 * @param dateAndTimeOfTravel
+	 */
 	public Booking(int seatsBooked, LocalDateTime dateAndTimeOfTravel) {
 		super();
 		this.seatsBooked = seatsBooked;
 		this.dateAndTimeOfTravel = dateAndTimeOfTravel;
 	}
 
+	/**
+	 * @param seatsBooked
+	 */
 	public Booking(int seatsBooked) {
 		super();
 		this.seatsBooked = seatsBooked;
 	}
 
+	/**
+	 * @param bookingId
+	 * @param seatsBooked
+	 * @param dateAndTimeOfTravel
+	 */
 	public Booking(Long bookingId, int seatsBooked, LocalDateTime dateAndTimeOfTravel) {
 		super();
 		this.bookingId = bookingId;
@@ -89,6 +132,11 @@ public class Booking {
 		this.dateAndTimeOfTravel = dateAndTimeOfTravel;
 	}
 
+	/**
+	 * @param bookingId
+	 * @param seatsBooked
+	 * @param bus
+	 */
 	public Booking(long bookingId, int seatsBooked, Bus bus) {
 		// TODO Auto-generated constructor stub
 		super();
@@ -97,54 +145,93 @@ public class Booking {
 		this.bus = bus;
 	}
 
+	/**
+	 * @return
+	 */
 	public Long getBookingId() {
 		return bookingId;
 	}
 
+	/**
+	 * @param bookingId
+	 */
 	public void setBookingId(Long bookingId) {
 		this.bookingId = bookingId;
 	}
 
+	/**
+	 * @return
+	 */
 	public int getSeatsBooked() {
 		return seatsBooked;
 	}
 
+	/**
+	 * @param seatsBooked
+	 */
 	public void setSeatsBooked(int seatsBooked) {
 		this.seatsBooked = seatsBooked;
 	}
 
+	/**
+	 * @return
+	 */
 	public LocalDateTime getDateAndTimeOfTravel() {
 		return dateAndTimeOfTravel;
 	}
 
+	/**
+	 * @param dateAndTimeOfTravel
+	 */
 	public void setDateAndTimeOfTravel(LocalDateTime dateAndTimeOfTravel) {
 		this.dateAndTimeOfTravel = dateAndTimeOfTravel;
 	}
 
+	/**
+	 * @return
+	 */
 	public Payment getPayment() {
 		return payment;
 	}
 
+	/**
+	 * @param payment
+	 */
 	public void setPayment(Payment payment) {
 		this.payment = payment;
 	}
 
+	/**
+	 * @return
+	 */
 	public Customer getCustomer() {
 		return customer;
 	}
 
+	/**
+	 * @param customer
+	 */
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
 
+	/**
+	 * @return
+	 */
 	public Bus getBus() {
 		return bus;
 	}
 
+	/**
+	 * @param bus
+	 */
 	public void setBus(Bus bus) {
 		this.bus = bus;
 	}
 
+	/**
+	 *
+	 */
 	@Override
 	public String toString() {
 		return "Booking [bookingId=" + bookingId + ", seatsBooked=" + seatsBooked + ", dateAndTimeOfTravel="

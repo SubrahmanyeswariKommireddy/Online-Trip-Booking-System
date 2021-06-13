@@ -11,9 +11,17 @@ import com.sprint.otms.models.Bus;
 @Repository
 public interface IBusRepository extends JpaRepository<Bus, Long> {
 
+	/**
+	 * @param travelId
+	 * @return
+	 */
 	@Query("select b from Bus b where b.travel.id = ?1  ")
 	public List<Bus> getBusesByTravelId(Long travelId);
 
+	/**
+	 * @param travelAgentName
+	 * @return
+	 */
 	@Query("select b from Bus b where b.travel.travelAgentName = ?1")
 	public List<Bus> getBusesByTravelAgentName(String travelAgentName);
 }

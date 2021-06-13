@@ -12,6 +12,9 @@ public class BookingNotFoundException extends RuntimeException {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @param message
+	 */
 	public BookingNotFoundException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub

@@ -52,12 +52,22 @@ public class Bus {
 		super();
 	}
 
+	/**
+	 * @param fare
+	 * @param totalCapacity
+	 */
 	public Bus(Float fare, Long totalCapacity) {
 		super();
 		this.fare = fare;
 		this.totalCapacity = totalCapacity;
 	}
 
+	/**
+	 * @param busId
+	 * @param fare
+	 * @param totalCapacity
+	 * @param busType
+	 */
 	public Bus(Long busId, Float fare, Long totalCapacity, BusType busType) {
 		super();
 		this.busId = busId;
@@ -66,6 +76,11 @@ public class Bus {
 		this.busType = busType;
 	}
 
+	/**
+	 * @param fare
+	 * @param totalCapacity
+	 * @param busType
+	 */
 	public Bus(Float fare, Long totalCapacity, BusType busType) {
 		super();
 		this.fare = fare;
@@ -73,12 +88,25 @@ public class Bus {
 		this.busType = busType;
 	}
 
+	/**
+	 * @param fare
+	 */
 	public Bus(float fare) {
 		super();
 		this.fare = fare;
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @param busId
+	 * @param fare
+	 * @param totalCapacity
+	 * @param currentCapacity
+	 * @param busType
+	 * @param booking
+	 * @param route
+	 * @param travel
+	 */
 	public Bus(Long busId, Float fare, Long totalCapacity, Long currentCapacity, BusType busType, Booking booking,
 			Route route, Travel travel) {
 		super();
@@ -92,6 +120,11 @@ public class Bus {
 		this.travel = travel;
 	}
 
+	/**
+	 * @param fare
+	 * @param totalCapacity
+	 * @param currentCapacity
+	 */
 	public Bus(Float fare, Long totalCapacity, Long currentCapacity) {
 		super();
 		this.fare = fare;
@@ -99,6 +132,12 @@ public class Bus {
 		this.currentCapacity = currentCapacity;
 	}
 
+	/**
+	 * @param id
+	 * @param fare
+	 * @param totalCapacity
+	 * @param currentCapacity
+	 */
 	public Bus(Long id, float fare, Long totalCapacity, Long currentCapacity) {
 		// TODO Auto-generated constructor stub
 		super();
@@ -108,46 +147,79 @@ public class Bus {
 		this.currentCapacity = currentCapacity;
 	}
 
+	/**
+	 * @return
+	 */
 	public Long getBusId() {
 		return busId;
 	}
 
+	/**
+	 * @param busId
+	 */
 	public void setBusId(Long busId) {
 		this.busId = busId;
 	}
 
+	/**
+	 * @return
+	 */
 	public Float getFare() {
 		return fare;
 	}
 
+	/**
+	 * @param fare
+	 */
 	public void setFare(Float fare) {
 		this.fare = fare;
 	}
 
+	/**
+	 * @return
+	 */
 	public Long getTotalCapacity() {
 		return totalCapacity;
 	}
 
+	/**
+	 * @param totalCapacity
+	 */
 	public void setTotalCapacity(Long totalCapacity) {
 		this.totalCapacity = totalCapacity;
 	}
 
+	/**
+	 * @return
+	 */
 	public BusType getBusType() {
 		return busType;
 	}
 
+	/**
+	 * @param busType
+	 */
 	public void setBusType(BusType busType) {
 		this.busType = busType;
 	}
 
+	/**
+	 * @return
+	 */
 	public Long getCurrentCapacity() {
 		return currentCapacity;
 	}
 
+	/**
+	 * @param currentCapacity
+	 */
 	public void setCurrentCapacity(Long currentCapacity) {
 		this.currentCapacity = currentCapacity;
 	}
 
+	/**
+	 *
+	 */
 	@Override
 	public String toString() {
 		return "Bus [busId=" + busId + ", fare=" + fare + ", totalCapacity=" + totalCapacity + ", currentCapacity="

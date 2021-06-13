@@ -26,10 +26,18 @@ public class Payment {
 	@OneToOne
 	private Booking booking;
 
+	/**
+	 * 
+	 */
 	public Payment() {
 		super();
 	}
 
+	/**
+	 * @param transactionId
+	 * @param transactionMode
+	 * @param booking
+	 */
 	public Payment(Long transactionId, TransactionMode transactionMode, Booking booking) {
 		super();
 		this.transactionId = transactionId;
@@ -37,12 +45,22 @@ public class Payment {
 		this.booking = booking;
 	}
 
+	/**
+	 * @param transactionMode
+	 * @param booking
+	 */
 	public Payment(TransactionMode transactionMode, Booking booking) {
 		super();
 		this.transactionMode = transactionMode;
 		this.booking = booking;
 	}
 
+	/**
+	 * @param transactionId
+	 * @param transactionMode
+	 * @param amount
+	 * @param booking
+	 */
 	public Payment(Long transactionId, TransactionMode transactionMode, Float amount, Booking booking) {
 		super();
 		this.transactionId = transactionId;
@@ -51,43 +69,73 @@ public class Payment {
 		this.booking = booking;
 	}
 
+	/**
+	 * @return
+	 */
 	public Float getAmount() {
 		return amount;
 	}
 
+	/**
+	 * @param amount
+	 */
 	public void setAmount(Float amount) {
 		this.amount = amount;
 	}
 
+	/**
+	 * @param transactionId
+	 */
 	public Payment(Long transactionId) {
 		super();
 		this.transactionId = transactionId;
 	}
 
+	/**
+	 * @return
+	 */
 	public Long getTransactionId() {
 		return transactionId;
 	}
 
+	/**
+	 * @param transactionId
+	 */
 	public void setTransactionId(Long transactionId) {
 		this.transactionId = transactionId;
 	}
 
+	/**
+	 * @return
+	 */
 	public TransactionMode getTransactionMode() {
 		return transactionMode;
 	}
 
+	/**
+	 * @param transactionMode
+	 */
 	public void setTransactionMode(TransactionMode transactionMode) {
 		this.transactionMode = transactionMode;
 	}
 
+	/**
+	 * @return
+	 */
 	public Booking getBooking() {
 		return booking;
 	}
 
+	/**
+	 * @param booking
+	 */
 	public void setBooking(Booking booking) {
 		this.booking = booking;
 	}
 
+	/**
+	 *
+	 */
 	@Override
 	public String toString() {
 		return "Payment [transactionId=" + transactionId + ", transactionMode=" + transactionMode + ", amount=" + amount

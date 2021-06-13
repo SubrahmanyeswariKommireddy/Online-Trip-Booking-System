@@ -12,16 +12,35 @@ import com.sprint.otms.models.Booking;
 @Transactional
 public interface IBookingService {
 
+	/**
+	 * @param booking
+	 * @return
+	 */
 	public Booking addBooking(Booking booking);
 
+	/**
+	 * @return
+	 */
 	public List<Booking> getAllBookings();
 
+	/**
+	 * @param bookingId
+	 * @return
+	 */
 	public String deleteBooking(Long bookingId);
 
+	/**
+	 * @param transactionId
+	 * @return
+	 */
 	public Booking findByBookingId(Long transactionId);
 
 	// List<Booking> findByDateAndTimeOfTravel(LocalDateTime dateTime);
 
+	/**
+	 * @param seatsBooked
+	 * @return
+	 */
 	Booking findBySeatsBooked(int seatsBooked);
 
 }

@@ -41,17 +41,31 @@ public class User {
 	@Column(name = "User_Type")
 	private User_Type userType;
 
+	/**
+	 * 
+	 */
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @param id
+	 */
 	public User(Long id) {
 		super();
 		this.id = id;
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @param id
+	 * @param userName
+	 * @param password
+	 * @param email
+	 * @param mobileNumber
+	 * @param userType
+	 */
 	public User(Long id, String userName, String password, String email, Long mobileNumber, User_Type userType) {
 		super();
 		this.id = id;
@@ -62,6 +76,13 @@ public class User {
 		this.userType = userType;
 	}
 
+	/**
+	 * @param userName
+	 * @param password
+	 * @param email
+	 * @param mobileNumber
+	 * @param userType
+	 */
 	public User(String userName, String password, String email, Long mobileNumber, User_Type userType) {
 		super();
 		this.userName = userName;
@@ -71,6 +92,13 @@ public class User {
 		this.userType = userType;
 	}
 
+	/**
+	 * @param id
+	 * @param userName
+	 * @param password
+	 * @param email
+	 * @param mobileNumber
+	 */
 	public User(Long id, String userName, String password, String email, Long mobileNumber) {
 		super();
 		this.id = id;
@@ -80,60 +108,103 @@ public class User {
 		this.mobileNumber = mobileNumber;
 	}
 
+	/**
+	 * @param userName
+	 * @param password
+	 */
 	public User(String userName, String password) {
 		super();
 		this.userName = userName;
 		this.password = password;
 	}
 
+	/**
+	 * @return
+	 */
 	public Long getId() {
 		return id;
 	}
 
+	/**
+	 * @param id
+	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
 
+	/**
+	 * @return
+	 */
 	public String getUserName() {
 		return userName;
 	}
 
+	/**
+	 * @param userName
+	 */
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
 
+	/**
+	 * @return
+	 */
 	public String getPassword() {
 		return password;
 	}
 
+	/**
+	 * @param password
+	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
+	/**
+	 * @return
+	 */
 	public String getEmail() {
 		return email;
 	}
 
+	/**
+	 * @param email
+	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
+	/**
+	 * @return
+	 */
 	public Long getMobileNumber() {
 		return mobileNumber;
 	}
 
+	/**
+	 * @param mobileNumber
+	 */
 	public void setMobileNumber(Long mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 
+	/**
+	 * @return
+	 */
 	public User_Type getUserType() {
 		return userType;
 	}
 
+	/**
+	 * @param userType
+	 */
 	public void setUserType(User_Type userType) {
 		this.userType = userType;
 	}
 
+	/**
+	 *
+	 */
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", email=" + email

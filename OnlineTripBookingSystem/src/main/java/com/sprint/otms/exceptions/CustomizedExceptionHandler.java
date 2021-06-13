@@ -13,6 +13,11 @@ import org.springframework.web.context.request.WebRequest;
 @RestController
 @ControllerAdvice
 public class CustomizedExceptionHandler extends ExceptionMessage {
+	/**
+	 * @param ex
+	 * @param request
+	 * @return
+	 */
 	@ExceptionHandler(value = Exception.class)
 
 	// Override method of ExceptionMessage class
@@ -26,6 +31,11 @@ public class CustomizedExceptionHandler extends ExceptionMessage {
 		return new ResponseEntity<>(exceptionMessage, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
+	/**
+	 * @param ex
+	 * @param request
+	 * @return
+	 */
 	@ExceptionHandler(value = MethodArgumentNotValidException.class)
 	public ResponseEntity<Object> MethodArgumentNotValidExceptionHandler(MethodArgumentNotValidException ex,
 			WebRequest request) {
@@ -37,6 +47,11 @@ public class CustomizedExceptionHandler extends ExceptionMessage {
 		return new ResponseEntity<>(exceptionMessage, HttpStatus.BAD_REQUEST);
 	}
 
+	/**
+	 * @param ex
+	 * @param request
+	 * @return
+	 */
 	@ExceptionHandler(value = AdminNotFoundException.class)
 	public ResponseEntity<Object> exception(AdminNotFoundException ex, WebRequest request) {
 		ExceptionMessage exceptionMessage = new ExceptionMessage(new Date(), ex.getMessage(),
@@ -44,6 +59,11 @@ public class CustomizedExceptionHandler extends ExceptionMessage {
 		return new ResponseEntity<>(exceptionMessage, HttpStatus.NOT_FOUND);
 	}
 
+	/**
+	 * @param ex
+	 * @param request
+	 * @return
+	 */
 	@ExceptionHandler(value = CustomerNotFoundException.class)
 	public ResponseEntity<Object> exception(CustomerNotFoundException ex, WebRequest request) {
 		ExceptionMessage exceptionMessage = new ExceptionMessage(new Date(), ex.getMessage(),
@@ -51,6 +71,11 @@ public class CustomizedExceptionHandler extends ExceptionMessage {
 		return new ResponseEntity<>(exceptionMessage, HttpStatus.NOT_FOUND);
 	}
 
+	/**
+	 * @param ex
+	 * @param request
+	 * @return
+	 */
 	@ExceptionHandler(value = TravelsNotFoundException.class)
 	public ResponseEntity<Object> exception(TravelsNotFoundException ex, WebRequest request) {
 		ExceptionMessage exceptionMessage = new ExceptionMessage(new Date(), ex.getMessage(),
@@ -58,6 +83,11 @@ public class CustomizedExceptionHandler extends ExceptionMessage {
 		return new ResponseEntity<>(exceptionMessage, HttpStatus.NOT_FOUND);
 	}
 
+	/**
+	 * @param ex
+	 * @param request
+	 * @return
+	 */
 	@ExceptionHandler(value = RouteNotFoundException.class)
 	public ResponseEntity<Object> exception(RouteNotFoundException ex, WebRequest request) {
 		ExceptionMessage exceptionMessage = new ExceptionMessage(new Date(), ex.getMessage(),
@@ -65,6 +95,11 @@ public class CustomizedExceptionHandler extends ExceptionMessage {
 		return new ResponseEntity<>(exceptionMessage, HttpStatus.NOT_FOUND);
 	}
 
+	/**
+	 * @param ex
+	 * @param request
+	 * @return
+	 */
 	@ExceptionHandler(value = BusNotFoundException.class)
 	public ResponseEntity<Object> exception(BusNotFoundException ex, WebRequest request) {
 		ExceptionMessage exceptionMessage = new ExceptionMessage(new Date(), ex.getMessage(),
@@ -72,6 +107,11 @@ public class CustomizedExceptionHandler extends ExceptionMessage {
 		return new ResponseEntity<>(exceptionMessage, HttpStatus.NOT_FOUND);
 	}
 
+	/**
+	 * @param ex
+	 * @param request
+	 * @return
+	 */
 	@ExceptionHandler(value = BookingNotFoundException.class)
 	public ResponseEntity<Object> exception(BookingNotFoundException ex, WebRequest request) {
 		ExceptionMessage exceptionMessage = new ExceptionMessage(new Date(), ex.getMessage(),

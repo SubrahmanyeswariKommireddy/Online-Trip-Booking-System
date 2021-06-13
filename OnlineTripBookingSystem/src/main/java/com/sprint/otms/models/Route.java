@@ -33,11 +33,20 @@ public class Route {
 	@JsonManagedReference
 	private List<Bus> buses;
 
+	/**
+	 * 
+	 */
 	public Route() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @param routeId
+	 * @param source
+	 * @param destination
+	 * @param buses
+	 */
 	public Route(Long routeId, String source, String destination, List<Bus> buses) {
 		super();
 		this.routeId = routeId;
@@ -46,6 +55,11 @@ public class Route {
 		this.buses = buses;
 	}
 
+	/**
+	 * @param source
+	 * @param destination
+	 * @param buses
+	 */
 	public Route(String source, String destination, List<Bus> buses) {
 		super();
 		this.source = source;
@@ -53,54 +67,91 @@ public class Route {
 		this.buses = buses;
 	}
 
+	/**
+	 * @param source
+	 * @param destination
+	 */
 	public Route(String source, String destination) {
 		super();
 		this.source = source;
 		this.destination = destination;
 	}
 
+	/**
+	 * @param routeId
+	 */
 	public Route(Long routeId) {
 		this.routeId = routeId;
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @param source
+	 */
 	public Route(String source) {
 		this.source = source;
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @return
+	 */
 	public Long getRouteId() {
 		return routeId;
 	}
 
+	/**
+	 * @param routeId
+	 */
 	public void setRouteId(Long routeId) {
 		this.routeId = routeId;
 	}
 
+	/**
+	 * @return
+	 */
 	public String getSource() {
 		return source;
 	}
 
+	/**
+	 * @param source
+	 */
 	public void setSource(String source) {
 		this.source = source;
 	}
 
+	/**
+	 * @return
+	 */
 	public String getDestination() {
 		return destination;
 	}
 
+	/**
+	 * @param destination
+	 */
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
 
+	/**
+	 * @return
+	 */
 	public List<Bus> getBuses() {
 		return buses;
 	}
 
+	/**
+	 * @param buses
+	 */
 	public void setBuses(List<Bus> buses) {
 		this.buses = buses;
 	}
 
+	/**
+	 *
+	 */
 	@Override
 	public String toString() {
 		return "Route [routeId=" + routeId + ", source=" + source + ", destination=" + destination + ", buses=" + buses

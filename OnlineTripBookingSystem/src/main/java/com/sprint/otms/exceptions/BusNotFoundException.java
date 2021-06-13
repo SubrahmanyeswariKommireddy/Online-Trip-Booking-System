@@ -12,6 +12,9 @@ public class BusNotFoundException extends RuntimeException {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @param message
+	 */
 	public BusNotFoundException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
