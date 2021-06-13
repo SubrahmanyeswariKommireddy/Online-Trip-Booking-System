@@ -15,6 +15,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "travel_details_table1")
 public class Travel {
@@ -28,6 +30,7 @@ public class Travel {
 	private TravelAgentName travelAgentName;
 
 	@OneToMany(mappedBy = "travel", fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<Bus> buses;
 
 	@ManyToOne(fetch = FetchType.LAZY)
