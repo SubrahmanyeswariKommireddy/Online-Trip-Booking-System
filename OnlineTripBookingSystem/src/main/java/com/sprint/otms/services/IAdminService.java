@@ -12,8 +12,20 @@ import com.sprint.otms.models.Admin;
 @Transactional
 public interface IAdminService extends IUserService {
 
+	/**
+	 * 
+	 * @param admin
+	 * @return
+	 */
 	public Admin addAdmin(Admin admin);
 
+	/**
+	 * @param id
+	 * @param oldPassword
+	 * @param newPassword
+	 * @return 
+	 * @throws ValidationException
+	 */
 	public Admin updateAdminPasswordById(Long id, String oldPassword, String newPassword) throws ValidationException;
 
 	public Admin updateAdminMobileNoById(Long id, Long oldMobileNo, Long newMobileNo) throws ValidationException;

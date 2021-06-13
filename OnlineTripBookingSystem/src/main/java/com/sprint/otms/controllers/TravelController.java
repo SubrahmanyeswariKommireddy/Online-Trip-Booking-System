@@ -38,6 +38,9 @@ public class TravelController {
 	@Autowired
 	private BusServiceImpl busServiceImpl;
 
+	/**
+	 * @return
+	 */
 	@GetMapping("/travels")
 	public List<Travel> getAllTravels() {
 
@@ -47,6 +50,11 @@ public class TravelController {
 		return travelServiceImpl.getAllTravel();
 	}
 
+	/**
+	 * @param travelId
+	 * @return
+	 * @throws MethodArgumentNotValidException
+	 */
 	@GetMapping("/getTravelsById/{travelId}")
 	public ResponseEntity<Travel> getById(@Valid @RequestParam Long travelId) throws MethodArgumentNotValidException {
 
@@ -70,6 +78,12 @@ public class TravelController {
 //		return busServiceImpl.getBusesByTravelAgentName(travelAgentName);
 //	}
 
+	/**
+	 * @param bus
+	 * @return 
+	 * @throws MethodArgumentNotValidException
+	 */
+	
 	@PostMapping("/travel/addBus")
 	public ResponseEntity<Bus> addBus(@Valid @RequestBody Bus bus) throws MethodArgumentNotValidException {
 
@@ -79,6 +93,10 @@ public class TravelController {
 		return new ResponseEntity<>(busServiceImpl.addBus(bus), HttpStatus.OK);
 	}
 
+	/**
+	 * @return
+	 */
+	
 	@GetMapping("/getBuses")
 	public List<Bus> get() {
 
@@ -88,6 +106,12 @@ public class TravelController {
 		return busServiceImpl.getAllBuses();
 	}
 
+	/**
+	 * @param id
+	 * @return
+	 * @throws MethodArgumentNotValidException
+	 */
+	
 	@GetMapping("/getBus/{id}")
 	public Bus getBusById(@PathVariable Long id) throws MethodArgumentNotValidException {
 
@@ -97,6 +121,11 @@ public class TravelController {
 		return busServiceImpl.getBusById(id);
 	}
 
+	/**
+	 * @param bus
+	 * @return
+	 * @throws MethodArgumentNotValidException
+	 */
 	@PutMapping("/updateBus/{id}")
 	public ResponseEntity<Bus> updateBus(@Valid @RequestBody Bus bus) throws MethodArgumentNotValidException {
 
@@ -107,6 +136,15 @@ public class TravelController {
 		return new ResponseEntity<>(newBus, HttpStatus.OK);
 	}
 
+	/**
+	 * @param id
+	 * @param oldFare
+	 * @param newFare
+	 * @return
+	 * @throws CustomerNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 * @throws ValidationException
+	 */
 	@PatchMapping("/updateFareById/{id}")
 
 	public ResponseEntity<Bus> updateFare(@Valid @PathVariable Long id, @RequestParam Float oldFare,
@@ -118,6 +156,10 @@ public class TravelController {
 
 	}
 
+	/**
+	 * @param id
+	 * @throws MethodArgumentNotValidException
+	 */
 	@DeleteMapping("/bus/{id}")
 	public void deleteBus(@Valid @PathVariable Long id) throws MethodArgumentNotValidException {
 

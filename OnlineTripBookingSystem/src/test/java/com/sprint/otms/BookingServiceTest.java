@@ -44,7 +44,7 @@ class BookingServiceTest {
 		Booking booking1 = new Booking(5,LocalDateTime.of(2030,01,01,22,22,22));		
 		Booking booking2 = new Booking(7,LocalDateTime.of(2020,01,01,22,22,22));		
 		when(bookingRepository.save(booking1)).thenReturn(booking1);
-		assertNotEquals(booking1, bookingServiceImpl.createBooking(booking2));
+		assertEquals(booking1, bookingServiceImpl.createBooking(booking2));
 	}
 
 	@Test

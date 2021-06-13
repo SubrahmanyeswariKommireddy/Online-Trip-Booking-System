@@ -59,6 +59,11 @@ public class CustomerController {
 	@Autowired
 	private PaymentServiceImpl paymentServiceImpl;
 
+	/**
+	 * @param customer
+	 * @return
+	 * @throws MethodArgumentNotValidException
+	 */
 	@PostMapping("customer/login")
 	public ResponseEntity<Customer> loginCustomer(@Valid @RequestBody Customer customer)
 			throws MethodArgumentNotValidException {
@@ -70,6 +75,11 @@ public class CustomerController {
 				customer.getPassword(), customer.getUserType()), HttpStatus.OK);
 	}
 
+	/**
+	 * @param customer
+	 * @return
+	 * @throws MethodArgumentNotValidException
+	 */
 	@PostMapping("/addCustomer")
 	public ResponseEntity<Customer> createCustomer(@Valid @RequestBody Customer customer)
 			throws MethodArgumentNotValidException {
@@ -80,6 +90,15 @@ public class CustomerController {
 		return new ResponseEntity<>(customerServiceImpl.addCustomer(customer), HttpStatus.OK);
 	}
 
+	/**
+	 * @param id
+	 * @param oldPassword
+	 * @param newPassword
+	 * @return
+	 * @throws CustomerNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 * @throws ValidationException
+	 */
 	@PatchMapping("/updateCustomerPassword/{id}")
 
 	public ResponseEntity<Customer> updatePassword(@Valid @PathVariable Long id, @RequestParam String oldPassword,
@@ -92,6 +111,15 @@ public class CustomerController {
 
 	}
 
+	/**
+	 * @param id
+	 * @param oldMobileNo
+	 * @param newMobileNo
+	 * @return
+	 * @throws CustomerNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 * @throws ValidationException
+	 */
 	@PatchMapping("/updateCustomerMobileNo/{id}")
 	public ResponseEntity<Customer> UpdateMobileNo(@Valid @PathVariable Long id, @RequestParam Long oldMobileNo,
 			@RequestParam Long newMobileNo)
@@ -103,6 +131,15 @@ public class CustomerController {
 
 	}
 
+	/**
+	 * @param id
+	 * @param oldEmail
+	 * @param newEmail
+	 * @return
+	 * @throws CustomerNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 * @throws ValidationException
+	 */
 	@PatchMapping("/updateCustomerEmail/{id}")
 	public ResponseEntity<Customer> UpdateEmail(@Valid @PathVariable Long id, @RequestParam String oldEmail,
 			@RequestParam String newEmail)
@@ -114,6 +151,12 @@ public class CustomerController {
 
 	}
 
+	/**
+	 * @param id
+	 * @return
+	 * @throws CustomerNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 */
 	@GetMapping("/getCustomer/{id}")
 	public ResponseEntity<Customer> getById(@Valid @PathVariable Long id)
 			throws CustomerNotFoundException, MethodArgumentNotValidException {
@@ -124,6 +167,11 @@ public class CustomerController {
 		return new ResponseEntity<Customer>(customerServiceImpl.findCustomerById(id), HttpStatus.OK);
 	}
 
+	/**
+	 * @param id
+	 * @throws CustomerNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 */
 	@DeleteMapping("/customer/{id}")
 	public void deleteCustomer(@Valid @PathVariable Long id)
 			throws CustomerNotFoundException, MethodArgumentNotValidException {
@@ -134,6 +182,9 @@ public class CustomerController {
 		customerServiceImpl.delete(id);
 	}
 
+	/**
+	 * @return
+	 */
 	@GetMapping("/customer/getTravels")
 	public List<Travel> getTravels() {
 
@@ -143,6 +194,9 @@ public class CustomerController {
 		return travelServiceImpl.getAllTravel();
 	}
 
+	/**
+	 * @return
+	 */
 	@GetMapping("/customer/getRoutes")
 	public List<Route> getRoutes() {
 
@@ -152,6 +206,9 @@ public class CustomerController {
 		return routeServiceImpl.getAllRoute();
 	}
 
+	/**
+	 * @return
+	 */
 	@GetMapping("/customer/getBuses")
 	public List<Bus> getBuses() {
 
@@ -163,6 +220,11 @@ public class CustomerController {
 
 //------------------------Booking-------------------------------------------------------
 
+	/**
+	 * @param booking
+	 * @return
+	 * @throws MethodArgumentNotValidException
+	 */
 	@PostMapping("/customer/addBooking")
 	public ResponseEntity<Booking> createBooking(@Valid @RequestBody Booking booking)
 			throws MethodArgumentNotValidException {
@@ -173,6 +235,9 @@ public class CustomerController {
 		return new ResponseEntity<>(bookingServiceImpl.addBooking(booking), HttpStatus.OK);
 	}
 
+	/**
+	 * @return
+	 */
 	@GetMapping("/customer/getBooking")
 	public List<Booking> getBooking() {
 
@@ -182,6 +247,12 @@ public class CustomerController {
 		return bookingServiceImpl.getAllBookings();
 	}
 
+	/**
+	 * @param id
+	 * @return
+	 * @throws BookingNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 */
 	@GetMapping("/customer/getBookingById/{id}")
 	public Booking getByBookingId(@Valid @PathVariable Long id)
 			throws BookingNotFoundException, MethodArgumentNotValidException {
@@ -192,6 +263,11 @@ public class CustomerController {
 		return bookingServiceImpl.findByBookingId(id);
 	}
 
+	/**
+	 * @param id
+	 * @throws BookingNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 */
 	@DeleteMapping("/customer/cancelBooking/{id}")
 	public void cancelBooking(@Valid @PathVariable Long id)
 			throws BookingNotFoundException, MethodArgumentNotValidException {
@@ -204,6 +280,13 @@ public class CustomerController {
 
 	// ----------------------------------payment------------------------------------
 
+	/**
+	 * @param payment
+	 * @param bookingId
+	 * @param busId
+	 * @return
+	 * @throws MethodArgumentNotValidException
+	 */
 	@PostMapping("/customer/addPayment")
 	public ResponseEntity<Payment> createPayment(@Valid @RequestBody Payment payment, Long bookingId, Long busId)
 			throws MethodArgumentNotValidException {
@@ -214,6 +297,9 @@ public class CustomerController {
 		return new ResponseEntity<>(paymentServiceImpl.addPayment(payment, bookingId, busId), HttpStatus.OK);
 	}
 
+	/**
+	 * @return
+	 */
 	@GetMapping("/getPayment")
 	public List<Payment> getPayment() {
 
@@ -223,6 +309,12 @@ public class CustomerController {
 		return paymentServiceImpl.getAllPayments();
 	}
 
+	/**
+	 * @param transactionId
+	 * @return
+	 * @throws BookingNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 */
 	@GetMapping("/getPaymentById/{transactionId}")
 	public Payment getPaymentById(@Valid @PathVariable Long transactionId)
 			throws BookingNotFoundException, MethodArgumentNotValidException {

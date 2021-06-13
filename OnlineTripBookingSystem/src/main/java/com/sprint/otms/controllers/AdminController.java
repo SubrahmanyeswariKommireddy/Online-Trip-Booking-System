@@ -60,6 +60,11 @@ public class AdminController {
 
 	// --------------------------------Admin-------------------------------//
 
+	/**
+	 * @param admin
+	 * @return
+	 * @throws MethodArgumentNotValidException
+	 */
 	@PostMapping("admin/login")
 	public ResponseEntity<Admin> loginAdmin(@Valid @RequestBody Admin admin) throws MethodArgumentNotValidException {
 
@@ -71,6 +76,11 @@ public class AdminController {
 				HttpStatus.OK);
 	}
 
+	/**
+	 * @param admin
+	 * @return
+	 * @throws MethodArgumentNotValidException
+	 */
 	@PostMapping("/addAdmin")
 	public ResponseEntity<Admin> createAdmin(@Valid @RequestBody Admin admin) throws MethodArgumentNotValidException {
 
@@ -80,6 +90,9 @@ public class AdminController {
 		return new ResponseEntity<>(adminServiceImpl.addAdmin(admin), HttpStatus.OK);
 	}
 
+	/**
+	 * @return
+	 */
 	@GetMapping("/getAdmin")
 	public List<Admin> get() {
 
@@ -89,6 +102,15 @@ public class AdminController {
 		return adminServiceImpl.getAdmin();
 	}
 
+	/**
+	 * @param id
+	 * @param oldPassword
+	 * @param newPassword
+	 * @return
+	 * @throws AdminNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 * @throws ValidationException
+	 */
 	@PatchMapping("/updateAdminPassword/{id}")
 	public ResponseEntity<Admin> updateAdminPasswordById(@Valid @PathVariable Long id, @RequestParam String oldPassword,
 			@RequestParam String newPassword)
@@ -101,6 +123,15 @@ public class AdminController {
 				HttpStatus.OK);
 	}
 
+	/**
+	 * @param id
+	 * @param oldMobileNo
+	 * @param newMobileNo
+	 * @return
+	 * @throws CustomerNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 * @throws ValidationException
+	 */
 	@PatchMapping("/updateAdminMobileNo/{id}")
 
 	public ResponseEntity<Admin> UpdateMobileNo(@Valid @PathVariable Long id, @RequestParam Long oldMobileNo,
@@ -113,6 +144,15 @@ public class AdminController {
 
 	}
 
+	/**
+	 * @param id
+	 * @param oldEmail
+	 * @param newEmail
+	 * @return
+	 * @throws CustomerNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 * @throws ValidationException
+	 */
 	@PatchMapping("/updateAdminEmail/{id}")
 
 	public ResponseEntity<Admin> updateEmail(@Valid @PathVariable Long id, @RequestParam String oldEmail,
@@ -124,6 +164,11 @@ public class AdminController {
 
 	}
 
+	/**
+	 * @param id
+	 * @throws AdminNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 */
 	@DeleteMapping("/admin/{id}")
 	public void deleteAdmin(@Valid @PathVariable Long id)
 			throws AdminNotFoundException, MethodArgumentNotValidException {
@@ -136,6 +181,11 @@ public class AdminController {
 
 	// -----------------------------Travels---------------------------------//
 
+	/**
+	 * @param travel
+	 * @return
+	 * @throws MethodArgumentNotValidException
+	 */
 	@PostMapping("/admin/addTravel")
 	public ResponseEntity<Travel> addTravel(@Valid @RequestBody Travel travel) throws MethodArgumentNotValidException {
 
@@ -145,6 +195,9 @@ public class AdminController {
 		return new ResponseEntity<>(travelServiceImpl.addTravel(travel), HttpStatus.OK);
 	}
 
+	/**
+	 * @return
+	 */
 	@GetMapping("/admin/getTravels")
 	public List<Travel> getTravels() {
 
@@ -177,6 +230,15 @@ public class AdminController {
 //		return busRepository.getBusesByTravelAgentName(travelAgentName);
 //	}
 
+	/**
+	 * @param id
+	 * @param oldName
+	 * @param newName
+	 * @return
+	 * @throws TravelsNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 * @throws ValidationException
+	 */
 	@PatchMapping("/admin/updateTravel/{id}")
 	public ResponseEntity<Travel> updateTravel(@Valid @PathVariable Long id, @RequestParam TravelAgentName oldName,
 			TravelAgentName newName)
@@ -189,6 +251,11 @@ public class AdminController {
 		return new ResponseEntity<>(newTravel, HttpStatus.OK);
 	}
 
+	/**
+	 * @param id
+	 * @throws TravelsNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 */
 	@DeleteMapping("/admin/deleteTravel/{id}")
 	public void deleteById(@Valid @PathVariable Long id)
 			throws TravelsNotFoundException, MethodArgumentNotValidException {
@@ -201,6 +268,11 @@ public class AdminController {
 
 	// --------------------------------Routes----------------------------------//
 
+	/**
+	 * @param route
+	 * @return
+	 * @throws MethodArgumentNotValidException
+	 */
 	@PostMapping("/admin/addRoute")
 	public ResponseEntity<Route> addRoute(@Valid @RequestBody Route route) throws MethodArgumentNotValidException {
 
@@ -210,6 +282,9 @@ public class AdminController {
 		return new ResponseEntity<>(routeServiceImpl.addRoute(route), HttpStatus.OK);
 	}
 
+	/**
+	 * @return
+	 */
 	@GetMapping("/admin/getRoutes")
 	public List<Route> getRoutes() {
 
@@ -219,6 +294,12 @@ public class AdminController {
 		return routeServiceImpl.getAllRoute();
 	}
 
+	/**
+	 * @param id
+	 * @return
+	 * @throws RouteNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 */
 	@GetMapping("/admin/getRouteById/{id}")
 	public ResponseEntity<Route> getRouteById(@Valid @PathVariable Long id)
 			throws RouteNotFoundException, MethodArgumentNotValidException {
@@ -229,6 +310,12 @@ public class AdminController {
 		return new ResponseEntity<Route>(routeServiceImpl.getRouteByRouteId(id), HttpStatus.OK);
 	}
 
+	/**
+	 * @param source
+	 * @return
+	 * @throws RouteNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 */
 	@GetMapping("/admin/getRouteBySource/{source}")
 	public List<Route> getRoutesBySource(@Valid @PathVariable String source)
 			throws RouteNotFoundException, MethodArgumentNotValidException {
@@ -239,6 +326,13 @@ public class AdminController {
 		return routeServiceImpl.getRouteBySource(source);
 	}
 
+	/**
+	 * @param source
+	 * @param Destination
+	 * @return
+	 * @throws RouteNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 */
 	@GetMapping("/admin/getRoute/{source}/{destination}")
 	public List<Route> getRoutesBySourceAndDestination(@Valid @PathVariable String source, String Destination)
 			throws RouteNotFoundException, MethodArgumentNotValidException {
@@ -249,6 +343,12 @@ public class AdminController {
 		return routeServiceImpl.getRouteBySourceAndDestination(source, Destination);
 	}
 
+	/**
+	 * @param route
+	 * @return
+	 * @throws RouteNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 */
 	@PutMapping("/admin/updateRoute/{id}")
 	public ResponseEntity<Route> updateRoute(@Valid @RequestBody Route route)
 			throws RouteNotFoundException, MethodArgumentNotValidException {
@@ -260,6 +360,14 @@ public class AdminController {
 		return new ResponseEntity<>(newRoute, HttpStatus.OK);
 	}
 
+	/**
+	 * @param id
+	 * @param oldSource
+	 * @param newSource
+	 * @return
+	 * @throws AdminNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 */
 	@PatchMapping("/updateSourceByRouteId/{id}")
 	public ResponseEntity<Route> updateSourceByRouteId(@Valid @PathVariable Long id, @RequestParam String oldSource,
 			@RequestParam String newSource) throws AdminNotFoundException, MethodArgumentNotValidException {
@@ -270,6 +378,14 @@ public class AdminController {
 		return new ResponseEntity<Route>(routeServiceImpl.updateSourceById(id, oldSource, newSource), HttpStatus.OK);
 	}
 
+	/**
+	 * @param id
+	 * @param oldDestination
+	 * @param newDestination
+	 * @return
+	 * @throws AdminNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 */
 	@PatchMapping("/updateDestinationByRouteId/{id}")
 	public ResponseEntity<Route> updateDestinationByRouteId(@Valid @PathVariable Long id,
 			@RequestParam String oldDestination, @RequestParam String newDestination)
@@ -282,6 +398,11 @@ public class AdminController {
 				HttpStatus.OK);
 	}
 
+	/**
+	 * @param id
+	 * @throws RouteNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 */
 	@DeleteMapping("/admin/deleteRoute/{id}")
 	public void deleteRouteById(@Valid @PathVariable Long id)
 			throws RouteNotFoundException, MethodArgumentNotValidException {
@@ -292,6 +413,12 @@ public class AdminController {
 		routeServiceImpl.delete(id);
 	}
 
+	/**
+	 * @param route
+	 * @return
+	 * @throws RouteNotFoundException
+	 * @throws MethodArgumentNotValidException
+	 */
 	@PatchMapping("/admin/partialUpdateRoute/{id}")
 	public ResponseEntity<Route> partialUpdateRoute(@Valid @RequestBody Route route)
 			throws RouteNotFoundException, MethodArgumentNotValidException {
@@ -310,6 +437,9 @@ public class AdminController {
 
 	// -------------------------------Buses----------------------------------//
 
+	/**
+	 * @return
+	 */
 	@GetMapping("/admin/buses")
 	public List<Bus> getBuses() {
 
@@ -321,6 +451,9 @@ public class AdminController {
 
 	// --------------------------Customers-------------------------------------//
 
+	/**
+	 * @return
+	 */
 	@GetMapping("/admin/getCustomers")
 	public List<Customer> getCustomers() {
 		LOGGER.info("getCustomers URL is opened");
