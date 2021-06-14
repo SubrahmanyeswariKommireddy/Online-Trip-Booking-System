@@ -15,7 +15,7 @@ public interface IUserService {
 
 	/**
 	 * @param user
-	 * @return
+	 * @return User
 	 */
 	public User registerUser(User user);
 
@@ -23,7 +23,7 @@ public interface IUserService {
 	 * @param emailId
 	 * @param password
 	 * @param userType
-	 * @return
+	 * @return User Login status
 	 */
 	public User Login(String emailId, String password, User_Type userType);
 
@@ -31,7 +31,7 @@ public interface IUserService {
 	 * @param emailId
 	 * @param password
 	 * @param userType
-	 * @return
+	 * @return User Logout status
 	 */
 	public User Logout(String emailId, String password, User_Type userType);
 

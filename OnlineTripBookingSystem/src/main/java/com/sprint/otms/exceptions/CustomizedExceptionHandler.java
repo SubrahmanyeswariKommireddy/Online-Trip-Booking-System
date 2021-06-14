@@ -21,7 +21,7 @@ public class CustomizedExceptionHandler extends ExceptionMessage {
 	/**
 	 * @param ex
 	 * @param request
-	 * @return
+	 * @return exception structure and specific status
 	 */
 	@ExceptionHandler(value = Exception.class)
 
@@ -39,7 +39,7 @@ public class CustomizedExceptionHandler extends ExceptionMessage {
 	/**
 	 * @param ex
 	 * @param request
-	 * @return
+	 * @return exception structure and specific status
 	 */
 	@ExceptionHandler(value = MethodArgumentNotValidException.class)
 	public ResponseEntity<Object> MethodArgumentNotValidExceptionHandler(MethodArgumentNotValidException ex,
@@ -55,7 +55,7 @@ public class CustomizedExceptionHandler extends ExceptionMessage {
 	/**
 	 * @param ex
 	 * @param request
-	 * @return
+	 * @return exception structure and specific status
 	 */
 	@ExceptionHandler(value = AdminNotFoundException.class)
 	public ResponseEntity<Object> exception(AdminNotFoundException ex, WebRequest request) {
@@ -67,7 +67,7 @@ public class CustomizedExceptionHandler extends ExceptionMessage {
 	/**
 	 * @param ex
 	 * @param request
-	 * @return
+	 * @return exception structure and specific status
 	 */
 	@ExceptionHandler(value = CustomerNotFoundException.class)
 	public ResponseEntity<Object> exception(CustomerNotFoundException ex, WebRequest request) {
@@ -79,7 +79,7 @@ public class CustomizedExceptionHandler extends ExceptionMessage {
 	/**
 	 * @param ex
 	 * @param request
-	 * @return
+	 * @return exception structure and specific status
 	 */
 	@ExceptionHandler(value = TravelsNotFoundException.class)
 	public ResponseEntity<Object> exception(TravelsNotFoundException ex, WebRequest request) {
@@ -91,7 +91,7 @@ public class CustomizedExceptionHandler extends ExceptionMessage {
 	/**
 	 * @param ex
 	 * @param request
-	 * @return
+	 * @return exception structure and specific status
 	 */
 	@ExceptionHandler(value = RouteNotFoundException.class)
 	public ResponseEntity<Object> exception(RouteNotFoundException ex, WebRequest request) {
@@ -103,7 +103,7 @@ public class CustomizedExceptionHandler extends ExceptionMessage {
 	/**
 	 * @param ex
 	 * @param request
-	 * @return
+	 * @return exception structure and specific status
 	 */
 	@ExceptionHandler(value = BusNotFoundException.class)
 	public ResponseEntity<Object> exception(BusNotFoundException ex, WebRequest request) {
@@ -115,7 +115,7 @@ public class CustomizedExceptionHandler extends ExceptionMessage {
 	/**
 	 * @param ex
 	 * @param request
-	 * @return
+	 * @return exception structure and specific status
 	 */
 	@ExceptionHandler(value = BookingNotFoundException.class)
 	public ResponseEntity<Object> exception(BookingNotFoundException ex, WebRequest request) {

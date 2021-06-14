@@ -124,7 +124,7 @@ public class User {
 	}
 
 	/**
-	 * @return
+	 * @return User Id
 	 */
 	public Long getId() {
 		return id;
@@ -138,7 +138,7 @@ public class User {
 	}
 
 	/**
-	 * @return
+	 * @return User Name
 	 */
 	public String getUserName() {
 		return userName;
@@ -152,7 +152,7 @@ public class User {
 	}
 
 	/**
-	 * @return
+	 * @return Password
 	 */
 	public String getPassword() {
 		return password;
@@ -166,7 +166,7 @@ public class User {
 	}
 
 	/**
-	 * @return
+	 * @return Email
 	 */
 	public String getEmail() {
 		return email;
@@ -180,7 +180,7 @@ public class User {
 	}
 
 	/**
-	 * @return
+	 * @return Mobile Number
 	 */
 	public Long getMobileNumber() {
 		return mobileNumber;
@@ -194,7 +194,7 @@ public class User {
 	}
 
 	/**
-	 * @return
+	 * @return User Type
 	 */
 	public User_Type getUserType() {
 		return userType;

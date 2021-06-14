@@ -88,7 +88,7 @@ public class Admin extends User {
 	}
 
 	/**
-	 * @return
+	 * @return all Travels
 	 */
 	public List<Travel> getTravels() {
 		return travels;

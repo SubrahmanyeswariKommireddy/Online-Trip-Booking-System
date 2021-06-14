@@ -36,7 +36,7 @@ public class ExceptionMessage {
 
 	// Getters Setters
 	/**
-	 * @return
+	 * @return TimeStamp
 	 */
 	public Date getTimestamp() {
 		return timestamp;
@@ -50,7 +50,7 @@ public class ExceptionMessage {
 	}
 
 	/**
-	 * @return
+	 * @return Message
 	 */
 	public String getMessage() {
 		return message;
@@ -64,7 +64,7 @@ public class ExceptionMessage {
 	}
 
 	/**
-	 * @return
+	 * @return Details
 	 */
 	public String getDetails() {
 		return details;

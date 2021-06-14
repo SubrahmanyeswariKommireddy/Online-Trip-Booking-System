@@ -39,7 +39,7 @@ public class TravelController {
 	private BusServiceImpl busServiceImpl;
 
 	/**
-	 * @return
+	 * @return all Travels
 	 */
 	@GetMapping("/travels")
 	public List<Travel> getAllTravels() {
@@ -52,7 +52,7 @@ public class TravelController {
 
 	/**
 	 * @param travelId
-	 * @return
+	 * @return Travel By Id
 	 * @throws MethodArgumentNotValidException
 	 */
 	@GetMapping("/getTravelsById/{travelId}")
@@ -80,7 +80,7 @@ public class TravelController {
 
 	/**
 	 * @param bus
-	 * @return 
+	 * @return Bus
 	 * @throws MethodArgumentNotValidException
 	 */
 	
@@ -94,7 +94,7 @@ public class TravelController {
 	}
 
 	/**
-	 * @return
+	 * @return all Buses
 	 */
 	
 	@GetMapping("/getBuses")
@@ -108,7 +108,7 @@ public class TravelController {
 
 	/**
 	 * @param id
-	 * @return
+	 * @return Bus By Id
 	 * @throws MethodArgumentNotValidException
 	 */
 	
@@ -123,7 +123,7 @@ public class TravelController {
 
 	/**
 	 * @param bus
-	 * @return
+	 * @return Updated Bus By Id
 	 * @throws MethodArgumentNotValidException
 	 */
 	@PutMapping("/updateBus/{id}")
@@ -140,7 +140,7 @@ public class TravelController {
 	 * @param id
 	 * @param oldFare
 	 * @param newFare
-	 * @return
+	 * @return Updated Fare By Id
 	 * @throws CustomerNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 * @throws ValidationException

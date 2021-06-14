@@ -20,12 +20,12 @@ public interface ICustomerService extends IUserService {
 
 	/**
 	 * @param customer
-	 * @return
+	 * @return Customer
 	 */
 	public Customer addCustomer(Customer customer);
 
 	/**
-	 * @return
+	 * @return all Customers
 	 */
 	public List<Customer> getAllCustomer();
 
@@ -37,7 +37,7 @@ public interface ICustomerService extends IUserService {
 
 	/**
 	 * @param password
-	 * @return
+	 * @return Changed Password
 	 */
 	public boolean changePassword(String password);
 
@@ -49,7 +49,7 @@ public interface ICustomerService extends IUserService {
 
 	/**
 	 * @param id
-	 * @return
+	 * @return Customer Details By Customer Id
 	 */
 	public Customer findCustomerById(Long id);
 
@@ -57,7 +57,7 @@ public interface ICustomerService extends IUserService {
 	 * @param id
 	 * @param oldPassword
 	 * @param newPassword
-	 * @return
+	 * @return Updated Customer Password
 	 * @throws ValidationException
 	 */
 	public Customer updateCustomerPasswordById(Long id, String oldPassword, String newPassword)
@@ -67,7 +67,7 @@ public interface ICustomerService extends IUserService {
 	 * @param id
 	 * @param oldMobileNo
 	 * @param newMobileNo
-	 * @return
+	 * @return Updated Customer Mobile Number
 	 * @throws ValidationException
 	 */
 	public Customer updateCustomerMobileNoById(Long id, Long oldMobileNo, Long newMobileNo) throws ValidationException;
@@ -76,7 +76,7 @@ public interface ICustomerService extends IUserService {
 	 * @param id
 	 * @param oldEmail
 	 * @param newEmail
-	 * @return
+	 * @return Updated Customer Email
 	 * @throws ValidationException
 	 */
 	public Customer updateCustomerEmailById(Long id, String oldEmail, String newEmail) throws ValidationException;

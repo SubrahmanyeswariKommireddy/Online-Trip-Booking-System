@@ -79,7 +79,7 @@ public class Customer extends User {
 	}
 
 	/**
-	 * @return
+	 * @return all Bookings
 	 */
 	public Booking getBooking() {
 		return booking;

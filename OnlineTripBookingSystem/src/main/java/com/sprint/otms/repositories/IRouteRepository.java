@@ -9,7 +9,7 @@ import com.sprint.otms.models.Route;
 
 /**
  * 
- * @author Subani
+ * @author Mehboob Subani
  *
  */
 @Repository
@@ -17,26 +17,26 @@ public interface IRouteRepository extends JpaRepository<Route, Long> {
 
 	/**
 	 * @param routeId
-	 * @return
+	 * @return Route by Route Id
 	 */
 	public Route findRouteByRouteId(Long routeId);
 
 	/**
 	 * @param source
-	 * @return
+	 * @return all sources
 	 */
 	public List<Route> getBySource(String source);
 
 	/**
 	 * @param destination
-	 * @return
+	 * @return all Destinations
 	 */
 	public List<Route> getByDestination(String destination);
 
 	/**
 	 * @param source
 	 * @param destination
-	 * @return
+	 * @return source and Destination
 	 */
 	public List<Route> getBySourceAndDestination(String source, String destination);
 }

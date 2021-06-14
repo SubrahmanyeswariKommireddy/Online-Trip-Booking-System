@@ -17,29 +17,19 @@ import com.sprint.otms.models.Admin;
 @Transactional
 public interface IAdminService extends IUserService {
 
-	/**
-	 * 
-	 * @param admin
-	 * @return
-	 */
+	
 	/**
 	 * @param admin
-	 * @return
+	 * @return Admin
 	 */
 	public Admin addAdmin(Admin admin);
 
+	
 	/**
 	 * @param id
 	 * @param oldPassword
 	 * @param newPassword
-	 * @return
-	 * @throws ValidationException
-	 */
-	/**
-	 * @param id
-	 * @param oldPassword
-	 * @param newPassword
-	 * @return
+	 * @return Updated Admin Password
 	 * @throws ValidationException
 	 */
 	public Admin updateAdminPasswordById(Long id, String oldPassword, String newPassword) throws ValidationException;
@@ -48,7 +38,7 @@ public interface IAdminService extends IUserService {
 	 * @param id
 	 * @param oldMobileNo
 	 * @param newMobileNo
-	 * @return
+	 * @return Updated Mobile Number
 	 * @throws ValidationException
 	 */
 	public Admin updateAdminMobileNoById(Long id, Long oldMobileNo, Long newMobileNo) throws ValidationException;
@@ -57,25 +47,24 @@ public interface IAdminService extends IUserService {
 	 * @param id
 	 * @param oldEmail
 	 * @param newEmail
-	 * @return
+	 * @return Updated Admin Email
 	 * @throws ValidationException
 	 */
 	public Admin updateAdminEmailById(Long id, String oldEmail, String newEmail) throws ValidationException;
 
 	/**
-	 * @return
+	 * @return Admin
 	 */
 	public List<Admin> getAdmin();
 
 	/**
 	 * @param admin
-	 * @return
+	 * @return Updated admin
 	 */
 	public Admin updateAdmin(Admin admin);
 
 	/**
 	 * @param id
-	 * @return
 	 */
 	public String deleteAdmin(Long id);
 
@@ -83,7 +72,7 @@ public interface IAdminService extends IUserService {
 	 * @param Id
 	 * @param oldPassword
 	 * @param newPassword
-	 * @return
+	 * @return Changed Password
 	 */
 	public boolean changePassword(Long Id, String oldPassword, String newPassword);
 

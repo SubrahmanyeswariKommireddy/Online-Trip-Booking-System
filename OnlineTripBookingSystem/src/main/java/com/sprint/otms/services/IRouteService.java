@@ -11,7 +11,7 @@ import com.sprint.otms.models.Route;
 
 /**
  * 
- * @author Subani
+ * @author Mehboob Subani
  *
  */
 @Service
@@ -20,49 +20,48 @@ public interface IRouteService {
 
 	/**
 	 * @param route
-	 * @return
+	 * @return Route
 	 */
 	public Route addRoute(Route route);
 
 	/**
-	 * @return
+	 * @return all Routes
 	 */
 	public List<Route> getAllRoute();
 
 	/**
 	 * @param route
-	 * @return
+	 * @return Updated Route
 	 */
 	public Route updateRoute(Route route);
 
 	/**
 	 * @param routeId
-	 * @return
 	 */
 	public String delete(Long routeId);
 
 	/**
 	 * @param routeId
-	 * @return
+	 * @return Route By Route Id
 	 */
 	public Route getRouteByRouteId(Long routeId);
 
 	/**
 	 * @param source
-	 * @return
+	 * @return all Routes By source
 	 */
 	public List<Route> getRouteBySource(String source);
 
 	/**
 	 * @param destination
-	 * @return
+	 * @return all Routes By Destination
 	 */
 	public List<Route> getRouteByDestination(String destination);
 
 	/**
 	 * @param source
 	 * @param destination
-	 * @return
+	 * @return Route By Source And Destination
 	 */
 	public List<Route> getRouteBySourceAndDestination(String source, String destination);
 
@@ -70,7 +69,7 @@ public interface IRouteService {
 	 * @param id
 	 * @param oldSource
 	 * @param newSource
-	 * @return
+	 * @return Updated Source For a Route By Route Id
 	 * @throws ValidationException
 	 */
 	public Route updateSourceById(Long id, String oldSource, String newSource) throws ValidationException;
@@ -79,7 +78,7 @@ public interface IRouteService {
 	 * @param id
 	 * @param oldDestination
 	 * @param newDestination
-	 * @return
+	 * @return Updated Destination For a Route By Route Id
 	 * @throws ValidationException
 	 */
 	public Route updateDestinationById(Long id, String oldDestination, String newDestination)

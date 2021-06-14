@@ -75,7 +75,7 @@ public class Payment {
 	}
 
 	/**
-	 * @return
+	 * @return Amount
 	 */
 	public Float getAmount() {
 		return amount;
@@ -97,7 +97,7 @@ public class Payment {
 	}
 
 	/**
-	 * @return
+	 * @return transaction By Id
 	 */
 	public Long getTransactionId() {
 		return transactionId;
@@ -111,7 +111,7 @@ public class Payment {
 	}
 
 	/**
-	 * @return
+	 * @return Mode Of Transaction
 	 */
 	public TransactionMode getTransactionMode() {
 		return transactionMode;
@@ -125,7 +125,7 @@ public class Payment {
 	}
 
 	/**
-	 * @return
+	 * @return all Bookings
 	 */
 	public Booking getBooking() {
 		return booking;

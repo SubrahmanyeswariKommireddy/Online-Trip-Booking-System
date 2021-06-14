@@ -153,7 +153,7 @@ public class Bus {
 	}
 
 	/**
-	 * @return
+	 * @return Bus By Id
 	 */
 	public Long getBusId() {
 		return busId;
@@ -167,7 +167,7 @@ public class Bus {
 	}
 
 	/**
-	 * @return
+	 * @return Fare
 	 */
 	public Float getFare() {
 		return fare;
@@ -181,7 +181,7 @@ public class Bus {
 	}
 
 	/**
-	 * @return
+	 * @return Total Capacity of Bus
 	 */
 	public Long getTotalCapacity() {
 		return totalCapacity;
@@ -195,7 +195,7 @@ public class Bus {
 	}
 
 	/**
-	 * @return
+	 * @return Bus Type
 	 */
 	public BusType getBusType() {
 		return busType;
@@ -209,7 +209,7 @@ public class Bus {
 	}
 
 	/**
-	 * @return
+	 * @return Current Capacity Of a Bus
 	 */
 	public Long getCurrentCapacity() {
 		return currentCapacity;

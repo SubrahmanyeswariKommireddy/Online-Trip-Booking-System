@@ -67,7 +67,7 @@ public class AdminController {
 
 	/**
 	 * @param admin
-	 * @return 
+	 * @return Login Response
 	 * @throws MethodArgumentNotValidException
 	 */
 	@PostMapping("admin/login")
@@ -83,7 +83,7 @@ public class AdminController {
 
 	/**
 	 * @param admin
-	 * @return
+	 * @return Added Admin
 	 * @throws MethodArgumentNotValidException
 	 */
 	@PostMapping("/addAdmin")
@@ -96,7 +96,7 @@ public class AdminController {
 	}
 
 	/**
-	 * @return
+	 * @return all Admins
 	 */
 	@GetMapping("/getAdmin")
 	public List<Admin> get() {
@@ -111,7 +111,7 @@ public class AdminController {
 	 * @param id
 	 * @param oldPassword
 	 * @param newPassword
-	 * @return
+	 * @return Updated Admin Password
 	 * @throws AdminNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 * @throws ValidationException
@@ -132,7 +132,7 @@ public class AdminController {
 	 * @param id
 	 * @param oldMobileNo
 	 * @param newMobileNo
-	 * @return
+	 * @return Updated Admin MobileNumber
 	 * @throws CustomerNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 * @throws ValidationException
@@ -153,7 +153,7 @@ public class AdminController {
 	 * @param id
 	 * @param oldEmail
 	 * @param newEmail
-	 * @return
+	 * @return Updated Admin Email
 	 * @throws CustomerNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 * @throws ValidationException
@@ -188,7 +188,7 @@ public class AdminController {
 
 	/**
 	 * @param travel
-	 * @return
+	 * @return Travel
 	 * @throws MethodArgumentNotValidException
 	 */
 	@PostMapping("/admin/addTravel")
@@ -201,7 +201,7 @@ public class AdminController {
 	}
 
 	/**
-	 * @return
+	 * @return all Travels
 	 */
 	@GetMapping("/admin/getTravels")
 	public List<Travel> getTravels() {
@@ -216,7 +216,7 @@ public class AdminController {
 	 * @param id
 	 * @param oldName
 	 * @param newName
-	 * @return
+	 * @return Updated Travel
 	 * @throws TravelsNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 * @throws ValidationException
@@ -252,7 +252,7 @@ public class AdminController {
 
 	/**
 	 * @param route
-	 * @return
+	 * @return Route
 	 * @throws MethodArgumentNotValidException
 	 */
 	@PostMapping("/admin/addRoute")
@@ -265,7 +265,7 @@ public class AdminController {
 	}
 
 	/**
-	 * @return
+	 * @return all Routes
 	 */
 	@GetMapping("/admin/getRoutes")
 	public List<Route> getRoutes() {
@@ -278,7 +278,7 @@ public class AdminController {
 
 	/**
 	 * @param id
-	 * @return
+	 * @return  Route by id
 	 * @throws RouteNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 */
@@ -294,7 +294,7 @@ public class AdminController {
 
 	/**
 	 * @param source
-	 * @return
+	 * @return Route By Source
 	 * @throws RouteNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 */
@@ -311,7 +311,7 @@ public class AdminController {
 	/**
 	 * @param source
 	 * @param Destination
-	 * @return
+	 * @return Route by Source or Destination
 	 * @throws RouteNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 */
@@ -327,7 +327,7 @@ public class AdminController {
 
 	/**
 	 * @param route
-	 * @return
+	 * @return Updated Route
 	 * @throws RouteNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 */
@@ -346,7 +346,7 @@ public class AdminController {
 	 * @param id
 	 * @param oldSource
 	 * @param newSource
-	 * @return
+	 * @return Updated Source by Route Id
 	 * @throws AdminNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 */
@@ -364,7 +364,7 @@ public class AdminController {
 	 * @param id
 	 * @param oldDestination
 	 * @param newDestination
-	 * @return
+	 * @return Updated Destination By Route id
 	 * @throws AdminNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 */
@@ -397,7 +397,7 @@ public class AdminController {
 
 	/**
 	 * @param route
-	 * @return
+	 * @return Partial Updated Route by Id
 	 * @throws RouteNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 */
@@ -415,7 +415,7 @@ public class AdminController {
 	// -------------------------------Buses----------------------------------//
 
 	/**
-	 * @return
+	 * @return all Buses
 	 */
 	@GetMapping("/admin/buses")
 	public List<Bus> getBuses() {
@@ -429,7 +429,7 @@ public class AdminController {
 	// --------------------------Customers-------------------------------------//
 
 	/**
-	 * @return
+	 * @return all Customers
 	 */
 	@GetMapping("/admin/getCustomers")
 	public List<Customer> getCustomers() {

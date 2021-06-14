@@ -148,7 +148,7 @@ public class Booking {
 	}
 
 	/**
-	 * @return
+	 * @return all Booking Id's
 	 */
 	public Long getBookingId() {
 		return bookingId;
@@ -162,7 +162,7 @@ public class Booking {
 	}
 
 	/**
-	 * @return
+	 * @return Seats Booked
 	 */
 	public int getSeatsBooked() {
 		return seatsBooked;
@@ -176,7 +176,7 @@ public class Booking {
 	}
 
 	/**
-	 * @return
+	 * @return Date and Time of Travel
 	 */
 	public LocalDateTime getDateAndTimeOfTravel() {
 		return dateAndTimeOfTravel;
@@ -190,7 +190,7 @@ public class Booking {
 	}
 
 	/**
-	 * @return
+	 * @return all Payments
 	 */
 	public Payment getPayment() {
 		return payment;
@@ -204,7 +204,7 @@ public class Booking {
 	}
 
 	/**
-	 * @return
+	 * @return all Customers
 	 */
 	public Customer getCustomer() {
 		return customer;
@@ -218,7 +218,7 @@ public class Booking {
 	}
 
 	/**
-	 * @return
+	 * @return all Buses
 	 */
 	public Bus getBus() {
 		return bus;

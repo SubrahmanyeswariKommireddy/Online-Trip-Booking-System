@@ -18,19 +18,18 @@ import com.sprint.otms.models.Payment;
 public interface IPaymentService {
 
 	/**
-	 * @return
+	 * @return all Payments
 	 */
 	public List<Payment> getAllPayments();
 
 	/**
 	 * @param transactionId
-	 * @return
+	 * @return Payment Details by Transaction Id
 	 */
 	public Payment getPaymentByTransactionId(Long transactionId);
 
 	/**
 	 * @param transactionId
-	 * @return
 	 */
 	public String delete(Long transactionId);
 
@@ -38,7 +37,7 @@ public interface IPaymentService {
 	 * @param payment
 	 * @param bookingId
 	 * @param busId
-	 * @return
+	 * @return Payments
 	 */
 	public Payment addPayment(Payment payment, Long bookingId, Long busId);
 

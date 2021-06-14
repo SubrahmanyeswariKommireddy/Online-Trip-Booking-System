@@ -98,7 +98,7 @@ public class Route {
 	}
 
 	/**
-	 * @return
+	 * @return Route By Id
 	 */
 	public Long getRouteId() {
 		return routeId;
@@ -112,7 +112,7 @@ public class Route {
 	}
 
 	/**
-	 * @return
+	 * @return all Sources
 	 */
 	public String getSource() {
 		return source;
@@ -126,7 +126,7 @@ public class Route {
 	}
 
 	/**
-	 * @return
+	 * @return all destinations
 	 */
 	public String getDestination() {
 		return destination;
@@ -140,7 +140,7 @@ public class Route {
 	}
 
 	/**
-	 * @return
+	 * @return all Buses
 	 */
 	public List<Bus> getBuses() {
 		return buses;

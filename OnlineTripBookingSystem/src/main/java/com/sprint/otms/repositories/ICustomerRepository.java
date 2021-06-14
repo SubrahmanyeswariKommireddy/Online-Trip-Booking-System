@@ -14,7 +14,7 @@ public interface ICustomerRepository extends JpaRepository<Customer, Long> {
 
 	/**
 	 * @param emailId
-	 * @return
+	 * @return Email
 	 */
 	Customer findByEmail(String emailId);
 

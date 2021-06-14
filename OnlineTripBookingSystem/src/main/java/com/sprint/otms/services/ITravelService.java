@@ -21,18 +21,18 @@ public interface ITravelService {
 
 	/**
 	 * @param travel
-	 * @return
+	 * @return Travel
 	 */
 	public Travel addTravel(Travel travel);
 
 	/**
-	 * @return
+	 * @return all Travels
 	 */
 	public List<Travel> getAllTravel();
 
 	/**
 	 * @param travel
-	 * @return
+	 * @return Updated Travel
 	 */
 	public Travel updateTravel(Travel travel);
 
@@ -40,7 +40,7 @@ public interface ITravelService {
 	 * @param id
 	 * @param oldPassword
 	 * @param newPassword
-	 * @return
+	 * @return Updated Travel
 	 * @throws ValidationException
 	 */
 	public Travel updateTravelById(Long id, TravelAgentName oldPassword, TravelAgentName newPassword)
@@ -48,19 +48,18 @@ public interface ITravelService {
 
 	/**
 	 * @param travelId
-	 * @return
 	 */
 	public String delete(Long travelId);
 
 	/**
 	 * @param travelId
-	 * @return
+	 * @return Travel By Travel Id
 	 */
 	public Travel getTravelById(Long travelId);
 
 	/**
 	 * @param travelAgentName
-	 * @return
+	 * @return all Travels
 	 */
 	public List<Travel> getTravelByName(String travelAgentName);
 

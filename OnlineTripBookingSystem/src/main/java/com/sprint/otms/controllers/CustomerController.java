@@ -61,7 +61,7 @@ public class CustomerController {
 
 	/**
 	 * @param customer
-	 * @return 
+	 * @return Customer Login Status
 	 * @throws MethodArgumentNotValidException
 	 */
 	@PostMapping("customer/login")
@@ -77,7 +77,7 @@ public class CustomerController {
 
 	/**
 	 * @param customer
-	 * @return
+	 * @return Customer
 	 * @throws MethodArgumentNotValidException
 	 */
 	@PostMapping("/addCustomer")
@@ -94,7 +94,7 @@ public class CustomerController {
 	 * @param id
 	 * @param oldPassword
 	 * @param newPassword
-	 * @return
+	 * @return Updated Customer Password By Id
 	 * @throws CustomerNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 * @throws ValidationException
@@ -115,7 +115,7 @@ public class CustomerController {
 	 * @param id
 	 * @param oldMobileNo
 	 * @param newMobileNo
-	 * @return
+	 * @return Updated Customer Mobile Number By Id
 	 * @throws CustomerNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 * @throws ValidationException
@@ -135,7 +135,7 @@ public class CustomerController {
 	 * @param id
 	 * @param oldEmail
 	 * @param newEmail
-	 * @return
+	 * @return Updated Customer Email by Id
 	 * @throws CustomerNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 * @throws ValidationException
@@ -153,7 +153,7 @@ public class CustomerController {
 
 	/**
 	 * @param id
-	 * @return
+	 * @return Customer By Id
 	 * @throws CustomerNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 */
@@ -183,7 +183,7 @@ public class CustomerController {
 	}
 
 	/**
-	 * @return
+	 * @return all Travels
 	 */
 	@GetMapping("/customer/getTravels")
 	public List<Travel> getTravels() {
@@ -195,7 +195,7 @@ public class CustomerController {
 	}
 
 	/**
-	 * @return
+	 * @return all Routes
 	 */
 	@GetMapping("/customer/getRoutes")
 	public List<Route> getRoutes() {
@@ -207,7 +207,7 @@ public class CustomerController {
 	}
 
 	/**
-	 * @return
+	 * @return all Buses
 	 */
 	@GetMapping("/customer/getBuses")
 	public List<Bus> getBuses() {
@@ -222,7 +222,7 @@ public class CustomerController {
 
 	/**
 	 * @param booking
-	 * @return
+	 * @return Booking
 	 * @throws MethodArgumentNotValidException
 	 */
 	@PostMapping("/customer/addBooking")
@@ -236,7 +236,7 @@ public class CustomerController {
 	}
 
 	/**
-	 * @return
+	 * @return all Bookings
 	 */
 	@GetMapping("/customer/getBooking")
 	public List<Booking> getBooking() {
@@ -249,7 +249,7 @@ public class CustomerController {
 
 	/**
 	 * @param id
-	 * @return
+	 * @return Booking By Id
 	 * @throws BookingNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 */
@@ -284,7 +284,7 @@ public class CustomerController {
 	 * @param payment
 	 * @param bookingId
 	 * @param busId
-	 * @return
+	 * @return Payment
 	 * @throws MethodArgumentNotValidException
 	 */
 	@PostMapping("/customer/addPayment")
@@ -298,7 +298,7 @@ public class CustomerController {
 	}
 
 	/**
-	 * @return
+	 * @return all Payments
 	 */
 	@GetMapping("/getPayment")
 	public List<Payment> getPayment() {
@@ -311,7 +311,7 @@ public class CustomerController {
 
 	/**
 	 * @param transactionId
-	 * @return
+	 * @return Payment By Id or Transaction By Id
 	 * @throws BookingNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 */

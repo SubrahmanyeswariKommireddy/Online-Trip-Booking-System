@@ -100,7 +100,7 @@ public class Travel {
 	}
 
 	/**
-	 * @return
+	 * @return Travel By Id
 	 */
 	public Long getTravelId() {
 		return travelId;
@@ -114,7 +114,7 @@ public class Travel {
 	}
 
 	/**
-	 * @return
+	 * @return all Travel Agent Names
 	 */
 	public TravelAgentName getTravelAgentName() {
 		return travelAgentName;
@@ -128,7 +128,7 @@ public class Travel {
 	}
 
 	/**
-	 * @return
+	 * @return all Buses
 	 */
 	public List<Bus> getBuses() {
 		return buses;

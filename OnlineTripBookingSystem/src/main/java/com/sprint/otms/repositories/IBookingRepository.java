@@ -15,13 +15,13 @@ public interface IBookingRepository extends JpaRepository<Booking, Long> {
 
 	/**
 	 * @param transactionId
-	 * @return
+	 * @return Transaction Id by Booking Id
 	 */
 	Booking findByBookingId(Long transactionId);
 
 	/**
 	 * @param seatsBooked
-	 * @return
+	 * @return How Many Seats Booked
 	 */
 	public Booking findByseatsBooked(int seatsBooked);
 

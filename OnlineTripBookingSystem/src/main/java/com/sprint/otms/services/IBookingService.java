@@ -19,30 +19,29 @@ public interface IBookingService {
 
 	/**
 	 * @param booking
-	 * @return
+	 * @return Booking
 	 */
 	public Booking addBooking(Booking booking);
 
 	/**
-	 * @return
+	 * @return all Bookings
 	 */
 	public List<Booking> getAllBookings();
 
 	/**
 	 * @param bookingId
-	 * @return
 	 */
 	public String deleteBooking(Long bookingId);
 
 	/**
 	 * @param transactionId
-	 * @return
+	 * @return Booking Details By Booking Id
 	 */
 	public Booking findByBookingId(Long transactionId);
 
 	/**
 	 * @param seatsBooked
-	 * @return
+	 * @return How Many Seats Booked
 	 */
 	Booking findBySeatsBooked(int seatsBooked);
 

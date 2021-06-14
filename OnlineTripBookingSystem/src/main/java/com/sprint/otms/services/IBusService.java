@@ -20,25 +20,24 @@ public interface IBusService {
 
 	/**
 	 * @param bus
-	 * @return
+	 * @return Bus
 	 */
 	public Bus addBus(Bus bus);
 
 	/**
 	 * @param bus
-	 * @return
+	 * @return Updated Bus
 	 */
 	public Bus updateBus(Bus bus);
 
 	/**
 	 * @param busId
-	 * @return
 	 */
 	public String delete(Long busId);
 
 	/**
 	 * @param busId
-	 * @return
+	 * @return Bus By Bus Id
 	 */
 	public Bus getBusById(Long busId);
 
@@ -51,7 +50,7 @@ public interface IBusService {
 	 * @param id
 	 * @param oldFare
 	 * @param newFare
-	 * @return
+	 * @return Updated Fare For Bus
 	 * @throws ValidationException
 	 */
 	public Bus updateFareById(Long id, Float oldFare, Float newFare) throws ValidationException;
