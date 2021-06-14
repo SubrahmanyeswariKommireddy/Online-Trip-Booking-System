@@ -15,6 +15,10 @@ import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+/**
+ * @author mehboob subani
+ *
+ */
 @Entity
 @Table(name = "route_details_table1")
 public class Route {
