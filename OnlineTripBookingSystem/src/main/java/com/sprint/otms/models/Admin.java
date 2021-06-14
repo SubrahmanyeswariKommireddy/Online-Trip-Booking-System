@@ -7,6 +7,11 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author Susmitha
+ *
+ */
 @Entity
 @Table(name = "admin_details_table1")
 public class Admin extends User {

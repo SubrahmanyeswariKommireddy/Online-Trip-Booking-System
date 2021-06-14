@@ -5,8 +5,10 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 /**
- * @author DASARI
+ * @author Shourya
  *
  */
 @Entity
@@ -14,6 +16,7 @@ import javax.persistence.Table;
 public class Customer extends User {
 
 	@OneToOne(mappedBy = "customer", fetch = FetchType.LAZY)
+	@JsonBackReference
 	private Booking booking;
 
 	/**

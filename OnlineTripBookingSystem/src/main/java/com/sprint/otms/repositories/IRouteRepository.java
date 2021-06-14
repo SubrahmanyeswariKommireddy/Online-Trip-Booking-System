@@ -7,6 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import com.sprint.otms.models.Route;
 
+/**
+ * 
+ * @author Subani
+ *
+ */
 @Repository
 public interface IRouteRepository extends JpaRepository<Route, Long> {
 

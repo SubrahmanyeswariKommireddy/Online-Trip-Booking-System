@@ -9,6 +9,11 @@ import org.springframework.stereotype.Service;
 
 import com.sprint.otms.models.Customer;
 
+/**
+ * 
+ * @author Shourya
+ *
+ */
 @Service
 @Transactional
 public interface ICustomerService extends IUserService {
@@ -75,7 +80,5 @@ public interface ICustomerService extends IUserService {
 	 * @throws ValidationException
 	 */
 	public Customer updateCustomerEmailById(Long id, String oldEmail, String newEmail) throws ValidationException;
-
-//	public Optional<Customer> getCustomersByName(String userName);
 
 }

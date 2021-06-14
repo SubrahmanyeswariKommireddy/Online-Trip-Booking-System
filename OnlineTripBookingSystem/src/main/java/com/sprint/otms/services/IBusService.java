@@ -9,6 +9,11 @@ import org.springframework.stereotype.Service;
 
 import com.sprint.otms.models.Bus;
 
+/**
+ * 
+ * @author Stephen
+ *
+ */
 @Service
 @Transactional
 public interface IBusService {
@@ -50,11 +55,5 @@ public interface IBusService {
 	 * @throws ValidationException
 	 */
 	public Bus updateFareById(Long id, Float oldFare, Float newFare) throws ValidationException;
-
-//	public List<Bus> getBusesByTravelId(Long travelId);
-//	
-//	public List<Bus> getBusesByRouteId(Long routeId);
-
-	// public List<Bus> getBusesByTravelAgentName(String travelAgentName);
 
 }

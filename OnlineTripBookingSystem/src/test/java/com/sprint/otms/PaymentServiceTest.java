@@ -6,20 +6,20 @@ import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
-import com.sprint.otms.models.Bus;
-import com.sprint.otms.models.Customer;
 import com.sprint.otms.models.Payment;
-import com.sprint.otms.models.Route;
-import com.sprint.otms.models.TransactionMode;
 import com.sprint.otms.repositories.IPaymentRepository;
 import com.sprint.otms.services.PaymentServiceImpl;
 
+/**
+ * 
+ * @author Satish
+ *
+ */
 @SpringBootTest
 class PaymentServiceTest {
 

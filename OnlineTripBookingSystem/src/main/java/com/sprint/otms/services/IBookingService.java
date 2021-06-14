@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 
 import com.sprint.otms.models.Booking;
 
+/**
+ * 
+ * @author Satish
+ *
+ */
 @Service
 @Transactional
 public interface IBookingService {
@@ -34,8 +39,6 @@ public interface IBookingService {
 	 * @return
 	 */
 	public Booking findByBookingId(Long transactionId);
-
-	// List<Booking> findByDateAndTimeOfTravel(LocalDateTime dateTime);
 
 	/**
 	 * @param seatsBooked

@@ -2,6 +2,11 @@ package com.sprint.otms.exceptions;
 
 import java.util.Date;
 
+/**
+ * 
+ * @author Susmitha
+ *
+ */
 public class ExceptionMessage {
 
 	private Date timestamp;

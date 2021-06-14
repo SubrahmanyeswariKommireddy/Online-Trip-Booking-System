@@ -11,6 +11,11 @@ import org.springframework.stereotype.Service;
 import com.sprint.otms.models.Customer;
 import com.sprint.otms.repositories.ICustomerRepository;
 
+/**
+ * 
+ * @author Shourya
+ *
+ */
 @Service
 @Transactional
 public class CustomerServiceImpl extends UserServiceImpl implements ICustomerService {
@@ -34,12 +39,6 @@ public class CustomerServiceImpl extends UserServiceImpl implements ICustomerSer
 		customerRepository.deleteById(id);
 		return "success";
 	}
-
-//
-//	public Optional<Customer> getCustomersByName(String userName) {
-//		// TODO Auto-generated method stub
-//		return customerRepository.findOne(userName);
-//	}
 
 	@Override
 	public boolean changePassword(String password) {

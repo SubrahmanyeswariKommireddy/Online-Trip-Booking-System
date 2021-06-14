@@ -1,5 +1,10 @@
 package com.sprint.otms.exceptions;
 
+/**
+ * 
+ * @author Satish
+ *
+ */
 public class BookingNotFoundException extends RuntimeException {
 
 	/**

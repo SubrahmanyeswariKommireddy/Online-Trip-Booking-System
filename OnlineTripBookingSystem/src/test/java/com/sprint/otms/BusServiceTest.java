@@ -15,6 +15,11 @@ import com.sprint.otms.models.Bus;
 import com.sprint.otms.repositories.IBusRepository;
 import com.sprint.otms.services.BusServiceImpl;
 
+/**
+ * 
+ * @author Stephen
+ *
+ */
 @SpringBootTest
 class BusServiceTest {
 

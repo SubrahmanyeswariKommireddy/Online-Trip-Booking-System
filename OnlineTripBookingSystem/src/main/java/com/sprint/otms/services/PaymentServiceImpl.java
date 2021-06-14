@@ -15,6 +15,11 @@ import com.sprint.otms.repositories.IBookingRepository;
 import com.sprint.otms.repositories.IBusRepository;
 import com.sprint.otms.repositories.IPaymentRepository;
 
+/**
+ * 
+ * @author Satish
+ *
+ */
 @Service
 @Transactional
 public class PaymentServiceImpl implements IPaymentService {
