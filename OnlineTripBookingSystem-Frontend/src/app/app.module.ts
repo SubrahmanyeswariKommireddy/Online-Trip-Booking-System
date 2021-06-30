@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,8 +19,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule
+    AppRoutingModule
+    // NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
