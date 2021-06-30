@@ -7,7 +7,13 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UpdateAdminComponent } from './admin/update-admin/update-admin.component';
+import { AdminListComponent } from './admin/admin-list/admin-list.component';
+import { CustomerListComponent } from './customer/customer-list/customer-list.component';
+import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
+import { AddBookingComponent } from './booking/add-booking/add-booking.component';
+import { AddPaymentComponent } from './payment/add-payment/add-payment.component'
 
 @NgModule({
   declarations: [
@@ -15,12 +21,18 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    UpdateAdminComponent,
+    AdminListComponent,
+    CustomerListComponent,
+    UpdateCustomerComponent,
+    AddBookingComponent,
+    AddPaymentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-    // NgbModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
