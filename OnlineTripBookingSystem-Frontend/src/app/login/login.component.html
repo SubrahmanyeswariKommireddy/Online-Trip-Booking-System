@@ -1,6 +1,6 @@
 <!-- Default form login -->
 <div class="col-md-6 user-container">
-  <form [formGroup]="loginForm" *ngIf="loginForm" (ngSubmit)="onSubmit()" class="text-center border border-light p-5">
+  <form [formGroup]="loginForm"  (ngSubmit)="checkLogin()" class="text-center border border-light p-5">
 
     <p class="h4 mb-4">Login</p>
 
@@ -29,7 +29,7 @@
     <!-- Password -->
     <!-- <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password"> -->
 
-    <input type="submit" value="Update" class="btn btn-success">
+    <input type="submit" value="Login" class="btn btn-success">
 
     <div class="d-flex justify-content-around">
 
