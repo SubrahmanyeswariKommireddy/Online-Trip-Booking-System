@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/shared/login.service';
+import { LoginService } from '../shared/login.service';
 
 export class JwtResponse{
 
@@ -13,6 +13,7 @@ export class JwtResponse{
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
   email:string = '';
@@ -41,7 +42,6 @@ export class LoginComponent implements OnInit {
       }
     )
     );
-
   }
 
   setValues(data:any){
@@ -49,9 +49,5 @@ export class LoginComponent implements OnInit {
     sessionStorage.setItem('email',this.email);
         sessionStorage.setItem('token',data.token);
       console.log('data set')
-
-
-
   }
-
 }

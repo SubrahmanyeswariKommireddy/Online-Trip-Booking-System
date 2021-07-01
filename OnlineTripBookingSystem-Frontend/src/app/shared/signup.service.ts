@@ -5,6 +5,7 @@ import { User } from '../models/User';
 @Injectable({
   providedIn: 'root'
 })
+
 export class SignupService {
   private baseUrl: string = 'http://localhost:9999';
 
@@ -12,8 +13,6 @@ export class SignupService {
 
   public createUser(user: any) {
 
-            return this.httpClient.post<User>(`${this.baseUrl}/register`, user);
-        }
+    return this.httpClient.post<User>(`${this.baseUrl}/register`, user);
+  }
 }
-
-
