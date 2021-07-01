@@ -1,32 +1,51 @@
 <!-- Default form login -->
-<form class="text-center border border-light p-5">
+<div class="col-md-6 user-container">
+  <form [formGroup]="loginForm" *ngIf="loginForm" (ngSubmit)="onSubmit()" class="text-center border border-light p-5">
 
-  <p class="h4 mb-4">Sign in</p>
+    <p class="h4 mb-4">Login</p>
 
-  <!-- Email -->
-  <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
-
-  <!-- Password -->
-  <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
-
-  <div class="d-flex justify-content-around">
-    
-    <div>
-      <!-- Forgot password -->
-      <a href="">Forgot password?</a>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" formControlName="email" placeholder="email" name="email" class="form-control" id="email">
     </div>
-  </div>
 
-  <!-- Sign in button -->
-  <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" placeholder="password" name="password" class="form-control"
+        id="password">
+    </div>
 
-  <!-- Register -->
-  <p>Not a member?
-    <a href="">Register</a>
-  </p>
+    <div class="form-group">
+      <label for="userType">Choose</label>
+      <select name="userType" id="userType">
+        <option value="Admin">Admin</option>
+        <option value="Customer">Customer</option>
+      </select>
+    </div>
 
- 
-  
+    <!-- Email -->
+    <!-- <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail"> -->
 
-</form>
+    <!-- Password -->
+    <!-- <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password"> -->
+
+    <input type="submit" value="Update" class="btn btn-success">
+
+    <div class="d-flex justify-content-around">
+
+      <div>
+        <!-- Forgot password -->
+        <a href="">Forgot password?</a>
+      </div>
+    </div>
+
+    <!-- Sign in button -->
+    <!-- <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button> -->
+
+    <!-- Register -->
+    <p>Not a member?
+      <a href="">Register</a>
+    </p>
+  </form>
+</div>
 <!-- Default form login -->

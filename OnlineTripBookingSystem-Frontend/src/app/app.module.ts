@@ -34,9 +34,11 @@ import { DeleteRouteComponent } from './route/delete-route/delete-route.componen
 import { UpdateRouteComponent } from './route/update-route/update-route.component';
 import { RouteListComponent } from './route/route-list/route-list.component';
 import { BusViewComponent } from './bus-view/bus-view.component';
-import { FormsModule } from '@angular/forms';
 import { AdminDetailsComponent } from './admin/admin-details/admin-details.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './shared/auth-interceptor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -78,9 +80,13 @@ import { ProfileComponent } from './profile/profile.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
