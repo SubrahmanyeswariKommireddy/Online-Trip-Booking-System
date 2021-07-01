@@ -1,8 +1,8 @@
 <!-- Default form login -->
-<div class="col-md-6 user-container">
+<div class="col-md-6 container" style="background-color: aliceblue; margin-top: 100px;">
     <form [formGroup]="signupForm" (ngSubmit)="createUser()" class="text-center border border-light p-5">
 
-        <p class="h4 mb-4">Login</p>
+        <p class="h4 mb-4">Sign Up</p>
 
         <div class="form-group">
             <label for="userName">Username</label>
@@ -30,6 +30,7 @@
         <div class="form-group">
             <label for="userType">Choose</label>
             <select name="userType" id="userType">
+                <option value="select">--select--</option>
                 <option value="Admin">Admin</option>
                 <option value="Customer">Customer</option>
             </select>
