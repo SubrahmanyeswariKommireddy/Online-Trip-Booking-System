@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.email = String(this._ActivatedRoute.snapshot.paramMap.get("email"))
     this.password = String(this._ActivatedRoute.snapshot.paramMap.get("password"))
+    this.userType = String(this._ActivatedRoute.snapshot.paramMap.get("userType"))
 
         this.loginService.authenticate(this.email, this.password, this.userType).subscribe(
             (data) => {
@@ -38,6 +39,7 @@ export class LoginComponent implements OnInit {
                 this.loginForm = this.formBuilder.group({
                     email: this.user.email,
                     password: this.user.password
+                    
                 })
             },
             (err) => console.log(err)
@@ -61,16 +63,16 @@ export class LoginComponent implements OnInit {
   //   );
   // }
 
-    onSubmit() {
-      console.log(this.loginForm.value + "from onSubmit of login component")
-      this.loginService.authenticate(this.email, this.password, this.userType).subscribe(
-          (data) => {
-              this.user = data;
-              this.router.navigate(['login'])
-          },
-          (err) => console.log(err)
-      )
-  }
+  //   onSubmit() {
+  //     console.log(this.loginForm.value + "from onSubmit of login component")
+  //     this.loginService.authenticate(this.email, this.password, this.userType).subscribe(
+  //         (data) => {
+  //             this.user = data;
+  //             this.router.navigate(['login'])
+  //         },
+  //         (err) => console.log(err)
+  //     )
+  // }
 
 
 
