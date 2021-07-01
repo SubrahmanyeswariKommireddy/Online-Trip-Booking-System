@@ -43,15 +43,11 @@ export class LoginComponent implements OnInit {
 
   }
 
-  setValues(data:any){
-    console.log("in set values",data)
-    sessionStorage.setItem('email',this.email);
-        sessionStorage.setItem('token',data.token)
-       
-      console.log('data set')
-
-
-
+  setValues(data: any) {
+    console.log("in set values", data)
+    sessionStorage.setItem('email', this.email);
+    sessionStorage.setItem('token', data.token);
+    console.log('data set')
   }
 
 }
