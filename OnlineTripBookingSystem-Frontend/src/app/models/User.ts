@@ -5,3 +5,4 @@ export class User {
     email: string = '';
     mobileNumber: string = '';
 }
+
