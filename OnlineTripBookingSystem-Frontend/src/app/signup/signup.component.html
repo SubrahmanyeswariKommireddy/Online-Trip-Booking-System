@@ -1,1 +1,57 @@
-<p>signup works!</p>
+<!-- Default form login -->
+<div class="col-md-6 user-container">
+    <form [formGroup]="signupForm" (ngSubmit)="createUser()" class="text-center border border-light p-5">
+
+        <p class="h4 mb-4">Login</p>
+
+        <div class="form-group">
+            <label for="userName">Username</label>
+            <input type="userName" formControlName="userName" placeholder="userName" name="userName"
+                class="form-control" id="userName">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" formControlName="email" placeholder="email" name="email" class="form-control" id="email">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" placeholder="password" name="password"
+                class="form-control" id="password">
+        </div>
+
+        <div class="form-group">
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="mobileNumber" formControlName="mobileNumber" placeholder="mobileNumber" name="mobileNumber"
+                class="form-control" id="mobileNumber">
+        </div>
+
+        <div class="form-group">
+            <label for="userType">Choose</label>
+            <select name="userType" id="userType">
+                <option value="Admin">Admin</option>
+                <option value="Customer">Customer</option>
+            </select>
+        </div>
+
+        <!-- Email -->
+        <!-- <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail"> -->
+
+        <!-- Password -->
+        <!-- <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password"> -->
+
+        <input type="submit" value="Signup" class="btn btn-success">
+
+
+
+        <!-- Sign in button -->
+        <!-- <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button> -->
+
+        <!-- Register -->
+        <p>Already registered?
+            <a href="">Login</a>
+        </p>
+    </form>
+</div>
+<!-- Default form login -->

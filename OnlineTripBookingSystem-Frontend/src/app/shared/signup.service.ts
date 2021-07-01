@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { SignupComponent } from '../signup/signup.component';
+import { User } from '../models/User';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +8,12 @@ import { SignupComponent } from '../signup/signup.component';
 export class SignupService {
   private baseUrl: string = 'http://localhost:9999';
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  addSignupDetail(signUp: SignupComponent): Observable<any> {
-    return this.http.post(`${this.baseUrl}/register`, signUp)
-  }
+  public createUser(user: any) {
+
+            return this.httpClient.post<User>(`${this.baseUrl}/register`, user);
+        }
 }
+
+
