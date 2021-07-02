@@ -30,7 +30,6 @@ import { DeleteBusComponent } from './bus/delete-bus/delete-bus.component';
 import { UpdateBusComponent } from './bus/update-bus/update-bus.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AddRouteComponent } from './route/add-route/add-route.component';
-import { DeleteRouteComponent } from './route/delete-route/delete-route.component';
 import { UpdateRouteComponent } from './route/update-route/update-route.component';
 import { RouteListComponent } from './route/route-list/route-list.component';
 import { BusViewComponent } from './bus-view/bus-view.component';
@@ -39,6 +38,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/auth-interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchBusesComponent } from './bus/search-buses/search-buses.component';
 
 @NgModule({
   declarations: [
@@ -69,12 +69,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DefaultHomepageComponent,
     LogoutComponent,
     AddRouteComponent,
-    DeleteRouteComponent,
+  
     UpdateRouteComponent,
     RouteListComponent,
     BusViewComponent,
     AdminDetailsComponent,
-    ProfileComponent
+    ProfileComponent,
+    SearchBusesComponent
   ],
   imports: [
     BrowserModule,
