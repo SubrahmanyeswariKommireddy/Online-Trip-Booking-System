@@ -26,7 +26,6 @@ import { AdminHomepageComponent } from './home/admin-homepage/admin-homepage.com
 import { DefaultHomepageComponent } from './home/default-homepage/default-homepage.component'
 import { BusListComponent } from './bus/bus-list/bus-list.component';
 import { AddBusComponent } from './bus/add-bus/add-bus.component';
-import { DeleteBusComponent } from './bus/delete-bus/delete-bus.component';
 import { UpdateBusComponent } from './bus/update-bus/update-bus.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AddRouteComponent } from './route/add-route/add-route.component';
@@ -39,6 +38,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/auth-interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchBusesComponent } from './bus/search-buses/search-buses.component';
+import { SearchRouteComponent } from './route/search-route/search-route.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +56,7 @@ import { SearchBusesComponent } from './bus/search-buses/search-buses.component'
     DeleteBookingComponent,
     BusListComponent,
     AddBusComponent,
-    DeleteBusComponent,
+   
     UpdateBusComponent,
     DeleteAdminComponent,
     BookingListComponent,
@@ -75,7 +75,8 @@ import { SearchBusesComponent } from './bus/search-buses/search-buses.component'
     BusViewComponent,
     AdminDetailsComponent,
     ProfileComponent,
-    SearchBusesComponent
+    SearchBusesComponent,
+    SearchRouteComponent
   ],
   imports: [
     BrowserModule,

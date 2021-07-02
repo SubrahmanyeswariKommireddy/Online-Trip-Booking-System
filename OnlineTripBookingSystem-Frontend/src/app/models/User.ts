@@ -7,8 +7,8 @@ export class User {
 
 }
 enum userType {
-    Admin = "admin",
-    Customer = "customer"
+    ADMIN = "admin",
+    CUSTOMER = "customer"
 
 }
 

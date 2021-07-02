@@ -35,6 +35,7 @@ export class LoginService {
           sessionStorage.setItem('email', email);
           let tokenStr = 'Bearer ' + userData.token;
           sessionStorage.setItem('token', tokenStr);
+          sessionStorage.setItem('userType',userType);
           return userData;
         }
       ));

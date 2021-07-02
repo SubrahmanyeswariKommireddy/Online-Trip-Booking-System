@@ -6,44 +6,20 @@
     <div>
         <div class="home-banner"></div>
     </div>
-
     <div class="input-search-container">
-        <form class="d-flex justify-content-center">
-            <div class="d-inline-block position-relative">
-                <span class="inputIcon"><i class="far fa-building"></i></span>
-                <label class="inputLabel-default" for="input-label-from">FROM</label>
-                <input id="input-label-from" class="inputForm" type="text" list="input-from-list">
-                <datalist id="input-from-list">
-        <!-- <option value="Gurgaon"></option> -->
-                </datalist>
-            </div>
-
-            <div class="d-inline-block position-relative">
-                <span class="inputIcon"><i class="far fa-building"></i></span>
-                <label class="inputLabel-default" for="input-label-to">TO</label>
-                <input id="input-label-to" class="inputForm" type="text" list="input-to-list">
-                <datalist id="input-to-list">
-                    <!-- <option value="Delhi"></option> -->
-                </datalist>
-            </div>
-
-            <div class="d-inline-block position-relative">
-                <span class="inputIcon"><i class="fas fa-calendar-alt"></i></span>
-                <label class="inputLabel-default" for="input-label-onward-date">DATE</label>
-                <input id="input-label-onward-date" class="inputForm" type="text">
-            </div>
+        <app-search-route></app-search-route>
+    </div>
 
             <!-- <div class="d-inline-block position-relative">
                 <span class="inputIcon"><i class="fas fa-calendar-alt"></i></span>
-                <label class="inputLabel-default" for="input-label-return-date">RETURN DATE</label>
-                <input id="input-label-return-date" class="inputForm" type="text">
+                <label class="inputLabel-default" for="input-label-onward-date">DATE</label>
+                <input id="input-label-onward-date" class="inputForm" type="text">
             </div> -->
-
-            <div class="d-inline-block position-relative">
-                <input class="btn btn-danger rounded-0 pl-3 pr-3 pb-2" type="submit" value="Search Buses">
-            </div>
-        </form>
-    </div>
+          
+            <!-- <div (click)=checkLogin() class="field" >
+                <input type="submit" value="Login">
+             </div> -->
+        
 </div>
 
 <div class="on-time-guarantee d-flex mt-5 mb-5 p-4 border">

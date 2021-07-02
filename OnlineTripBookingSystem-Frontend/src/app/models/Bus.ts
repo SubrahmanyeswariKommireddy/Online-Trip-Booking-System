@@ -7,9 +7,5 @@ export class Bus {
     currentCapacity!:Number;
     busType:string='';
     travel!:Travel;
-//     userName: string = '';
-//     password: string = '';
-//     userType: string = '';
-//     email: string = '';
-//     mobileNumber: string = '';
+
  }
