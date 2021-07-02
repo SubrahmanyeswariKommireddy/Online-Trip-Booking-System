@@ -1,7 +1,7 @@
 import { Travel } from "./Travel";
 
 export class Bus {
-    id!:Number;
+    busId!:Number;
     fare!:Number;
     totalCapacity!:Number;
     currentCapacity!:Number;
