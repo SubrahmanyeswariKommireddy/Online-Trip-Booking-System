@@ -4,11 +4,13 @@ export class User {
     userType: string = '';
     email: string = '';
     mobileNumber: string = '';
-   
+
+}
+enum userType {
+    Admin = "admin",
+    Customer = "customer"
+
 }
 
- // enum userType {
-    //    ADMIN,
-    //    CUSTOMER
-    // }
+
 
