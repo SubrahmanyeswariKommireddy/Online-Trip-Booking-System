@@ -12,4 +12,5 @@ export class BusViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }

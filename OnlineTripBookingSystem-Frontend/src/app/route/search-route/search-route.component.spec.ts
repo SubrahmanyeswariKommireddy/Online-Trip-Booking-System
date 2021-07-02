@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeleteBusComponent } from './delete-bus.component';
+import { SearchRouteComponent } from './search-route.component';
 
-describe('DeleteBusComponent', () => {
-  let component: DeleteBusComponent;
-  let fixture: ComponentFixture<DeleteBusComponent>;
+describe('SearchRouteComponent', () => {
+  let component: SearchRouteComponent;
+  let fixture: ComponentFixture<SearchRouteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeleteBusComponent ]
+      declarations: [ SearchRouteComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeleteBusComponent);
+    fixture = TestBed.createComponent(SearchRouteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

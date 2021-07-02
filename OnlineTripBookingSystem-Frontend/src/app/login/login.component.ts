@@ -19,20 +19,29 @@ export class LoginComponent implements OnInit {
   password:string = '';
   userType:string = '';
   invalidLogin:boolean = false;
-  response!:JwtResponse
+  response!:JwtResponse;
+
 
   constructor(private router: Router,
     private loginservice: LoginService) { }
+   
+   
 
   ngOnInit() {
     
   }
 
   checkLogin() {
+    var userType=sessionStorage.getItem('userType');
+   
     (this.loginservice.authenticate(this.email, this.password, this.userType).subscribe(
       data => {
         console.log(data)
-        this.router.navigate([''])
+        if (userType=="ADMIN") {
+          this.router.navigate([''])
+      
+        }
+        // this.router.navigate([''])
         this.invalidLogin = false
       },
       error => {
