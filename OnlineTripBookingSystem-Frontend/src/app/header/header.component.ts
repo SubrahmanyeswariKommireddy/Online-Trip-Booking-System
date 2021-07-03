@@ -8,12 +8,23 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   
-
+  public isAdmin: boolean=false;
+  public isCustomer: boolean=false;
 
   constructor(private router:Router) { }
 
   ngOnInit(): void {
-  }
+    
+    var userType = sessionStorage.getItem('userType')
+    if(userType=="ADMIN")
+    {
+      this.isAdmin=true;
+    }
+    else if(userType=="CUSTOMER")
+    {
+      this.isCustomer=true;
+    }
+  }  
 
   btnClick(){
     console.log("printing");
