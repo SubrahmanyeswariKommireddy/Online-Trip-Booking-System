@@ -11,7 +11,7 @@ import { AddBusComponent } from './bus/add-bus/add-bus.component';
 import { BusComponentComponent } from './bus/bus-component/bus-component.component';
 
 const routes: Routes = [
-  {path:'',component:DefaultHomepageComponent},
+  {path:'default',component:DefaultHomepageComponent},
   {path:'home',component:AdminHomepageComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../shared/login.service';
 
 @Component({
   selector: 'app-header',
@@ -11,14 +12,16 @@ export class HeaderComponent implements OnInit {
   public isAdmin: boolean=false;
   public isCustomer: boolean=false;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, public loginService:LoginService) { }
 
   ngOnInit(): void {
     
     var userType = sessionStorage.getItem('userType')
     if(userType=="ADMIN")
     {
+      
       this.isAdmin=true;
+      
     }
     else if(userType=="CUSTOMER")
     {
@@ -30,5 +33,12 @@ export class HeaderComponent implements OnInit {
     console.log("printing");
     this.router.navigateByUrl('login');
   }
+  logOut(){
+    console.log("printing");
+    this.loginService.logOut();
+    this.router.navigateByUrl('login');
+  }
+
 
 }
+

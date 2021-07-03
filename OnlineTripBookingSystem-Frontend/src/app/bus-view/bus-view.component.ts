@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Booking } from '../models/Booking';
 import { Bus } from '../models/Bus';
+import { Payment } from '../models/Payment';
 
 @Component({
   selector: 'app-bus-view',
@@ -7,25 +9,72 @@ import { Bus } from '../models/Bus';
   styleUrls: ['./bus-view.component.css']
 })
 export class BusViewComponent implements OnInit {
-  list!:Array<Bus>;
+  list!:Array<Booking>;
+  ab!: String;
+  bus!:Bus;
+  uncheck!: string;
+  payment!:Payment;
+  public seats = [];
+  model: any = {};
+
+
+  seat:Booking[] = [];
+  fare=600;
+  total: any;
+  class:String='';
+  fillupSeats!: [];
+  decreaseSeats!:[];
+  seatNumber:null;
+  
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  // disableseats() {
-  //       for (let j = 0; j < this.list.length; j++) {
-  //         this.ab = this.list[j].seatdetails;
-  //         var splitted = this.ab.split(',');
-  //         for (let i = 0; i < splitted.length; i++) {
-  //           var a = document.getElementById(`${splitted[i]}`);
-  //           a.setAttribute('disabled', 'disabled');
-  //           a.setAttribute('checked', 'true');
-  //           this.ab = "";
-  //         }
-  //       }
-  //     }
+  disableseats() {
+        for (let j = 0; j < this.list.length; j++) {
+          this.ab = this.list[j].seatsBooked;
+          var splitted = this.ab.split(',');
+          for (let i = 0; i < splitted.length; i++) {
+            var a = document.getElementById(`${splitted[i]}`);
+            // a.setAttribute('disabled', 'disabled');
+            // a.setAttribute('checked', 'true');
+            a?.setAttribute('disabled','disabled');
+            a?.setAttribute('checked','true');
+            this.ab = "";
+          }
+        }
+      }
+      addchk(data: any) {
+            if (this.model.Numseats == undefined) {
+              alert('Enter Username and number of seats');
+              this.uncheck = data;
+              return;
+            }
+            if (this.seats.length.toString() == this.model.Numseats) {
+              alert('You can only select ' + this.model.Numseats + ' seats');
+              let za = document.getElementById(`${data}`);
+              za?.setAttribute('checked', 'false');
+              return;
+            }
+            // this.seats.push(data);
+            // this.payment.amount = (Number(this.payment.amount)) + (Number(20));
+            // this.model.seats = this.seats.toString();
+            // var a = document.getElementById(`${data}`);
+            // a?.style.setProperty('border', '3px solid #ff9800');
+          }
 
+          Booking(seatNumber:any){
+            this.seat.push(seatNumber)
+            console.log(this.seat)
+            console.log(this.seat.length)
+            var a = document.getElementById(`${seatNumber}`);
+            a?.style.setProperty('border', '3px solid #ff9800');
+            if(this.seat.length>0 ){
+              // this.seatsBooked = this.seat.length;
+             this.total=this.fare*this.seat.length;
+            }
+          }
 
 }
 
