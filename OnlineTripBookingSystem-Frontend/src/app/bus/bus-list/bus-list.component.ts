@@ -36,20 +36,22 @@ export class BusListComponent implements OnInit {
     this.router.navigate(['viewSeats']);
   }
 
-  // onEdit(bus: Bus) {
-  //     this.router.navigate(['edit-customer', bus.id])
-  // }
+  
 
-  // onDelete(bus: Bus) {
-  //     this.busService.deleteBusById(bus.id).subscribe(
-  //         (data) => {
-  //             console.log('Bus deleted'),
-  //             this.buses = this.buses.filter(
-  //                 b => b !== bus
-  //             )
-  //         }
-  //     )
-  // }
+  onEdit(bus: Bus) {
+       this.router.navigate(['app-update-bus', bus.busId])
+  }
+
+  onDelete(bus: Bus) {
+      // this.busService.deleteBusById(bus).subscribe(
+          // (data) => {
+          //     console.log('Bus deleted'),
+          //     this.buses = this.buses.filter(
+          //         b => b !== bus
+          //     )
+          // }
+     // )
+  }
 
 
 }
