@@ -1,18 +1,36 @@
-<div class="col-md-6 container">
-    <h2 class="text-center">Edit Bus</h2>
-    <form [formGroup]="updateBusForm" (ngSubmit)="onSubmit()">
 
-   
-     <div class="form-group" >
-        <label  for="fare">Fare</label>
-        <input type="number" formControlName="fare" 
-       min="1" required name="fare" class="form-control" id="fare">
-    </div>
 
-    <div (click)=onSubmit() class="field" >
-       <input type="submit" value="Update">
-    </div>
+  <div class="col-md-6 container">
+   <h2 class="text-center">Add Bus</h2>
+   <form [formGroup]="updateBusForm" (ngSubmit)="onSubmit()">
 
-    </form>
+       <div class="form-group" >
+           <label for="busType">Bus Type</label>
+           <select name="busType" id="busType" formControlName="busType" class="form-control">
+               <option value="LUXURY">Luxury</option>
+               <option value="SUPERLUXURY">Super Luxury</option>
+               <option value="VOLVO">volvo</option>
+           </select>
+        
+       </div>
+
+  
+    <div class="form-group" >
+       <label  for="fare">Fare</label>
+       <input type="number" formControlName="fare" 
+      min="1" required name="fare" class="form-control" id="fare">
+   </div>
+
+   <div class="form-group" >
+       <label  for="totalCapacity">Capacity</label>
+       <input type="number" formControlName="totalCapacity" 
+      min="1" required name="totalCapacity" class="form-control" id="totalCapacity">
+   </div>
+
+   <div (click)=onSubmit() class="field" >
+      <input type="submit" value="update">
+   </div>
+
+   </form>
 
 </div> 

@@ -25,7 +25,7 @@ export class BusService {
   }
   deleteBusById(id:number):Observable<Bus>{
 
-    return <Observable<Bus>>this.httpClient.delete(this.baseUrl+"/getBus/"+id)
+    return <Observable<Bus>>this.httpClient.delete(this.baseUrl+"/bus/"+id)
 }
 updateBus(id:number,bus:Bus):Observable<Bus>{
 

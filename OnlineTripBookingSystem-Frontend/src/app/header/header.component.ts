@@ -19,12 +19,13 @@ export class HeaderComponent implements OnInit {
     var userType = sessionStorage.getItem('userType')
     if(userType=="ADMIN")
     {
-      
+      console.log("printinh");
       this.isAdmin=true;
       
     }
     else if(userType=="CUSTOMER")
     {
+      console.log("printinh");
       this.isCustomer=true;
     }
   }  

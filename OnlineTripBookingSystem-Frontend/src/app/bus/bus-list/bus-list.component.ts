@@ -13,7 +13,7 @@ export class BusListComponent implements OnInit {
 
   buses!: Bus[];
   private error!: string;
-  private id!: number ;
+   busId!: number ;
 
   constructor(private formBuilder: FormBuilder, private router: Router, private busService: BusService) {
 
@@ -39,19 +39,19 @@ export class BusListComponent implements OnInit {
   
 
   onEdit(bus: Bus) {
-       this.router.navigate(['app-update-bus', bus.busId])
+       this.router.navigate(['updateBus']);
   }
 
-  onDelete(bus: Bus) {
-      // this.busService.deleteBusById(bus).subscribe(
-          // (data) => {
-          //     console.log('Bus deleted'),
-          //     this.buses = this.buses.filter(
-          //         b => b !== bus
-          //     )
-          // }
-     // )
+  
+    onDelete(bus: Bus) {
+      this.busService.deleteBusById(bus.busId).subscribe(
+          (data) => {
+              console.log('Bus deleted'),
+              this.buses = this.buses.filter(
+                  b => b !== bus
+              )
+          }
+      )
   }
-
-
+  
 }

@@ -1,5 +1,5 @@
 
- <div class="container" style="background-color: aliceblue;">
+ <!-- <div class="container" style="background-color: aliceblue;">
   <table>
   <div>
       Email Id : <input type="text" name="email" [(ngModel)]="email"><br><br>
@@ -16,4 +16,36 @@
     Not a member? <a href="/signup">Register</a>
  </div>
 
-</div> 
+</div>  -->
+
+<div class="container">
+  <div class="brand-logo"></div>
+  <div class="brand-title">LogIn</div>
+  <div class="inputs">
+    <div class="log-in-inputs">
+    <label>Email</label>
+    <input type="text" name="email" [(ngModel)]="email">
+    </div>
+    <div class="log-in-inputs">
+    <label>Password</label>
+    <input type="password" name="password" [(ngModel)]="password">
+    </div>
+    <div class="log-in-inputs">
+      <label>User Type</label>
+      <input type="text" name="userType" [(ngModel)]="userType">
+    </div>
+    <!-- <div class="form-group">
+    <label>User Type</label>
+    <select name="userType" id="userType" formControlName="userType" class="form-control center-box">
+      <option>--SELECT--</option>
+      <option value="LUXURY">Admin</option>
+              <option value="SUPERLUXURY">Customer</option>
+    </select>
+    </div> -->
+   
+  <button (click)=checkLogin() class="btn btn-success">LOGIN</button>
+  </div>
+  <div class="signup-link">
+    Not a member? <a href="/signup">Register</a>
+ </div>
+</div>
