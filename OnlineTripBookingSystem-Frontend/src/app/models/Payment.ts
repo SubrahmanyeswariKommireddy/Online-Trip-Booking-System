@@ -1,4 +1,5 @@
-import { Booking } from "./booking";
+import { Booking } from "./Booking";
+
 
 export class Payment{
     transactionId!:Number;

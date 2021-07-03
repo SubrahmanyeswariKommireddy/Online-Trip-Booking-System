@@ -5,5 +5,5 @@ export class Route{
     source:string='';
     destination:string='';
     bus!:Bus;
-    date!:Date;
+   
 }

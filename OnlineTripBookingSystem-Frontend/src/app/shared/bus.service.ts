@@ -13,15 +13,15 @@ export class BusService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getBuses() {
-    return <Observable<Bus[]>>this.httpClient.get(this.baseUrl + "/customer/getBuses")
+  getBuses():Observable<Bus[]> {
+    return <Observable<Bus[]>>this.httpClient.get(this.baseUrl + "/getBuses")
   }
   getBusById(id:number):Observable<Bus>{
 
     return <Observable<Bus>>this.httpClient.get(this.baseUrl+"/getBus/"+id)
 }
-  public addBus(bus:Bus) :Observable<Bus>{
-    return <Observable<Bus>>this.httpClient.post(this.baseUrl + "/addBus",bus)
+  addBus(bus:Bus) :Observable<Bus>{
+    return <Observable<Bus>>this.httpClient.post(this.baseUrl + "/travel/addBus",bus)
   }
   deleteBusById(id:number):Observable<Bus>{
 

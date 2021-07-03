@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Bus } from 'src/app/models/Bus';
 import { BusService } from 'src/app/shared/bus.service';
@@ -19,20 +19,21 @@ export class AddBusComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.addBusForm = this.formBuilder.group({
-            fare: ['', Validators.required],
-            busType: ['', Validators.required],
-            Travel: ['', Validators.required]
-        })
+
+        this.addBusForm=new FormGroup({
+            fare:new FormControl(''),
+            busType:new FormControl(''),
+            totalCapacity:new FormControl('')
+        });
     }
 
     onSubmit() {
         console.log(this.addBusForm.value + "from onSubmit of add bus component")
         this.busService.addBus(this.addBusForm.value).subscribe(
             data => {this.bus = data;
-                this.router.navigate(['buses'])},
+                this.router.navigate(['busList'])},
             err => console.log(err)
         )
     }
-    
+
 }

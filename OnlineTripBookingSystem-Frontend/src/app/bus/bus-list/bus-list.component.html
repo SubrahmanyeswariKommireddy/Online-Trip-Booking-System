@@ -1,1 +1,45 @@
-<p>bus-list works!</p>
+<div class="container">
+<!-- 
+    <table class="table table-bordered table-striped">
+        <th colspan="2">Bus List</th>
+        <tr>
+
+            <th colspan="2">BusType</th>
+
+
+
+            <th colspan="2">Fare</th>
+        </tr>
+
+        <tr *ngFor="let bus of buses">
+            <td>
+                <a [routerLink]="['/getBus',bus.busId]">{{bus.busType}}</a>
+            </td>
+
+            <td>
+                <a [routerLink]="['/getBus',bus.fare]">{{bus.fare}}</a>
+            </td>
+
+
+        </tr>
+    </table> -->
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Bus Type</th>
+          <th>Fare</th>
+          <th>TotalCapacity</th>
+          <th></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bus of buses">
+                <td>{{bus.busType}}</td>
+                <td>{{bus.fare}}</td>
+                <td>{{bus.totalCapacity}}</td>
+                <td><button class="btn btn-success" (click)=checkAvailability()> Check Availability</button></td>
+                </tr>
+        </tbody>
+          </table>
+</div>

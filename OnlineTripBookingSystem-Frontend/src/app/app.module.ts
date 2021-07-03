@@ -39,6 +39,7 @@ import { AuthInterceptor } from './shared/auth-interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchBusesComponent } from './bus/search-buses/search-buses.component';
 import { SearchRouteComponent } from './route/search-route/search-route.component';
+import { BusComponentComponent } from './bus/bus-component/bus-component.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { SearchRouteComponent } from './route/search-route/search-route.componen
     AdminDetailsComponent,
     ProfileComponent,
     SearchBusesComponent,
-    SearchRouteComponent
+    SearchRouteComponent,
+    BusComponentComponent
   ],
   imports: [
     BrowserModule,
