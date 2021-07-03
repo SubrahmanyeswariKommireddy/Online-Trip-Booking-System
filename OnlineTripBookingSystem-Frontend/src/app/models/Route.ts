@@ -1,9 +1,9 @@
 import { Bus } from "./Bus";
 
 export class Route{
-    id!:Number;
+    routeId!:Number;
     source:string='';
     destination:string='';
     bus!:Bus;
-    date!:Date;
+   
 }

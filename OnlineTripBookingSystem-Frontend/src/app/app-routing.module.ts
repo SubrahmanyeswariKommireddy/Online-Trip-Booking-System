@@ -8,6 +8,7 @@ import { DefaultHomepageComponent } from './home/default-homepage/default-homepa
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AddBusComponent } from './bus/add-bus/add-bus.component';
+import { BusComponentComponent } from './bus/bus-component/bus-component.component';
 
 const routes: Routes = [
   {path:'',component:DefaultHomepageComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:'search',component:SearchBusesComponent},
   {path:'viewSeats',component:BusViewComponent},
   {path:'busList',component:BusListComponent},
+  {path:'getBus/:id',component:BusComponentComponent},
   {path:'addBus',component:AddBusComponent}
 ];
 

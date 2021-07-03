@@ -20,6 +20,7 @@ export class BusListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+   
       this.busService.getBuses().subscribe(
           (data) => this.buses = data,
           (err) => console.log(err)
@@ -29,6 +30,10 @@ export class BusListComponent implements OnInit {
 
   addBus() {
       this.router.navigate(['app-add-bus'])
+  }
+
+  checkAvailability(){
+    this.router.navigate(['viewSeats']);
   }
 
   // onEdit(bus: Bus) {
@@ -45,4 +50,6 @@ export class BusListComponent implements OnInit {
   //         }
   //     )
   // }
+
+
 }
