@@ -1,5 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { Route } from "../models/Route";
 
 @Injectable({
     providedIn: 'root'
@@ -11,10 +13,8 @@ import { Injectable } from "@angular/core";
 
     constructor(private httpClient: HttpClient) { }
 
-    busBetweenValue(source: any,destination: any)
-  {
-    return this.httpClient.get(`${this.baseUrl}/admin/getRoute/${source}/${destination}`)   
-  }
-
+    addRoute(route:Route) :Observable<Route>{
+      return <Observable<Route>>this.httpClient.post(this.baseUrl + "/admin/addRoute",route)
+    }
 
   }
