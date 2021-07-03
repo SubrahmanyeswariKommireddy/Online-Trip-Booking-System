@@ -1,1 +1,18 @@
-<p>update-bus works!</p>
+<div class="col-md-6 container">
+    <h2 class="text-center">Edit Bus</h2>
+    <form [formGroup]="updateBusForm" (ngSubmit)="onSubmit()">
+
+   
+     <div class="form-group" >
+        <label  for="fare">Fare</label>
+        <input type="number" formControlName="fare" 
+       min="1" required name="fare" class="form-control" id="fare">
+    </div>
+
+    <div (click)=onSubmit() class="field" >
+       <input type="submit" value="Update">
+    </div>
+
+    </form>
+
+</div> 

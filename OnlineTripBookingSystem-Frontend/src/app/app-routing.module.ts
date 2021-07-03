@@ -10,9 +10,10 @@ import { SignupComponent } from './signup/signup.component';
 import { AddBusComponent } from './bus/add-bus/add-bus.component';
 import { BusComponentComponent } from './bus/bus-component/bus-component.component';
 import { AddRouteComponent } from './route/add-route/add-route.component';
+import { UpdateBusComponent } from './bus/update-bus/update-bus.component';
 
 const routes: Routes = [
-  {path:'',component:DefaultHomepageComponent},
+  {path:'default',component:DefaultHomepageComponent},
   {path:'home',component:AdminHomepageComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'busList',component:BusListComponent},
   {path:'getBus/:id',component:BusComponentComponent},
   {path:'addBus',component:AddBusComponent},
-  {path:'addRoute',component:AddRouteComponent}
+  {path:'addRoute',component:AddRouteComponent},
+  {path:'updateBus',component:UpdateBusComponent}
 ];
 
 @NgModule({

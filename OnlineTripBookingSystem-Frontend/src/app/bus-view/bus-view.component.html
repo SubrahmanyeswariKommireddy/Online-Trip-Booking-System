@@ -29,7 +29,7 @@
  <div> <img src="./assets/images/steering.jpeg" alt="driver" width="35" height="40" style="margin-left:7.5em; margin-top: 0.3em; padding-bottom: 2mm;"></div>
       <div class="row">
          
-        <div class="seat">1</div>
+        <div class="seat" (click)="Booking('1')">1</div>
         <div class="seat">2</div>
      
         <div class="seat">3</div>
@@ -81,7 +81,7 @@
   </div>
 </div>
     <p class="text">
-       Selected Seats : <span id="count">0</span> <span
+       Selected Seats : <span id="count" >0</span> <span
        
         ></span
       >
@@ -91,6 +91,6 @@
       Confirm Booking</button>
    </p>
 
-    <script src="script.js"></script>
+    <script src="bus-view.component.ts"></script>
   </body>
 </html>

@@ -38,11 +38,11 @@ export class LoginComponent implements OnInit {
       data => {
         console.log(data)
         if (userType=="ADMIN") {
-          this.router.navigate([''])
+          this.router.navigate(['/home'])
       
         }
         else if(userType=="CUSTOMER"){
-           this.router.navigate([''])
+           this.router.navigate(['/default'])
         }
         this.invalidLogin = false
       },

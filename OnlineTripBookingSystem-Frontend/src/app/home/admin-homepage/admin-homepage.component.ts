@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminHomepageComponent implements OnInit {
 
+  public isAdmin: boolean=false;
+  public isCustomer: boolean=false;
+
   constructor() { }
 
   ngOnInit(): void {
+
+    
   }
 
 }
