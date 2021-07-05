@@ -40,10 +40,10 @@
                 <td>{{bus.totalCapacity}}</td>
                 <td><button class="btn btn-success" (click)=checkAvailability()> Check Availability</button></td>
                 <td >
-                    <button class="btn btn-success" (click)="onEdit(bus)">Edit</button>
+                    <button *ngIf="isAdmin" class="btn btn-success" (click)="onEdit(bus)">Edit</button>
                 </td>
                 <td >
-                    <button class="btn btn-danger" (click)="onDelete(bus)">Delete</button>
+                    <button *ngIf="isAdmin" class="btn btn-danger" (click)="onDelete(bus)">Delete</button>
                 </td>
                 </tr>
         </tbody>
