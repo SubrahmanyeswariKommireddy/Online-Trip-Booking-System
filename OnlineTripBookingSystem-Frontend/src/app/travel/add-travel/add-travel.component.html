@@ -1,1 +1,21 @@
-<p>add-travel works!</p>
+
+
+  <div class="col-md-6 container">
+    <h2 class="text-center">Add Travel</h2>
+    <form [formGroup]="addTravelForm" (ngSubmit)="onSubmit()">
+
+
+
+    <div class="form-group" >
+        <label  for="travelAgentName">Travel Agent Name</label>
+        <input type="string" formControlName="travelAgentName" 
+        required name="travelAgentName" class="form-control" id="travelAgentName">
+    </div>
+
+    <div (click)=onSubmit() class="field" >
+       <input type="submit" value="Add">
+    </div>
+
+    </form>
+
+</div> 
