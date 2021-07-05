@@ -40,6 +40,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchBusesComponent } from './bus/search-buses/search-buses.component';
 import { SearchRouteComponent } from './route/search-route/search-route.component';
 import { BusComponentComponent } from './bus/bus-component/bus-component.component';
+import { AdminHeaderComponent } from './header/admin-header/admin-header.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { BusComponentComponent } from './bus/bus-component/bus-component.compone
     ProfileComponent,
     SearchBusesComponent,
     SearchRouteComponent,
-    BusComponentComponent
+    BusComponentComponent,
+    AdminHeaderComponent
   ],
   imports: [
     BrowserModule,

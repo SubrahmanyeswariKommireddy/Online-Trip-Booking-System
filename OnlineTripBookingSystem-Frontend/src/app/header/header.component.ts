@@ -9,24 +9,24 @@ import { LoginService } from '../shared/login.service';
 })
 export class HeaderComponent implements OnInit {
   
-  public isAdmin: boolean=false;
-  public isCustomer: boolean=false;
+  // public isAdmin: boolean=false;
+  // public isCustomer: boolean=false;
 
   constructor(private router:Router, public loginService:LoginService) { }
 
   ngOnInit(): void {
     
-    var userType = sessionStorage.getItem('userType')
-    if(userType=="ADMIN")
-    {
+    // var userType = sessionStorage.getItem('userType')
+    // if(userType=="ADMIN")
+    // {
       
-      this.isAdmin=true;
+    //   this.isAdmin=true;
       
-    }
-    else if(userType=="CUSTOMER")
-    {
-      this.isCustomer=true;
-    }
+    // }
+    // else if(userType=="CUSTOMER")
+    // {
+    //   this.isCustomer=true;
+    // }
   }  
 
   btnClick(){
