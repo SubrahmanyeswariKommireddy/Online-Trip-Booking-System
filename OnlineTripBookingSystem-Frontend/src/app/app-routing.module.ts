@@ -11,6 +11,7 @@ import { AddBusComponent } from './bus/add-bus/add-bus.component';
 import { BusComponentComponent } from './bus/bus-component/bus-component.component';
 import { AddRouteComponent } from './route/add-route/add-route.component';
 import { UpdateBusComponent } from './bus/update-bus/update-bus.component';
+import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
 
 const routes: Routes = [
   {path:'default',component:DefaultHomepageComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:'getBus/:id',component:BusComponentComponent},
   {path:'addBus',component:AddBusComponent},
   {path:'addRoute',component:AddRouteComponent},
-  {path:'updateBus',component:UpdateBusComponent}
+  {path:'updateBus',component:UpdateBusComponent},
+  {path:'updateCustomer',component:UpdateCustomerComponent}
 ];
 
 @NgModule({
