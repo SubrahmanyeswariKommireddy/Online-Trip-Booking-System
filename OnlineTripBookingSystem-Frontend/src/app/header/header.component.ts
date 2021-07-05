@@ -33,12 +33,11 @@ export class HeaderComponent implements OnInit {
     console.log("printing");
     this.router.navigateByUrl('login');
   }
+  
   logOut(){
     console.log("printing");
     this.loginService.logOut();
     this.router.navigateByUrl('login');
   }
-
-
 }
 

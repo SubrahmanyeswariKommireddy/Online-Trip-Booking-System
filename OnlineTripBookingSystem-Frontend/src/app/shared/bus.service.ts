@@ -13,23 +13,23 @@ export class BusService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getBuses():Observable<Bus[]> {
+  getBuses(): Observable<Bus[]> {
     return <Observable<Bus[]>>this.httpClient.get(this.baseUrl + "/getBuses")
   }
-  getBusById(id:number):Observable<Bus>{
+  getBusById(id: number): Observable<Bus> {
 
-    return <Observable<Bus>>this.httpClient.get(this.baseUrl+"/getBus/"+id)
-}
-  addBus(bus:Bus) :Observable<Bus>{
-    return <Observable<Bus>>this.httpClient.post(this.baseUrl + "/travel/addBus",bus)
+    return <Observable<Bus>>this.httpClient.get(this.baseUrl + "/getBus/" + id)
   }
-  deleteBusById(id:number):Observable<Bus>{
+  addBus(bus: Bus): Observable<Bus> {
+    return <Observable<Bus>>this.httpClient.post(this.baseUrl + "/travel/addBus", bus)
+  }
+  deleteBusById(id: number): Observable<Bus> {
 
-    return <Observable<Bus>>this.httpClient.delete(this.baseUrl+"/bus/"+id)
-}
-updateBus(id:number,bus:Bus):Observable<Bus>{
+    return <Observable<Bus>>this.httpClient.delete(this.baseUrl + "/bus/" + id)
+  }
+  updateBus(id: number, bus: Bus): Observable<Bus> {
 
-    return <Observable<Bus>>this.httpClient.put(this.baseUrl+"/udateBus/"+id,bus)
-}
+    return <Observable<Bus>>this.httpClient.put(this.baseUrl + "/udateBus/" + id, bus)
+  }
 }
 

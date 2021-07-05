@@ -13,8 +13,8 @@ import { AddRouteComponent } from './route/add-route/add-route.component';
 import { UpdateBusComponent } from './bus/update-bus/update-bus.component';
 
 const routes: Routes = [
-  {path:'default',component:DefaultHomepageComponent},
-  {path:'home',component:AdminHomepageComponent},
+  {path:'',component:DefaultHomepageComponent},
+  {path:'admin',component:AdminHomepageComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'search',component:SearchBusesComponent},
