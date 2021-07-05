@@ -90,31 +90,56 @@ public class UserServiceImpl implements IUserService {
 				throw new AdminNotFoundException("User Already Exists");
 			}
 		}
+		}
 		
-		else if(user.getUserType() == User_Type.CUSTOMER)
-		{
+//		else if(user.getUserType() == User_Type.CUSTOMER)
+//		{
+//			
+//			Customer c = new Customer();
+//			c.setEmail(user.getEmail());
+//			c.setMobileNumber(user.getMobileNumber());
+//			c.setUserName(user.getUserName());
+//			c.setPassword(bcryptEncoder.encode(user.getPassword()));
+//			c.setUserType(user.getUserType());
+//			Customer customer =  customerRepository.findByEmail(user.getEmail());
+//			if(customer == null)
+//			{
+//				user.setPassword(bcryptEncoder.encode(user.getPassword()));
+//				userRepository.save(user);
+//				return customerRepository.save(c);
+//			}
+//			else
+//			{
+//				throw new CustomerNotFoundException("User Already Exists");
+//			}
+//		}
+			else if(user.getUserType() == User_Type.CUSTOMER)
+			{
+				List<User> us=userRepository.findByEmail(user.getEmail());
+				if(us.size()==0) {
+				Customer customer =  customerRepository.findByEmail(user.getEmail());
+				if(customer == null)
+				{
+					Customer cus = new Customer();
+					cus.setEmail(user.getEmail());
+					cus.setMobileNumber(user.getMobileNumber());
+					cus.setUserName(user.getUserName());
+					cus.setPassword(bcryptEncoder.encode(user.getPassword()));
+					cus.setUserType(User_Type.CUSTOMER);
+					user.setPassword(bcryptEncoder.encode(user.getPassword()));
+					userRepository.save(user);
+					return customerRepository.save(cus);
+				}
+				else
+				{
+					throw new CustomerNotFoundException("User Already Exists");
+				}
+			}
+			}
 			
-			Customer c = new Customer();
-			c.setEmail(user.getEmail());
-			c.setMobileNumber(user.getMobileNumber());
-			c.setUserName(user.getUserName());
-			c.setPassword(bcryptEncoder.encode(user.getPassword()));
-			c.setUserType(user.getUserType());
-			Customer customer =  customerRepository.findByEmail(user.getEmail());
-			if(customer == null)
-			{
-				user.setPassword(bcryptEncoder.encode(user.getPassword()));
-				userRepository.save(user);
-				return customerRepository.save(c);
-			}
-			else
-			{
-				throw new CustomerNotFoundException("User Already Exists");
-			}
-		}
-		}
 		throw new DuplicateRecordException("duplicate record found");
 	}
+	
 //	@Override
 //	public User Login(String emailId, String password, Role role) {
 //		// TODO Auto-generated method stub
