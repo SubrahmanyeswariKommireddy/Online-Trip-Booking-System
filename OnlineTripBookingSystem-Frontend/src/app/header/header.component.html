@@ -61,7 +61,7 @@
 							<a class="nav-link text-white" href="/login" (click)="btnClick()">Log In</a>
 							<!-- <button class="nav-link text-white" routerLink="/login">Log In</button> -->
 						</li>
-						<li><a *ngIf="loginService.isUserLoggedIn()" (click)="logOut()" href="/default" class="nav-link">LogOut</a></li>
+						<li class="nav-item"><a  class="nav-link text-white" *ngIf="loginService.isUserLoggedIn()" (click)="logOut()" href="/default" class="nav-link">LogOut</a></li>
 
 					</ul>
 				</div>
