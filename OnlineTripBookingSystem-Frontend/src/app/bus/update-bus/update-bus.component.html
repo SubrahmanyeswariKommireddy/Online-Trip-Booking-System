@@ -1,4 +1,4 @@
-<div class="col-md-6 container">
+<!-- <div class="col-md-6 container">
    <h2 class="text-center">Update Bus Details</h2>
    <form [formGroup]="updateBusForm" (ngSubmit)="onSubmit()">
 
@@ -15,17 +15,39 @@
       <div class="form-group">
          <label for="fare">Fare</label>
          <input type="number" formControlName="fare" min="1" required name="fare" class="form-control" id="fare">
-      </div>
+      </div> -->
 
       <!-- <div class="form-group" >
        <label  for="totalCapacity">Capacity</label>
        <input type="number" formControlName="totalCapacity" 
       min="1" required name="totalCapacity" class="form-control" id="totalCapacity">
    </div> -->
-
+<!-- 
       <div (click)=onSubmit() class="field">
          <input type="submit" value="update">
       </div>
 
    </form>
-</div>
+</div> -->
+
+
+<div class="col-md-6 user-container">
+   <h2 class="text-center">Edit User</h2>
+   <form [formGroup]="updateBusForm" (ngSubmit)="onSubmit()">
+     <div class="hidden">
+       <input type="text" formControlName="id" placeholder="id" name="id" class="form-control" id="id" readonly="true">
+     </div>
+
+     <div class="form-group">
+       <label for="busType">Bus Type</label>
+       <input type="text" formControlName="busType" placeholder="busType" name="busType" class="form-control" id="busType" >
+     </div>
+ 
+     <div class="form-group">
+       <label for="fare">Fare</label>
+       <input formControlName="fare" placeholder="fare" name="fare" class="form-control" id="fare">
+     </div>
+ 
+     <input type="submit" value="Update" class="btn btn-success">
+   </form>
+ </div>

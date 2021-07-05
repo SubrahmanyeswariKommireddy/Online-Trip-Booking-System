@@ -29,7 +29,7 @@ export class BusService {
   }
   updateBus(id: number, bus: Bus): Observable<Bus> {
 
-    return <Observable<Bus>>this.httpClient.put(this.baseUrl + "/udateBus/" + id, bus)
+    return <Observable<Bus>>this.httpClient.put(this.baseUrl + "/updateBus/" + id, bus)
   }
 }
 
