@@ -27,24 +27,24 @@ export class SearchRouteComponent implements OnInit {
 
   ngOnInit() {
   }
-  update(source: any,destination: any)
-  {
-    this.routeService.busBetweenValue(source,destination).subscribe(bus =>
-      {
-        if(bus!=null)
-        {
-          console.log(bus);
-          this.router.navigate([''])
+  // update(source: any,destination: any)
+  // {
+  //   this.routeService.busBetweenValue(source,destination).subscribe(bus =>
+  //     {
+  //       if(bus!=null)
+  //       {
+  //         console.log(bus);
+  //         this.router.navigate([''])
           
-        }
-        else{
-          console.log(bus)
-          // console.log("NO Output");
-          alert("ENTER CORRECT CREDENTAILS");
+  //       }
+  //       else{
+  //         console.log(bus)
+  //         // console.log("NO Output");
+  //         alert("ENTER CORRECT CREDENTAILS");
           
-             }
-      }
-    )
+  //            }
+  //     }
+  //   )
   
-  }
+  // }
 }

@@ -40,7 +40,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchBusesComponent } from './bus/search-buses/search-buses.component';
 import { SearchRouteComponent } from './route/search-route/search-route.component';
 import { BusComponentComponent } from './bus/bus-component/bus-component.component';
+<<<<<<< HEAD
 import { AdminHeaderComponent } from './header/admin-header/admin-header.component';
+=======
+import { RouteComponentComponent } from './route/route-component/route-component.component';
+>>>>>>> 0bc368062a50c54d06fd5179277550acbf5fa01b
 
 @NgModule({
   declarations: [
