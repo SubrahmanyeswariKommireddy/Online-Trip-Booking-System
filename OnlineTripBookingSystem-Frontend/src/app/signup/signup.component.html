@@ -158,7 +158,7 @@
    </body>
 </html> -->
 
-<div class="col-md-6" style="padding: 0px 0px 0px 100px;">
+<!-- <div class="col-md-6" style="padding: 0px 0px 0px 100px;">
     <h2 class="text-center">Register</h2>
     <form #form1="ngForm" (ngSubmit)="createUser(form1)">
 
@@ -197,6 +197,42 @@
             Already registered?  <a href="/login">Login</a>
         </div>
     </form>
+</div> -->
+
+
+<div class="container">
+    <div class="brand-logo"></div>
+    <div class="brand-title">Register</div>
+    <form #form1="ngForm" (ngSubmit)="createUser(form1)">
+    <div class="inputs">
+        <div class="log-in-inputs">
+            <label for="userName">User Name:</label>
+            <input [(ngModel)]="user.userName" placeholder="User Name" name="userName" class="form-control"
+                id="userName">
+          </div>
+          <div class="log-in-inputs">
+            <label for="mobilenumber">Mobile Number:</label>
+            <input [(ngModel)]="user.mobileNumber" placeholder="Mobile Number" name="mobileNumber" class="form-control"
+                id="mobileNumber">
+          </div>
+      <div class="log-in-inputs">
+        <label for="email">Email Id:</label>
+      <input [(ngModel)]="user.email" placeholder="Email Id" name="email" class="form-control" id="email">
+      </div>
+      <div class="log-in-inputs">
+        <label for="password">Password :</label>
+        <input [(ngModel)]="user.password" placeholder="Password" name="password" class="form-control"
+            id="password">
+      </div>
+      <div class="log-in-inputs">
+        <label for="userType">UserType :</label>
+            <input [(ngModel)]="user.userType" placeholder="Role" name="role" class="form-control" id="role">
+      </div>
+      <button type="submit">Register</button>
+      <!-- <button (click)=checkLogin() class="btn btn-success">LOGIN</button> -->
+  </div>
+  <div class="signup-link">
+    Already registered?  <a href="/login">Login</a>
+ </div>
+</form>
 </div>
-
-

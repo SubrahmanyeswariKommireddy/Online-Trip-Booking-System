@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../shared/login.service';
 
-export class JwtResponse{
+export class JwtResponse {
 
-  jwtToken!:string;
-  id!:number;
+  jwtToken!: string;
+  id!: number;
 }
 
 @Component({
@@ -15,34 +15,32 @@ export class JwtResponse{
 })
 export class LoginComponent implements OnInit {
 
-  email:string = '';
-  password:string = '';
-  userType:string = '';
-  invalidLogin:boolean = false;
-  response!:JwtResponse;
+  email: string = '';
+  password: string = '';
+  userType: string = '';
+  invalidLogin: boolean = false;
+  response!: JwtResponse;
 
 
   constructor(private router: Router,
     private loginservice: LoginService) { }
-   
-   
 
   ngOnInit() {
-    
+
   }
 
   checkLogin() {
-    var userType=sessionStorage.getItem('userType');
-   
+    var userType = sessionStorage.getItem('userType');
+
     (this.loginservice.authenticate(this.email, this.password, this.userType).subscribe(
       data => {
         console.log(data)
-        if (userType=="ADMIN") {
-          this.router.navigate(['/home'])
-      
+        if (userType == "ADMIN") {
+          this.router.navigate(['/admin'])
+
         }
-        else if(userType=="CUSTOMER"){
-           this.router.navigate(['/default'])
+        else if (userType == "CUSTOMER") {
+          this.router.navigate([''])
         }
         this.invalidLogin = false
       },
@@ -51,20 +49,15 @@ export class LoginComponent implements OnInit {
       }
     )
     );
-
   }
 
-  setValues(data:any){
-    console.log("in set values",data)
-    sessionStorage.setItem('email',this.email);
-        sessionStorage.setItem('token',data.token)
-       
-      console.log('data set')
-
-
-
+  setValues(data: any) {
+    console.log("in set values", data)
+    sessionStorage.setItem('email', this.email);
+    sessionStorage.setItem('token', data.token);
+    sessionStorage.setItem('userType', this.userType)
+    console.log('data set')
   }
-
 }
 
 
@@ -98,7 +91,7 @@ export class LoginComponent implements OnInit {
 //     private loginservice: LoginService) { }
 
 //   ngOnInit() {
-    
+
 //   }
 
 //   checkLogin() {
@@ -160,7 +153,7 @@ export class LoginComponent implements OnInit {
 //     private loginService: LoginService) { }
 
 //   ngOnInit() {
-    
+
 //   }
 
 //   checkLogin() {

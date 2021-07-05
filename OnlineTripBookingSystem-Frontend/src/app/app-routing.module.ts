@@ -11,11 +11,12 @@ import { AddBusComponent } from './bus/add-bus/add-bus.component';
 import { BusComponentComponent } from './bus/bus-component/bus-component.component';
 import { AddRouteComponent } from './route/add-route/add-route.component';
 import { UpdateBusComponent } from './bus/update-bus/update-bus.component';
+import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
 import { AddTravelComponent } from './travel/add-travel/add-travel.component';
 
 const routes: Routes = [
-  {path:'default',component:DefaultHomepageComponent},
-  {path:'home',component:AdminHomepageComponent},
+  {path:'',component:DefaultHomepageComponent},
+  {path:'admin',component:AdminHomepageComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'search',component:SearchBusesComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:'getBus/:id',component:BusComponentComponent},
   {path:'addBus',component:AddBusComponent},
   {path:'addRoute',component:AddRouteComponent},
+  {path:'updateCustomer',component:UpdateCustomerComponent},
   {path:'addTravel',component:AddTravelComponent},
   {path:'updateBus',component:UpdateBusComponent}
 ];
@@ -33,3 +35,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

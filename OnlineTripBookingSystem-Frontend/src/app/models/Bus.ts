@@ -7,5 +7,4 @@ export class Bus {
     currentCapacity!:Number;
     busType:string='';
     travel!:Travel;
-
  }

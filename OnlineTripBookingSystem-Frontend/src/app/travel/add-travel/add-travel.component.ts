@@ -29,7 +29,7 @@ export class AddTravelComponent implements OnInit {
     console.log("travel added")
     this.routeService.addTravel(this.addTravelForm.value).subscribe(
         data => {this.travel = data;
-            this.router.navigate(['/home'])},
+            this.router.navigate([''])},
         err => console.log(err)
     )
 }
