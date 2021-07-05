@@ -14,150 +14,122 @@ export class UpdateCustomerComponent implements OnInit {
   customer!:Customer;
   updateCustomerForm!: FormGroup;
   id: number = 0;
-  oldPassword!:string;
-  newPassword!:string
-  mobileNumber: string='';
-  userName:string='';
-  email:string='';
-  password:string='';
-  userService: any;
+  // oldPassword!:string;
+  // newPassword!:string
+  // mobileNumber: string='';
+  // userName:string='';
+  // email:string='';
+  // password:string='';
+   userService: any;
+  // isLoginError : boolean = false;
 
   constructor(private formBuilder: FormBuilder, userService:UserService, private router: Router, private _ActivatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.updateCustomerForm=new FormGroup({
-      mobileNumber:new FormControl(''),
-      password:new FormControl(''),
-      email:new FormControl('')
-  });
+  //   this.updateCustomerForm=new FormGroup({
+  //     mobileNumber:new FormControl(''),
+  //     userName:new FormControl(''),
+  //     email:new FormControl('')
+  // });
+
+  this.id = Number(this._ActivatedRoute.snapshot.paramMap.get("id"));
+
+    this.userService.getCustomerById(this.id).subscribe(
+      (data: Customer) => {
+        console.log(data);
+        this.customer = data;
+        this.updateCustomerForm = this.formBuilder.group({
+
+          id: this.customer.id,
+          // alert: this.customer.alert,
+          // message: this.customer.message,
+
+        })
+      },
+      (err: any) => console.log(err)
+    );
   }
   onSubmit() {
-    // console.log(this.updateCustomerForm.value + "from onSubmit of update customer component")
-    // this.customerService.updatePassword(this.updateCustomerForm.value).subscribe(
-    //     data => {this.customer = data;
-    //         this.router.navigate(['busList'])},
-    //     err => console.log(err)
-    // )
+    
+      console.log('form onSubmit of edit securityalert' + this.updateCustomerForm.value);
+          this.userService.updateMobileNumber(this.id, this.updateCustomerForm.value).
+            subscribe(
+              (data: Customer) => {
+                this.customer = data;
+                this.router.navigate([''])
+              },
+              (err: any) => { console.log(err) }
+            )
    
 }
 
-updateUserInfo()
-{
-  this.customer = { 
-    "id":this.id,
-    "mobileNumber":this.mobileNumber,
-    "email":this.email,
-    "userName":this.userName,
-    "password":this.password
-   
-  };
-  console.log('printing')
-  this.userService.updateUser(this.id,this.customer).subscribe((data: Customer)=>this.customer=data);
-  sessionStorage.setItem("id",this.customer.id.toString());
-  sessionStorage.setItem("mobileNumber",this.customer.mobileNumber.toString());
-  sessionStorage.setItem("email",this.customer.email.toString());
-  sessionStorage.setItem("userName",this.customer.userName.toString());
-  sessionStorage.setItem("password",this.customer.password.toString());
-  alert("Account Details Updated successfully!")
-
-}
-
-changePassword()
-  {
-    if(this.password==this.oldPassword)
-    {
-      if(this.oldPassword!=this.newPassword)
-      {
-        this.password = this.newPassword;
-
-        this.updateUserInfo();
-        console.log('printing')
-        location.reload();
-        console.log('printing')
-        alert("Password changed successfully!");
-      }
-      else
-      {
-        alert("New Password cannot be same as Old password!")
-      }
-    }
-    else
-    {
-      alert("Old Password is Incorrect!")
-    }
-  }
-
+// createUser(form1: any): void {
+//   console.log("in create user",form1.value)
+  
+//   this.userService.createUser(this.customer)
+//       .subscribe( (data: any) => {
+//         console.log(data);
+//         this.router.navigate(['/default'])
+//       });
+// };
 }
 
 
+// import { Component, OnInit } from '@angular/core';
+// import { FormBuilder, FormGroup } from '@angular/forms';
+// import { ActivatedRoute, Router } from '@angular/router';
+// import { SecurityAlertService } from '../shared/securityalertservice';
+// import { SecurityAlert } from './securityalert';
+
+// @Component({
+//   selector: 'app-edit-securityalert',
+//   templateUrl: './edit-securityalert.component.html',
+//   styleUrls: ['./edit-securityalert.component.css']
+// })
+// export class EditSecurityalertComponent implements OnInit {
 
 
-// export class MyAccountComponent implements OnInit {
-//   user:User;
-//   id;fullname;mobileno;dob;emailid;username;password;oldPassword;newPassword;
-//   constructor(private userService:UserService,private route:Router) { }
+//   securityalert!: SecurityAlert;
+//   editForm!: FormGroup;
+//   id: number = 0;
+
+//   constructor(private _ActivatedRoute: ActivatedRoute,
+//     private formBuilder: FormBuilder,
+//     private router: Router,
+//     private service: SecurityAlertService) { }
+
 
 //   ngOnInit(): void {
-//     if(sessionStorage.getItem("userid")==null)
-//     {
-//       this.route.navigate(["/login"]);
-//     }
-//     this.id = sessionStorage.getItem('userid');
-//     this.fullname = sessionStorage.getItem('userfullname');
-//     this.mobileno = sessionStorage.getItem('usermobileno');
-//     this.dob = sessionStorage.getItem('userdob');
-//     this.emailid = sessionStorage.getItem('useremailid');
-//     this.username = sessionStorage.getItem('username');
-//     this.password = sessionStorage.getItem('password');
+//     this.id = Number(this._ActivatedRoute.snapshot.paramMap.get("id"));
+
+//     this.service.getSecurityAlertById(this.id).subscribe(
+//       (data) => {
+//         console.log(data);
+//         this.securityalert = data;
+//         this.editForm = this.formBuilder.group({
+
+//           id: this.securityalert.id,
+//           alert: this.securityalert.alert,
+//           message: this.securityalert.message,
+
+//         })
+//       },
+//       (err) => console.log(err)
+//     );
 //   }
-//   updateUserInfo()
-//   {
-//     this.user = { 
-//       "id":this.id,
-//       "fullName":this.fullname,
-//       "mobileno":this.mobileno,
-//       "dob":this.dob,
-//       "emailid":this.emailid,
-//       "username":this.username,
-//       "password":this.password
-//     };
-//     this.userService.updateUser(this.id,this.user).subscribe(data=>this.user=data);
-//     sessionStorage.setItem("userid",this.user.id.toString());
-//     sessionStorage.setItem("userfullname",this.user.fullName.toString());
-//     sessionStorage.setItem("usermobileno",this.user.mobileno.toString());
-//     sessionStorage.setItem("userdob",this.user.dob.toString());
-//     sessionStorage.setItem("useremailid",this.user.emailid.toString());
-//     sessionStorage.setItem("username",this.user.username.toString());
-//     sessionStorage.setItem("password",this.user.password.toString());
-//     alert("Account Details Updated successfully!")
-//   }
-//   changeUserPassword()
-//   {
-//     if(this.password==this.oldPassword)
-//     {
-//       if(this.oldPassword!=this.newPassword)
-//       {
-//         this.password = this.newPassword;
-//         this.updateUserInfo();
-//         location.reload();
-//         alert("Password changed successfully!");
-//       }
-//       else
-//       {
-//         alert("New Password cannot be same as Old password!")
-//       }
-//     }
-//     else
-//     {
-//       alert("Old Password is Incorrect!")
-//     }
-//   }
-//   deleteCurrentUser()
-//   {
-//     let id:number = Number(sessionStorage.getItem("userid"));
-//     this.userService.deleteUser(id).subscribe((data)=>data);
-//     sessionStorage.clear();
-//     location.reload();
-//     alert("Account Deleted Successfully!");
+
+//   onSubmit() {
+
+//     console.log('form onSubmit of edit securityalert' + this.editForm.value);
+//     this.service.updateSecurityAlert(this.id, this.editForm.value).
+//       subscribe(
+//         (data) => {
+//           this.securityalert = data;
+//           this.router.navigate(['securityalerts'])
+//         },
+//         (err) => { console.log(err) }
+//       )
 //   }
 // }
+
+

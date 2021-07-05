@@ -11,6 +11,9 @@ import { BusService } from 'src/app/shared/bus.service';
 })
 export class BusListComponent implements OnInit {
 
+  public isAdmin: boolean=false;
+  public isCustomer: boolean=false;
+
   buses!: Bus[];
   private error!: string;
    busId!: number ;
@@ -25,6 +28,18 @@ export class BusListComponent implements OnInit {
           (data) => this.buses = data,
           (err) => console.log(err)
       )
+
+      var userType = sessionStorage.getItem('userType')
+    if(userType=="ADMIN")
+    {
+      
+      this.isAdmin=true;
+      
+    }
+    else if(userType=="CUSTOMER")
+    {
+      this.isCustomer=true;
+    }
   }
   
 
