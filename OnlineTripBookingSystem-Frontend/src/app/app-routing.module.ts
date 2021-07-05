@@ -15,8 +15,8 @@ import { UpdateCustomerComponent } from './customer/update-customer/update-custo
 import { AddTravelComponent } from './travel/add-travel/add-travel.component';
 
 const routes: Routes = [
-  {path:'default',component:DefaultHomepageComponent},
-  {path:'home',component:AdminHomepageComponent},
+  {path:'',component:DefaultHomepageComponent},
+  {path:'admin',component:AdminHomepageComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'search',component:SearchBusesComponent},
