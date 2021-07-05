@@ -21,7 +21,7 @@ import { User } from "../models/User";
     //     return <Observable<User>>this.httpClient.put(this.baseUrl+"/updateCustomer/"+id,user)
     // }
 
-    updateBus(id:number,customer:Customer):Observable<Customer>{
+    updateCustomer(id:number,customer:Customer):Observable<Customer>{
 
       return <Observable<Customer>>this.httpClient.put(this.baseUrl+"/udateCustomer/"+id,customer)
   }

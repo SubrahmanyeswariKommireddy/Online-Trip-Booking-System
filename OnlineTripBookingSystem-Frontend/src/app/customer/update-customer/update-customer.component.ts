@@ -11,68 +11,30 @@ import { UserService } from 'src/app/shared/user.service';
   styleUrls: ['./update-customer.component.css']
 })
 export class UpdateCustomerComponent implements OnInit {
+
+  // updateCustomerForm!: FormGroup;
   customer!:Customer;
-  updateCustomerForm!: FormGroup;
-  id: number = 0;
-  // oldPassword!:string;
-  // newPassword!:string
-  // mobileNumber: string='';
-  // userName:string='';
-  // email:string='';
-  // password:string='';
-   userService: any;
-  // isLoginError : boolean = false;
-
-  constructor(private formBuilder: FormBuilder, userService:UserService, private router: Router, private _ActivatedRoute: ActivatedRoute) { }
-
-  ngOnInit(): void {
-  //   this.updateCustomerForm=new FormGroup({
-  //     mobileNumber:new FormControl(''),
-  //     userName:new FormControl(''),
-  //     email:new FormControl('')
-  // });
-
-  this.id = Number(this._ActivatedRoute.snapshot.paramMap.get("id"));
-
-    this.userService.getCustomerById(this.id).subscribe(
-      (data: Customer) => {
-        console.log(data);
-        this.customer = data;
-        this.updateCustomerForm = this.formBuilder.group({
-
-          id: this.customer.id,
-          // alert: this.customer.alert,
-          // message: this.customer.message,
-
-        })
-      },
-      (err: any) => console.log(err)
-    );
-  }
-  onSubmit() {
-    
-      console.log('form onSubmit of edit securityalert' + this.updateCustomerForm.value);
-          this.userService.updateMobileNumber(this.id, this.updateCustomerForm.value).
-            subscribe(
-              (data: Customer) => {
-                this.customer = data;
-                this.router.navigate([''])
-              },
-              (err: any) => { console.log(err) }
-            )
+  id!:number;
    
+  constructor(
+    private userService: UserService,
+    private router:Router
+  ) { }
+
+  ngOnInit() {
+  }
+
+//   onSubmit() {
+//     console.log(this.customer.mobileNumber + "from onSubmit of add bus component")
+//     this.userService.updateMobileNumber(this.customer.id, this.customer).subscribe(
+//         data => {this.customer = data;
+//             this.router.navigate([''])},
+//         err => console.log(err)
+//     )
+// }
 }
 
-// createUser(form1: any): void {
-//   console.log("in create user",form1.value)
-  
-//   this.userService.createUser(this.customer)
-//       .subscribe( (data: any) => {
-//         console.log(data);
-//         this.router.navigate(['/default'])
-//       });
-// };
-}
+
 
 
 // import { Component, OnInit } from '@angular/core';
