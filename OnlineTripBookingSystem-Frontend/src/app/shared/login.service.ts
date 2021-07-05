@@ -49,5 +49,7 @@ export class LoginService {
 
   logOut() {
     sessionStorage.removeItem('email')
+    sessionStorage.removeItem('token')
+    sessionStorage.removeItem('userType')
   }
 }
