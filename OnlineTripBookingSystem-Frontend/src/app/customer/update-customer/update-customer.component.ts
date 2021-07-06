@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Customer } from 'src/app/models/Customer';
-import { User } from 'src/app/models/User';
 import { UserService } from 'src/app/shared/user.service';
 
 @Component({
@@ -12,7 +11,7 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class UpdateCustomerComponent implements OnInit {
 
-  // updateCustomerForm!: FormGroup;
+  updateCustomerForm!: FormGroup;
   customer!:Customer;
   id!:number;
    
@@ -24,14 +23,14 @@ export class UpdateCustomerComponent implements OnInit {
   ngOnInit() {
   }
 
-//   onSubmit() {
-//     console.log(this.customer.mobileNumber + "from onSubmit of add bus component")
-//     this.userService.updateMobileNumber(this.customer.id, this.customer).subscribe(
-//         data => {this.customer = data;
-//             this.router.navigate([''])},
-//         err => console.log(err)
-//     )
-// }
+  onSubmit() {
+    console.log(this.customer.mobileNumber + "from onSubmit of add bus component")
+    this.userService.updateMobileNumber(this.customer.id, this.customer).subscribe(
+        data => {this.customer = data;
+            this.router.navigate([''])},
+        err => console.log(err)
+    )
+}
 }
 
 
