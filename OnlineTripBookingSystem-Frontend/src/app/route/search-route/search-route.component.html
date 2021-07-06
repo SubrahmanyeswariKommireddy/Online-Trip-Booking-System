@@ -1,5 +1,5 @@
-<div class="input-search-container">
-    <!-- (ngSubmit)="update(busBetween.value.source,busBetween.value.destination) -->
+<!-- <div class="input-search-container">
+    (ngSubmit)="update(busBetween.value.source,busBetween.value.destination) 
     <form class="d-flex justify-content-center" #busBetween="ngForm" (ngSubmit)="onSubmit()">
         <div class="d-inline-block position-relative">
             <span class="inputIcon"><i class="far fa-building"></i></span>
@@ -28,7 +28,7 @@
             <input class="btn btn-danger rounded-0 pl-3 pr-3 pb-2" type="submit" value="Search Buses" href="/search">
         </div>
     </form>
-</div>
+</div> -->
 
 
 <!-- 
@@ -69,6 +69,24 @@
 
     </form>
 </div> -->
+
+
+<div class="container">
+    <div class="cover">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate class="form-horizontal">
+            <div class="elem-group inlined">
+                <input type="search" [(ngModel)]="searchData.source" name="source" placeholder="Source" required>
+            </div>
+            <div class="elem-group inlined">
+                <input type="search" [(ngModel)]="searchData.destination" name="destination" placeholder="Destination" required>
+            </div>
+            <div class="elem-group inlined">
+                <input type="date" name="checkin" required>
+            </div>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</div>
 
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Bus } from 'src/app/models/Bus';
 import { BusService } from 'src/app/shared/bus.service';
 
@@ -18,11 +18,15 @@ export class BusListComponent implements OnInit {
   private error!: string;
    busId!: number ;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private busService: BusService) {
+  busData!:any;
+
+  constructor(private route:ActivatedRoute,private formBuilder: FormBuilder, private router: Router, private busService: BusService) {
 
   }
 
   ngOnInit(): void {
+
+    this.busData= this.route.snapshot.paramMap.get('searchData');
    
       this.busService.getBuses().subscribe(
           (data) => this.buses = data,
@@ -40,6 +44,8 @@ export class BusListComponent implements OnInit {
     {
       this.isCustomer=true;
     }
+
+
   }
   
 

@@ -13,6 +13,7 @@ import { AddRouteComponent } from './route/add-route/add-route.component';
 import { UpdateBusComponent } from './bus/update-bus/update-bus.component';
 import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
 import { AddTravelComponent } from './travel/add-travel/add-travel.component';
+import { AddBookingComponent } from './booking/add-booking/add-booking.component';
 
 const routes: Routes = [
   {path:'',component:DefaultHomepageComponent},
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path:'addRoute',component:AddRouteComponent},
   {path:'updateCustomer',component:UpdateCustomerComponent},
   {path:'addTravel',component:AddTravelComponent},
-  {path:'updateBus/:id',component:UpdateBusComponent}
+  {path:'updateBus/:id',component:UpdateBusComponent},
+  {path:'booking',component:AddBookingComponent}
 ];
 
 @NgModule({

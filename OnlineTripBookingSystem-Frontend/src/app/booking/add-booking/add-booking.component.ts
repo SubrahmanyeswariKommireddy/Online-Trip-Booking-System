@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-add-booking',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddBookingComponent implements OnInit {
 
-  constructor() { }
+  seatsCount!:number;
+  constructor(private route:ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit():void {
+// console.log(parseInt(this.route.snapshot.paramMap.get('count')!));
+    this.seatsCount=parseInt(this.route.snapshot.paramMap.get('count')!)
   }
+
+@Input()
+countNum!:number;
 
 }
