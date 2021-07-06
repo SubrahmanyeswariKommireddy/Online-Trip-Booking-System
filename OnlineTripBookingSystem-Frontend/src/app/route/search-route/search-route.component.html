@@ -1,10 +1,10 @@
 <!-- <div class="input-search-container">
-    (ngSubmit)="update(busBetween.value.source,busBetween.value.destination) 
+     (ngSubmit)="update(busBetween.value.source,busBetween.value.destination) 
     <form class="d-flex justify-content-center" #busBetween="ngForm" (ngSubmit)="onSubmit()">
         <div class="d-inline-block position-relative">
             <span class="inputIcon"><i class="far fa-building"></i></span>
-            <label class="inputLabel-default" for="input-label-from">FROM</label>
-            <input id="input-label-from" class="inputForm" type="text" list="input-from-list">
+            <label class="inputLabel-default" for="input-label-from"></label>
+            <input id="input-label-from" class="inputForm" type="text" list="input-from-list" placeholder="From">
             <datalist id="input-from-list">
               
             </datalist>
@@ -12,8 +12,8 @@
 
         <div class="d-inline-block position-relative">
             <span class="inputIcon"><i class="far fa-building"></i></span>
-            <label class="inputLabel-default" for="input-label-to">TO</label>
-            <input id="input-label-to" class="inputForm" type="text" list="input-to-list">
+            <label class="inputLabel-default" for="input-label-to"></label>
+            <input id="input-label-to" class="inputForm" type="text" list="input-to-list" placeholder="To">
             <datalist id="input-to-list">
               
             </datalist>
@@ -91,24 +91,19 @@
 
 
 
-
-
-
-
-<!-- <div class="container">
+<div class="container">
     <div class="cover">
-      <h1>Discover what's out there.</h1>
-      <form #one="ngForm" (ngSubmit)="onSubmit()" novalidate class="form-horizontal">
-                      <div class="elem-group inlined">
-                      <input type="search" name="source" placeholder="Source" required>
-                  </div>
-                  <div class="elem-group inlined">
-                      <input type="search" name="destination" placeholder="Destination" required>
-                  </div>
-                  <div class="elem-group inlined">
-                      <input type="date" name="checkin" required>
-                  </div>
-                    <button type="submit">Search</button>
-                 </form>
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate class="form-horizontal">
+            <div class="elem-group inlined">
+                <input type="search" name="total_adults" placeholder="Source" required>
+            </div>
+            <div class="elem-group inlined">
+                <input type="search" name="total_children" placeholder="Destination" required>
+            </div>
+            <div class="elem-group inlined">
+                <input type="date" name="checkin" required>
+            </div>
+            <button type="submit">Search</button>
+        </form>
     </div>
-  </div> -->
+</div>

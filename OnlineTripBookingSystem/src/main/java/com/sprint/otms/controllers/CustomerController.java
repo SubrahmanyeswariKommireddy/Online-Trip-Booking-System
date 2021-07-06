@@ -153,8 +153,8 @@ public class CustomerController {
 				HttpStatus.OK);
 
 	}
-	@PutMapping("/updateCustomer/{id}")
-	public ResponseEntity<Customer> updateCustomer(@Valid @RequestBody Customer customer) throws MethodArgumentNotValidException {
+	@PatchMapping("/updateCustomer")
+	public ResponseEntity<Customer> updateCustomer(@RequestBody Customer customer) throws MethodArgumentNotValidException {
 
 		LOGGER.info("updateCustomer URL is opened");
 		LOGGER.info("updateCustomer() is initiated");

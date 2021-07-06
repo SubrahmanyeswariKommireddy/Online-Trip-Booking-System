@@ -71,6 +71,7 @@ export class SearchRouteComponent implements OnInit {
     this.searchData.destination=form.value.destination;
     this.router.navigate(['busList'],this.searchData)
   }
+
   // update(source: any,destination: any)
   // {
   //   this.routeService.busBetweenValue(source,destination).subscribe(bus =>

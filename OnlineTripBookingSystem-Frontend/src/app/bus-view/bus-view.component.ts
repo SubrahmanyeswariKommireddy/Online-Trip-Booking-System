@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { StringLiteral } from 'typescript';
+import { Route } from '../models/Route';
 
 @Component({
   selector: 'app-seat',
@@ -11,10 +13,16 @@ export class BusViewComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit(): void {
-
-
+      
   }
 
+     //variable declarations
+    //  movieTitle:string = "Captain America: The Winter Soldier";
+    //  screen: string = "LUXE CINEMAS";
+    //  time: string = "FRI, 6:45PM"
+ 
+    //  rows: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    //  cols: number[]  = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  
      reserved: string[] = [];
      selected: string[] = [];
@@ -111,4 +119,12 @@ export class BusViewComponent implements OnInit {
 
 
 
+
+    //  showSelected() {
+    //      if(this.selected.length > 0) {
+    //          alert("Selected Seats: " + this.selected + "\nTotal: "+(this.ticketPrice * this.selected.length + this.convFee));
+    //      } else {
+    //          alert("No seats selected!");
+    //      }
+    //  }
 

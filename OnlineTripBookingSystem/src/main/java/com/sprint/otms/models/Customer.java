@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 public class Customer extends User {
 
 	@OneToOne(mappedBy = "customer", fetch = FetchType.LAZY)
-	@JsonBackReference
+	//@JsonBackReference
 	private Booking booking;
 
 	/**
