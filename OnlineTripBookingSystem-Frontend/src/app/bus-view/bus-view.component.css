@@ -56,9 +56,9 @@ body {
 
 }
 
-.seat::selected{
+/* .seat::selected{
   background-color: coral;
-}
+} */
 
 
 .seat.occupied {
@@ -150,4 +150,19 @@ p.text span {
     
   }
 
+  input[type=checkbox]{
+    color: coral;
+    
+  }
+
+  .grey{
+    background-color: black;
+  }
+
+  .green{
+    background-color: blanchedalmond;
+  }
  
+  #1,#2{
+    background-color: chocolate;
+  }

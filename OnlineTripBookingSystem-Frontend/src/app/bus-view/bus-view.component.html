@@ -46,17 +46,21 @@
         <!-- <div class="seat" (click)="seatClicked('1')" [ngStyle]="{
           'background-color' : getStatus('1') ? 'yellow' : 'pink'
         }">1</div> -->
-        <div class="seat"  (click)="seatClicked('1')">1
+        <div class="seat"  (click)="seatClicked('1') " [ngStyle]="{
+          'background-color' : getStatus('1') ? 'yellow' : 'pink'
+        }">1
         </div>
         
         <!-- <div class="seat"  [ngStyle]="{
           'background-color' : getStatus('2') ? 'yellow' : 'pink'
         }" (click)="seatClicked('2')">2</div> -->
 
-        <div class="seat" (click)="seatClicked('2')">2</div>
+        <div class="seat" (click)="seatClicked('2')" [ngStyle]="{
+          'background-color' : getStatus('2') ? 'yellow' : 'pink'
+        }">2</div>
      
-        <div class="seat" (click)="seatClicked('3')">3</div>
-        <div class="seat" (click)="seatClicked('4')">4</div>
+        <div class="seat" id="1" (click)="seatClicked('3')">3</div>
+        <div class="seat" id="2" (click)="seatClicked('4')">4</div>
       </div>
       <div class="row">
         <div class="seat" (click)="seatClicked('5')">5</div>
@@ -104,16 +108,14 @@
   </div>
 </div>
     <p class="text">
-       Selected Seats : <span id="count" >{{countSeats}}</span> <span
-       
-        ></span
+       Selected Seats : <span id="count" >{{countSeats}}</span> <span></span
       >
     </p>
     <p class="text">
-      <button class='stylebutton'>
+      <button class='stylebutton' (click)="myFunc()">
       Confirm Booking</button>
    </p>
 
     <script src="bus-view.component.ts"></script>
   </body>
-</html>
+</html>rgb(122, 102, 88)

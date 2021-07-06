@@ -13,6 +13,7 @@ import { AddRouteComponent } from './route/add-route/add-route.component';
 import { UpdateBusComponent } from './bus/update-bus/update-bus.component';
 import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
 import { AddTravelComponent } from './travel/add-travel/add-travel.component';
+import { AddBookingComponent } from './booking/add-booking/add-booking.component';
 import { UpdateAdminComponent } from './admin/update-admin/update-admin.component';
 import { ProfileComponent } from './profile/profile.component';
 
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:'updateAdmin/:id',component:UpdateAdminComponent},
   {path:'addTravel',component:AddTravelComponent},
   {path:'updateBus/:id',component:UpdateBusComponent},
+  {path:'booking',component:AddBookingComponent},
   {path:'profile',component:ProfileComponent}
 ];
 

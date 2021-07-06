@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { StringLiteral } from 'typescript';
 import { Route } from '../models/Route';
 
@@ -9,7 +10,7 @@ import { Route } from '../models/Route';
 })
 export class BusViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
       
@@ -18,18 +19,39 @@ export class BusViewComponent implements OnInit {
      reserved: string[] = [];
      selected: string[] = [];
      
-     ticketPrice: number = 120;
-     convFee: number = 30;
-     totalPrice: number = 0;
-     currency: string = "Rs";
+    //  ticketPrice: number = 120;
+    //  convFee: number = 30;
+    //  totalPrice: number = 0;
+    //  currency: string = "Rs";
  
 
+    // @Input()
      countSeats:number=0;
+
+    //  @Output()
+    //  sendCountMsg = new EventEmitter<number>();
+     
      status:boolean=false;
        flag!:number;
+     //return status of each seat
+
+    //  getStatus(seatPos: string)  {
+    //      if(this.reserved.indexOf(seatPos) !== -1) {
+    //          return 'reserved';
+    //      } else  {
+    //          return 'selected';
+    //      }
+         
+    //  }
+
+    // sendCount(){
+    //     this.sendCountMsg.emit(this.countSeats);
+    //     // this.router.navigate(['/booking']);
+    // }
+
 
     getStatus(seatPos:string){
-        if(this.selected.indexOf(seatPos)==0){
+        if(this.selected.indexOf(seatPos)===1){
             this.status=!this.status;
             return this.status;
         }
@@ -65,11 +87,36 @@ export class BusViewComponent implements OnInit {
      }
      
      //Buy button handler
-     showSelected() {
-         if(this.selected.length > 0) {
-             alert("Selected Seats: " + this.selected + "\nTotal: "+(this.ticketPrice * this.selected.length + this.convFee));
-         } else {
-             alert("No seats selected!");
-         }
-     }
-}
+    //  showSelected() {
+    //      if(this.selected.length > 0) {
+    //          alert("Selected Seats: " + this.selected + "\nTotal: "+(this.ticketPrice * this.selected.length + this.convFee));
+    //      } else {
+    //          alert("No seats selected!");
+    //      }
+    //  }
+
+    bgColor : string = 'grey';
+
+    changeColor(){
+        console.log("printing")
+        this.bgColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+    }
+
+    myFunc(){
+        
+        this.router.navigate(['/booking',{count:this.countSeats}]);
+    }
+
+ }
+
+
+
+
+    //  showSelected() {
+    //      if(this.selected.length > 0) {
+    //          alert("Selected Seats: " + this.selected + "\nTotal: "+(this.ticketPrice * this.selected.length + this.convFee));
+    //      } else {
+    //          alert("No seats selected!");
+    //      }
+    //  }
+
