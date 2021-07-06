@@ -13,84 +13,99 @@ export class UpdateCustomerComponent implements OnInit {
 
   updateCustomerForm!: FormGroup;
   customer!:Customer;
-  id!:number;
+  id:number=0;
    
   constructor(
+    private formBuilder: FormBuilder,
     private userService: UserService,
-    private router:Router
+    private router:Router,private _ActivatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
+
+    this.id = Number(this._ActivatedRoute.snapshot.paramMap.get("id"))
+
+            this.userService.getCustomerById(this.id).subscribe(
+                (data) => {
+                    console.log(data);
+                    this.customer = data;
+                    this.updateCustomerForm = this.formBuilder.group({
+                        id: this.customer.id,
+                       
+                        mobileNumber: this.customer.mobileNumber
+                    })
+                },
+                (err) => console.log(err)
+            );
   }
 
   onSubmit() {
-    console.log(this.customer.mobileNumber + "from onSubmit of add bus component")
-    this.userService.updateMobileNumber(this.customer.id, this.customer).subscribe(
-        data => {this.customer = data;
-            this.router.navigate([''])},
-        err => console.log(err)
-    )
+      console.log(this.updateCustomerForm.value + "from onSubmit of edit customer component")
+      this.userService.updateCustomer( this.updateCustomerForm.value).subscribe(
+          (data) => {
+              this.customer = data;
+              console.log(data);
+              console.log('mobile number updated successfully!')
+              this.router.navigate([''])
+              
+          },
+          (err) => console.log(err)
+      )
+    }
 }
-}
 
 
 
+// export class UpdateBusComponent implements OnInit {
 
-// import { Component, OnInit } from '@angular/core';
-// import { FormBuilder, FormGroup } from '@angular/forms';
-// import { ActivatedRoute, Router } from '@angular/router';
-// import { SecurityAlertService } from '../shared/securityalertservice';
-// import { SecurityAlert } from './securityalert';
+//   updateBusForm!: FormGroup;
+//   bus!:Bus;
+//   busId: number = 0;
 
-// @Component({
-//   selector: 'app-edit-securityalert',
-//   templateUrl: './edit-securityalert.component.html',
-//   styleUrls: ['./edit-securityalert.component.css']
-// })
-// export class EditSecurityalertComponent implements OnInit {
-
-
-//   securityalert!: SecurityAlert;
-//   editForm!: FormGroup;
-//   id: number = 0;
-
-//   constructor(private _ActivatedRoute: ActivatedRoute,
-//     private formBuilder: FormBuilder,
-//     private router: Router,
-//     private service: SecurityAlertService) { }
-
+//   constructor(private formBuilder: FormBuilder, private router: Router, private busService: BusService, private _ActivatedRoute: ActivatedRoute) { }
 
 //   ngOnInit(): void {
-//     this.id = Number(this._ActivatedRoute.snapshot.paramMap.get("id"));
 
-//     this.service.getSecurityAlertById(this.id).subscribe(
+//     this.busId = Number(this._ActivatedRoute.snapshot.paramMap.get("id"))
+
+//         this.busService.getBusById(this.busId).subscribe(
+//             (data) => {
+//                 console.log(data);
+//                 this.bus = data;
+//                 this.updateBusForm = this.formBuilder.group({
+//                     busId: this.bus.busId,
+                   
+//                     fare: this.bus.fare
+//                 })
+//             },
+//             (err) => console.log(err)
+//         );
+//   //   this.updateBusForm=new FormGroup({
+//   //     fare:new FormControl(''),
+//   //     busType:new FormControl(''),
+//   //     totalCapacity:new FormControl('')
+//   // });
+//   }
+
+  
+// //   onSubmit() {
+// //     console.log(this.updateBusForm.value + "from onSubmit of add bus component")
+// //     this.busService.addBus(this.updateBusForm.value).subscribe(
+// //         data => {this.bus = data;
+// //             this.router.navigate(['busList'])},
+// //         err => console.log(err)
+// //     )
+// // }
+
+// onSubmit() {
+//   console.log(this.updateBusForm.value + "from onSubmit of edit bus component")
+//   this.busService.updateBus( this.updateBusForm.value).subscribe(
 //       (data) => {
-//         console.log(data);
-//         this.securityalert = data;
-//         this.editForm = this.formBuilder.group({
-
-//           id: this.securityalert.id,
-//           alert: this.securityalert.alert,
-//           message: this.securityalert.message,
-
-//         })
+//           this.bus = data;
+//           this.router.navigate(['busList'])
 //       },
 //       (err) => console.log(err)
-//     );
-//   }
-
-//   onSubmit() {
-
-//     console.log('form onSubmit of edit securityalert' + this.editForm.value);
-//     this.service.updateSecurityAlert(this.id, this.editForm.value).
-//       subscribe(
-//         (data) => {
-//           this.securityalert = data;
-//           this.router.navigate(['securityalerts'])
-//         },
-//         (err) => { console.log(err) }
-//       )
-//   }
+//   )
 // }
-
+// }
 

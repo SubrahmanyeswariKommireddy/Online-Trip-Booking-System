@@ -185,6 +185,28 @@ public class AdminController {
 
 		adminServiceImpl.deleteAdmin(id);
 	}
+	
+	
+	
+	@GetMapping("/getAdmin/{id}")
+	public ResponseEntity<Admin> getById(@Valid @PathVariable Long id)
+			throws AdminNotFoundException, MethodArgumentNotValidException {
+
+		LOGGER.info("getAdmin URL is opened");
+		LOGGER.info("getById() is initiated");
+
+		return new ResponseEntity<Admin>(adminServiceImpl.findAdminById(id), HttpStatus.OK);
+	}
+	
+	@PatchMapping("/updateAdmin")
+	public ResponseEntity<Admin> updateAdmin(@RequestBody Admin admin) throws MethodArgumentNotValidException {
+
+		LOGGER.info("updateAdmin URL is opened");
+		LOGGER.info("updateAdmin() is initiated");
+
+		Admin adm = adminServiceImpl.updateAdmin(admin);
+		return new ResponseEntity<>(adm, HttpStatus.OK);
+	}
 
 	// -----------------------------Travels---------------------------------//
 

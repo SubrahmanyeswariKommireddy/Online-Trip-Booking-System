@@ -1,6 +1,7 @@
 package com.sprint.otms.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 import javax.validation.ValidationException;
@@ -8,6 +9,9 @@ import javax.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sprint.otms.exceptions.BusNotFoundException;
+import com.sprint.otms.exceptions.CustomerNotFoundException;
+import com.sprint.otms.models.Bus;
 import com.sprint.otms.models.Customer;
 import com.sprint.otms.repositories.ICustomerRepository;
 
@@ -32,7 +36,15 @@ public class CustomerServiceImpl extends UserServiceImpl implements ICustomerSer
 	}
 
 	public Customer updateCustomer(Customer customer) {
-		return customerRepository.save(customer);
+		Optional<Customer> c= customerRepository.findById(customer.getId());
+		if(c!=null) {
+			c.get().setMobileNumber(customer.getMobileNumber());
+			
+			return customerRepository.save(c.get());
+		}
+		else {
+			throw new CustomerNotFoundException();
+		}
 	}
 
 	public String delete(Long id) {

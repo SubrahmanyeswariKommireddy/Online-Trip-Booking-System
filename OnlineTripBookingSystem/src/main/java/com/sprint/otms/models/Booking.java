@@ -30,7 +30,7 @@ public class Booking {
 	private LocalDateTime dateAndTimeOfTravel;
 
 	@OneToOne
-	@JsonManagedReference
+	//@JsonManagedReference
 	private Customer customer;
 
 	@OneToOne(mappedBy = "booking", fetch = FetchType.LAZY)

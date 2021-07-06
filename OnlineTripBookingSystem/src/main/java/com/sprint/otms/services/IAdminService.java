@@ -75,5 +75,7 @@ public interface IAdminService extends IUserService {
 	 * @return Changed Password
 	 */
 	public boolean changePassword(Long Id, String oldPassword, String newPassword);
+	
+	public Admin findAdminById(Long id);
 
 }
