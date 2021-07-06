@@ -15,18 +15,7 @@ export class HeaderComponent implements OnInit {
   constructor(private router:Router, public loginService:LoginService) { }
 
   ngOnInit(): void {
-    
-    // var userType = sessionStorage.getItem('userType')
-    // if(userType=="ADMIN")
-    // {
-      
-    //   this.isAdmin=true;
-      
-    // }
-    // else if(userType=="CUSTOMER")
-    // {
-    //   this.isCustomer=true;
-    // }
+
   }  
 
   btnClick(){
