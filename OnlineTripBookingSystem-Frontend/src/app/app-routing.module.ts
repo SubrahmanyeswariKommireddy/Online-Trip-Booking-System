@@ -32,7 +32,7 @@ const routes: Routes = [
   {path:'updateAdmin/:id',component:UpdateAdminComponent},
   {path:'addTravel',component:AddTravelComponent},
   {path:'updateBus/:id',component:UpdateBusComponent},
-  {path:'booking',component:AddBookingComponent}
+  {path:'booking',component:AddBookingComponent},
   {path:'profile',component:ProfileComponent}
 ];
 
