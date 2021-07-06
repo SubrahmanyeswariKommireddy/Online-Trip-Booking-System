@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StringLiteral } from 'typescript';
+import { Route } from '../models/Route';
 
 @Component({
   selector: 'app-seat',
@@ -10,15 +12,16 @@ export class BusViewComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+      
   }
 
      //variable declarations
-     movieTitle:string = "Captain America: The Winter Soldier";
-     screen: string = "LUXE CINEMAS";
-     time: string = "FRI, 6:45PM"
+    //  movieTitle:string = "Captain America: The Winter Soldier";
+    //  screen: string = "LUXE CINEMAS";
+    //  time: string = "FRI, 6:45PM"
  
-     rows: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
-     cols: number[]  = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    //  rows: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    //  cols: number[]  = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  
      reserved: string[] = [];
      selected: string[] = [];
@@ -88,12 +91,4 @@ export class BusViewComponent implements OnInit {
              alert("No seats selected!");
          }
      }
-
-    
-
 }
-// }
-
-
-
-
