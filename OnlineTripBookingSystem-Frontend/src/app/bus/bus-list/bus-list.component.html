@@ -1,43 +1,7 @@
-<!-- <div class="container">-->
-<!-- <div>
-    
-</div> -->
-
-
-<!-- <div class="container">
-    <span {{route.source}}></span>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Bus Type</th>
-                <th>Fare</th>
-                <th>TotalCapacity</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let bus of buses">
-                <td>{{bus.busType}}</td>
-                <td>{{bus.fare}}</td>
-                <td>{{bus.totalCapacity}}</td>
-                <td><button class="btn btn-success" (click)=checkAvailability()> Check Availability</button></td>
-                <td>
-                    <button *ngIf="isAdmin" class="btn btn-success" (click)="onEdit(bus)">Edit</button>
-                </td>
-                <td>
-                    <button *ngIf="isAdmin" class="btn btn-danger" (click)="onDelete(bus)">Delete</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div> -->
-
 <div class="container">
+    <h3>{{busData}}</h3>
     <h1>Bus List</h1>
-
-    <table class="table table-striped">
-        <h3>{{busData}}</h3>
-    <!-- <table class="rwd-table"> -->
+    <table class="rwd-table">
         <thead>
             <tr>
                 <th>Bus Type</th>

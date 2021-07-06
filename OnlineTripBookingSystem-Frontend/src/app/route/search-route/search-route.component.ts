@@ -24,38 +24,10 @@ export class SearchRouteComponent implements OnInit {
   //   );
   // };
 
-
-
-  // export class AddBookingComponent implements OnInit {
-
-  //   seatsCount!:number;
-  //   constructor(private route:ActivatedRoute) { }
-  
-  //   ngOnInit():void {
-  // // console.log(parseInt(this.route.snapshot.paramMap.get('count')!));
-  //     this.seatsCount=parseInt(this.route.snapshot.paramMap.get('count')!)
-  //   }
-  
-  // @Input()
-  // countNum!:number;
-  
-  // }
-
-
-  
   searchData:any={
     source:'',
     destination:''
   }
-
-
-//   seatsCount!:number;
-//   constructor(private route:ActivatedRoute) { }
-
-//   ngOnInit():void {
-// // console.log(parseInt(this.route.snapshot.paramMap.get('count')!));
-//     this.seatsCount=parseInt(this.route.snapshot.paramMap.get('count')!)
-//   }
 
   constructor(private route:ActivatedRoute,private router: Router,private busService: BusService, private routeService:RouteService) { }
 
@@ -65,11 +37,13 @@ export class SearchRouteComponent implements OnInit {
   }
 
   onSubmit(form:any){
-    // console.log("printing")
     console.log(form.value);
     this.searchData.source=form.value.source;
     this.searchData.destination=form.value.destination;
-    this.router.navigate(['busList'],this.searchData);
+   // this.router.navigate(['/busList',{search:this.searchData}]);
+
+     this.router.navigate(['/busList',{sourcePlace:this.searchData.source}]);
+    // ,destinationPlace:this.searchData.destination}]);
   }
 
   // update(source: any,destination: any)
@@ -93,8 +67,7 @@ export class SearchRouteComponent implements OnInit {
   
   // }
 
-  myFunc(){
-  //   this.router.navigate(['/booking',{count:this.countSeats}]);
-    this.router.navigate(['/busList',{sourcePlace:this.searchData.source},{destinationPlace:this.searchData.destination}]);
-  }
+  // myFunc(){
+  //   this.router.navigate(['/busList',{sourcePlace:this.searchData.source},{destinationPlace:this.searchData.destination}]);
+  // }
 }
