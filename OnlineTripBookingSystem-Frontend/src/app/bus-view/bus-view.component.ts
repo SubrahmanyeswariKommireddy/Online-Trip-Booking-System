@@ -17,38 +17,18 @@ export class BusViewComponent implements OnInit {
   }
  
      reserved: string[] = [];
-     selected: string[] = [];
-     
-    //  ticketPrice: number = 120;
-    //  convFee: number = 30;
-    //  totalPrice: number = 0;
-    //  currency: string = "Rs";
- 
+     selected: string[] = []; 
 
-    // @Input()
      countSeats:number=0;
-
-    //  @Output()
-    //  sendCountMsg = new EventEmitter<number>();
      
      status:boolean=false;
        flag!:number;
      //return status of each seat
 
-    //  getStatus(seatPos: string)  {
-    //      if(this.reserved.indexOf(seatPos) !== -1) {
-    //          return 'reserved';
-    //      } else  {
-    //          return 'selected';
-    //      }
-         
-    //  }
-
     // sendCount(){
     //     this.sendCountMsg.emit(this.countSeats);
     //     // this.router.navigate(['/booking']);
     // }
-
 
     getStatus(seatPos:string){
         if(this.selected.indexOf(seatPos)===1){
@@ -102,21 +82,8 @@ export class BusViewComponent implements OnInit {
         this.bgColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
     }
 
-    myFunc(){
-        
+    seatsSelected(){
         this.router.navigate(['/booking',{count:this.countSeats}]);
     }
 
  }
-
-
-
-
-    //  showSelected() {
-    //      if(this.selected.length > 0) {
-    //          alert("Selected Seats: " + this.selected + "\nTotal: "+(this.ticketPrice * this.selected.length + this.convFee));
-    //      } else {
-    //          alert("No seats selected!");
-    //      }
-    //  }
-
