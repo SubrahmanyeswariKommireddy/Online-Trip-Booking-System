@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <!-- Responsive Meta Tag -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Adding Bootstrap CDN - Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- Adding Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- Adding CSS -->
     <!-- <link rel="stylesheet" type="text/css" href="css/app.css"> -->
     <title>OTMS</title>
@@ -58,7 +61,7 @@
                             <a class="nav-link text-white" href="#">Help</a>
                         </li>
 
-                        <li class="nav-item dropdown">
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
                                 Manage Booking
                             </a>
@@ -67,14 +70,22 @@
                                 <a class="dropdown-item" href="#">Link 2</a>
                                 <a class="dropdown-item" href="#">Link 3</a>
                             </div>
-                        </li>
+                        </li> -->
 
                         <li class="nav-item">
                             <a *ngIf="!loginService.isUserLoggedIn()" class="nav-link text-white" href="/login" (click)="btnClick()">Log In</a>
                             <!-- <button class="nav-link text-white" routerLink="/login">Log In</button> -->
                         </li>
-                        <li><a *ngIf="loginService.isUserLoggedIn()" (click)="logOut()" href="/admin"
-                                class="nav-link">LogOut</a>
+                        <li>
+                            <!-- <a *ngIf="loginService.isUserLoggedIn()" (click)="logOut()" href="/admin"
+                                class="nav-link">LogOut</a> -->
+                                <div class="dropdown" *ngIf="loginService.isUserLoggedIn()">
+                                    <button class="dropbtn">Profile</button>
+                                    <div class="dropdown-content">
+                                      <a href="#">Edit Profiles</a>
+                                      <a (click)="logOut()" href="">Logout</a>
+                                    </div>
+                                  </div>
                         </li>
                     </ul>
                 </div>
