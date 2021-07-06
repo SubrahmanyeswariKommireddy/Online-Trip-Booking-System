@@ -12,16 +12,13 @@ import { CustomerListComponent } from './customer/customer-list/customer-list.co
 import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
 import { AddBookingComponent } from './booking/add-booking/add-booking.component';
 import { AddPaymentComponent } from './payment/add-payment/add-payment.component';
-import { DeleteCustomerComponent } from './customer/delete-customer/delete-customer.component';
 import { DeletePaymentComponent } from './payment/delete-payment/delete-payment.component';
 import { DeleteBookingComponent } from './booking/delete-booking/delete-booking.component';
 import { DeleteAdminComponent } from './admin/delete-admin/delete-admin.component';
 import { BookingListComponent } from './booking/booking-list/booking-list.component';
 import { SignupComponent } from './signup/signup.component';
 import { AddTravelComponent } from './travel/add-travel/add-travel.component';
-import { TravelListComponent } from './travel/travel-list/travel-list.component';
 import { UpdateTravelComponent } from './travel/update-travel/update-travel.component';
-import { DeleteTravelComponent } from './travel/delete-travel/delete-travel.component';
 import { AdminHomepageComponent } from './home/admin-homepage/admin-homepage.component';
 import { DefaultHomepageComponent } from './home/default-homepage/default-homepage.component'
 import { BusListComponent } from './bus/bus-list/bus-list.component';
@@ -53,7 +50,6 @@ import { AdminHeaderComponent } from './header/admin-header/admin-header.compone
     UpdateCustomerComponent,
     AddBookingComponent,
     AddPaymentComponent,
-    DeleteCustomerComponent,
     DeletePaymentComponent,
     DeleteBookingComponent,
     BusListComponent,
@@ -64,9 +60,7 @@ import { AdminHeaderComponent } from './header/admin-header/admin-header.compone
     BookingListComponent,
     SignupComponent,
     AddTravelComponent,
-    TravelListComponent,
     UpdateTravelComponent,
-    DeleteTravelComponent,
     AdminHomepageComponent,
     DefaultHomepageComponent,
     LogoutComponent,
