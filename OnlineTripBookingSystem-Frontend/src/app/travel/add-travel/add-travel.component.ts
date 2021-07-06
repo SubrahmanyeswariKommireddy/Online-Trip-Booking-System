@@ -20,17 +20,19 @@ export class AddTravelComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.addTravelForm=new FormGroup({
-      travelAgentName:new FormControl('')
-  })
+    this.addTravelForm = new FormGroup({
+      travelAgentName: new FormControl('')
+    })
   }
   onSubmit() {
     console.log(this.addTravelForm.value + "from onSubmit of add route component")
     console.log("travel added")
     this.routeService.addTravel(this.addTravelForm.value).subscribe(
-        data => {this.travel = data;
-            this.router.navigate([''])},
-        err => console.log(err)
+      data => {
+        this.travel = data;
+        this.router.navigate([''])
+      },
+      err => console.log(err)
     )
-}
+  }
 }

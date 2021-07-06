@@ -1,7 +1,7 @@
 import { User } from "./User";
 
 export class Customer {
-    id!:Number;
+    id!:number;
     userName: string = '';
     password: string = '';
     email: string = '';

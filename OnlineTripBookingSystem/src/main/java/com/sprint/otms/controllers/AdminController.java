@@ -185,6 +185,28 @@ public class AdminController {
 
 		adminServiceImpl.deleteAdmin(id);
 	}
+	
+	
+	
+	@GetMapping("/getAdmin/{id}")
+	public ResponseEntity<Admin> getById(@Valid @PathVariable Long id)
+			throws AdminNotFoundException, MethodArgumentNotValidException {
+
+		LOGGER.info("getAdmin URL is opened");
+		LOGGER.info("getById() is initiated");
+
+		return new ResponseEntity<Admin>(adminServiceImpl.findAdminById(id), HttpStatus.OK);
+	}
+	
+	@PatchMapping("/updateAdmin")
+	public ResponseEntity<Admin> updateAdmin(@RequestBody Admin admin) throws MethodArgumentNotValidException {
+
+		LOGGER.info("updateAdmin URL is opened");
+		LOGGER.info("updateAdmin() is initiated");
+
+		Admin adm = adminServiceImpl.updateAdmin(admin);
+		return new ResponseEntity<>(adm, HttpStatus.OK);
+	}
 
 	// -----------------------------Travels---------------------------------//
 
@@ -338,16 +360,16 @@ public class AdminController {
 	 * @throws RouteNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 */
-	@PutMapping("/admin/updateRoute/{id}")
-	public ResponseEntity<Route> updateRoute(@Valid @RequestBody Route route)
-			throws RouteNotFoundException, MethodArgumentNotValidException {
-
-		LOGGER.info("updateRoute URL is opened");
-		LOGGER.info("updateRoute() is initiated");
-
-		Route newRoute = routeServiceImpl.updateRoute(route);
-		return new ResponseEntity<>(newRoute, HttpStatus.OK);
-	}
+//	@PutMapping("/admin/updateRoute/{id}")
+//	public ResponseEntity<Route> updateRoute(@Valid @RequestBody Route route)
+//			throws RouteNotFoundException, MethodArgumentNotValidException {
+//
+//		LOGGER.info("updateRoute URL is opened");
+//		LOGGER.info("updateRoute() is initiated");
+//
+//		Route newRoute = routeServiceImpl.updateRoute(route);
+//		return new ResponseEntity<>(newRoute, HttpStatus.OK);
+//	}
 
 	/**
 	 * @param id
@@ -419,14 +441,14 @@ public class AdminController {
 	 * @throws RouteNotFoundException
 	 * @throws MethodArgumentNotValidException
 	 */
-	@PatchMapping("/admin/partialUpdateRoute/{id}")
-	public ResponseEntity<Route> partialUpdateRoute(@Valid @RequestBody Route route)
+	@PatchMapping("/admin/partialUpdateRoute/{routeId}")
+	public ResponseEntity<Route> partialUpdateRoute(@PathVariable Long routeId, @RequestBody Bus bus)
 			throws RouteNotFoundException, MethodArgumentNotValidException {
 
 		LOGGER.info("partialUpdateRoute URL is opened");
 		LOGGER.info("partialUpdateRoute() is initiated");
 
-		Route newRoute = routeServiceImpl.updateRoute(route);
+		Route newRoute = routeServiceImpl.updateRoute(routeId,bus);
 		return new ResponseEntity<>(newRoute, HttpStatus.OK);
 	}
 
@@ -456,5 +478,26 @@ public class AdminController {
 
 		return customerServiceImpl.getAllCustomer();
 	}
+	
+	
+	
+	
+	
+	@GetMapping("/admin/getBus/{id}")
+	public List<Bus> getBusesByRoute(@Valid @PathVariable Long id)
+			throws RouteNotFoundException, MethodArgumentNotValidException {
+
+		LOGGER.info("getRoute URL is opened");
+		LOGGER.info("getRoutesBySourceAndDestination() is initiated");
+		Route r= routeServiceImpl.getRouteByRouteId(id);
+
+		return r.getBuses();
+	}
+
+	
+	
+	
+	
+	
 
 }

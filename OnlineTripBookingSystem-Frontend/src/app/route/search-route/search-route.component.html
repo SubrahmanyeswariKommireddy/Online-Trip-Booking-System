@@ -1,10 +1,10 @@
-<div class="input-search-container">
-    <!-- (ngSubmit)="update(busBetween.value.source,busBetween.value.destination) -->
-    <form class="d-flex justify-content-center" #busBetween="ngForm">
+<!-- <div class="input-search-container">
+     (ngSubmit)="update(busBetween.value.source,busBetween.value.destination) 
+    <form class="d-flex justify-content-center" #busBetween="ngForm" (ngSubmit)="onSubmit()">
         <div class="d-inline-block position-relative">
             <span class="inputIcon"><i class="far fa-building"></i></span>
-            <label class="inputLabel-default" for="input-label-from">FROM</label>
-            <input id="input-label-from" class="inputForm" type="text" list="input-from-list">
+            <label class="inputLabel-default" for="input-label-from"></label>
+            <input id="input-label-from" class="inputForm" type="text" list="input-from-list" placeholder="From">
             <datalist id="input-from-list">
               
             </datalist>
@@ -12,8 +12,8 @@
 
         <div class="d-inline-block position-relative">
             <span class="inputIcon"><i class="far fa-building"></i></span>
-            <label class="inputLabel-default" for="input-label-to">TO</label>
-            <input id="input-label-to" class="inputForm" type="text" list="input-to-list">
+            <label class="inputLabel-default" for="input-label-to"></label>
+            <input id="input-label-to" class="inputForm" type="text" list="input-to-list" placeholder="To">
             <datalist id="input-to-list">
               
             </datalist>
@@ -28,44 +28,24 @@
             <input class="btn btn-danger rounded-0 pl-3 pr-3 pb-2" type="submit" value="Search Buses" href="/search">
         </div>
     </form>
-</div>
-
-
-<!-- 
- <div class="col-md-5 offset-md-4 card card-body mt-5">
-    <form #busBetween="ngForm" (ngSubmit)="update(busBetween.value.source,busBetween.value.destination)">
-        <h1>BUS BETWEEN</h1>
-
-        
-
-        <div class="form-group">
-            <label for="source">Enter source :</label>
-            <input type="text" #source="ngModel" ngModel name="source" id="source" class="form-control"
-                required>
-            <div *ngIf="source.touched && source.invalid" >
-                    <p class="alert alert-danger" > This field is required</p>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="destination">Enter Destination :</label>
-            <input type="text" #destination="ngModel" ngModel name="destination" id="destination" class="form-control"
-                required>
-            <div *ngIf="destination.touched && destination.invalid" >
-                    <p class="alert alert-danger" > This field is required</p>
-            </div>
-        </div>
-        <button type="button" class="btn btn-dark" style="    bottom: 48px;
-    right: 0;
-    display: block;
-    position: fixed;"  routerLink="/admin">Back </button>
-
-       
- 
-        
-        <div class="btn-group col-md-12">
-            <button type="submit" class="btn btn-primary" [disabled]="busBetween.invalid">Login </button>
-        </div>
-
-    </form>
 </div> -->
+
+
+
+
+<div class="container">
+    <div class="cover">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate class="form-horizontal">
+            <div class="elem-group inlined">
+                <input type="search" name="total_adults" placeholder="Source" required>
+            </div>
+            <div class="elem-group inlined">
+                <input type="search" name="total_children" placeholder="Destination" required>
+            </div>
+            <div class="elem-group inlined">
+                <input type="date" name="checkin" required>
+            </div>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</div>

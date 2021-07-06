@@ -30,8 +30,11 @@ export class AddBusComponent implements OnInit {
     onSubmit() {
         console.log(this.addBusForm.value + "from onSubmit of add bus component")
         this.busService.addBus(this.addBusForm.value).subscribe(
+           
             data => {this.bus = data;
-                this.router.navigate(['busList'])},
+                this.router.navigate(['busList'])
+                console.log(data)
+            },
             err => console.log(err)
         )
     }

@@ -1,6 +1,7 @@
 package com.sprint.otms.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 import javax.validation.ValidationException;
@@ -8,6 +9,7 @@ import javax.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sprint.otms.exceptions.BusNotFoundException;
 import com.sprint.otms.models.Bus;
 import com.sprint.otms.repositories.IBusRepository;
 
@@ -26,7 +28,7 @@ public class BusServiceImpl implements IBusService {
 	@Override
 	public Bus addBus(Bus bus) {
 		// TODO Auto-generated method stub
-		bus.setTotalCapacity(30L);
+		bus.setTotalCapacity(32L);
 		bus.setCurrentCapacity(bus.getTotalCapacity());
 		return busRepository.saveAndFlush(bus);
 	}
@@ -34,8 +36,16 @@ public class BusServiceImpl implements IBusService {
 	@Override
 	public Bus updateBus(Bus bus) {
 		// TODO Auto-generated method stub
-		bus.setTotalCapacity(30L);
-		return busRepository.saveAndFlush(bus);
+		Optional<Bus> b= busRepository.findById(bus.getBusId());
+		if(b!=null) {
+			b.get().setFare(bus.getFare());
+			b.get().setTotalCapacity(32L);
+			return busRepository.save(b.get());
+		}
+		
+		else {
+			throw new BusNotFoundException("bus not found");
+		}
 	}
 
 	@Override

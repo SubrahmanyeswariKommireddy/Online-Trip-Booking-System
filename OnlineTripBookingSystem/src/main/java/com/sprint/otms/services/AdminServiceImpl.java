@@ -1,6 +1,8 @@
 package com.sprint.otms.services;
 
 import java.util.List;
+import java.util.Optional;
+
 import javax.transaction.Transactional;
 
 import javax.xml.bind.ValidationException;
@@ -8,7 +10,10 @@ import javax.xml.bind.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sprint.otms.exceptions.AdminNotFoundException;
+import com.sprint.otms.exceptions.CustomerNotFoundException;
 import com.sprint.otms.models.Admin;
+import com.sprint.otms.models.Customer;
 import com.sprint.otms.models.User;
 import com.sprint.otms.models.User_Type;
 import com.sprint.otms.repositories.IAdminRepository;
@@ -37,11 +42,11 @@ public class AdminServiceImpl extends UserServiceImpl implements IAdminService {
 		
 	}
 
-	@Override
-	public Admin updateAdmin(Admin admin) {
-		// TODO Auto-generated method stub
-		return adminRepository.saveAndFlush(admin);
-	}
+//	@Override
+//	public Admin updateAdmin(Admin admin) {
+//		// TODO Auto-generated method stub
+//		return adminRepository.saveAndFlush(admin);
+//	}
 
 	@Override
 	public boolean changePassword(Long Id, String oldPassword, String newPassword) {
@@ -53,6 +58,12 @@ public class AdminServiceImpl extends UserServiceImpl implements IAdminService {
 	public List<Admin> getAdmin() {
 		// TODO Auto-generated method stub
 		return adminRepository.findAll();
+	}
+	
+	@Override
+	public Admin findAdminById(Long id) {
+		// TODO Auto-generated method stub
+		return adminRepository.getById(id);
 	}
 
 	@Override
@@ -106,5 +117,17 @@ public class AdminServiceImpl extends UserServiceImpl implements IAdminService {
 			}
 		}
 		return admin.get();
+	}
+	
+	public Admin updateAdmin(Admin admin) {
+		Optional<Admin> a= adminRepository.findById(admin.getId());
+		if(a!=null) {
+			a.get().setMobileNumber(admin.getMobileNumber());
+			
+			return adminRepository.save(a.get());
+		}
+		else {
+			throw new AdminNotFoundException();
+		}
 	}
 }

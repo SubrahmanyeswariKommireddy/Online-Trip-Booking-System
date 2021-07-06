@@ -1,0 +1,42 @@
+2021-07-02 09:13:44.147  INFO 5380 --- [main] c.s.o.OnlineTripBookingSystemApplication : Starting OnlineTripBookingSystemApplication using Java 15.0.2 on LT093 with PID 5380 (C:\Online-Trip-Booking-System\OnlineTripBookingSystem\bin\main started by Susmitha in C:\Online-Trip-Booking-System\OnlineTripBookingSystem)
+2021-07-02 09:13:44.251  INFO 5380 --- [main] c.s.o.OnlineTripBookingSystemApplication : No active profile set, falling back to default profiles: default
+2021-07-02 09:13:51.560  WARN 5380 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-07-02 09:13:56.995  INFO 5380 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-02 09:13:57.607  INFO 5380 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 465 ms. Found 8 JPA repository interfaces.
+2021-07-02 09:14:02.415  INFO 5380 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@74667e6a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-02 09:14:02.427  INFO 5380 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-02 09:14:05.338  INFO 5380 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2021-07-02 09:14:05.457  INFO 5380 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-02 09:14:05.459  INFO 5380 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-02 09:14:06.558  INFO 5380 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-02 09:14:06.559  INFO 5380 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 21170 ms
+2021-07-02 09:14:08.439  INFO 5380 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-02 09:14:09.208  INFO 5380 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-07-02 09:14:11.780  INFO 5380 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-02 09:14:12.607  INFO 5380 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-02 09:14:21.065  INFO 5380 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-02 09:14:21.415  INFO 5380 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-07-02 09:15:08.310  INFO 5380 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-02 09:15:08.371  INFO 5380 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-02 09:15:12.734  WARN 5380 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-02 09:15:18.907  INFO 5380 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/v3/api-docs'] with []
+2021-07-02 09:15:18.909  INFO 5380 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/swagger-ui.html'] with []
+2021-07-02 09:15:18.909  INFO 5380 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/swagger-ui/**'] with []
+2021-07-02 09:15:19.125  INFO 5380 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d28e108, org.springframework.security.web.context.SecurityContextPersistenceFilter@7320bccc, org.springframework.security.web.header.HeaderWriterFilter@155cf9f6, org.springframework.security.web.authentication.logout.LogoutFilter@11ce61d1, com.sprint.otms.JwtRequestFilter@7c045627, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@520e6089, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6be865c1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d2bcca8, org.springframework.security.web.session.SessionManagementFilter@3204146d, org.springframework.security.web.access.ExceptionTranslationFilter@5e8f0c54, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@413a2520]
+2021-07-02 09:15:19.362  INFO 5380 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-07-02 09:15:21.719  INFO 5380 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2021-07-02 09:15:21.721  INFO 5380 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-07-02 09:15:21.886  INFO 5380 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-07-02 09:15:22.091  INFO 5380 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-07-02 09:15:23.088  WARN 5380 --- [main] s.d.s.w.r.p.ParameterDataTypeReader      : Trying to infer dataType com.sprint.otms.models.TravelAgentName
+2021-07-02 09:15:23.406  INFO 5380 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: UpdateMobileNoUsingPATCH_1
+2021-07-02 09:15:23.537  INFO 5380 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getBusesUsingGET_1
+2021-07-02 09:15:23.598  INFO 5380 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getRoutesUsingGET_1
+2021-07-02 09:15:23.604  INFO 5380 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getTravelsUsingGET_1
+2021-07-02 09:15:23.761  INFO 5380 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2021-07-02 09:15:23.787  INFO 5380 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByIdUsingGET_1
+2021-07-02 09:15:23.882  INFO 5380 --- [main] c.s.o.OnlineTripBookingSystemApplication : Started OnlineTripBookingSystemApplication in 106.423 seconds (JVM running for 122.862)
+2021-07-02 09:15:23.890  INFO 5380 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-02 09:15:23.896  INFO 5380 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-02 10:11:24.145  INFO 5380 --- [RMI TCP Connection(22)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-07-02 10:11:26.483  INFO 5380 --- [RMI TCP Connection(22)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC

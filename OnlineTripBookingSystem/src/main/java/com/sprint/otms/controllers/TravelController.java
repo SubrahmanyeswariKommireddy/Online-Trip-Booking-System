@@ -128,8 +128,8 @@ public class TravelController {
 	 * @return Updated Bus By Id
 	 * @throws MethodArgumentNotValidException
 	 */
-	@PutMapping("/updateBus/{id}")
-	public ResponseEntity<Bus> updateBus(@Valid @RequestBody Bus bus) throws MethodArgumentNotValidException {
+	@PatchMapping("/updateBus")
+	public ResponseEntity<Bus> updateBus(@RequestBody Bus bus) throws MethodArgumentNotValidException {
 
 		LOGGER.info("updateBus URL is opened");
 		LOGGER.info("updateBus() is initiated");
