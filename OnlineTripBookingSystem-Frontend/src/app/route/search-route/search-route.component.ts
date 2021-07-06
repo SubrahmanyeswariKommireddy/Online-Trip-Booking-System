@@ -69,7 +69,7 @@ export class SearchRouteComponent implements OnInit {
     console.log(form.value);
     this.searchData.source=form.value.source;
     this.searchData.destination=form.value.destination;
-    this.router.navigate(['busList'],this.searchData)
+    this.router.navigate(['busList'],this.searchData);
   }
 
   // update(source: any,destination: any)

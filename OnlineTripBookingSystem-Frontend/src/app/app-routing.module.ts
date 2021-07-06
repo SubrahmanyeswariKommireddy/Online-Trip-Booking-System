@@ -16,6 +16,8 @@ import { AddTravelComponent } from './travel/add-travel/add-travel.component';
 import { AddBookingComponent } from './booking/add-booking/add-booking.component';
 import { UpdateAdminComponent } from './admin/update-admin/update-admin.component';
 import { ProfileComponent } from './profile/profile.component';
+import { Payment } from './models/Payment';
+import { AddPaymentComponent } from './payment/add-payment/add-payment.component';
 
 const routes: Routes = [
   {path:'',component:DefaultHomepageComponent},
@@ -33,7 +35,8 @@ const routes: Routes = [
   {path:'addTravel',component:AddTravelComponent},
   {path:'updateBus/:id',component:UpdateBusComponent},
   {path:'booking',component:AddBookingComponent},
-  {path:'profile',component:ProfileComponent}
+  {path:'profile',component:ProfileComponent},
+  {path:'payment',component:AddPaymentComponent}
 ];
 
 @NgModule({

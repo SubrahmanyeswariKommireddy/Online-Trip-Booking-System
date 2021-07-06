@@ -1,10 +1,10 @@
 * {
 	box-sizing: border-box;
 }
-
+/* 
 body {
-	/*margin-top: 63px;*/
-}
+	margin-top: 63px;
+} */
 
 /* Main Home Banner and Input Search Container r*/
 .home-banner {
@@ -20,6 +20,7 @@ body {
 	top: 50%;
 	left: 50%;
 	right: 50%;
+	
 }
 
 .inputIcon {
