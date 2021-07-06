@@ -1,28 +1,21 @@
+<div class="col-md-6 container">
+  <h2 class="text-center">Add Route</h2>
+  <form [formGroup]="addRouteForm" (ngSubmit)="onSubmit()">
 
-
-  <div class="col-md-6 container">
-    <h2 class="text-center">Add Route</h2>
-    <form [formGroup]="addRouteForm" (ngSubmit)="onSubmit()">
-
-
-
-   
-     <div class="form-group" >
-        <label  for="source">Source</label>
-        <input type="string" formControlName="source" 
-        required name="source" class="form-control" id="source">
+    <div class="form-group">
+      <label for="source">Source</label>
+      <input type="string" formControlName="source" required name="source" class="form-control" id="source">
     </div>
 
-    <div class="form-group" >
-        <label  for="destination">Destination</label>
-        <input type="string" formControlName="destination" 
-        required name="destination" class="form-control" id="destination">
+    <div class="form-group">
+      <label for="destination">Destination</label>
+      <input type="string" formControlName="destination" required name="destination" class="form-control"
+        id="destination">
     </div>
 
-    <div (click)=onSubmit() class="field" >
-       <input type="submit" value="Add">
+    <div class="field">
+      <input type="submit" value="Add">
     </div>
 
-    </form>
-
-</div> 
+  </form>
+</div>

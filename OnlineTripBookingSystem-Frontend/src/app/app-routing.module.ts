@@ -14,6 +14,7 @@ import { UpdateBusComponent } from './bus/update-bus/update-bus.component';
 import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
 import { AddTravelComponent } from './travel/add-travel/add-travel.component';
 import { UpdateAdminComponent } from './admin/update-admin/update-admin.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {path:'',component:DefaultHomepageComponent},
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path:'updateCustomer/:id',component:UpdateCustomerComponent},
   {path:'updateAdmin/:id',component:UpdateAdminComponent},
   {path:'addTravel',component:AddTravelComponent},
-  {path:'updateBus/:id',component:UpdateBusComponent}
+  {path:'updateBus/:id',component:UpdateBusComponent},
+  {path:'profile',component:ProfileComponent}
 ];
 
 @NgModule({

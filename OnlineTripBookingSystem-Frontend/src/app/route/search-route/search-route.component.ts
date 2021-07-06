@@ -28,10 +28,10 @@ export class SearchRouteComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(){
-    // console.log("printing")
+  onSubmit(form: any){
     this.router.navigate(['busList'])
   }
+
   // update(source: any,destination: any)
   // {
   //   this.routeService.busBetweenValue(source,destination).subscribe(bus =>
