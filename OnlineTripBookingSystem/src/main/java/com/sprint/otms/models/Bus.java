@@ -46,7 +46,7 @@ public class Bus {
 
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "bus_route")
-	@JsonBackReference
+	//@JsonBackReference
 	private Route route;
 
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

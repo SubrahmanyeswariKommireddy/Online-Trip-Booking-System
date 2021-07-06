@@ -22,12 +22,12 @@ const routes: Routes = [
   {path:'search',component:SearchBusesComponent},
   {path:'viewSeats',component:BusViewComponent},
   {path:'busList',component:BusListComponent},
-  {path:'getBus/:id',component:BusComponentComponent},
+  {path:'getBus',component:BusComponentComponent},
   {path:'addBus',component:AddBusComponent},
   {path:'addRoute',component:AddRouteComponent},
   {path:'updateCustomer',component:UpdateCustomerComponent},
   {path:'addTravel',component:AddTravelComponent},
-  {path:'updateBus',component:UpdateBusComponent}
+  {path:'updateBus/:id',component:UpdateBusComponent}
 ];
 
 @NgModule({

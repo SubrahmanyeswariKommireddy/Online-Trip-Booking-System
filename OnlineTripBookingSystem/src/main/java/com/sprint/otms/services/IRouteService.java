@@ -7,6 +7,7 @@ import javax.validation.ValidationException;
 
 import org.springframework.stereotype.Service;
 
+import com.sprint.otms.models.Bus;
 import com.sprint.otms.models.Route;
 
 /**
@@ -33,7 +34,7 @@ public interface IRouteService {
 	 * @param route
 	 * @return Updated Route
 	 */
-	public Route updateRoute(Route route);
+	public Route updateRoute(Long routeId,Bus bus);
 
 	/**
 	 * @param routeId

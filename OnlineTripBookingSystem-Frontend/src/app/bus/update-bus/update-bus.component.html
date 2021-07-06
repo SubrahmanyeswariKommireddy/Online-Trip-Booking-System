@@ -3,14 +3,17 @@
    <form [formGroup]="updateBusForm" (ngSubmit)="onSubmit()">
 
       <div class="form-group">
+         <input type="text" formControlName="busId" placeholder="busId" name="busId" class="form-control" id="busId" readonly="true">
+       </div>
+
+      <!-- <div class="form-group">
          <label for="busType">Bus Type</label>
          <select name="busType" id="busType" formControlName="busType" class="form-control">
             <option value="LUXURY">Luxury</option>
             <option value="SUPERLUXURY">Super Luxury</option>
             <option value="VOLVO">volvo</option>
          </select>
-
-      </div>
+      </div> -->
 
       <div class="form-group">
          <label for="fare">Fare</label>
@@ -23,7 +26,7 @@
       min="1" required name="totalCapacity" class="form-control" id="totalCapacity">
    </div> -->
 
-      <div (click)=onSubmit() class="field">
+      <div  class="field">
          <input type="submit" value="update">
       </div>
 

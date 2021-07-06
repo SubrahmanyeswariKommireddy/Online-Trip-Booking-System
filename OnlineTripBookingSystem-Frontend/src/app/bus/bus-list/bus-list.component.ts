@@ -54,7 +54,9 @@ export class BusListComponent implements OnInit {
   
 
   onEdit(bus: Bus) {
-       this.router.navigate(['updateBus']);
+       this.router.navigate(['updateBus',bus.busId]);
+       
+      
   }
 
   

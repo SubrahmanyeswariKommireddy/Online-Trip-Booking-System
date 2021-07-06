@@ -1,6 +1,7 @@
 package com.sprint.otms.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 import javax.validation.ValidationException;
@@ -8,6 +9,9 @@ import javax.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sprint.otms.exceptions.BusNotFoundException;
+import com.sprint.otms.exceptions.RouteNotFoundException;
+import com.sprint.otms.models.Bus;
 import com.sprint.otms.models.Route;
 import com.sprint.otms.repositories.IRouteRepository;
 
@@ -36,10 +40,33 @@ public class RouteServiceImpl implements IRouteService {
 	}
 
 	@Override
-	public Route updateRoute(Route route) {
+	public Route updateRoute(Long routeId, Bus bus) {
 		// TODO Auto-generated method stub
-		return routeRepository.saveAndFlush(route);
+		Optional<Route> route= routeRepository.findById(routeId);
+		if(route!=null) {
+			route.get().getBuses().add(bus);
+			return routeRepository.save(route.get());
+		}
+		else {
+			throw new RouteNotFoundException();
+		}
+		
 	}
+	
+	
+//	public Bus updateBus(Bus bus) {
+//		// TODO Auto-generated method stub
+//		Optional<Bus> b= busRepository.findById(bus.getBusId());
+//		if(b!=null) {
+//			b.get().setFare(bus.getFare());
+//			b.get().setTotalCapacity(32L);
+//			return busRepository.save(b.get());
+//		}
+//		
+//		else {
+//			throw new BusNotFoundException("bus not found");
+//		}
+//	}
 
 	@Override
 	public String delete(Long routeId) {
