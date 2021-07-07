@@ -1,92 +1,78 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StringLiteral } from 'typescript';
 import { Route } from '../models/Route';
 
 @Component({
-  selector: 'app-seat',
-  templateUrl: './bus-view.component.html',
-  styleUrls: ['./bus-view.component.css']
+    selector: 'app-seat',
+    templateUrl: './bus-view.component.html',
+    styleUrls: ['./bus-view.component.css']
 })
 export class BusViewComponent implements OnInit {
 
-  constructor(private router:Router) { }
+    getFare!: any;
 
-  ngOnInit(): void {
-      
-  }
- 
-     reserved: string[] = [];
-     selected: string[] = []; 
+    constructor(private router: Router, private _ActivatedRoute: ActivatedRoute) { }
 
-     countSeats:number=0;
-     
-     status:boolean=false;
-       flag!:number;
-     //return status of each seat
+    ngOnInit(): void {
+        this.getFare = this._ActivatedRoute.snapshot.paramMap.get('fare');
+    }
 
-    // sendCount(){
-    //     this.sendCountMsg.emit(this.countSeats);
-    //     // this.router.navigate(['/booking']);
-    // }
+    reserved: string[] = [];
+    selected: string[] = [];
 
-    getStatus(seatPos:string){
-        if(this.selected.indexOf(seatPos)===1){
-            this.status=!this.status;
+    countSeats: number = 0;
+
+    status: boolean = false;
+    flag!: number;
+
+
+    //return status of each seat
+    getStatus(seatPos: string) {
+        if (this.selected.indexOf(seatPos) === 1) {
+            this.status = !this.status;
             return this.status;
         }
         return this.status;
     }
 
-     //clear handler
-     clearSelected() {
-         this.selected = [];
-     }
-
-     //click handler
-     seatClicked (seatPos: string) {
-         var index = this.selected.indexOf(seatPos);
-         console.log(index);
-         
-         if(index !== -1) {
-             // seat already selected, remove
-             this.selected.splice(index, 1)
-             this.countSeats--;
-             console.log("deslected");
-         } else {
-             //push to selected array only if it is not reserved
-             if(this.reserved.indexOf(seatPos) === -1)
-                 this.selected.push(seatPos);
-                 this.countSeats++;
-                if(this.selected.indexOf(seatPos)){
-                    this.status=this.getStatus(seatPos);
-                    this.flag=1;
-                }
-                 console.log("selected");
-         }
-     }
-     
-     //Buy button handler
-    //  showSelected() {
-    //      if(this.selected.length > 0) {
-    //          alert("Selected Seats: " + this.selected + "\nTotal: "+(this.ticketPrice * this.selected.length + this.convFee));
-    //      } else {
-    //          alert("No seats selected!");
-    //      }
-    //  }
-
-    bgColor : string = 'grey';
-
-    changeColor(){
-        console.log("printing")
-        this.bgColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+    //clear handler
+    clearSelected() {
+        this.selected = [];
     }
 
-    seatsSelected(){
-        this.router.navigate(['/booking',{count:this.countSeats}]);
+    //click handler
+    seatClicked(seatPos: string) {
+        var index = this.selected.indexOf(seatPos);
+        console.log(index);
+
+        if (index !== -1) {
+            // seat already selected, remove
+            this.selected.splice(index, 1)
+            this.countSeats--;
+            console.log("deslected");
+        } else {
+            //push to selected array only if it is not reserved
+            if (this.reserved.indexOf(seatPos) === -1)
+                this.selected.push(seatPos);
+            this.countSeats++;
+            if (this.selected.indexOf(seatPos)) {
+                this.status = this.getStatus(seatPos);
+                this.flag = 1;
+            }
+            console.log("selected");
+        }
     }
 
 
 
 
- }
+    seatsSelected() {
+        this.router.navigate(['/booking', { count: this.countSeats, amount: this.getFare * this.countSeats }]);
+
+    }
+
+
+
+
+}

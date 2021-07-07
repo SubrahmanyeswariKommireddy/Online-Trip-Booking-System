@@ -17,7 +17,8 @@ export class BusListComponent implements OnInit {
 
   buses!: Bus[];
   busId!: number;
-  busData!: any;
+  sourceData!: any;
+  destinationData!:any;
 
   constructor(private _ActivatedRoute: ActivatedRoute, private formBuilder: FormBuilder, private router: Router, private busService: BusService) {
 
@@ -25,8 +26,9 @@ export class BusListComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.busData = this._ActivatedRoute.snapshot.paramMap.get('sourcePlace');
-
+    this.sourceData = this._ActivatedRoute.snapshot.paramMap.get('sourcePlace');
+    this.destinationData=this._ActivatedRoute.snapshot.paramMap.get('destinationPlace')
+    console.log(this.sourceData);
     this.busService.getBuses().subscribe(
       (data) => this.buses = data,
       (err) => console.log(err)
@@ -50,8 +52,8 @@ export class BusListComponent implements OnInit {
     this.router.navigate(['app-add-bus'])
   }
 
-  checkAvailability() {
-    this.router.navigate(['viewSeats']);
+  checkAvailability(bus:Bus) {
+    this.router.navigate(['viewSeats',{fare:bus.fare}]);
   }
 
   onEdit(bus: Bus) {
