@@ -1,51 +1,47 @@
-
- <h4>  Dear Customer, you have booked {{seatsCount}} seats  and amount is {{amount}}</h4>
-
 <div class="col-md-6 container">
-   <h2 class="text-center">Booking</h2>
-   <form [formGroup]="addBookingForm" (ngSubmit)="onSubmit()">
+    <h2 class="text-center">Booking</h2>
+    <form [formGroup]="addBookingForm" (ngSubmit)="onSubmit()">
 
-       <div class="form-group">
+        <div class="form-group">
 
-           <label for="name">Name</label>
-           <input type="text" formControlName="userName" placeholder="name" name="userName" class="form-control" id="userName">
-       </div>
+            <label for="name">Name</label>
+            <input type="text" formControlName="userName" placeholder="name" name="userName" class="form-control"
+                id="userName">
+        </div>
 
-       <div class="form-group">
+        <div class="form-group">
 
-           <label for="email">Email</label>
-           <input type="text" formControlName="email" placeholder="email" name="email" class="form-control"
-               id="email">
-       </div>
+            <label for="email">Email</label>
+            <input type="text" formControlName="email" placeholder="email" name="email" class="form-control" id="email">
+        </div>
 
-       <div class="form-group">
+        <div class="form-group">
 
-           <label for="mobileNumber">Mobile Number</label>
-           <input type="text" formControlName="mobileNumber" placeholder="mobileNumber" name="mobileNumber"
-               class="form-control" id="mobileNumber">
-       </div>
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="text" formControlName="mobileNumber" placeholder="mobileNumber" name="mobileNumber"
+                class="form-control" id="mobileNumber">
+        </div>
 
-       <div class="form-group">
-         <label for="dateTime">Time:</label>
-         <input type="datetime-local" formControlName="dateTime" class="form-control">
-       </div>
-       <input type="submit" value="proceed" class="btn btn-success">
-   </form>
+        <div class="form-group">
+            <label for="dateTime">Time:</label>
+            <input type="datetime-local" formControlName="dateTime" class="form-control">
+        </div>
+        <input type="submit" value="proceed" class="btn btn-success">
+    </form>
 
+    <h5>Confirm to proceed</h5>
+    <h6>{{name}}</h6>
+    <br>
+    <h6>{{emailId}}</h6>
+    <br>
+    <h6>{{phoneNumber}}</h6>
+    <br>
+    <h6>{{dateAndTime}}</h6>
+    <p class="text">
+        <button class='stylebutton' (click)="myFunc()">
+            Proceed to payment</button>
+    </p>
 
-   <h5>Confirm to proceed</h5>
-<h6>{{name}}</h6>
-<br>
-<h6>{{emailId}}</h6>
-<br>
-<h6>{{phoneNumber}}</h6>
-<br>
-<h6>{{dateAndTime}}</h6>
-   <p class="text">
-      <button class='stylebutton' (click)="myFunc()">
-      Proceed to payment</button>
-   </p>
 </div>
 
-
-
+<h5> You have booked {{seatsCount}} seats and amount is {{amount}}</h5>
