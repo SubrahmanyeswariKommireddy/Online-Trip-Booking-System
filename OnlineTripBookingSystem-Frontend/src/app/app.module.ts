@@ -11,7 +11,6 @@ import { UpdateAdminComponent } from './admin/update-admin/update-admin.componen
 import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
 import { AddBookingComponent } from './booking/add-booking/add-booking.component';
 import { AddPaymentComponent } from './payment/add-payment/add-payment.component';
-import { DeleteBookingComponent } from './booking/delete-booking/delete-booking.component';
 import { SignupComponent } from './signup/signup.component';
 import { AddTravelComponent } from './travel/add-travel/add-travel.component';
 import { UpdateTravelComponent } from './travel/update-travel/update-travel.component';
@@ -43,7 +42,6 @@ import { CustomerDetailsComponent } from './customer/customer-details/customer-d
     UpdateCustomerComponent,
     AddBookingComponent,
     AddPaymentComponent,
-    DeleteBookingComponent,
     BusListComponent,
     AddBusComponent,
    

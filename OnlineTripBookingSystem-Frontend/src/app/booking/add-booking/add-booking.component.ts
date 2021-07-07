@@ -12,12 +12,12 @@ export class AddBookingComponent implements OnInit {
   seatsCount!: number;
   amount!: number;
   addBookingForm!: FormGroup;
-
   name!: string;
   phoneNumber: string = '';
   emailId: string = '';
   dateAndTime: string = '';
   fare!: number;
+  
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
@@ -40,8 +40,8 @@ export class AddBookingComponent implements OnInit {
     this.phoneNumber = this.addBookingForm.get('mobileNumber')?.value;
     this.emailId = this.addBookingForm.get('email')?.value;
     this.dateAndTime = this.addBookingForm.get('dateTime')?.value;
-
   }
+
   @Input()
   countNum!: number;
 

@@ -1,1 +1,33 @@
-<p>add-payment works!</p>
+<div class="col-md-6 container">
+    <h2 class="text-center">Card Details</h2>
+    <form [formGroup]="addPaymentForm" (ngSubmit)="pay()">
+
+        <div class="form-group">
+            <label for="cardNumber">Card number</label>
+            <input type="text" formControlName="cardNumber" placeholder="cardNumber" name="cardNumber"
+                class="form-control" id="cardNumber">
+        </div>
+
+        <div class="form-group">
+            <label for="expMonth">Expiry month</label>
+            <input type="text" formControlName="expMonth" placeholder="expMonth" name="expMonth" class="form-control"
+                id="expMonth">
+        </div>
+
+        <div class="form-group">
+            <label for="expYear">Expiry year</label>
+            <input type="text" formControlName="expYear" placeholder="expYear" name="expYear" class="form-control"
+                id="expYear">
+        </div>
+
+        <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="text" formControlName="cvv" placeholder="cvv" name="cvv" class="form-control" id="cvv">
+        </div>
+        <button class='stylebutton' (click)="onSubmit()">
+            Confirm Payment</button>
+    </form>
+
+    <h5>{{status}}</h5>
+
+</div>
