@@ -86,9 +86,7 @@ export class BusViewComponent implements OnInit {
         this.router.navigate(['/booking',{count:this.countSeats}]);
     }
 
-    myFunc(){
-        this.router.navigate(['/booking',{count:this.countSeats}]);
-    }
+
 
 
  }
