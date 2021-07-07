@@ -1,5 +1,6 @@
 <div class="container">
-    <h3>{{busData}}</h3>
+    <h3>buses between {{sourceData}} and 
+    {{destinationData}}</h3>
     <h1>Bus List</h1>
     <table class="rwd-table">
         <thead>
@@ -15,7 +16,7 @@
                 <td>{{bus.busType}}</td>
                 <td>{{bus.fare}}</td>
                 <td>{{bus.totalCapacity}}</td>
-                <td><button class="btn btn-success" (click)=checkAvailability()> Check Availability</button></td>
+                <td><button class="btn btn-success" (click)=checkAvailability(bus)> Check Availability</button></td>
                 <td>
                     <button *ngIf="isAdmin" class="btn btn-success" (click)="onEdit(bus)">Edit</button>
                 </td>

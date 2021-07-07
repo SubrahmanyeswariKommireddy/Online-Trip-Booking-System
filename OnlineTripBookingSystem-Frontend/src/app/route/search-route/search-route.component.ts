@@ -42,7 +42,7 @@ export class SearchRouteComponent implements OnInit {
     this.searchData.destination=form.value.destination;
    // this.router.navigate(['/busList',{search:this.searchData}]);
 
-     this.router.navigate(['/busList',{sourcePlace:this.searchData.source}]);
+     this.router.navigate(['/busList',{sourcePlace:this.searchData.source,destinationPlace:this.searchData.destination}]);
     // ,destinationPlace:this.searchData.destination}]);
   }
 

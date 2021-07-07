@@ -51,6 +51,7 @@ import { SignupService } from '../shared/signup.service';
 export class SignupComponent implements OnInit {
 
   user:User= {
+    id:0,
     userName: '',
     password:'',
     userType:'',
@@ -72,7 +73,7 @@ export class SignupComponent implements OnInit {
     this.signupService.createUser(this.user)
         .subscribe( data => {
           console.log(data);
-          this.router.navigate(['/default'])
+          this.router.navigate([''])
         });
   };
 }
