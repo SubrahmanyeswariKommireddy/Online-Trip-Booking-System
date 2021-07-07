@@ -1,15 +1,18 @@
-<ul class="showcase">
+<div class="bckimg">
+  <h1 style="font-family: 'Trebuchet MS', sans-serif; color: white; text-align: center">SELECT SEATS</h1>
+  
+<ul class="showcase justify-content-center">
   <li>
     <div class="seat" (click)="seatClicked('2')"></div>
-    <small>N/A</small>
+    <small style="color: black; font-weight: bold;">Available</small>
   </li>
   <li>
     <div class="seat selected" style="background: #89c757;"></div>
-    <small>Selected</small>
+    <small style="color: black; font-weight: bold;">Selected</small>
   </li>
   <li>
     <div class="seat occupied"></div>
-    <small>Occupied</small>
+    <small style="color: black; font-weight: bold;">Occupied</small>
   </li>
 </ul>
 <div class="d-flex felx-column justify-content-center">
@@ -120,3 +123,5 @@ Fare:{{getFare*countSeats}}</p>
 <button class='stylebutton' (click)="seatsSelected()">
 Confirm Booking</button>
 </p>
+
+</div>
