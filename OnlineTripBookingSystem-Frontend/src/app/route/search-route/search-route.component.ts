@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BusService } from 'src/app/shared/bus.service';
 import { RouteService } from 'src/app/shared/route.service';
 import { FormsModule, NgForm } from '@angular/forms'
+import { DatePipe } from '@angular/common';
+import { SeatData } from 'src/app/models/seat-data';
 
 @Component({
   selector: 'app-search-route',
@@ -26,11 +28,15 @@ export class SearchRouteComponent implements OnInit {
 
   searchData:any={
     source:'',
-    destination:''
+    destination:'',
+    date:''
   }
 
-  constructor(private route:ActivatedRoute,private router: Router,private busService: BusService, private routeService:RouteService) { }
+  constructor(private route:ActivatedRoute,private router: Router,private busService: BusService, private routeService:RouteService, 
+    private datePipe:DatePipe,private seatData:SeatData) { }
 
+   
+    
   ngOnInit():void {
     // this.searchData.source=this.route.snapshot.paramMap.get('source');
     // this.searchData.destination=this.route.snapshot.paramMap.get('destination');
@@ -41,7 +47,13 @@ export class SearchRouteComponent implements OnInit {
     this.searchData.source=form.value.source;
     this.searchData.destination=form.value.destination;
    // this.router.navigate(['/busList',{search:this.searchData}]);
-
+   console.log(form.value.date);
+   let date = form.value.date;
+   
+   let dataStore=this.datePipe.transform(date,"yyyy-MM-dd")
+   console.log(this.searchData.date=dataStore);
+   this.seatData.bookingDate.push(dataStore!);
+   console.log(this.seatData);
      this.router.navigate(['/busList',{sourcePlace:this.searchData.source,destinationPlace:this.searchData.destination}]);
     // ,destinationPlace:this.searchData.destination}]);
   }
