@@ -25,8 +25,6 @@ export class BusViewComponent implements OnInit {
     reserved: string[] = [];
     selected: string[] = [];
 
-    //selectedSeats:string[32]=[];
-
     countSeats: number = 0;
 
     status: boolean = false;
@@ -79,7 +77,6 @@ export class BusViewComponent implements OnInit {
     seatsSelected() {
         console.log(this.seatData.seatArr=this.seatArray);
         this.router.navigate(['/booking', { count: this.countSeats, amount: this.getFare * this.countSeats }]);
-
     }
 
 }
