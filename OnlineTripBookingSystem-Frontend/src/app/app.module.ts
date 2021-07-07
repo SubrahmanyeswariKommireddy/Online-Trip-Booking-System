@@ -31,6 +31,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchRouteComponent } from './route/search-route/search-route.component';
 import { AdminHeaderComponent } from './header/admin-header/admin-header.component';
 import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
+import { SeatData } from './models/seat-data';
+import { DatePipe } from '@angular/common';
+
+
+
 
 @NgModule({
   declarations: [
@@ -73,7 +78,10 @@ import { CustomerDetailsComponent } from './customer/customer-details/customer-d
   ],
   providers: [{ provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
-    multi: true}],
+    multi: true},
+    SeatData,
+     DatePipe],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

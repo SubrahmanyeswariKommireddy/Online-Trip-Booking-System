@@ -10,33 +10,29 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class CustomerDetailsComponent implements OnInit {
 
- 
-    customer!:Customer;
-    id:number=0;
-     
-    constructor(
-      private userService: UserService,
-      private router:Router,private _ActivatedRoute: ActivatedRoute
-    ) { }
-  
-    ngOnInit() {
-  
-      var id=sessionStorage.getItem('id');
-      
-  
-        this.userService.getCustomerById(Number(id)).subscribe(
-          (data) => {
-            console.log(data);
-            this.customer = data
-          },
-          (err) => console.log(err)
-        );
-    }
-  
-  
-    onBack() {
-        this.router.navigate(['']);
-      }
-  
-  
-    }
+  customer!: Customer;
+  id: number = 0;
+
+  constructor(
+    private userService: UserService,
+    private router: Router, private _ActivatedRoute: ActivatedRoute
+  ) { }
+
+  ngOnInit() {
+
+    var id = sessionStorage.getItem('id');
+
+    this.userService.getCustomerById(Number(id)).subscribe(
+      (data) => {
+        console.log(data);
+        this.customer = data
+      },
+      (err) => console.log(err)
+    );
+  }
+
+  onBack() {
+    this.router.navigate(['']);
+  }
+
+}
