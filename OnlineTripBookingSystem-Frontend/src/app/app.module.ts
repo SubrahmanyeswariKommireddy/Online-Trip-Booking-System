@@ -37,6 +37,7 @@ import { SearchBusesComponent } from './bus/search-buses/search-buses.component'
 import { SearchRouteComponent } from './route/search-route/search-route.component';
 import { BusComponentComponent } from './bus/bus-component/bus-component.component';
 import { AdminHeaderComponent } from './header/admin-header/admin-header.component';
+import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { AdminHeaderComponent } from './header/admin-header/admin-header.compone
     SearchBusesComponent,
     SearchRouteComponent,
     BusComponentComponent,
-    AdminHeaderComponent
+    AdminHeaderComponent,
+    CustomerDetailsComponent
   ],
   imports: [
     BrowserModule,

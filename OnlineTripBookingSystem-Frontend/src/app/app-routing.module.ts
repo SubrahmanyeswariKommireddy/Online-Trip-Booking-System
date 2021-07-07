@@ -18,6 +18,8 @@ import { UpdateAdminComponent } from './admin/update-admin/update-admin.componen
 import { ProfileComponent } from './profile/profile.component';
 import { Payment } from './models/Payment';
 import { AddPaymentComponent } from './payment/add-payment/add-payment.component';
+import { AdminDetailsComponent } from './admin/admin-details/admin-details.component';
+import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
 
 const routes: Routes = [
   {path:'',component:DefaultHomepageComponent},
@@ -36,6 +38,8 @@ const routes: Routes = [
   {path:'updateBus/:id',component:UpdateBusComponent},
   {path:'booking',component:AddBookingComponent},
   {path:'profile',component:ProfileComponent},
+  {path:'adminProfile',component:AdminDetailsComponent},
+  {path:'customerProfile',component:CustomerDetailsComponent},
   {path:'payment',component:AddPaymentComponent}
 ];
 

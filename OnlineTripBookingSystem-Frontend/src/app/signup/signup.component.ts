@@ -51,6 +51,7 @@ import { SignupService } from '../shared/signup.service';
 export class SignupComponent implements OnInit {
 
   user:User= {
+    id:0,
     userName: '',
     password:'',
     userType:'',

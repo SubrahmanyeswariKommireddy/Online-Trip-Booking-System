@@ -36,7 +36,10 @@ public class JwtUserDetailsService implements UserDetailsService {
           com.sprint.otms.models.User user =  repo.findByEmail(username).get(0);
           
           com.sprint.otms.models.User validuser= service.findUser(user);
+          System.out.println(user);
+          System.out.println(validuser);
           if(validuser==null)
+        	  
               throw new UsernameNotFoundException("user not found"+username);
           
           return  new org.springframework.security.core.userdetails.User(validuser.getEmail(), validuser.getPassword(), new ArrayList<>());
