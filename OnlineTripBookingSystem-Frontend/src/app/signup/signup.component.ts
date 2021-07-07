@@ -73,7 +73,7 @@ export class SignupComponent implements OnInit {
     this.signupService.createUser(this.user)
         .subscribe( data => {
           console.log(data);
-          this.router.navigate(['/default'])
+          this.router.navigate([''])
         });
   };
 }
