@@ -1,5 +1,7 @@
 package com.sprint.otms.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.ResponseEntity;
@@ -8,6 +10,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +24,7 @@ import com.sprint.otms.models.JwtRequest;
 import com.sprint.otms.models.JwtResponse;
 import com.sprint.otms.models.User;
 import com.sprint.otms.models.User_Type;
+import com.sprint.otms.repositories.IUserRepository;
 import com.sprint.otms.services.JwtUserDetailsService;
 import com.sprint.otms.services.UserServiceImpl;
 
@@ -39,6 +43,12 @@ public class JwtAuthenticationController {
 	
 	@Autowired
 	private UserServiceImpl userServiceImpl;
+	
+	@Autowired
+	private IUserRepository userRepository;
+	
+	@Autowired
+    private PasswordEncoder bcryptEncoder;
 
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
@@ -59,7 +69,7 @@ User userDb = userServiceImpl.Login(authenticationRequest.getEmail(), authentica
 		final String token = jwtTokenUtil.generateToken(userDetails);
 		System.out.println("token" + token);
 
-		return ResponseEntity.ok(new JwtResponse(token));
+		return ResponseEntity.ok(new JwtResponse(token,userDb.getId()));
 	}
 
 //	@RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -84,6 +94,35 @@ User userDb = userServiceImpl.Login(authenticationRequest.getEmail(), authentica
 			throw new Exception("USER_DISABLED", e);
 		} catch (BadCredentialsException e) {
 			throw new Exception("INVALID_CREDENTIALS", e);
+		}
+	}
+	
+	@RequestMapping(value = "/updatePassword", method = RequestMethod.PATCH)
+	public ResponseEntity<User> updatePassword(@RequestParam String newPassword,@RequestBody User user) throws Exception {
+		System.out.println(user.getPassword());
+		List<User> u = userRepository.findByEmail(user.getEmail());
+		System.out.println(user.getPassword());
+		if(u.size() > 0)
+		{
+			UserDetails userDetails = userDetailsService.loadUserByUsername(user.getEmail());
+			System.out.println("old password"+userDetails.getPassword());
+			
+			if(userDetails.getPassword()==user.getPassword())
+			{
+				System.out.println(newPassword);
+				
+				u.get(0).setPassword(bcryptEncoder.encode(newPassword));
+				System.out.println(newPassword);
+				return ResponseEntity.ok(userRepository.save(u.get(0)));
+			}
+			else
+			{
+				throw new Exception("Invalid old password");
+			}	
+		}
+		else
+		{
+			throw new UserNotFoundException("No user found");
 		}
 	}
 }

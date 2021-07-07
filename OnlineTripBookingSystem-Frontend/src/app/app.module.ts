@@ -8,13 +8,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UpdateAdminComponent } from './admin/update-admin/update-admin.component';
-import { CustomerListComponent } from './customer/customer-list/customer-list.component';
 import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
 import { AddBookingComponent } from './booking/add-booking/add-booking.component';
 import { AddPaymentComponent } from './payment/add-payment/add-payment.component';
-import { DeletePaymentComponent } from './payment/delete-payment/delete-payment.component';
 import { DeleteBookingComponent } from './booking/delete-booking/delete-booking.component';
-import { BookingListComponent } from './booking/booking-list/booking-list.component';
 import { SignupComponent } from './signup/signup.component';
 import { AddTravelComponent } from './travel/add-travel/add-travel.component';
 import { UpdateTravelComponent } from './travel/update-travel/update-travel.component';
@@ -25,7 +22,6 @@ import { AddBusComponent } from './bus/add-bus/add-bus.component';
 import { UpdateBusComponent } from './bus/update-bus/update-bus.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AddRouteComponent } from './route/add-route/add-route.component';
-import { UpdateRouteComponent } from './route/update-route/update-route.component';
 import { RouteListComponent } from './route/route-list/route-list.component';
 import { BusViewComponent } from './bus-view/bus-view.component';
 import { AdminDetailsComponent } from './admin/admin-details/admin-details.component';
@@ -33,10 +29,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/auth-interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SearchBusesComponent } from './bus/search-buses/search-buses.component';
 import { SearchRouteComponent } from './route/search-route/search-route.component';
-import { BusComponentComponent } from './bus/bus-component/bus-component.component';
 import { AdminHeaderComponent } from './header/admin-header/admin-header.component';
+import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
 
 @NgModule({
   declarations: [
@@ -45,17 +40,14 @@ import { AdminHeaderComponent } from './header/admin-header/admin-header.compone
     HeaderComponent,
     FooterComponent,
     UpdateAdminComponent,
-    CustomerListComponent,
     UpdateCustomerComponent,
     AddBookingComponent,
     AddPaymentComponent,
-    DeletePaymentComponent,
     DeleteBookingComponent,
     BusListComponent,
     AddBusComponent,
    
     UpdateBusComponent,
-    BookingListComponent,
     SignupComponent,
     AddTravelComponent,
     UpdateTravelComponent,
@@ -64,14 +56,13 @@ import { AdminHeaderComponent } from './header/admin-header/admin-header.compone
     LogoutComponent,
     AddRouteComponent,
   
-    UpdateRouteComponent,
     RouteListComponent,
     BusViewComponent,
     AdminDetailsComponent,
     ProfileComponent,
-    SearchBusesComponent,
     SearchRouteComponent,
-    BusComponentComponent,
+    AdminHeaderComponent,
+    CustomerDetailsComponent,
     AdminHeaderComponent
   ],
   imports: [
