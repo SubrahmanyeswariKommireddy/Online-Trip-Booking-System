@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="col">
         <h3>Customer Details</h3>
         <div class="card">
@@ -18,4 +18,67 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+<!-- <div id="login-container" >
+    <div class="profile-img"></div>
+    <h1>
+        {{customer.userName}}
+    </h1>
+    <div class="description">
+        <h5> ID : {{customer.id}}</h5>
+
+        <h5>Mobile Number : {{customer.mobileNumber}}</h5>
+
+        <h5>Email Id : {{customer.email}}</h5>
+    </div>
+
+    <button>Edit Profile</button>
+
+    <footer>
+        <div class="projects">
+            <p>Back</p>
+        </div>
+    </footer>
+</div> -->
+ 
+ <div id="login-container">
+    <div class="profile-img"></div>
+    <h1>
+      {{customer.userName}}
+    </h1>
+    <div class="description">
+     <div class="col-sm-3">
+                        <h6 class="mb-0">Id</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        {{customer.id}}
+                      </div>
+      <hr>
+      
+      <div class="col-sm-3">
+                        <h6 class="mb-0">MobileNumber</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        {{customer.mobileNumber}}
+                      </div>
+      <hr>
+      
+      <div class="col-sm-3">
+                        <h6 class="mb-0">Email Id</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        {{customer.email}}
+                      </div>
+      <hr>
+                          
+           
+    </div>
+     
+    <button>Edit Profile</button>
+    
+    <footer>
+      <div class="projects">
+        <p>Back</p>
+        </div>
+    </footer>
+  </div>
