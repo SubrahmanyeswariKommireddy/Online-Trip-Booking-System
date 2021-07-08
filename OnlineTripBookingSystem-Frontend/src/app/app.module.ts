@@ -32,6 +32,7 @@ import { AdminHeaderComponent } from './header/admin-header/admin-header.compone
 import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
 import { SeatData } from './models/seat-data';
 import { DatePipe } from '@angular/common';
+import { UpdatePasswordComponent } from './password/update-password/update-password.component';
 
 
 
@@ -64,7 +65,8 @@ import { DatePipe } from '@angular/common';
     SearchRouteComponent,
     AdminHeaderComponent,
     CustomerDetailsComponent,
-    AdminHeaderComponent
+    AdminHeaderComponent,
+    UpdatePasswordComponent
   ],
   imports: [
     BrowserModule,
