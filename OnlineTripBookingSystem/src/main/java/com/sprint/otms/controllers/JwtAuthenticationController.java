@@ -97,28 +97,47 @@ User userDb = userServiceImpl.Login(authenticationRequest.getEmail(), authentica
 		}
 	}
 	
+//	@RequestMapping(value = "/updatePassword", method = RequestMethod.PATCH)
+//	public ResponseEntity<User> updatePassword(@RequestParam String newPassword,@RequestBody User user) throws Exception {
+//		System.out.println(user.getPassword());
+//		List<User> u = userRepository.findByEmail(user.getEmail());
+//		System.out.println(user.getPassword());
+//		if(u.size() > 0)
+//		{
+//			UserDetails userDetails = userDetailsService.loadUserByUsername(user.getEmail());
+//			System.out.println("old password"+userDetails.getPassword());
+//			
+//			if(userDetails.getPassword()==user.getPassword())
+//			{
+//				System.out.println(newPassword);
+//				
+//				u.get(0).setPassword(bcryptEncoder.encode(newPassword));
+//				System.out.println(newPassword);
+//				return ResponseEntity.ok(userRepository.save(u.get(0)));
+//			}
+//			else
+//			{
+//				throw new Exception("Invalid old password");
+//			}	
+//		}
+//		else
+//		{
+//			throw new UserNotFoundException("No user found");
+//		}
+//	}
 	@RequestMapping(value = "/updatePassword", method = RequestMethod.PATCH)
 	public ResponseEntity<User> updatePassword(@RequestParam String newPassword,@RequestBody User user) throws Exception {
-		System.out.println(user.getPassword());
+		User userDb = userServiceImpl.Login(user.getEmail(), user.getPassword(), user.getUserType());
+		if(userDb == null)
+		{
+			throw new UserNotFoundException("Not a Valid User");
+		}
+		authenticate(user.getEmail(), user.getPassword());
 		List<User> u = userRepository.findByEmail(user.getEmail());
-		System.out.println(user.getPassword());
 		if(u.size() > 0)
 		{
-			UserDetails userDetails = userDetailsService.loadUserByUsername(user.getEmail());
-			System.out.println("old password"+userDetails.getPassword());
-			
-			if(userDetails.getPassword()==user.getPassword())
-			{
-				System.out.println(newPassword);
-				
-				u.get(0).setPassword(bcryptEncoder.encode(newPassword));
-				System.out.println(newPassword);
-				return ResponseEntity.ok(userRepository.save(u.get(0)));
-			}
-			else
-			{
-				throw new Exception("Invalid old password");
-			}	
+			u.get(0).setPassword(bcryptEncoder.encode(newPassword));
+			return ResponseEntity.ok(userRepository.save(u.get(0)));
 		}
 		else
 		{
