@@ -24,7 +24,6 @@ import { AddRouteComponent } from './route/add-route/add-route.component';
 import { RouteListComponent } from './route/route-list/route-list.component';
 import { BusViewComponent } from './bus-view/bus-view.component';
 import { AdminDetailsComponent } from './admin/admin-details/admin-details.component';
-import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/auth-interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -62,7 +61,6 @@ import { DatePipe } from '@angular/common';
     RouteListComponent,
     BusViewComponent,
     AdminDetailsComponent,
-    ProfileComponent,
     SearchRouteComponent,
     AdminHeaderComponent,
     CustomerDetailsComponent,

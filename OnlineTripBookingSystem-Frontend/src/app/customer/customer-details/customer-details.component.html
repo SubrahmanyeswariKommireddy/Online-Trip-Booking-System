@@ -1,84 +1,38 @@
-<!-- <div class="container">
-    <div class="col">
-        <h3>Customer Details</h3>
-        <div class="card">
-            <div class="card-header">{{customer.userName}}</div>
-            <div class="card-body">
-                <div class="card-title">
-                    <div class="card-subtitle">
-                        <h5>{{customer.id}}</h5>
-                        <h5>{{customer.mobileNumber}}</h5>
-                        
-                        <h5>{{customer.email}}</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer">
-                <button (click)="onBack()">Back</button>
-            </div>
-        </div>
+<div id="login-container">
+  <div class="profile-img"></div>
+  <h1>
+    {{customer.userName}}
+  </h1>
+  <div class="description">
+    <div class="col-sm-3">
+      <h6 class="mb-1">Id</h6>
     </div>
-</div> -->
-<!-- <div id="login-container" >
-    <div class="profile-img"></div>
-    <h1>
-        {{customer.userName}}
-    </h1>
-    <div class="description">
-        <h5> ID : {{customer.id}}</h5>
-
-        <h5>Mobile Number : {{customer.mobileNumber}}</h5>
-
-        <h5>Email Id : {{customer.email}}</h5>
+    <div class="col-sm-9 text-secondary">
+      {{customer.id}}
     </div>
 
-    <button>Edit Profile</button>
-
-    <footer>
-        <div class="projects">
-            <p>Back</p>
-        </div>
-    </footer>
-</div> -->
- 
- <div id="login-container">
-    <div class="profile-img"></div>
-    <h1>
-      {{customer.userName}}
-    </h1>
-    <div class="description">
-     <div class="col-sm-3">
-                        <h6 class="mb-0">Id</h6>
-                      </div>
-                      <div class="col-sm-9 text-secondary">
-                        {{customer.id}}
-                      </div>
-      <hr>
-      
-      <div class="col-sm-3">
-                        <h6 class="mb-0">MobileNumber</h6>
-                      </div>
-                      <div class="col-sm-9 text-secondary">
-                        {{customer.mobileNumber}}
-                      </div>
-      <hr>
-      
-      <div class="col-sm-3">
-                        <h6 class="mb-0">Email Id</h6>
-                      </div>
-                      <div class="col-sm-9 text-secondary">
-                        {{customer.email}}
-                      </div>
-      <hr>
-                          
-           
+    <div class="col-sm-6">
+      <h6 class="mb-1 mt-2">Mobile Number</h6>
     </div>
-     
-    <button>Edit Profile</button>
-    
-    <footer>
-      <div class="projects">
-        <p>Back</p>
-        </div>
-    </footer>
+    <div class="col-sm-9 text-secondary">
+      {{customer.mobileNumber}}
+    </div>
+
+    <div class="col-sm-4">
+      <h6 class="mb-1 mt-2">Email Id</h6>
+    </div>
+    <div class="col-sm-9 text-secondary">
+      {{customer.email}}
+    </div>
   </div>
+
+  <button href="" (click)="onEdit(customer)">Edit Profile</button>
+
+  <footer>
+    <div class="projects">
+      <p style="font-size: 30px; font-style: oblique;"><a [routerLink]="['/']"
+          style="color:white; font-family: Monoton">Back</a></p>
+    </div>
+  </footer>
+
+</div>

@@ -2,11 +2,9 @@
 
 * {
   box-sizing: border-box;
- 
 }
 
 body {
-  
   background-color: #f2f2f2;
   color: #fff;
   display: flex;
@@ -16,7 +14,6 @@ body {
   height: 100vh;
   font-family: 'Lato', sans-serif;
   margin: 0;
-  
 }
 
 .bckimg{
@@ -30,8 +27,6 @@ body {
   perspective: 1000px;
   margin-bottom: 30px;
    margin: 5px 0;
-
-
 }
 
 .seat {
@@ -44,13 +39,6 @@ body {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-
-.seat.selected{
-  background-color: #6feaf6;
-
-}
-
-
 
 .seat.occupied {
   background-color: rgb(237, 240, 100);
@@ -108,7 +96,6 @@ body {
   display: flex;
 }
 
-
 p.text {
   margin: 5px 0;
   color: black;
@@ -118,6 +105,7 @@ p.text {
 p.text span {
   color: #121313;
 }
+
 .stylebutton{
     height: 40px;
     width: 138px;
@@ -126,8 +114,8 @@ p.text span {
     text-align: center;
     background-color: #6feaf6;
     border-width: 0px;
-
 }
+
 .wrapper{
     width: 200px;
     background: #fff;
@@ -136,41 +124,28 @@ p.text span {
     padding-left: 3mm;
     padding-bottom: 2mm;
     margin-top: 15mm;
-    
   }
 
   input[type=checkbox]{
     color: coral;
-    
   }
-
-  .grey{
-    background-color: black;
-  }
-
-  .green{
-    background-color: blanchedalmond;
-  }
- 
-  
 
 * {
   margin: 0;
   padding: 0;
 }
 
-
 .seat {
   text-align: center;
-
   padding-top: 1mm;
-background-color: #22c7d3;
-height: 25px;
-width: 30px;
-margin: 3px;
-border-top-left-radius: 10px;
-border-top-right-radius: 10px;
+  background-color: #22c7d3;
+  height: 25px;
+  width: 30px;
+  margin: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
+
 .seat-select {
   display: none;
 }

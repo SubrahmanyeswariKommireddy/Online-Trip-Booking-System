@@ -32,7 +32,6 @@ export class UpdateCustomerComponent implements OnInit {
         this.customer = data;
         this.updateCustomerForm = this.formBuilder.group({
           id: this.customer.id,
-
           mobileNumber: this.customer.mobileNumber
         })
       },
@@ -46,10 +45,11 @@ export class UpdateCustomerComponent implements OnInit {
       (data) => {
         this.customer = data;
         console.log(data);
-        console.log('mobile number updated successfully!')
-        this.router.navigate([''])
+        console.log('Mobile number updated successfully!')
+        this.router.navigate(['customerProfile'])
       },
       (err) => console.log(err)
     )
   }
+
 }
