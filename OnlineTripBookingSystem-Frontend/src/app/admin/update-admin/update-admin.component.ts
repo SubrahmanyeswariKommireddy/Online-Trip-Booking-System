@@ -44,7 +44,6 @@ export class UpdateAdminComponent implements OnInit {
       (data) => {
         this.admin = data;
         console.log(data);
-        console.log('Mobile number updated successfully!')
         this.router.navigate(['adminProfile'])
       },
       (err) => console.log(err)

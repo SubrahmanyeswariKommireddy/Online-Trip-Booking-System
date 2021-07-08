@@ -27,17 +27,16 @@ export class AddPaymentComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  pay() {
     this.cardNumber = this.addPaymentForm.get('cardNumber')?.value;
     this.expMonth = this.addPaymentForm.get('expMonth')?.value;
     this.expYear = this.addPaymentForm.get('expYear')?.value;
     this.cvv = this.addPaymentForm.get('cvv')?.value;
   }
 
-  pay() {
+  onSubmit() {
     console.log(this.cardNumber.valueOf());
     if (this.cardNumber.length == 16) {
-      console.log('Payment successful');
       this.status = "Payment successful";
     }
     else {

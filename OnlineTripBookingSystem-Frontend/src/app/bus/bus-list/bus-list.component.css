@@ -2,6 +2,7 @@
  .rwd-table {
 	 margin: 1em 0;
 	 min-width: 300px;
+	 margin-left: 25%;
 }
  .rwd-table tr {
 	 border-top: 1px solid #ddd;
@@ -57,6 +58,11 @@
 	 font-weight: normal;
 	 letter-spacing: -1px;
 	 color: #34495e;
+	 margin-left: 45%;
+	 margin-top: 25mm;
+}
+h5{
+	margin-left: 25%;
 }
  .rwd-table {
 	 background: #34495e;
