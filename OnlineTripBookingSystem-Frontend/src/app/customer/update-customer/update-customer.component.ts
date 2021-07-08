@@ -45,7 +45,6 @@ export class UpdateCustomerComponent implements OnInit {
       (data) => {
         this.customer = data;
         console.log(data);
-        console.log('Mobile number updated successfully!')
         this.router.navigate(['customerProfile'])
       },
       (err) => console.log(err)

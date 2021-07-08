@@ -33,9 +33,6 @@ import { CustomerDetailsComponent } from './customer/customer-details/customer-d
 import { SeatData } from './models/seat-data';
 import { DatePipe } from '@angular/common';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
