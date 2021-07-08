@@ -20,7 +20,6 @@ export class AdminDetailsComponent implements OnInit {
   ngOnInit() {
 
     var id=sessionStorage.getItem('id');
-    
 
       this.userService.getAdminById(Number(id)).subscribe(
         (data) => {
@@ -31,45 +30,13 @@ export class AdminDetailsComponent implements OnInit {
       );
   }
 
+  onEdit(admin:Admin) {
+    this.router.navigate(['updateAdmin',admin.id]);
+  }
 
   onBack() {
       this.router.navigate(['']);
     }
 
-
   }
-
-
-
-
-
-
-
-
-
-  // admin!: Admin;
-  // id: number = 0;
-
-  // constructor(
-  //   private _ActivatedRoute: ActivatedRoute,
-  //   private router: Router,
-  //   private service: AdminService) { }
-
-
-  // ngOnInit(): void {
-  //   this.id = Number(this._ActivatedRoute.snapshot.paramMap.get("id"));
-
-  //   this.service.getAdminById(this.id).subscribe(
-  //     (data) => {
-  //       console.log(data);
-  //       this.admin = data
-  //     },
-  //     (err) => console.log(err)
-  //   );
-
-  // }
-
-  // onBack() {
-  //   this.router.navigate(['admins']);
-  // }
 

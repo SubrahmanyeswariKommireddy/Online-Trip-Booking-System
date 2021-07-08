@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="col">
         <h3>Customer Details</h3>
         <div class="card">
@@ -17,4 +17,44 @@
             </div>
         </div>
     </div>
+</div> -->
+
+
+<div id="login-container">
+    <div class="profile-img"></div>
+    <h1>
+        {{admin.userName}}
+    </h1>
+    <div class="description">
+        <div class="col-sm-3">
+            <h6 class="mb-1">Id</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+            {{admin.id}}
+        </div>
+
+        <div class="col-sm-6">
+            <h6 class="mb-1 mt-2">Mobile Number</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+            {{admin.mobileNumber}}
+        </div>
+
+        <div class="col-sm-4">
+            <h6 class="mb-1 mt-2">Email Id</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+            {{admin.email}}
+        </div>
+    </div>
+
+    <button href="" (click)="onEdit(admin)">Edit Profile</button>
+
+    <footer>
+        <div class="projects">
+            <p style="font-size: 30px; font-style: oblique;"><a [routerLink]="['/admin']"
+                    style="color:white; font-family: Monoton">Back</a></p>
+        </div>
+    </footer>
+
 </div>

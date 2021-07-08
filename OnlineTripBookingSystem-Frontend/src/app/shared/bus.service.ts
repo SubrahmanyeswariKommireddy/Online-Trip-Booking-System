@@ -14,27 +14,29 @@ export class BusService {
   constructor(private httpClient: HttpClient) { }
 
   getBuses(): Observable<Bus[]> {
+
     return <Observable<Bus[]>>this.httpClient.get(this.baseUrl + "/getBuses")
   }
+
   getBusById(busId: number): Observable<Bus> {
 
     return <Observable<Bus>>this.httpClient.get(this.baseUrl + "/getBus/" + busId)
   }
+
   addBus(bus: Bus): Observable<Bus> {
+
     return <Observable<Bus>>this.httpClient.post(this.baseUrl + "/travel/addBus", bus)
   }
+
   deleteBusById(id: number): Observable<Bus> {
 
     return <Observable<Bus>>this.httpClient.delete(this.baseUrl + "/bus/" + id)
   }
-  updateBus( bus: Bus): Observable<Bus> {
 
-    return <Observable<Bus>>this.httpClient.patch(this.baseUrl + "/updateBus" , bus)
+  updateBus(bus: Bus): Observable<Bus> {
+
+    return <Observable<Bus>>this.httpClient.patch(this.baseUrl + "/updateBus", bus)
   }
 
-  // updateFare(id:number,bus:Bus):Observable<Bus>{
- 
-  //   return <Observable<Bus>>this.httpClient.patch(this.baseUrl+"/updateFareById/"+id,bus)
-  // }
 }
 
