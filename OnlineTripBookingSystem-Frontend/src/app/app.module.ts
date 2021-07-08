@@ -34,9 +34,6 @@ import { SeatData } from './models/seat-data';
 import { DatePipe } from '@angular/common';
 import { UpdatePasswordComponent } from './password/update-password/update-password.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

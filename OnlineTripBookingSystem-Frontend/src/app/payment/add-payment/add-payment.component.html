@@ -1,6 +1,6 @@
 <div class="col-md-6 container">
     <h2 class="text-center">Card Details</h2>
-    <form [formGroup]="addPaymentForm" (ngSubmit)="pay()">
+    <form [formGroup]="addPaymentForm" (ngSubmit)="onSubmit()">
 
         <div class="form-group">
             <label for="cardNumber">Card number</label>
@@ -24,7 +24,7 @@
             <label for="cvv">CVV</label>
             <input type="text" formControlName="cvv" placeholder="cvv" name="cvv" class="form-control" id="cvv">
         </div>
-        <button class='stylebutton' (click)="onSubmit()">
+        <button class='stylebutton' (click)="pay()">
             Confirm Payment</button>
     </form>
 
