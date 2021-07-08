@@ -1,8 +1,10 @@
-<div class="col-md-6 container">
-    <h2 class="text-center">Booking</h2>
-    <form [formGroup]="addBookingForm" (ngSubmit)="onSubmit()">
-
-        <div class="form-group">
+<div class="courses-container">
+	<div class="course">
+		<div class="course-preview">
+			<h1>Booking</h1>
+			
+			<form [formGroup]="addBookingForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
 
             <label for="name">Name</label>
             <input type="text" formControlName="userName" placeholder="name" name="userName" class="form-control"
@@ -27,21 +29,26 @@
             <input type="datetime-local" formControlName="dateTime" class="form-control">
         </div>
         <input type="submit" value="proceed" class="btn btn-success">
-    </form>
-
-    <h5>Confirm to proceed</h5>
-    <h6>{{name}}</h6>
+      </form>
+			
+		</div>
+		<div class="course-info">
+			<div class="progress-container">
+				<div class="progress"></div>
+				<h6>{{name}}</h6>
     <br>
     <h6>{{emailId}}</h6>
     <br>
     <h6>{{phoneNumber}}</h6>
     <br>
     <h6>{{dateAndTime}}</h6>
-    <p class="text">
-        <button class='stylebutton' (click)="myFunc()">
+    
+		
+			<p class="text">
+        <button class='btn-2' (click)="myFunc()">
             Proceed to payment</button>
     </p>
-
+		</div>
+		</div>
+	</div>
 </div>
-
-<h5> You have booked {{seatsCount}} seats and amount is {{amount}}</h5>

@@ -74,7 +74,7 @@ body { */
 
 
 
-	@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+	/* @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
@@ -107,7 +107,7 @@ body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  color: #0a0a0b;
+  color:cadetblue;
   overflow: hidden;
 }
 
@@ -136,7 +136,7 @@ h1 {
 
 i {
   font-size: 1.3rem;
-}
+} */
 
 header {
   position: absolute;
@@ -185,9 +185,9 @@ a.btn:hover {
 .cover  {
   height: 10vh;
   width: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.05)), to(rgba(0,0,0,0)));
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
-  background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
+  /* background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.05)), to(rgba(0,0,0,0)));
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%); */
+  /* background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%); */
   padding: 20px 50px;
   display: -webkit-box;
   display: flex;
@@ -223,7 +223,7 @@ a.btn:hover {
   z-index: 10;
   position: relative;
   width: 500px;
-  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 4px 8px 16px cadetblue;
 }
 
 .flex-form > * {
@@ -350,21 +350,26 @@ input {
 div.elem-group.inlined input {
   width: 100%;
   display: inline-block;
+  border-radius: 6px;
+  border-width: 0px;
 }
 
 button {
-  height: 50px;
-  background: orange;
+  height: 40px;
+  background:mediumslateblue ;
   border: none;
   color: white;
   font-size: 1.25em;
   font-family: 'Nanum Gothic';
   border-radius: 4px;
   cursor: pointer;
+  width: 100px;
+  margin-top: 3mm;
+ 
 }
 
 button:hover {
-  border: 2px solid black;
+  border: 2px solid rgb(110, 21, 211);
 }
 
 .container {
