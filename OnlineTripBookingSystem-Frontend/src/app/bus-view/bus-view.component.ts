@@ -13,13 +13,13 @@ export class BusViewComponent implements OnInit {
 
     getFare!: any;
 
-    seatArray!:any[];
+    seatArray!: any[];
 
-    constructor(private router: Router, private _ActivatedRoute: ActivatedRoute,private seatData:SeatData) { }
+    constructor(private router: Router, private _ActivatedRoute: ActivatedRoute, private seatData: SeatData) { }
 
     ngOnInit(): void {
         this.getFare = this._ActivatedRoute.snapshot.paramMap.get('fare');
-         this.seatArray=this.seatData.seatArr
+        this.seatArray = this.seatData.seatArr
     }
 
     reserved: string[] = [];
@@ -29,7 +29,6 @@ export class BusViewComponent implements OnInit {
 
     status: boolean = false;
     flag!: number;
-
 
     //return status of each seat
     getStatus(seatPos: string) {
@@ -61,8 +60,8 @@ export class BusViewComponent implements OnInit {
             //push to selected array only if it is not reserved
             if (this.reserved.indexOf(seatPos) === -1)
                 this.selected.push(seatPos);
-                let seatPosNo=parseInt(seatPos);
-                this.seatArray[seatPosNo]=0
+            let seatPosNo = parseInt(seatPos);
+            this.seatArray[seatPosNo] = 0
             this.countSeats++;
             if (this.selected.indexOf(seatPos)) {
                 this.status = this.getStatus(seatPos);
@@ -75,7 +74,7 @@ export class BusViewComponent implements OnInit {
     }
 
     seatsSelected() {
-        console.log(this.seatData.seatArr=this.seatArray);
+        console.log(this.seatData.seatArr = this.seatArray);
         this.router.navigate(['/booking', { count: this.countSeats, amount: this.getFare * this.countSeats }]);
     }
 
