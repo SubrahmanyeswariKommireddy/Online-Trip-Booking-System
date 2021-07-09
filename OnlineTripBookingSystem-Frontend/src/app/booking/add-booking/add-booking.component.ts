@@ -32,7 +32,7 @@ export class AddBookingComponent implements OnInit {
   }
 
   myFunc() {
-    this.router.navigate(['/payment']);
+    this.router.navigate(['/payment',{am:this.amount}]);
   }
 
   onSubmit() {

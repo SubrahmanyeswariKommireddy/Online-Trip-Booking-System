@@ -36,7 +36,7 @@ export class TravelListComponent implements OnInit {
   }
 
   addBus() {
-    this.router.navigate(['app-add-bus'])
+    this.router.navigate(['addBus'])
   }
 
   // onDelete(bus: Bus) {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-add-payment',
@@ -15,10 +16,12 @@ export class AddPaymentComponent implements OnInit {
   expYear!: number;
   cvv!: number;
   status!: string;
+  getAmount:number=0;
 
-  constructor() { }
+  constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getAmount = parseInt(this.route.snapshot.paramMap.get('am')!)
     this.addPaymentForm = new FormGroup({
       cardNumber: new FormControl(''),
       expMonth: new FormControl(''),
