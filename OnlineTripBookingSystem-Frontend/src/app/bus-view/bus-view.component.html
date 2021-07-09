@@ -10,6 +10,14 @@
       <div class="seat selected" style="background: yellowgreen;"></div>
       <small style="color: black; font-weight: bold;">Selected</small>
     </li>
+    <!-- <li>
+      <div class="seat" [ngStyle]="{'background-color':!isFirstSeatDisabled ? 'white':'black'}">
+        <div class="seat occupied" style="color: black; font-weight: bold; padding-left: 35px; padding-top: -30px;">
+          Occupied
+        </div> -->
+        <!-- <small style="color: black; font-weight: bold; padding-left: 35px; padding-top: -30px;"> Occupied</small></div> -->
+      <!-- </div>
+    </li> -->
 
   </ul>
   <div class="d-flex felx-column justify-content-center">
@@ -22,137 +30,223 @@
 
         <form id="reservation" method="post" action="test.php">
           <section id="seats">
-            <div class="row">
+            
+            <div class="row" >
+            
               <!-- *ngIf="isValid;then content else other_content"       -->
-              <input id="seat-1" class="seat-select" [disabled]="isFirstSeatDisabled" type="checkbox" value="1" name="seat[]"
-                (click)="seatClicked('1')" />
-              <label for="seat-1" class="seat"></label>
-           
-              <input id="seat-2" class="seat-select" [disabled]="isSecondSeatDisabled" type="checkbox" value="2" name="seat[]"
-                (click)="seatClicked('2')" />
-              <label for="seat-2" class="seat"></label>
-
-              <input id="seat-3" class="seat-select" [disabled]="isThirdSeatDisabled" type="checkbox" value="3" name="seat[]"
-                (click)="seatClicked('3')" />
-              <label for="seat-3" class="seat"></label>
-              <input id="seat-4" class="seat-select" [disabled]="isFourthSeatDisabled" type="checkbox" value="4" name="seat[]"
-                (click)="seatClicked('4')" />
-              <label for="seat-4" class="seat"></label>
-            </div>
-
-            <div class="row">
-              <input id="seat-5" class="seat-select" [disabled]="isFifthSeatDisabled" type="checkbox" value="5" name="seat[]"
-                (click)="seatClicked('5')" />
-              <label for="seat-5" class="seat"></label>
-              <input id="seat-6" class="seat-select" [disabled]="isSixthSeatDisabled" type="checkbox" value="6" name="seat[]"
-                (click)="seatClicked('6')" />
-              <label for="seat-6" class="seat"></label>
-
-              <input id="seat-7" class="seat-select" [disabled]="isSeventhSeatDisabled" type="checkbox" value="7" name="seat[]"
-                (click)="seatClicked('7')" />
-              <label for="seat-7" class="seat"></label>
-              <input id="seat-8" class="seat-select" [disabled]="isEightSeatDisabled" type="checkbox" value="8" name="seat[]"
-                (click)="seatClicked('8')" />
-              <label for="seat-8" class="seat"></label>
-            </div>
-
-            <div class="row">
-              <input id="seat-9" class="seat-select" [disabled]="isNineSeatDisabled" type="checkbox" value="9" name="seat[]"
-                (click)="seatClicked('9')" />
-              <label for="seat-9" class="seat"></label>
-              <input id="seat-10" class="seat-select" [disabled]="isTenSeatDisabled" type="checkbox" value="10" name="seat[]"
-                (click)="seatClicked('10')" />
-              <label for="seat-10" class="seat"></label>
-
-
-              <input id="seat-11" class="seat-select" [disabled]="isElevenSeatDisabled" type="checkbox" value="11" name="seat[]"
-                (click)="seatClicked('11')" />
-              <label for="seat-11" class="seat"></label>
-              <input id="seat-12" class="seat-select" [disabled]="isTwelveSeatDisabled" type="checkbox" value="12" name="seat[]"
-                (click)="seatClicked('12')" />
-              <label for="seat-12" class="seat"></label>
-            </div>
-
-            <div class="row">
-              <input id="seat-13" class="seat-select" [disabled]="isThirteenSeatDisabled" type="checkbox" value="13" name="seat[]"
-                (click)="seatClicked('13')" />
-              <label for="seat-13" class="seat"></label>
-              <input id="seat-14" class="seat-select" [disabled]="isFourteenSeatDisabled" type="checkbox" value="14" name="seat[]"
-                (click)="seatClicked('14')" />
-              <label for="seat-14" class="seat"></label>
-
-              <input id="seat-15" class="seat-select"  [disabled]="isFifteenSeatDisabled" type="checkbox" value="15" name="seat[]"
-                (click)="seatClicked('15')" />
-              <label for="seat-15" class="seat"></label>
-              <input id="seat-16" class="seat-select" [disabled]="isSixteenSeatDisabled" type="checkbox" value="16" name="seat[]"
-                (click)="seatClicked('16')" />
-              <label for="seat-16" class="seat"></label>
-            </div>
-
-            <div class="row">
-              <input id="seat-17" class="seat-select" [disabled]="isSeventeenSeatDisabled" type="checkbox" value="17" name="seat[]"
-                (click)="seatClicked('17')" />
-              <label for="seat-17" class="seat"></label>
-              <input id="seat-18" class="seat-select" [disabled]="isEighteenDisabled" type="checkbox" value="18" name="seat[]"
-                (click)="seatClicked('18')" />
-              <label for="seat-18" class="seat"></label>
-
-              <input id="seat-19" class="seat-select" [disabled]="isNinteenDisabled" type="checkbox" value="19" name="seat[]"
-                (click)="seatClicked('19')" />
-              <label for="seat-19" class="seat"></label>
-              <input id="seat-20" class="seat-select" [disabled]="isTwentySeatDisabled" type="checkbox" value="20" name="seat[]"
-                (click)="seatClicked('20')" />
-              <label for="seat-20" class="seat"></label>
-            </div>
-
-            <div class="row">
-              <input id="seat-21" class="seat-select" [disabled]="isTwentyOneSeatDisabled" type="checkbox" value="21" name="seat[]"
-                (click)="seatClicked('21')" />
-              <label for="seat-21" class="seat"></label>
-              <input id="seat-22" class="seat-select" [disabled]="isTwentyTwoSeatDisabled" type="checkbox" value="22" name="seat[]"
-                (click)="seatClicked('22')" />
-              <label for="seat-22" class="seat"></label>
-
-              <input id="seat-23" class="seat-select" [disabled]="isTwentyThreeSeatDisabled" type="checkbox" value="23" name="seat[]"
-                (click)="seatClicked('23')" />
-              <label for="seat-23" class="seat"></label>
-              <input id="seat-24" class="seat-select" [disabled]="isTwentyFourSeatDisabled" type="checkbox" value="24" name="seat[]"
-                (click)="seatClicked('24')" />
-              <label for="seat-24" class="seat"></label>
-            </div>
-
-            <div class="row">
-              <input id="seat-25" class="seat-select" [disabled]="isTwentyFiveSeatDisabled" type="checkbox" value="25" name="seat[]"
-                (click)="seatClicked('25')" />
-              <label for="seat-25" class="seat"></label>
-              <input id="seat-26" class="seat-select" [disabled]="isTwentySixSeatDisabled" type="checkbox" value="26" name="seat[]"
-                (click)="seatClicked('26')" />
-              <label for="seat-26" class="seat"></label>
               
-              <input id="seat-27" class="seat-select" [disabled]="isTwentySevenSeatDisabled" type="checkbox" value="27" name="seat[]"
-                (click)="seatClicked('27')" />
-              <label for="seat-27" class="seat"></label>
-              <input id="seat-28" class="seat-select" [disabled]="isTwentyEightSeatDisabled" type="checkbox" value="28" name="seat[]"
-                (click)="seatClicked('28')" />
-              <label for="seat-28" class="seat"></label>
+
+              <div class="seat" [ngStyle]="{'background-color':!isFirstSeatDisabled ? 'white':'black'}">
+                <input id="seat-1" class="seat-select" [disabled]="isFirstSeatDisabled " type="checkbox" value="1" name="seat[]"
+                  (click)="seatClicked('1')" />
+                <label for="seat-1" class="seat"></label>
+              </div>
+              
+              <div class="seat" [ngStyle]="{'background-color':!isSecondSeatDisabled ? 'white':'black'}">
+                <input id="seat-2" class="seat-select" [disabled]="isSecondSeatDisabled" type="checkbox" value="2" name="seat[]"
+                  (click)="seatClicked('2')" />
+                <label for="seat-2" class="seat"></label>
+              
+              </div>
+              
+              
+              <div class="seat" [ngStyle]="{'background-color':!isThirdSeatDisabled ? 'white':'black'}">
+                <input id="seat-3" class="seat-select" [disabled]="isThirdSeatDisabled" type="checkbox" value="3" name="seat[]"
+                  (click)="seatClicked('3')" />
+                <label for="seat-3" class="seat"></label>
+              </div>
+              
+              <div class="seat" [ngStyle]="{'background-color':!isFourthSeatDisabled ? 'white':'black'}">
+                <input id="seat-4" class="seat-select" [disabled]="isFourthSeatDisabled" type="checkbox" value="4" name="seat[]"
+                  (click)="seatClicked('4')" />
+                <label for="seat-4" class="seat"></label>
+              </div>
+              
+              </div>
+
+
+            <div class="row">
+              <div class="seat" [ngStyle]="{'background-color':!isFifthSeatDisabled ? 'white':'black'}">
+                <input id="seat-5" class="seat-select" [disabled]="isFifthSeatDisabled" type="checkbox" value="5"
+                  name="seat[]" (click)="seatClicked('5')" />
+                <label for="seat-5" class="seat"></label>
+              </div>
+
+              <div class="seat" [ngStyle]="{'background-color':!isSixthSeatDisabled ? 'white':'black'}">
+                <input id="seat-6" class="seat-select" [disabled]="isSixthSeatDisabled" type="checkbox" value="6"
+                  name="seat[]" (click)="seatClicked('6')" />
+                <label for="seat-6" class="seat"></label>
+              </div>
+
+              <div class="seat" [ngStyle]="{'background-color':!isSeventhSeatDisabled ? 'white':'black'}">
+                <input id="seat-7" class="seat-select" [disabled]="isSeventhSeatDisabled" type="checkbox" value="7"
+                  name="seat[]" (click)="seatClicked('7')" />
+                <label for="seat-7" class="seat"></label>
+              </div>
+
+              <div class="seat" [ngStyle]="{'background-color':!isEightSeatDisabled ? 'white':'black'}">
+                <input id="seat-8" class="seat-select" [disabled]="isEightSeatDisabled" type="checkbox" value="8"
+                  name="seat[]" (click)="seatClicked('8')" />
+                <label for="seat-8" class="seat"></label>
+              </div>
+            </div>
+
+            <div  class="row">
+              <div class="seat" [ngStyle]="{'background-color':!isNineSeatDisabled ? 'white':'black'}">
+                <input id="seat-9" class="seat-select" [disabled]="isNineSeatDisabled" type="checkbox" value="9"
+                  name="seat[]" (click)="seatClicked('9')" />
+                <label for="seat-9" class="seat"></label>
+              </div>
+
+              <div class="seat" [ngStyle]="{'background-color':!isTenSeatDisabled ? 'white':'black'}">
+                <input id="seat-10" class="seat-select" [disabled]="isTenSeatDisabled" type="checkbox" value="10"
+                  name="seat[]" (click)="seatClicked('10')" />
+                <label for="seat-10" class="seat"></label>
+              </div>
+
+              <div class="seat" [ngStyle]="{'background-color':!isElevenSeatDisabled ? 'white':'black'}">
+                <input id="seat-11" class="seat-select" [disabled]="isElevenSeatDisabled" type="checkbox" value="11"
+                  name="seat[]" (click)="seatClicked('11')" />
+                <label for="seat-11" class="seat"></label>
+              </div>
+
+              <div class="seat" [ngStyle]="{'background-color':!isTwelveSeatDisabled ? 'white':'black'}">
+                <input id="seat-12" class="seat-select" [disabled]="isTwelveSeatDisabled" type="checkbox" value="12"
+                  name="seat[]" (click)="seatClicked('12')" />
+                <label for="seat-12" class="seat"></label>
+              </div>
             </div>
 
             <div class="row">
-              <input id="seat-29" class="seat-select" [disabled]="isTwentyNineSeatDisabled" type="checkbox" value="29" name="seat[]"
-                (click)="seatClicked('29')" />
-              <label for="seat-29" class="seat"></label>
-              <input id="seat-30" class="seat-select" [disabled]="isThirtySeatDisabled" type="checkbox" value="30" name="seat[]"
-                (click)="seatClicked('30')" />
-              <label for="seat-30" class="seat"></label>
+              <div class="seat" [ngStyle]="{'background-color':!isThirteenSeatDisabled ? 'white':'black'}">
+                <input id="seat-13" class="seat-select" [disabled]="isThirteenSeatDisabled" type="checkbox" value="13"
+                  name="seat[]" (click)="seatClicked('13')" />
+                <label for="seat-13" class="seat"></label>
+              </div>
 
-              <input id="seat-31" class="seat-select" [disabled]="isThirtyOneSeatDisabled" type="checkbox" value="31" name="seat[]"
-                (click)="seatClicked('31')" />
-              <label for="seat-31" class="seat"></label>
-              <input id="seat-32" class="seat-select" [disabled]="isThirtyTwoSeatDisabled" type="checkbox" value="32" name="seat[]"
-                (click)="seatClicked('32')" />
-              <label for="seat-32" class="seat"></label>
+              <div class="seat" [ngStyle]="{'background-color':!isFourteenSeatDisabled ? 'white':'black'}">
+                <input id="seat-14" class="seat-select" [disabled]="isFourteenSeatDisabled" type="checkbox" value="14"
+                  name="seat[]" (click)="seatClicked('14')" />
+                <label for="seat-14" class="seat"></label>
+              </div>
 
+              <div class="seat" [ngStyle]="{'background-color':!isFifteenSeatDisabled ? 'white':'black'}">
+                <input id="seat-15" class="seat-select" [disabled]="isFifteenSeatDisabled" type="checkbox" value="15"
+                  name="seat[]" (click)="seatClicked('15')" />
+                <label for="seat-15" class="seat"></label>
+              </div>
+
+              <div class="seat" [ngStyle]="{'background-color':!isSixteenSeatDisabled ? 'white':'black'}">
+                <input id="seat-16" class="seat-select" [disabled]="isSixteenSeatDisabled" type="checkbox" value="16"
+                  name="seat[]" (click)="seatClicked('16')" />
+                <label for="seat-16" class="seat"></label>
+              </div>
+            </div>
+
+            <div  class="row">
+              <div class="seat" [ngStyle]="{'background-color':!isSeventeenSeatDisabled ? 'white':'black'}">
+                <input id="seat-17" class="seat-select" [disabled]="isSeventeenSeatDisabled" type="checkbox" value="17"
+                  name="seat[]" (click)="seatClicked('17')" />
+                <label for="seat-17" class="seat"></label>
+              </div>
+
+              <div class="seat" [ngStyle]="{'background-color':!isEighteenDisabled ? 'white':'black'}">
+                <input id="seat-18" class="seat-select" [disabled]="isEighteenDisabled" type="checkbox" value="18"
+                  name="seat[]" (click)="seatClicked('18')" />
+                <label for="seat-18" class="seat"></label>
+              </div>
+
+              <div class="seat" [ngStyle]="{'background-color':!isNinteenDisabled ? 'white':'black'}">
+                <input id="seat-19" class="seat-select" [disabled]="isNinteenDisabled" type="checkbox" value="19"
+                  name="seat[]" (click)="seatClicked('19')" />
+                <label for="seat-19" class="seat"></label>
+              </div>
+
+              <div class="seat" [ngStyle]="{'background-color':!isTwentySeatDisabled ? 'white':'black'}">
+                <input id="seat-20" class="seat-select" [disabled]="isTwentySeatDisabled" type="checkbox" value="20"
+                  name="seat[]" (click)="seatClicked('20')" />
+                <label for="seat-20" class="seat"></label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="seat"  [ngStyle]="{'background-color':!isTwentyOneSeatDisabled ? 'white':'black'}">
+                <input id="seat-21" class="seat-select" [disabled]="isTwentyOneSeatDisabled" type="checkbox" value="21"
+                  name="seat[]" (click)="seatClicked('21')" />
+                <label for="seat-21" class="seat"></label>
+              </div>
+
+              <div class="seat"  [ngStyle]="{'background-color':!isTwentyTwoSeatDisabled ? 'white':'black'}">
+                <input id="seat-22" class="seat-select" [disabled]="isTwentyTwoSeatDisabled" type="checkbox" value="22"
+                  name="seat[]" (click)="seatClicked('22')" />
+                <label for="seat-22" class="seat"></label>
+              </div>
+
+              <div class="seat"  [ngStyle]="{'background-color':!isTwentyThreeSeatDisabled ? 'white':'black'}">
+                <input id="seat-23" class="seat-select" [disabled]="isTwentyThreeSeatDisabled" type="checkbox"
+                  value="23" name="seat[]" (click)="seatClicked('23')" />
+                <label for="seat-23" class="seat"></label>
+              </div>
+
+              <div class="seat"  [ngStyle]="{'background-color':!isTwentyFourSeatDisabled ? 'white':'black'}">
+                <input id="seat-24" class="seat-select" [disabled]="isTwentyFourSeatDisabled" type="checkbox" value="24"
+                  name="seat[]" (click)="seatClicked('24')" />
+                <label for="seat-24" class="seat"></label>
+              </div>
+            </div>
+
+            <div   class="row">
+              <div class="seat" [ngStyle]="{'background-color':!isTwentyFiveSeatDisabled ? 'white':'black'}">
+                <input id="seat-25" class="seat-select" [disabled]="isTwentyFiveSeatDisabled" type="checkbox" value="25"
+                  name="seat[]" (click)="seatClicked('25')" />
+                <label for="seat-25" class="seat"></label>
+              </div>
+
+              <div class="seat"  [ngStyle]="{'background-color':!isTwentySixSeatDisabled ? 'white':'black'}">
+                <input id="seat-26" class="seat-select" [disabled]="isTwentySixSeatDisabled" type="checkbox" value="26"
+                  name="seat[]" (click)="seatClicked('26')" />
+                <label for="seat-26" class="seat"></label>
+              </div>
+
+              <div class="seat"  [ngStyle]="{'background-color':!isTwentySevenSeatDisabled ? 'white':'black'}">
+                <input id="seat-27" class="seat-select" [disabled]="isTwentySevenSeatDisabled" type="checkbox"
+                  value="27" name="seat[]" (click)="seatClicked('27')" />
+                <label for="seat-27" class="seat"></label>
+              </div>
+
+              <div class="seat"  [ngStyle]="{'background-color':!isTwentyEightSeatDisabled ? 'white':'black'}">
+                <input id="seat-28" class="seat-select" [disabled]="isTwentyEightSeatDisabled" type="checkbox"
+                  value="28" name="seat[]" (click)="seatClicked('28')" />
+                <label for="seat-28" class="seat"></label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="seat"  [ngStyle]="{'background-color':!isTwentyNineSeatDisabled ? 'white':'black'}">
+                <input id="seat-29" class="seat-select" [disabled]="isTwentyNineSeatDisabled" type="checkbox" value="29"
+                  name="seat[]" (click)="seatClicked('29')" />
+                <label for="seat-29" class="seat"></label>
+              </div>
+
+              <div class="seat"  [ngStyle]="{'background-color':!isThirtySeatDisabled ? 'white':'black'}">
+                <input id="seat-30" class="seat-select" [disabled]="isThirtySeatDisabled" type="checkbox" value="30"
+                  name="seat[]" (click)="seatClicked('30')" />
+                <label for="seat-30" class="seat"></label>
+              </div>
+
+              <div class="seat"  [ngStyle]="{'background-color':!isThirtyOneSeatDisabled ? 'white':'black'}">
+                <input id="seat-31" class="seat-select" [disabled]="isThirtyOneSeatDisabled" type="checkbox" value="31"
+                  name="seat[]" (click)="seatClicked('31')" />
+                <label for="seat-31" class="seat"></label>
+              </div>
+
+              <div class="seat"  [ngStyle]="{'background-color':!isThirtyTwoSeatDisabled ? 'white':'black'}">
+                <input id="seat-32" class="seat-select" [disabled]="isThirtyTwoSeatDisabled" type="checkbox" value="32"
+                  name="seat[]" (click)="seatClicked('32')" />
+                <label for="seat-32" class="seat"></label>
+              </div>
               <!-- </section> -->
+            
               <p class="text">
                 Selected Seats : <span id="count">{{countSeats}}</span> <span></span>
                 <br>

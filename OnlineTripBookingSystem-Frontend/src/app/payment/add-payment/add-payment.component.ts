@@ -17,6 +17,7 @@ export class AddPaymentComponent implements OnInit {
   cvv!: number;
   status!: string;
   getAmount:number=0;
+  cardHolder:number=0;
 
   constructor(private route:ActivatedRoute,private router:Router) { }
 
@@ -26,7 +27,8 @@ export class AddPaymentComponent implements OnInit {
       cardNumber: new FormControl(''),
       expMonth: new FormControl(''),
       expYear: new FormControl(''),
-      cvv: new FormControl('')
+      cvv: new FormControl(''),
+      cardHolder: new FormControl('')
     });
   }
 
@@ -35,6 +37,7 @@ export class AddPaymentComponent implements OnInit {
     this.expMonth = this.addPaymentForm.get('expMonth')?.value;
     this.expYear = this.addPaymentForm.get('expYear')?.value;
     this.cvv = this.addPaymentForm.get('cvv')?.value;
+    this.cardHolder = this.addPaymentForm.get('cardHolder')?.value;
   }
 
   onSubmit() {
