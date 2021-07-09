@@ -34,6 +34,7 @@ import { SeatData } from './models/seat-data';
 import { DatePipe } from '@angular/common';
 import { UpdatePasswordComponent } from './password/update-password/update-password.component';
 import { TravelListComponent } from './travel/travel-list/travel-list.component';
+import { AddFeedbackComponent } from './feedback/add-feedback/add-feedback.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { TravelListComponent } from './travel/travel-list/travel-list.component'
     CustomerDetailsComponent,
     AdminHeaderComponent,
     UpdatePasswordComponent,
-    TravelListComponent
+    TravelListComponent,
+    AddFeedbackComponent
   ],
   imports: [
     BrowserModule,
