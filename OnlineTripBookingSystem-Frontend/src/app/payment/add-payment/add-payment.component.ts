@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-payment',
@@ -18,7 +18,7 @@ export class AddPaymentComponent implements OnInit {
   status!: string;
   getAmount:number=0;
 
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route:ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
     this.getAmount = parseInt(this.route.snapshot.paramMap.get('am')!)
@@ -41,10 +41,12 @@ export class AddPaymentComponent implements OnInit {
     console.log(this.cardNumber.valueOf());
     if (this.cardNumber.length == 16) {
       this.status = "Payment successful";
+      this.router.navigate(['/feedback']);
     }
     else {
       console.log('Payment failed');
       this.status = "Payment failed";
+      this.router.navigate(['']);
     }
   }
 
