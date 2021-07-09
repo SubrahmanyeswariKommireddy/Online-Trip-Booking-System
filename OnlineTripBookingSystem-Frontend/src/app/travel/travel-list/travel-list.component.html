@@ -1,0 +1,36 @@
+
+<div><app-header></app-header></div>
+<div class="container">
+    <h1>Travel List</h1>
+  
+   
+    <table class="rwd-table">
+        <thead>
+            <tr>
+                <th>TravelAgentName</th>
+                
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let travel of travels">
+                <td>{{travel.travelAgentName}}</td>
+                <!-- <td>{{bus.fare}}</td>
+                <td>{{bus.totalCapacity}}</td> -->
+                <!-- <td><button class="btn btn-success" (click)=checkAvailability(bus)> Check Availability</button></td> -->
+                <!-- <td>
+                    <button *ngIf="isAdmin" class="btn btn-success" (click)="onEdit(bus)">Edit</button>
+                </td>
+                <td>
+                    <button *ngIf="isAdmin" class="btn btn-danger" (click)="onDelete(bus)">Delete</button>
+                </td> -->
+                <td>
+                    <button (click)="deleteTravel(travel)">Delete Travel</button>
+                </td>
+                <td>
+                    <button (click)="addBus()">Add Bus</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

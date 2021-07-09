@@ -67,6 +67,7 @@ export class BusListComponent implements OnInit {
           this.buses = this.buses.filter(
             b => b !== bus
           )
+          console.log(data)
       }
     )
   }
