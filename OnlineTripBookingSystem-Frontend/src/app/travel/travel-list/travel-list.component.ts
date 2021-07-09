@@ -36,7 +36,7 @@ console.log(this.travels);
   }
 
   addBus() {
-    this.router.navigate(['app-add-bus'])
+    this.router.navigate(['addBus'])
   }
 
   // onDelete(bus: Bus) {
