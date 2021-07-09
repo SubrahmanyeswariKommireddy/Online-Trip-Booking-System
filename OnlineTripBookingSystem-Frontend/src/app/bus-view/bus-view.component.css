@@ -82,6 +82,9 @@ body {
   margin-top: 20mm;
   
 }
+.seat.occupied{
+  margin-bottom: 20px;
+}
 
 .showcase li {
   display: flex;
@@ -92,6 +95,7 @@ body {
 
 .showcase li small {
   margin-left: 2px;
+  margin-bottom: -7.5px;
 }
 
 .row {
