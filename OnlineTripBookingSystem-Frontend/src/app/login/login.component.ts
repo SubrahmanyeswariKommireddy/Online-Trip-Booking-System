@@ -16,11 +16,14 @@ export class JwtResponse {
 
 export class LoginComponent implements OnInit {
 
+  roleData: any[] = ['ADMIN','CUSTOMER']
+
   email: string = '';
   password: string = '';
   userType: string = '';
   invalidLogin: boolean = false;
   response!: JwtResponse;
+  isValidFormSubmitted: boolean = false;
 
   constructor(private router: Router,
     private loginservice: LoginService, private toastr: ToastrService) { }
@@ -31,6 +34,12 @@ export class LoginComponent implements OnInit {
 
   checkLogin() {
     var userType = sessionStorage.getItem('userType');
+  //   this.isValidFormSubmitted = false;
+  // if (form1.valid) {
+  //   this.isValidFormSubmitted = true;
+  // } else {
+  //   return;
+  // }
 
     (this.loginservice.authenticate(this.email, this.password, this.userType).subscribe(
       data => {
@@ -44,18 +53,18 @@ export class LoginComponent implements OnInit {
         this.invalidLogin = false
       },
       error => {
-        if (this.email == "") {
-          this.toastr.warning('Login Failed: Email is required');
-        }
-        else if (this.password == "") {
-          this.toastr.warning('Login Failed: Password is required');
-        }
-        else if (this.userType == "") {
-          this.toastr.warning('Login Failed: Usertype is required');
-        }
-        else {
-          this.toastr.error('Login Failed: Invalid Credentials');
-        }
+        // if (this.email == "") {
+        //   this.toastr.warning('Login Failed: Email is required');
+        // }
+        // else if (this.password == "") {
+        //   this.toastr.warning('Login Failed: Password is required');
+        // }
+        // else if (this.userType == "") {
+        //   this.toastr.warning('Login Failed: Usertype is required');
+        // }
+        // else {
+        //   this.toastr.error('Login Failed: Invalid Credentials');
+        // }
         this.invalidLogin = true
       }
     )
