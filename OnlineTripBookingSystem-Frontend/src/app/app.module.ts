@@ -36,6 +36,7 @@ import { UpdatePasswordComponent } from './password/update-password/update-passw
 import { TravelListComponent } from './travel/travel-list/travel-list.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddFeedbackComponent } from './feedback/add-feedback/add-feedback.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CustomerDetailsComponent,
     AdminHeaderComponent,
     UpdatePasswordComponent,
-    TravelListComponent
+    TravelListComponent,
+    AddFeedbackComponent
   ],
   imports: [
     BrowserModule,

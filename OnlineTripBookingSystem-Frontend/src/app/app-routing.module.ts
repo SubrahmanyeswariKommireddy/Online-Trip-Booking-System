@@ -18,6 +18,7 @@ import { AdminDetailsComponent } from './admin/admin-details/admin-details.compo
 import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
 import { UpdatePasswordComponent } from './password/update-password/update-password.component';
 import { TravelListComponent } from './travel/travel-list/travel-list.component';
+import { AddFeedbackComponent } from './feedback/add-feedback/add-feedback.component';
 
 const routes: Routes = [
   {path:'',component:DefaultHomepageComponent},
@@ -37,7 +38,8 @@ const routes: Routes = [
   {path:'customerProfile',component:CustomerDetailsComponent},
   {path:'payment',component:AddPaymentComponent},
   {path:'passwordUpdate',component:UpdatePasswordComponent},
-  {path:'travellist',component:TravelListComponent}
+  {path:'travellist',component:TravelListComponent},
+  {path:'feedback',component:AddFeedbackComponent}
 ];
 
 @NgModule({
