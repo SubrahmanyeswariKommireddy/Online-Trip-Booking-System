@@ -15,15 +15,6 @@
         <tbody>
             <tr *ngFor="let travel of travels">
                 <td>{{travel.travelAgentName}}</td>
-                <!-- <td>{{bus.fare}}</td>
-                <td>{{bus.totalCapacity}}</td> -->
-                <!-- <td><button class="btn btn-success" (click)=checkAvailability(bus)> Check Availability</button></td> -->
-                <!-- <td>
-                    <button *ngIf="isAdmin" class="btn btn-success" (click)="onEdit(bus)">Edit</button>
-                </td>
-                <td>
-                    <button *ngIf="isAdmin" class="btn btn-danger" (click)="onDelete(bus)">Delete</button>
-                </td> -->
                 <td>
                     <button (click)="deleteTravel(travel)">Delete Travel</button>
                 </td>
