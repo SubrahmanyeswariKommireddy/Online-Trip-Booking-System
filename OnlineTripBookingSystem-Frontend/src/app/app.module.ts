@@ -34,6 +34,8 @@ import { SeatData } from './models/seat-data';
 import { DatePipe } from '@angular/common';
 import { UpdatePasswordComponent } from './password/update-password/update-password.component';
 import { TravelListComponent } from './travel/travel-list/travel-list.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,9 @@ import { TravelListComponent } from './travel/travel-list/travel-list.component'
     NgbModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [{ provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,

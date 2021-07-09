@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-payment',
@@ -14,9 +15,8 @@ export class AddPaymentComponent implements OnInit {
   expMonth!: number;
   expYear!: number;
   cvv!: number;
-  status!: string;
 
-  constructor() { }
+  constructor(private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.addPaymentForm = new FormGroup({
@@ -35,13 +35,12 @@ export class AddPaymentComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.cardNumber.valueOf());
     if (this.cardNumber.length == 16) {
-      this.status = "Payment successful";
+      this.toastr.success('Payment Successful');
+
     }
     else {
-      console.log('Payment failed');
-      this.status = "Payment failed";
+      this.toastr.error('Payment Failed: Invalid Credentials');
     }
   }
 
