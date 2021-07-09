@@ -37,7 +37,6 @@ export class AddPaymentComponent implements OnInit {
   onSubmit() {
     console.log(this.cardNumber.valueOf());
     if (this.cardNumber.length == 16) {
-      console.log('Payment successful');
       this.status = "Payment successful";
     }
     else {

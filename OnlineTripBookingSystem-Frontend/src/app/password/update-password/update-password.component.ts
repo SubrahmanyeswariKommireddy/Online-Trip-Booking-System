@@ -11,7 +11,7 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class UpdatePasswordComponent implements OnInit {
 
-  user!:User;
+  user!: User;
   editForm!: FormGroup;
 
   constructor(
@@ -27,7 +27,6 @@ export class UpdatePasswordComponent implements OnInit {
   }
 
   onSubmit() {
-
     const formValue = this.editForm.value;
     const data: any = {
       "email": sessionStorage.getItem('email'),
@@ -35,17 +34,17 @@ export class UpdatePasswordComponent implements OnInit {
       "userType": sessionStorage.getItem('userType')
     };
 
-    this.service.updatePassword(formValue.newPassword,data).
+    this.service.updatePassword(formValue.newPassword, data).
       subscribe(
         (data) => {
           this.user = data;
-          if(sessionStorage.getItem('userType') == "ADMIN")
-          {
-            this.router.navigate([''])
+          if (sessionStorage.getItem('userType') == "ADMIN") {
+            this.router.navigate(['/admin'])
+            "Password Updated"
           }
-          if(sessionStorage.getItem('userType') == "CUSTOMER")
-          {
+          if (sessionStorage.getItem('userType') == "CUSTOMER") {
             this.router.navigate([''])
+            "Password Updated"
           }
         },
         (err) => { console.log(err) }

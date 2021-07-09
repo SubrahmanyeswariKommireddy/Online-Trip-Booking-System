@@ -19,6 +19,7 @@ export class BusListComponent implements OnInit {
   busId!: number;
   sourceData!: any;
   destinationData!:any;
+  busSeat:number=0;
 
   constructor(private _ActivatedRoute: ActivatedRoute, private formBuilder: FormBuilder, private router: Router, private busService: BusService) {
 
@@ -53,7 +54,20 @@ export class BusListComponent implements OnInit {
   }
 
   checkAvailability(bus:Bus) {
-    this.router.navigate(['viewSeats',{fare:bus.fare}]);
+
+   var busSeatCount = sessionStorage.getItem((bus.busId).toString());
+  //  let busSeat = parseInt(busSeatCount?.toString())
+  if(busSeatCount!=null){
+    this.busSeat= parseInt(busSeatCount);
+  }
+  if(this.busSeat>0){
+
+  }
+  else{
+    sessionStorage.setItem((bus.busId).toString(),"0")
+  }
+   
+    this.router.navigate(['viewSeats',{fare:bus.fare,id:bus.busId}]);
   }
 
   onEdit(bus: Bus) {

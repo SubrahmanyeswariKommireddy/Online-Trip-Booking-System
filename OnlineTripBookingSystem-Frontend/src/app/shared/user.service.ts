@@ -38,6 +38,7 @@ export class UserService {
   }
 
   updatePassword(newPassword: string,user: User): Observable<User> {
+    
     return <Observable<User>>this.httpClient.patch(this.baseUrl + "/updatePassword?newPassword="+newPassword,user)
   }
   
