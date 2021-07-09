@@ -39,23 +39,15 @@ export class TravelListComponent implements OnInit {
     this.router.navigate(['addBus'])
   }
 
-  // onDelete(bus: Bus) {
-  //   this.busService.deleteBusById(bus.busId).subscribe(
-  //     (data) => {
-  //       console.log('Bus deleted'),
-  //         this.buses = this.buses.filter(
-  //           b => b !== bus
-  //         )
-  //     }
-  //   )
-  // }
+
 deleteTravel(travel:Travel){
   this.travelService.deleteTravelById(travel.travelId).subscribe(
     (data) => {
       console.log('travel deleted'),
       this.travels=this.travels.filter(
-        t => t ! == travel
+        t => t !== travel
       )
+      console.log(data);
     }
   )
 }

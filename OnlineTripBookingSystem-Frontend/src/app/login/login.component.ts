@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../shared/login.service';
+import { ToastrService } from 'ngx-toastr';
 
 export class JwtResponse {
   jwtToken!: string;
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
   response!: JwtResponse;
 
   constructor(private router: Router,
-    private loginservice: LoginService) { }
+    private loginservice: LoginService, private toastr: ToastrService) { }
 
   ngOnInit() {
 
@@ -33,10 +34,9 @@ export class LoginComponent implements OnInit {
 
     (this.loginservice.authenticate(this.email, this.password, this.userType).subscribe(
       data => {
-        console.log(data)
+        this.toastr.success('Login Successful');
         if (userType == "ADMIN") {
           this.router.navigate(['/admin'])
-
         }
         else if (userType == "CUSTOMER") {
           this.router.navigate([''])
@@ -44,6 +44,18 @@ export class LoginComponent implements OnInit {
         this.invalidLogin = false
       },
       error => {
+        if (this.email == "") {
+          this.toastr.warning('Login Failed: Email is required');
+        }
+        else if (this.password == "") {
+          this.toastr.warning('Login Failed: Password is required');
+        }
+        else if (this.userType == "") {
+          this.toastr.warning('Login Failed: Usertype is required');
+        }
+        else {
+          this.toastr.error('Login Failed: Invalid Credentials');
+        }
         this.invalidLogin = true
       }
     )

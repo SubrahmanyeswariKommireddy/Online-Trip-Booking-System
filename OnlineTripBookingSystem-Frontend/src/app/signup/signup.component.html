@@ -1,214 +1,20 @@
-<!-- Default form login -->
-<!-- <div class="col-md-6 container" style="background-color:gainsboro; margin-top: 100px;">
-    <form [formGroup]="signupForm" (ngSubmit)="createUser()" class="text-center border border-light p-5">
-
-        <p class="h4 mb-4">Sign Up</p>
-
-        <div class="form-group">
-            <label for="userName">Username</label>
-            <input type="userName" formControlName="userName" placeholder="userName" name="userName"
-                class="form-control" id="userName">
-        </div>
-
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" formControlName="email" placeholder="email" name="email" class="form-control" id="email">
-        </div>
-
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" formControlName="password" placeholder="password" name="password"
-                class="form-control" id="password">
-        </div>
-
-        <div class="form-group">
-            <label for="mobileNumber">Mobile Number</label>
-            <input type="mobileNumber" formControlName="mobileNumber" placeholder="mobileNumber" name="mobileNumber"
-                class="form-control" id="mobileNumber">
-        </div>
-
-        <div class="form-group">
-            <label for="userType">Choose</label>
-            <select name="userType" id="userType">
-                <option value="select">Select</option>
-                <option value="Admin">Admin</option>
-                <option value="Customer">Customer</option>
-            </select>
-        </div> -->
-
-        <!-- Email -->
-        <!-- <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail"> -->
-
-        <!-- Password -->
-        <!-- <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password"> -->
-
-        <!-- <input type="submit" value="Signup" class="btn btn-success"> -->
-
-
-
-        <!-- Sign in button -->
-        <!-- <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button> -->
-
-        <!-- Register -->
-        <!-- <p>Already registered?
-            <a href="/login">Login</a>
-        </p>
-    </form>
-</div> -->
-<!-- Default form login -->
-
-
-
-<!-- <div class="col-md-6 container" style="background-color:gainsboro; margin-top: 100px">
-    <p class="h4 mb-4 text-center">Register</p>
-    <form #form1="ngForm" (ngSubmit)="createUser(form1)">
-
-        <div class="form-group">
-            <label for="userName">User Name</label>
-            <input [(ngModel)]="user.userName" placeholder="User Name" name="userName" class="form-control"
-                id="userName">
-        </div>
-
-        <div class="form-group">
-            <label for="mobileNumber">Mobile Number</label>
-            <input [(ngModel)]="user.mobileNumber" placeholder="Mobile Number" name="mobileNumber" class="form-control"
-                id="mobileNumber">
-        </div>
-
-        <div class="form-group">
-            <label for="email">Email Id</label>
-            <input [(ngModel)]="user.email" placeholder="Email Id" name="email" class="form-control" id="email">
-        </div>
-
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input [(ngModel)]="user.password" placeholder="Password" name="password" class="form-control"
-                id="password">
-        </div>
-
-        <div class="form-group">
-            <label for="userType">User Type</label>
-            <input [(ngModel)]="user.userType" placeholder="userType" name="userType" class="form-control" id="userType">
-        </div>
-
-        <button type="submit" class="btn btn-success">Register</button>
-
-        <p>Already registered?
-            <a href="/login">Login</a>
-        </p>
-
-    </form>
-</div> -->
-
-
-
-<!-- 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>Register Form</title>
-      <link rel="stylesheet" href="style.css">
-   </head>
-   <body>
-      <div class="wrapper">
-         <div class="title">
-            Register
-         </div>
-         <form action="#">
-            
-            <div class="form-group" class="field">
-                User Name
-                <input [(ngModel)]="user.userName"  name="userName" class="form-control"
-                    id="userName">
-            </div>
-            <div class="form-group" class="field">
-                Mobile Number
-                <input [(ngModel)]="user.mobileNumber" name="mobileNumber" class="form-control"
-                    id="mobileNumber">
-            </div>
-            <div class="form-group" class="field">
-               Email Id
-                <input [(ngModel)]="user.email"  name="email" class="form-control" id="email">
-            </div>
-    
-            <div class="form-group" class="field">
-                Password
-                <input [(ngModel)]="user.password"  name="password" class="form-control"
-                    id="password">
-            </div>
-    
-            <div class="form-group" class="field">
-                User Type
-                <input [(ngModel)]="user.userType"  name="userType" class="form-control" id="userType">
-            </div>
-         
-        
-
-
-            <div class="field" >
-               <input type="submit" value="Register">
-            </div>
-
-            <div class="signup-link">
-                Already registered?  <a href="/login">Login</a>
-            </div>
-          </form>
-      </div>
-   </body>
-</html> -->
-
-<!-- <div class="col-md-6" style="padding: 0px 0px 0px 100px;">
-    <h2 class="text-center">Register</h2>
-    <form #form1="ngForm" (ngSubmit)="createUser(form1)">
-
-
-        <div class="form-group">
-            <label for="userName">User Name:</label>
-            <input [(ngModel)]="user.userName" placeholder="User Name" name="userName" class="form-control"
-                id="userName">
-        </div>
-
-        <div class="form-group">
-            <label for="mobilenumber">Mobile Number:</label>
-            <input [(ngModel)]="user.mobileNumber" placeholder="Mobile Number" name="mobileNumber" class="form-control"
-                id="mobileNumber">
-        </div>
-
-        <div class="form-group">
-            <label for="email">Email Id:</label>
-            <input [(ngModel)]="user.email" placeholder="Email Id" name="email" class="form-control" id="email">
-        </div>
-
-        <div class="form-group">
-            <label for="password">Password :</label>
-            <input [(ngModel)]="user.password" placeholder="Password" name="password" class="form-control"
-                id="password">
-        </div>
-
-        <div class="form-group">
-            <label for="userType">UserType :</label>
-            <input [(ngModel)]="user.userType" placeholder="Role" name="role" class="form-control" id="role">
-        </div>
-
-        <button type="submit">Register</button>
-
-        <div class="signup-link">
-            Already registered?  <a href="/login">Login</a>
-        </div>
-    </form>
-</div> -->
-
-
 <div class="container">
     <div class="brand-logo"></div>
     <div class="brand-title">Register</div>
-    <form #form1="ngForm" (ngSubmit)="createUser(form1)">
+    <form #form1="ngForm" (ngSubmit)="createUser(form1)" novalidate>
     <div class="inputs">
         <div class="log-in-inputs">
             <label for="userName">User Name:</label>
             <input [(ngModel)]="user.userName" placeholder="User Name" name="userName" class="form-control"
-                id="userName">
+                id="userName" required minlength="5">
+                <!-- <div *ngIf="userName.errors && userForm.submitted && !isValidFormSubmitted" class="error">
+					<div *ngIf="userName.errors.required">
+						Username required.
+					</div>
+                    </div> -->
+                <!-- <div *ngIf="name.errors?.required">
+                    Name is required.
+                  </div> -->
           </div>
           <div class="log-in-inputs">
             <label for="mobilenumber">Mobile Number:</label>
@@ -222,14 +28,17 @@
       <div class="log-in-inputs">
         <label for="password">Password :</label>
         <input [(ngModel)]="user.password" placeholder="Password" name="password" class="form-control"
-            id="password">
+            id="password" required minlength="6">
+            <!-- <span *ngIf="password.hasError('required')">  
+                User email is required.  
+              </span>   -->
+           
       </div>
       <div class="log-in-inputs">
-        <label for="userType">UserType :</label>
+        <label for="userType">User Type :</label>
             <input [(ngModel)]="user.userType" placeholder="Role" name="role" class="form-control" id="role">
       </div>
       <button type="submit">Register</button>
-      <!-- <button (click)=checkLogin() class="btn btn-success">LOGIN</button> -->
   </div>
   <div class="signup-link">
     Already registered?  <a href="/login">Login</a>
