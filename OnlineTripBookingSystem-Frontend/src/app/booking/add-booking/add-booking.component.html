@@ -1,55 +1,66 @@
 <div class="courses-container">
-	<div class="course">
-		<div class="course-preview">
-			<h1>Booking</h1>
-			
-			<form [formGroup]="addBookingForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
+    <div class="course">
+        <div class="course-preview">
+            <h1>Booking</h1>
 
-            <label for="name">Name</label>
-            <input type="text" formControlName="userName" placeholder="name" name="userName" class="form-control"
-                id="userName">
+            <form [formGroup]="addBookingForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+
+                    <label for="name">Name</label>
+                    <input type="text" formControlName="userName" placeholder="name" name="userName"
+                        class="form-control" id="userName">
+                </div>
+
+                <div class="form-group">
+
+                    <label for="email">Email</label>
+                    <input type="text" formControlName="email" placeholder="email" name="email" class="form-control"
+                        id="email">
+                </div>
+
+                <div class="form-group">
+
+                    <label for="mobileNumber">Mobile Number</label>
+                    <input type="text" formControlName="mobileNumber" placeholder="mobileNumber" name="mobileNumber"
+                        class="form-control" id="mobileNumber">
+                </div>
+
+                <div class="form-group">
+                    <label for="dateTime">Time:</label>
+                    <input type="datetime-local" formControlName="dateTime" class="form-control">
+                </div>
+                <input style="font-weight: bold;" type="submit" value="Check out" class="btn btn-success">
+            </form>
+
         </div>
+        <div class="course-info">
+            <div class="detailtitle mt-4" style="margin-left: -55px;">
+                <h1>Details</h1>
+            </div>
+            <div class="progress-container">
+                <div class="progress"></div>
+                <span style="font-weight: bold;" class="mt-1">Name</span>
+                <h6> {{name}}</h6>
+                <hr>
 
-        <div class="form-group">
+                <span style="font-weight: bold;" class="mt-1">Email</span>
+                <h6> {{emailId}}</h6>
+                <hr>
 
-            <label for="email">Email</label>
-            <input type="text" formControlName="email" placeholder="email" name="email" class="form-control" id="email">
+                <span style="font-weight: bold;" class="mt-1">Mobile</span>
+                <h6> {{phoneNumber}}</h6>
+                <hr>
+
+                <span style="font-weight: bold;" class="mt-1">Date</span>
+                <h6> {{dateAndTime}}</h6>
+                <hr>
+
+                <h5> You have booked {{seatsCount}} seats and amount is {{amount}}</h5>
+                <p class="text">
+                    <button class='btn-2' (click)="myFunc()">
+                        Proceed to payment</button>
+                </p>
+            </div>
         </div>
-
-        <div class="form-group">
-
-            <label for="mobileNumber">Mobile Number</label>
-            <input type="text" formControlName="mobileNumber" placeholder="mobileNumber" name="mobileNumber"
-                class="form-control" id="mobileNumber">
-        </div>
-
-        <div class="form-group">
-            <label for="dateTime">Time:</label>
-            <input type="datetime-local" formControlName="dateTime" class="form-control">
-        </div>
-        <input style="font-weight: bold;"type="submit" value="Check out" class="btn btn-success">
-      </form>
-			
-		</div>
-		<div class="course-info">
-            <div class="detailtitle"><h1>Details</h1></div>
-			<div class="progress-container">
-				<div class="progress"></div>
-				<span style="font-weight: bold;">Name</span><h6 > {{name}}</h6><hr>
-    <br>
-    <span style="font-weight: bold;">Email</span><h6> {{emailId}}</h6><hr>
-    <br>
-    <span style="font-weight: bold;">Mobile</span><h6> {{phoneNumber}}</h6><hr>
-    <br>
-    <span style="font-weight: bold;">Date</span><h6> {{dateAndTime}}</h6><hr>
-    
-    <h5> You have booked {{seatsCount}} seats and amount is {{amount}}</h5>
-			<p class="text">
-        <button class='btn-2' (click)="myFunc()">
-            Proceed to payment</button>
-    </p>
-		</div>
-		</div>
-	</div>
+    </div>
 </div>

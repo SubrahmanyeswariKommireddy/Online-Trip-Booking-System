@@ -20,21 +20,22 @@ export class AddRouteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.addRouteForm=new FormGroup({
-      source:new FormControl(''),
-      destination:new FormControl('')
-     
-  });
-  }
+    this.addRouteForm = new FormGroup({
+      source: new FormControl(''),
+      destination: new FormControl('')
 
+    });
+  }
 
   onSubmit() {
     console.log(this.addRouteForm.value + "from onSubmit of add route component")
     this.routeService.addRoute(this.addRouteForm.value).subscribe(
-        data => {this.route = data;
-            this.router.navigate([''])},
-        err => console.log(err)
+      data => {
+        this.route = data;
+        this.router.navigate([''])
+      },
+      err => console.log(err)
     )
-}
+  }
 
 }
