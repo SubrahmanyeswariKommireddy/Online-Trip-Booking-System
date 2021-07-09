@@ -25,7 +25,7 @@ export class TravelListComponent implements OnInit {
     (err) => console.log(err)
  
   )
-console.log(this.travels);
+  console.log(this.travels);
   var userType = sessionStorage.getItem('userType')
   if (userType == "ADMIN") {
     this.isAdmin = true;

@@ -21,9 +21,9 @@ import { Travel } from "../models/Travel";
       return <Observable<Travel[]>>this.httpClient.get(this.baseUrl + "/admin/getTravels");
     }
 
-    deleteTravelById(id: number): Observable<Travel> {
+    deleteTravelById(travelId: number): Observable<Travel> {
 
-      return <Observable<Travel>>this.httpClient.delete(this.baseUrl + "/admin/deleteTravel/" + id)
+      return <Observable<Travel>>this.httpClient.delete(this.baseUrl + "/admin/deleteTravel/" + travelId)
     }
 
     getTravelById(travelId: number): Observable<Travel>{
