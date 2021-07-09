@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -17,8 +18,9 @@ export class AddPaymentComponent implements OnInit {
   cvv!: number;
   status!: string;
   getAmount:number=0;
+  cardHolder:number=0;
 
-  constructor(private route:ActivatedRoute,private router:Router) { }
+  constructor(private route:ActivatedRoute,private router:Router,private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getAmount = parseInt(this.route.snapshot.paramMap.get('am')!)
@@ -26,7 +28,8 @@ export class AddPaymentComponent implements OnInit {
       cardNumber: new FormControl(''),
       expMonth: new FormControl(''),
       expYear: new FormControl(''),
-      cvv: new FormControl('')
+      cvv: new FormControl(''),
+      cardHolder: new FormControl('')
     });
   }
 
@@ -35,17 +38,16 @@ export class AddPaymentComponent implements OnInit {
     this.expMonth = this.addPaymentForm.get('expMonth')?.value;
     this.expYear = this.addPaymentForm.get('expYear')?.value;
     this.cvv = this.addPaymentForm.get('cvv')?.value;
+    this.cardHolder = this.addPaymentForm.get('cardHolder')?.value;
   }
 
   onSubmit() {
-    console.log(this.cardNumber.valueOf());
     if (this.cardNumber.length == 16) {
-      this.status = "Payment successful";
+      this.toastr.success('Payment Successful');
       this.router.navigate(['/feedback']);
     }
     else {
-      console.log('Payment failed');
-      this.status = "Payment failed";
+      this.toastr.error('Payment Failed: Invalid Credentials');
       this.router.navigate(['']);
     }
   }
