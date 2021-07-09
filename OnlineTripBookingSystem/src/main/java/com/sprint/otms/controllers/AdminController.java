@@ -235,7 +235,11 @@ public class AdminController {
 
 		return travelServiceImpl.getAllTravel();
 	}
-
+	
+	@GetMapping("/admin/getTravel/{travelId}")
+	public Travel getTravelById(@PathVariable Long travelId) {
+		return travelServiceImpl.getTravelById(travelId);
+	}
 	/**
 	 * @param id
 	 * @param oldName

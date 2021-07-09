@@ -15,7 +15,7 @@ export class AddTravelComponent implements OnInit {
   id: number = 0;
   addTravelForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private routeService: TravelService) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private travelService: TravelService) {
 
   }
 
@@ -24,13 +24,15 @@ export class AddTravelComponent implements OnInit {
       travelAgentName: new FormControl('')
     })
   }
+
   onSubmit() {
     console.log(this.addTravelForm.value + "from onSubmit of add route component")
     console.log("travel added")
-    this.routeService.addTravel(this.addTravelForm.value).subscribe(
+    this.travelService.addTravel(this.addTravelForm.value).subscribe(
       data => {
         this.travel = data;
-        this.router.navigate([''])
+        this.router.navigate(['travellist'])
+        console.log(data);
       },
       err => console.log(err)
     )

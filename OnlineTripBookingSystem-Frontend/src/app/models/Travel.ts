@@ -1,7 +1,7 @@
 import { Bus } from "./Bus";
 
 export class Travel{
-    travelId!:Number;
+    travelId!:number;
     travelAgentName:string='';
     bus!:Bus;
 }

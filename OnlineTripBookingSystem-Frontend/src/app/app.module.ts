@@ -33,6 +33,7 @@ import { CustomerDetailsComponent } from './customer/customer-details/customer-d
 import { SeatData } from './models/seat-data';
 import { DatePipe } from '@angular/common';
 import { UpdatePasswordComponent } from './password/update-password/update-password.component';
+import { TravelListComponent } from './travel/travel-list/travel-list.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { UpdatePasswordComponent } from './password/update-password/update-passw
     AdminHeaderComponent,
     CustomerDetailsComponent,
     AdminHeaderComponent,
-    UpdatePasswordComponent
+    UpdatePasswordComponent,
+    TravelListComponent
   ],
   imports: [
     BrowserModule,
