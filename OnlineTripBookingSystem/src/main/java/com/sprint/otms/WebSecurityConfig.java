@@ -41,8 +41,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private JwtRequestFilter jwtRequestFilter;
 
     @Override public void configure(WebSecurity web) {
-    	web.ignoring().antMatchers("/v3/api-docs", "/swagger-ui.html", "/swagger-ui/**");
+    	web.ignoring().antMatchers("/v3/api-docs");
     	}
+    
+//    "/swagger-ui.html", "/swagger-ui/**"
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
@@ -76,7 +78,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // We don't need CSRF for this example
         httpSecurity.csrf().disable()
                 // dont authenticate this particular request
-                .authorizeRequests().antMatchers("/authenticate", "/register","/getAdmin","/getBuses").permitAll().
+                .authorizeRequests().antMatchers("/authenticate", "/register","/getAdmin","/getBuses","/swagger-ui.html", "/swagger-ui/**","/getCustomerBooking").permitAll().
                 antMatchers(HttpMethod.OPTIONS, "/**").permitAll().
                 // all other requests need to be authenticated
                 anyRequest().authenticated().and().

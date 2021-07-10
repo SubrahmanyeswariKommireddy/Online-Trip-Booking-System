@@ -24,9 +24,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sprint.otms.exceptions.BookingNotFoundException;
+import com.sprint.otms.exceptions.BusBookingNotFoundException;
 import com.sprint.otms.exceptions.CustomerNotFoundException;
 import com.sprint.otms.models.Booking;
 import com.sprint.otms.models.Bus;
+import com.sprint.otms.models.BusBooking;
 import com.sprint.otms.models.Customer;
 import com.sprint.otms.models.Payment;
 import com.sprint.otms.models.Route;
@@ -61,6 +63,9 @@ public class CustomerController {
 
 	@Autowired
 	private PaymentServiceImpl paymentServiceImpl;
+	
+//	@Autowired
+	//private BusBookingServiceImpl busBookingService;
 
 	/**
 	 * @param customer
@@ -336,4 +341,36 @@ public class CustomerController {
 
 		return paymentServiceImpl.getPaymentByTransactionId(transactionId);
 	}
+	
+	
+	@PostMapping("/addBusBooking")
+	public Customer addBooking(@RequestParam Long id ,@RequestBody BusBooking booking) throws BusBookingNotFoundException
+	{
+		return customerServiceImpl.addBooking(id,booking);
+	}
+	
+	@GetMapping("/getCustomerBooking")
+	public ResponseEntity<List<BusBooking>> getByCustomerId(@Valid @RequestParam Long id)
+			throws CustomerNotFoundException, MethodArgumentNotValidException {
+
+		LOGGER.info("getCustomer URL is opened");
+		LOGGER.info("getById() is initiated");
+Customer c= customerServiceImpl.findCustomerById(id);
+		return new ResponseEntity<List<BusBooking>>(c.getBooking(),HttpStatus.OK);
+	}
+	
+	@GetMapping("/getAllBookings")
+	public List<Customer> getAllBookings() throws BusBookingNotFoundException{
+		return customerServiceImpl.getAllBookings();
+	}
+//	
+//	@GetMapping("/getBookingById/{id}")
+//	public BusBooking getBooking(@PathVariable Long id) throws BusBookingNotFoundException{
+//		return busBookingService.getBookingById(id);
+//	}
+//	
+//	@DeleteMapping("/deleteBooking/{id}")
+//	public void BusBooking(@PathVariable Long id) throws BusBookingNotFoundException{
+//		busBookingService.deleteBooking(id);
+//	}
 }

@@ -1,0 +1,35 @@
+
+<div><app-header></app-header></div>
+<div class="container">
+    <h1>My Bookings</h1>
+  
+   
+    <table class="rwd-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>mobileNumber</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let booking of bookings">
+                <td>{{booking.name}}</td>
+                <td>{{booking.email}}</td>
+                <td>{{booking.mobileNumber}}</td>
+                <td>{{booking.source}}</td>
+                <td>{{booking.destination}}</td>
+                 
+                 <!-- <td>
+                     <button (click)="deleteTravel(travel)">Delete Travel</button>
+                </td>
+                <td>
+                    <button (click)="addBus()">Add Bus</button>
+                </td>  -->
+            </tr>
+        </tbody>
+    </table>
+</div>

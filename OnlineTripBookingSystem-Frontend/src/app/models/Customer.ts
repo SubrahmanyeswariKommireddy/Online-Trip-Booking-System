@@ -1,3 +1,4 @@
+import { BusBooking } from "./BusBooking";
 import { User } from "./User";
 
 export class Customer {
@@ -6,5 +7,5 @@ export class Customer {
     password: string = '';
     email: string = '';
     mobileNumber: string = '';
-
+    booking!:BusBooking;
 }

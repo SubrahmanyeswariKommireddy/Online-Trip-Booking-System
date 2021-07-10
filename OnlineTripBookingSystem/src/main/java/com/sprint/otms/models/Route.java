@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
  *
  */
 @Entity
-@Table(name = "route_table")
+@Table(name = "route_tableOne")
 public class Route {
 
 	@Id

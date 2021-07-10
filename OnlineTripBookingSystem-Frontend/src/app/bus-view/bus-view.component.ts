@@ -277,7 +277,7 @@ seats:number=0;
     seatsSelected() {
         
         console.log(this.seatData.seatArr = this.seatArray);
-        this.router.navigate(['/booking', { count: this.countSeats, amount: this.getFare * this.countSeats }]);
+        this.router.navigate(['/busBooking', { count: this.countSeats, amount: this.getFare * this.countSeats }]);
         this.seats=0;
     }
 

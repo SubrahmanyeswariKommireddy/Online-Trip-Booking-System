@@ -7,6 +7,7 @@ import javax.validation.ValidationException;
 
 import org.springframework.stereotype.Service;
 
+import com.sprint.otms.models.BusBooking;
 import com.sprint.otms.models.Customer;
 
 /**
@@ -52,7 +53,8 @@ public interface ICustomerService extends IUserService {
 	 * @return Customer Details By Customer Id
 	 */
 	public Customer findCustomerById(Long id);
-
+	public List<Customer> getAllBookings();
+	public Customer addBooking(Long id, BusBooking booking);
 	/**
 	 * @param id
 	 * @param oldPassword
