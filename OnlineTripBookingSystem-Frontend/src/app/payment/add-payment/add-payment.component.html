@@ -1,4 +1,4 @@
-<div class="col-md-6 container">
+<!-- <div class="col-md-6 container">
     <h2 class="text-center">Card Details</h2>
     <form [formGroup]="addPaymentForm" (ngSubmit)="onSubmit()">
 
@@ -34,4 +34,128 @@
     </form>
 
     <h5>{{getAmount}}</h5>
+</div> -->
+
+
+
+
+
+
+
+
+<!-- <div class="modal">
+    <div class="modal__container">
+      <div class="modal__featured">
+        <div class="modal__circle"></div>
+        <div class="modal__circles"></div>
+        <img src="" class="modal__product" />
+      </div>
+      <div class="modal__content">
+        <h2>Your payment details</h2><br>
+
+        <form [formGroup]="addPaymentForm" (ngSubmit)="onSubmit()">
+          <ul class="form-list">
+            <li class="form-list__row">
+              <label>Name</label>
+              <input type="text" formControlName="cardHolder" name="cardHolder" class="form-control" id="cardHolder" required="" >
+            </li>
+            <li class="form-list__row">
+              <label>Card Number</label>
+              <div id="input--cc" class="creditcard-icon">
+                <input type="text" formControlName="cardNumber" name="cardNumber" class="form-control" id="cardNumber" required="" >
+              </div>
+            </li>
+            <li class="form-list_row ">
+              <div>
+                <label>Expiration Date</label>
+                <div class="form-list__input-inline">
+                  <input type="text" formControlName="expMonth" name="expMonth" class="form-control" id="expMonth" placeholder="MM"  pattern="\\d*" minlength="2" maxlength="2" required="" >
+                  <input type="text" formControlName="expYear" name="expYear" class="form-control" id="expYear" placeholder="YY"  pattern="\\d*" minlength="2" maxlength="2" required=""><br><br><br>
+              
+                </div>
+
+              </div>
+            </li>
+              <li class="form-list_row ">
+              <div>
+                <label>
+                  cvv
+                </label>
+                <input type="text" formControlName="cvv" name="cvv" class="form-control" id="cvv" placeholder="123" pattern="\\d*" minlength="3" maxlength="4" required=""><br>
+              </div>
+            </li>
+            
+            <li class="form-list__row">
+              <h5>Total Amount Payable : {{getAmount}} </h5>
+            </li>
+            
+            <li>
+              <button class="button" type="submit" (click)="pay()">Pay Now</button>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </div>  -->
+
+
+
+
+  <!-- <div id="card-success" class="hidden">
+  <i class="fa fa-check"></i>
+  <p>Payment Successful!</p>
 </div>
+<div id="form-errors" class="hidden">
+  <i class="fa fa-exclamation-triangle"></i>
+  <p id="card-error">Card error</p>
+</div> -->
+
+<div id="form-container">
+    <form [formGroup]="addPaymentForm" (ngSubmit)="onSubmit()">
+    <div id="card-front">
+       
+        <div id="shadow"></div>
+        <div id="image-container">
+            <span id="amount">Paying: {{getAmount}}</span>
+            <span id="card-image">
+
+            </span>
+        </div>
+      
+            <label for="card-number">Card Number</label>
+            <input type="text" formControlName="cardNumber" placeholder="1234 5678 9101 1112" length="16"
+                name="cardNumber" class="form-control" id="cardNumber">
+            <div id="cardholder-container">
+                <label for="card-holder">Card Holder</label>
+                <input type="text" formControlName="cardHolder" placeholder="NAME" name="cardHolder"
+                    class="form-control" id="cardHolder">
+            </div>
+           
+            <div id="exp-container">
+                <label for="card-exp">Expiration</label>
+                <input type="text" formControlName="expMonth" placeholder="MM" length="2" name="expMonth" id="expMonth">
+                <input type="text" formControlName="expYear" placeholder="YY" length="2" name="expYear" id="expYear">
+            </div>
+            <div id="cvc-container">
+                <label for="card-cvc"> CVC/CVV</label>
+                <input type="text" formControlName="cvv" placeholder="XXX-X" type="text" min-length="3" max-length="4"
+                    id="cvv">
+
+                <p>Last 3 or 4 digits</p>
+            </div>
+            
+       
+    </div>
+   
+    <div id="card-back">
+        <div id="card-stripe">
+        </div>
+
+    </div>
+
+   
+    <input type="text" id="card-token" />
+    <button id="card-btn" type="button" (click)="pay()">Confirm Payment</button></form>
+
+</div>
+
