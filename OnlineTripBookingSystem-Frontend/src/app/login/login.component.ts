@@ -2,8 +2,11 @@
 // import { Router } from '@angular/router';
 // import { LoginService } from '../shared/login.service';
 // import { ToastrService } from 'ngx-toastr';
+<<<<<<< HEAD
 // import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 // import { User } from '../models/User';
+=======
+>>>>>>> ccfc9a674b3114d04b74aaf5c076bed398aad1c1
 
 // export class JwtResponse {
 //   jwtToken!: string;
@@ -18,6 +21,7 @@
 
 // export class LoginComponent implements OnInit {
 
+<<<<<<< HEAD
 //   roleData: any[] = ['ADMIN','CUSTOMER']
 
 //   user: User = {
@@ -29,11 +33,14 @@
 //     mobileNumber: ''
 //   }
 
+=======
+>>>>>>> ccfc9a674b3114d04b74aaf5c076bed398aad1c1
 //   email: string = '';
 //   password: string = '';
 //   userType: string = '';
 //   invalidLogin: boolean = false;
 //   response!: JwtResponse;
+<<<<<<< HEAD
 //   isValidFormSubmitted: boolean = false;
 
 //   constructor(private router: Router,
@@ -52,6 +59,19 @@
 //     return;
 //   }
 
+=======
+
+//   constructor(private router: Router,
+//     private loginservice: LoginService, private toastr: ToastrService) { }
+
+//   ngOnInit() {
+
+//   }
+
+//   checkLogin() {
+//     var userType = sessionStorage.getItem('userType');
+
+>>>>>>> ccfc9a674b3114d04b74aaf5c076bed398aad1c1
 //     (this.loginservice.authenticate(this.email, this.password, this.userType).subscribe(
 //       data => {
 //         this.toastr.success('Login Successful');
@@ -93,7 +113,10 @@
 // }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ccfc9a674b3114d04b74aaf5c076bed398aad1c1
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -113,7 +136,11 @@ export class JwtResponse {
 })
 export class LoginComponent implements OnInit {
 
+<<<<<<< HEAD
   roleData: any[] = ['ADMIN', 'GUARD', 'FLATOWNER']
+=======
+  roleData: any[] = ['ADMIN', 'CUSTOMER']
+>>>>>>> ccfc9a674b3114d04b74aaf5c076bed398aad1c1
 
   user: User = {
     id:0,
@@ -139,14 +166,14 @@ export class LoginComponent implements OnInit {
 
   }
 
-  checkLogin() {
-    // console.log("in create user", form1.value)
-    // this.isValidFormSubmitted = false;
-    // if (form1.valid) {
-    //   this.isValidFormSubmitted = true;
-    // } else {
-    //   return;
-    // }
+  checkLogin(form1:any) {
+    var userType = sessionStorage.getItem('userType');
+  //   this.isValidFormSubmitted = false;
+  // if (form1.valid) {
+  //   this.isValidFormSubmitted = true;
+  // } else {
+  //   return;
+  // }
 
     (this.loginservice.authenticate(this.user.email, this.user.password, this.user.userType).subscribe(
       (data: any) => {
