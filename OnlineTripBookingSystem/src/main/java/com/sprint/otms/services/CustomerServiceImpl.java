@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.sprint.otms.exceptions.BusNotFoundException;
 import com.sprint.otms.exceptions.CustomerNotFoundException;
 import com.sprint.otms.models.Bus;
+import com.sprint.otms.models.BusBooking;
 import com.sprint.otms.models.Customer;
 import com.sprint.otms.repositories.ICustomerRepository;
 
@@ -108,5 +109,25 @@ public class CustomerServiceImpl extends UserServiceImpl implements ICustomerSer
 			}
 		}
 		return customer.get();
+	}
+	
+	@Override
+	public Customer addBooking(Long id,BusBooking booking) {
+		// TODO Auto-generated method stub
+		Optional<Customer> c= customerRepository.findById(id);
+		if(c!=null) {
+			System.out.println("customer");
+			List<BusBooking> list=c.get().getBooking();
+			list.add(booking);
+			c.get().setBooking(list);
+			 return customerRepository.save(c.get());
+		}
+		return null;	
+	}
+	
+	@Override
+	public List<Customer> getAllBookings() {
+		// TODO Auto-generated method stub
+		return customerRepository.findAll();
 	}
 }

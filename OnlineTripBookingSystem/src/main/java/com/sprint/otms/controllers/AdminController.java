@@ -483,10 +483,7 @@ public class AdminController {
 		return customerServiceImpl.getAllCustomer();
 	}
 	
-	
-	
-	
-	
+
 	@GetMapping("/admin/getBus/{id}")
 	public List<Bus> getBusesByRoute(@Valid @PathVariable Long id)
 			throws RouteNotFoundException, MethodArgumentNotValidException {
@@ -497,11 +494,5 @@ public class AdminController {
 
 		return r.getBuses();
 	}
-
-	
-	
-	
-	
-	
 
 }

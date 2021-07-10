@@ -120,4 +120,11 @@ public class CustomizedExceptionHandler extends ExceptionMessage {
 				request.getDescription(false));
 		return new ResponseEntity<>(exceptionMessage, HttpStatus.NOT_FOUND);
 	}
+	
+	@ExceptionHandler(value = BusBookingNotFoundException.class)
+	public ResponseEntity<Object> exception(BusBookingNotFoundException ex, WebRequest request){
+		ExceptionMessage exceptionMessage = new ExceptionMessage(new Date(), ex.getMessage(),
+				request.getDescription(false));
+		return new ResponseEntity<>(exceptionMessage, HttpStatus.NOT_FOUND);
+	}
 }

@@ -13,7 +13,7 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "admin_table")
+@Table(name = "admin_tableOne")
 public class Admin extends User {
 
 	@OneToMany(fetch = FetchType.LAZY)

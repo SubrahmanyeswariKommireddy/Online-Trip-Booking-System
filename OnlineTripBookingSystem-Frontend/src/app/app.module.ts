@@ -37,6 +37,8 @@ import { TravelListComponent } from './travel/travel-list/travel-list.component'
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddFeedbackComponent } from './feedback/add-feedback/add-feedback.component';
+import { AddBusBookingComponent } from './booking/add-bus-booking/add-bus-booking.component';
+import { BookingListComponent } from './booking/booking-list/booking-list.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +71,9 @@ import { AddFeedbackComponent } from './feedback/add-feedback/add-feedback.compo
     AdminHeaderComponent,
     UpdatePasswordComponent,
     TravelListComponent,
-    AddFeedbackComponent
+    AddFeedbackComponent,
+    AddBusBookingComponent,
+    BookingListComponent
   ],
   imports: [
     BrowserModule,

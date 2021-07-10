@@ -18,7 +18,7 @@ import com.sun.istack.NotNull;
  *
  */
 @Entity
-@Table(name = "booking_table")
+@Table(name = "booking_tableOne")
 public class Booking {
 
 	@Id
@@ -30,7 +30,6 @@ public class Booking {
 	private LocalDateTime dateAndTimeOfTravel;
 
 	@OneToOne
-	//@JsonManagedReference
 	private Customer customer;
 
 	@OneToOne(mappedBy = "booking", fetch = FetchType.LAZY)
