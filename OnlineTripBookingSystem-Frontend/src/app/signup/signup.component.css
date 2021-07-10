@@ -17,7 +17,7 @@ body {
 .container {
   position: relative;
   width: 350px;
-  height: 750px;
+  min-height: 700px;
   border-radius: 20px;
   padding: 40px;
   margin-top: 0mm;
@@ -74,7 +74,7 @@ input::placeholder {
   color: gray;
 }
 
-input {
+input, select {
   background: #ecf0f3;
   padding: 10px;
   padding-left: 20px;
