@@ -1,4 +1,4 @@
-/* .visuallyhidden {
+.visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -175,10 +175,11 @@
         justify-content: center;
     -ms-flex-align: center;
         align-items: center;
-    height: 100vh;
+    height: relative;
     width: 100vw;
     padding-top: 200px;
     z-index: 100; 
+   
   overflow-y: auto;
   }
     .modal__container {
@@ -235,9 +236,9 @@
         border-radius: 100%;
         -ms-transform: translateX(-50%) translateY(-25%);
             transform: translateX(-50%) translateY(-25%);
-         } */
+         }
 
-
+/* 
          @import url(https://fonts.googleapis.com/css?family=Lato:400, 700,300);
 body {
   background-color: #ffb242;
@@ -439,44 +440,10 @@ input {
   border-radius: 4px;
   font-family: lato, 'helvetica-light', 'sans-serif';
   letter-spacing: .7px;
-}
-
-/* input::-webkit-input-placeholder {
-  color: #fff;
-  opacity: 0.7;
-  font-family: lato, 'helvetica-light', 'sans-serif' letter-spacing: 1px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  font-size: 10px;
-}
-
-input:-moz-placeholder {
-  color: #fff;
-  opacity: 0.7;
-  font-family: lato, 'helvetica-light', 'sans-serif' letter-spacing: 1px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  font-size: 10px;
-}
-
-input::-moz-placeholder {
-  color: #fff;
-  opacity: 0.7;
-  font-family: lato, 'helvetica-light', 'sans-serif' letter-spacing: 1px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  font-size: 10px;
 } */
 
-/* input:-ms-input-placeholder {
-  color: #fff;
-  opacity: 0.7;
-  font-family: lato, 'helvetica-light', 'sans-serif' letter-spacing: 1px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  font-size: 10px;
-} */
 
+/* 
 input.invalid {
   border: solid 2px #eb0000;
   height: 34px;
@@ -499,4 +466,4 @@ label {
   box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
-}
+} */

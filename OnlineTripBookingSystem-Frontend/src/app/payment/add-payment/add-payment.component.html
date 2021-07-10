@@ -41,9 +41,11 @@
 
 
 
-
-
-<!-- <div class="modal">
+<div>
+  <app-header></app-header>
+</div>
+<body>
+<div class="modal">
     <div class="modal__container">
       <div class="modal__featured">
         <div class="modal__circle"></div>
@@ -93,10 +95,19 @@
               <button class="button" type="submit" (click)="pay()">Pay Now</button>
             </li>
           </ul>
+         
         </form>
+        
       </div>
     </div>
-  </div>  -->
+   
+    <app-footer></app-footer>
+  
+  </div> 
+  
+</body>
+  
+
 
 
 
@@ -110,7 +121,7 @@
   <p id="card-error">Card error</p>
 </div> -->
 
-<div id="form-container">
+<!-- <div id="form-container">
     <form [formGroup]="addPaymentForm" (ngSubmit)="onSubmit()">
     <div id="card-front">
        
@@ -158,4 +169,4 @@
     <button id="card-btn" type="button" (click)="pay()">Confirm Payment</button></form>
 
 </div>
-
+ -->
