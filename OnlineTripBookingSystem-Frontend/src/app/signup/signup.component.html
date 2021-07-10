@@ -1,47 +1,69 @@
 <div class="container">
-    <div class="brand-logo"></div>
+  <div class="brand-logo"></div>
+  <div [hidden]="isValidFormSubmitted">
     <div class="brand-title">Register</div>
     <form #form1="ngForm" (ngSubmit)="createUser(form1)" novalidate>
-    <div class="inputs">
+      <div class="inputs">
+
         <div class="log-in-inputs">
-            <label for="userName">User Name:</label>
-            <input [(ngModel)]="user.userName" placeholder="User Name" name="userName" class="form-control"
-                id="userName" required minlength="5">
-                <!-- <div *ngIf="userName.errors && userForm.submitted && !isValidFormSubmitted" class="error">
-					<div *ngIf="userName.errors.required">
-						Username required.
-					</div>
-                    </div> -->
-                <!-- <div *ngIf="name.errors?.required">
-                    Name is required.
-                  </div> -->
+          <label for="userName">User Name</label>
+          <input type="text" [(ngModel)]="user.userName" placeholder="User Name" name="userName" class="form-control" id="userName"
+            required #userName="ngModel">
+            <div [hidden]="userName.valid || userName.pristine" class="alert alert-danger">
+              Username is required
+            </div>
+        </div>
+
+        <div class="log-in-inputs">
+          <label for="mobilenumber">Mobile Number</label>
+          <input [(ngModel)]="user.mobileNumber" placeholder="Mobile Number" name="mobileNumber" class="form-control"
+            id="mobileNumber" required #mobileNumber="ngModel">
+          <div [hidden]="mobileNumber.valid || mobileNumber.pristine" class="alert alert-danger">
+            Mobilenumber is required
           </div>
-          <div class="log-in-inputs">
-            <label for="mobilenumber">Mobile Number:</label>
-            <input [(ngModel)]="user.mobileNumber" placeholder="Mobile Number" name="mobileNumber" class="form-control"
-                id="mobileNumber">
+        </div>
+
+        <div class="log-in-inputs">
+          <label for="email">Email Id</label>
+          <input type="text" [(ngModel)]="user.email" placeholder="Email Id" name="email" class="form-control" id="email" required
+            #email="ngModel">
+          <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+            Email is required
           </div>
-      <div class="log-in-inputs">
-        <label for="email">Email Id:</label>
-      <input [(ngModel)]="user.email" placeholder="Email Id" name="email" class="form-control" id="email">
+        </div>
+
+        <!-- <input type="email"
+           class="form-control"
+           name="email"
+           [(ngModel)]="model.email"
+           required> -->
+
+        <div class="log-in-inputs">
+          <label for="password">Password</label>
+          <input type="password" [(ngModel)]="user.password" placeholder="Password" name="password" class="form-control" id="password"
+            required minlength="6" #password="ngModel">
+          <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+            Password is required
+          </div>
+        </div>
+
+        <div class="log-in-inputs">
+          <label for="userType">User Type</label>
+          <select name="userType" placeholder="Usertype" class="form-control" [(ngModel)]="user.userType" id="userType">
+            <option>---Select---</option>
+            <option *ngFor="let item of roleData" [value]="item">
+              {{item}}
+            </option>
+          </select>
+          <!-- <input [(ngModel)]="user.userType" placeholder="Usertype" name="userType" class="form-control" id="userType"> -->
+        </div>
+        <button type="submit">Register</button>
       </div>
-      <div class="log-in-inputs">
-        <label for="password">Password :</label>
-        <input [(ngModel)]="user.password" placeholder="Password" name="password" class="form-control"
-            id="password" required minlength="6">
-            <!-- <span *ngIf="password.hasError('required')">  
-                User email is required.  
-              </span>   -->
-           
+
+      <div class="signup-link">
+        Already registered? <a href="/login">Login</a>
       </div>
-      <div class="log-in-inputs">
-        <label for="userType">User Type :</label>
-            <input [(ngModel)]="user.userType" placeholder="userType" name="userType" class="form-control" id="role">
-      </div>
-      <button type="submit">Register</button>
+
+    </form>
   </div>
-  <div class="signup-link">
-    Already registered?  <a href="/login">Login</a>
- </div>
-</form>
 </div>

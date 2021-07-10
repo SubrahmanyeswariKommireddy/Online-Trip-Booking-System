@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { User } from '../models/User';
 import { SignupService } from '../shared/signup.service';
 import { ToastrService } from 'ngx-toastr';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -11,6 +10,8 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+
+  roleData: any[] = ['ADMIN','CUSTOMER']
 
   user: User = {
     id: 0,
@@ -26,7 +27,7 @@ export class SignupComponent implements OnInit {
   password: string = '';
   userType: string = '';
   mobileNumber: string = '';
-  isValidFormSubmitted: boolean=false;
+  isValidFormSubmitted: boolean = false;
 
   constructor(
     private signupService: SignupService,
@@ -38,12 +39,12 @@ export class SignupComponent implements OnInit {
 
   createUser(form1: any): void {
     console.log("in create user", form1.value)
-  //   this.isValidFormSubmitted = false;
-  // if (form1.valid) {
-  //   this.isValidFormSubmitted = true;
-  // } else {
-  //   return;
-  // }
+    this.isValidFormSubmitted = false;
+    if (form1.valid) {
+      this.isValidFormSubmitted = true;
+    } else {
+      return;
+    }
     this.signupService.createUser(this.user)
       .subscribe(
         data => {
@@ -52,18 +53,3 @@ export class SignupComponent implements OnInit {
         });
   };
 }
-
-
-
-
-// onFormSubmit(form: NgForm) {
-//   this.isValidFormSubmitted = false;
-//   if (form.valid) {
-//     this.isValidFormSubmitted = true;
-//   } else {
-//     return;
-//   }
-//   let newUser: User = form.value;
-//   this.userService.createUser(newUser);
-//   this.resetUserForm(form);
-// }

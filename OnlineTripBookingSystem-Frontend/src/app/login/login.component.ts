@@ -92,7 +92,7 @@ export class JwtResponse {
 })
 export class LoginComponent implements OnInit {
 
-  roleData: any[] = ['ADMIN', 'GUARD', 'FLATOWNER']
+  roleData: any[] = ['ADMIN', 'CUSTOMER']
 
   user: User = {
     id:0,
@@ -109,7 +109,8 @@ export class LoginComponent implements OnInit {
   isValidFormSubmitted: boolean = false;
   
   invalidLogin: boolean = false;
-  response!: JwtResponse
+  response!: JwtResponse;
+ 
 
   constructor(private router: Router,private toastr: ToastrService,
     private loginservice: LoginService) { }
@@ -119,27 +120,38 @@ export class LoginComponent implements OnInit {
   }
 
   checkLogin(form1:any) {
-    // console.log("in create user", form1.value)
-    // this.isValidFormSubmitted = false;
-    // if (form1.valid) {
-    //   this.isValidFormSubmitted = true;
-    // } else {
-    //   return;
-    // }
+    var userType = sessionStorage.getItem('userType');
+  //   this.isValidFormSubmitted = false;
+  // if (form1.valid) {
+  //   this.isValidFormSubmitted = true;
+  // } else {
+  //   return;
+  // }
 
     (this.loginservice.authenticate(this.user.email, this.user.password, this.user.userType).subscribe(
       (data: any) => {
         this.toastr.success('Login Successful');
-                if (this.user.userType == "ADMIN") {
-                  this.router.navigate(['/admin'])
-                }
-                else if (this.user.userType == "CUSTOMER") {
-                  this.router.navigate([''])
-                }
-                this.invalidLogin = false
-              },
-      (error: any) => {
-        this.toastr.error('Login Failed: Invalid Credentials');
+        if (userType == "ADMIN") {
+          this.router.navigate(['/admin'])
+        }
+        else if (userType == "CUSTOMER") {
+          this.router.navigate([''])
+        }
+        this.invalidLogin = false
+      },
+      error => {
+        // if (this.email == "") {
+        //   this.toastr.warning('Login Failed: Email is required');
+        // }
+        // else if (this.password == "") {
+        //   this.toastr.warning('Login Failed: Password is required');
+        // }
+        // else if (this.userType == "") {
+        //   this.toastr.warning('Login Failed: Usertype is required');
+        // }
+        // else {
+        //   this.toastr.error('Login Failed: Invalid Credentials');
+        // }
         this.invalidLogin = true
       }
     )
