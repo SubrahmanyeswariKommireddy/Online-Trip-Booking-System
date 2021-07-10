@@ -3,21 +3,29 @@
 
   <ul class="showcase justify-content-center">
     <li>
-      <div class="seat" (click)="seatClicked('2')"></div>
-      <small style="color: black; font-weight: bold;">Available</small>
+      <div class="seat" style="margin-left: -35px;"></div>
+      <small style="color: black; font-weight: bold; ">Available</small>
     </li>
     <li>
       <div class="seat selected" style="background: yellowgreen;"></div>
       <small style="color: black; font-weight: bold;">Selected</small>
     </li>
     <!-- <li>
-      <div class="seat" [ngStyle]="{'background-color':!isFirstSeatDisabled ? 'white':'black'}">
+      <div class="seat" [ngStyle]="{'background-color':!isFirstSeatDisabled ? 'white':'black'}"> 
         <div class="seat occupied" style="color: black; font-weight: bold; padding-left: 35px; padding-top: -30px;">
           Occupied
-        </div> -->
+       </div> -->
         <!-- <small style="color: black; font-weight: bold; padding-left: 35px; padding-top: -30px;"> Occupied</small></div> -->
       <!-- </div>
     </li> -->
+    <li>
+      <div class="seat" [ngStyle]="{'background-color':'black'}" >
+        <small style="color: black; font-weight: bold; padding-left: 35px; ">Occupied</small>
+      <div class="seat" style="margin-top:-22px">
+      
+    </div>
+    </div>
+    </li>
 
   </ul>
   <div class="d-flex felx-column justify-content-center">

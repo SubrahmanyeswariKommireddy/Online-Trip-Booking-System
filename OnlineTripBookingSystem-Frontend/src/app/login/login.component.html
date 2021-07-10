@@ -1,46 +1,48 @@
+<body class="bckimg">
 
 <div class="container">
   <div class="brand-logo"></div>
   <div [hidden]="isValidFormSubmitted">
-  <div class="brand-title">LogIn</div>
-  <form #form1="ngForm" (ngSubmit)="checkLogin(form1)">
-  <div class="inputs">
+    <div class="brand-title">LogIn</div>
+    <form #form1="ngForm" (ngSubmit)="checkLogin(form1)">
+      <div class="inputs">
 
-    <div class="log-in-inputs">
-    <label>Email</label>
-    <input type="text" [(ngModel)]="user.email" placeholder="Email Id" name="email"
-            class="form-control" id="email" required #email="ngModel">
+        <div class="log-in-inputs">
+          <label>Email</label>
+          <input type="text" [(ngModel)]="user.email" placeholder="Email Id" name="email" class="form-control"
+            id="email" required #email="ngModel">
           <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
             Email is required
           </div>
-    </div>
+        </div>
 
-    <div class="log-in-inputs">
-    <label>Password</label>
-    <input type="text" [(ngModel)]="user.password" placeholder="Password" name="password"
-            class="form-control" id="password" required minlength="6" #password="ngModel">
+        <div class="log-in-inputs">
+          <label>Password</label>
+          <input type="text" [(ngModel)]="user.password" placeholder="Password" name="password" class="form-control"
+            id="password" required minlength="6" #password="ngModel">
           <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
             Password is required
           </div>
-    </div>
+        </div>
 
-    <div class="log-in-inputs">
-      <label>User Type</label>
-      <select name="userType" placeholder="Usertype" class="form-control" [(ngModel)]="user.userType" id="userType">
-        <option>---Select---</option>
-        <option *ngFor="let item of roleData" [value]="item">
-          {{item}}
-        </option>
-      </select>
-    </div> 
+        <div class="log-in-inputs">
+          <label>User Type</label>
+          <select name="userType" placeholder="Usertype" class="form-control" [(ngModel)]="user.userType" id="userType">
+            <option>---Select---</option>
+            <option *ngFor="let item of roleData" [value]="item">
+              {{item}}
+            </option>
+          </select>
+        </div>
 
-    <button type="submit">LOGIN</button>
-    </div>
+        <button type="submit">LOGIN</button>
+      </div>
 
-    <div class="signup-link">
-      Not a member? <a href="/signup">Register</a>
-   </div>
+      <div class="signup-link">
+        Not a member? <a href="/signup">Register</a>
+      </div>
 
-  </form>
+    </form>
   </div>
-  </div>
+</div>
+</body>

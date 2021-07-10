@@ -39,6 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddFeedbackComponent } from './feedback/add-feedback/add-feedback.component';
 import { AddBusBookingComponent } from './booking/add-bus-booking/add-bus-booking.component';
 import { BookingListComponent } from './booking/booking-list/booking-list.component';
+import { AdminBuslistComponent } from './admin/admin-buslist/admin-buslist/admin-buslist.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { BookingListComponent } from './booking/booking-list/booking-list.compon
     TravelListComponent,
     AddFeedbackComponent,
     AddBusBookingComponent,
-    BookingListComponent
+    BookingListComponent,
+    AdminBuslistComponent
   ],
   imports: [
     BrowserModule,

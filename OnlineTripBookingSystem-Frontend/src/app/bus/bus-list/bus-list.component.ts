@@ -49,9 +49,9 @@ export class BusListComponent implements OnInit {
     }
   }
 
-  addBus() {
-    this.router.navigate(['app-add-bus'])
-  }
+  // addBus() {
+  //   this.router.navigate(['app-add-bus'])
+  // }
 
   checkAvailability(bus:Bus) {
 

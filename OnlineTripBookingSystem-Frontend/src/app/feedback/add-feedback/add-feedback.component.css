@@ -29,7 +29,26 @@
 	color: #fff;
 	font-size: 16px;
 	margin-top: 3mm;
-	padding: 12px 25px;
+  margin-left: 12mm;
+	padding: 12px 55px;
     margin-top: 30px;
 	letter-spacing: 1px;
+}
+.container{
+  margin-top: 10%;
+  margin-left: 25%;
+  margin-bottom: 5%;
+  background-color:rgba(153, 230, 31, 0.815);
+  width: 50%;
+  height: 50vh;
+  padding: 25px;
+  padding-left: 15%;
+  border-radius: 25px;
+}
+h6{
+  font-weight: bold;
+  font-size: 6mm;
+}
+textarea {
+  width: 80mm;
 }
