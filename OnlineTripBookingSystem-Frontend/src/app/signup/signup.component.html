@@ -1,3 +1,5 @@
+<body class="bckimg">
+
 <div class="container">
   <div class="brand-logo"></div>
   <div [hidden]="isValidFormSubmitted">
@@ -32,12 +34,6 @@
           </div>
         </div>
 
-        <!-- <input type="email"
-           class="form-control"
-           name="email"
-           [(ngModel)]="model.email"
-           required> -->
-
         <div class="log-in-inputs">
           <label for="password">Password</label>
           <input type="password" [(ngModel)]="user.password" placeholder="Password" name="password" class="form-control" id="password"
@@ -50,7 +46,6 @@
         <div class="log-in-inputs">
           <label for="userType">User Type</label>
           <select name="userType" placeholder="Usertype" class="form-control" [(ngModel)]="user.userType" id="userType">
-            <option>---Select---</option>
             <option *ngFor="let item of roleData" [value]="item">
               {{item}}
             </option>
@@ -67,3 +62,4 @@
     </form>
   </div>
 </div>
+</body>

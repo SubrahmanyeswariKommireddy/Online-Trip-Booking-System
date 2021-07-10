@@ -32,7 +32,7 @@ export class AddBusComponent implements OnInit {
         this.busService.addBus(this.addBusForm.value).subscribe(
            
             data => {this.bus = data;
-                this.router.navigate(['busList'])
+                this.router.navigate(['adminBusList'])
                 console.log(data)
             },
             err => console.log(err)

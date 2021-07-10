@@ -17,16 +17,11 @@ export class SignupComponent implements OnInit {
     id: 0,
     userName: '',
     password: '',
-    userType: '',
+    userType: 'Select',
     email: '',
     mobileNumber: ''
   }
 
-  userName: string = '';
-  email: string = '';
-  password: string = '';
-  userType: string = '';
-  mobileNumber: string = '';
   isValidFormSubmitted: boolean = false;
 
   constructor(
