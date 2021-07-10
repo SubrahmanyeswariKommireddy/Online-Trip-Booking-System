@@ -118,14 +118,14 @@ export class LoginComponent implements OnInit {
     id:0,
     userName: '',
     password: '',
-    userType: '---Select---',
+    userType: '',
     email: '',
     mobileNumber: ''
   }
 
   emailId: string = '';
   password: string = '';
-  userType: string = 'Select';
+  userType: string = '';
   isValidFormSubmitted: boolean = false;
   
   invalidLogin: boolean = false;
@@ -138,14 +138,14 @@ export class LoginComponent implements OnInit {
 
   }
 
-  checkLogin() {
+  checkLogin(form1:any) {
     var userType = sessionStorage.getItem('userType');
-  //   this.isValidFormSubmitted = false;
-  // if (form1.valid) {
-  //   this.isValidFormSubmitted = true;
-  // } else {
-  //   return;
-  // }
+    this.isValidFormSubmitted = false;
+  if (form1.valid) {
+    this.isValidFormSubmitted = true;
+  } else {
+    return;
+  }
 
     (this.loginservice.authenticate(this.user.email, this.user.password, this.user.userType).subscribe(
       (data: any) => {
@@ -174,9 +174,5 @@ export class LoginComponent implements OnInit {
     sessionStorage.setItem('id', data.id)
     console.log('data set')
   }
-
-  // home() {
-  //   this.router.navigate([''])
-  // }
 
 }

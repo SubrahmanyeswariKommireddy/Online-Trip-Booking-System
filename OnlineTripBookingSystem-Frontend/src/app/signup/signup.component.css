@@ -4,7 +4,6 @@ body {
   margin: -20mm;
   width: 100vw;
   height: 100vh;
-  background: #ecf0f3;
   display: flex;
   align-items: center;
   text-align: center;
@@ -12,18 +11,25 @@ body {
   place-items: center;
   overflow: hidden;
   font-family: poppins;
+  background-image: url("/src/assets/images/login.jpg");
+}
+
+.bckimg{
+  background-image: url("../../assets/images/login.jpg");
+  background-size: cover;
+  height: 180vh;
+  width: 104.3vw;
 }
 
 .container {
-  position: relative;
   width: 350px;
-  min-height: 700px;
+  min-height: 750px;
   border-radius: 20px;
   padding: 40px;
-  margin-top: 0mm;
-  box-sizing: border-box;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  margin-left: 75mm;
   background: #ecf0f3;
-  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
 }
 
 .brand-logo {
