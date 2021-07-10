@@ -63,7 +63,7 @@
 							<a class="nav-link text-white" href="#" style="margin-top: 11.5px; margin-right: 15px;">Help</a>
 						</li>
 						<li class="nav-item">
-							<a *ngIf="!loginService.isUserLoggedIn()" class="nav-link text-white"
+							<a *ngIf="!loginService.isUserLoggedIn()" class="nav-link text-white" style="margin-top: 11.5px; margin-right: 15px;"
 								[routerLink]="['/login']" (click)="btnClick()">Log In</a>
 						</li>
 						<!-- <li>
