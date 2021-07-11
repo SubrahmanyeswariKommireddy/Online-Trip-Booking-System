@@ -56,7 +56,7 @@ export class AddBusBookingComponent implements OnInit {
     this.emailId = this.addBookingForm.get('email')?.value;
     this.sourceplace = this.addBookingForm.get('source')?.value;
     this.destinationPlace = this.addBookingForm.get('destination')?.value;
-    this.dateTime = this.addBookingForm.get('dateTime')?.value;
+    this.dateTime = this.addBookingForm.get('date')?.value;
 
     let id = sessionStorage.getItem('id');
     console.log(this.addBookingForm.value + "from onSubmit of add booking component");
