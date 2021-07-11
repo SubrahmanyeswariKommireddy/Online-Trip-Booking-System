@@ -42,8 +42,8 @@ export class AddPaymentComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.cardNumber.length == 16 && this.cvv.valueOf() == 3) {
-      console.log(this.cvv)
+    if (this.cardNumber.length == 16) {
+     
       this.toastr.success('Payment Successful');
       this.router.navigate(['/feedback']);
     }
