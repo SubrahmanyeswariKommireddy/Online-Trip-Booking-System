@@ -18,14 +18,15 @@ body {
 .bckimg{
   background-image: url("../../../assets/images/booking1.jpg");
   background-size: cover;
-  height: 120vh;
+  height: 130vh;
   width: 98.7vw;
 }
 
 .courses-container {
 	margin-top: 20mm;
     margin-left: 1%;
-    margin-bottom: 40mm;
+    margin-bottom: 30mm;
+	transform: translate(2%,15%);
 }
 
 .course {

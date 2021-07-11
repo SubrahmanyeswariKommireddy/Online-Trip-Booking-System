@@ -122,7 +122,7 @@ body {
 	.example > .block {
 	   
 		height: calc(450px + 2px);
-		background-image: url(/assets/images/bustravel.jpg);
+		background-image: url(/assets/images/bus67.jpg);
 		background-size: 81vmin 81vmin;
 		background-repeat: round,repeat;
 		background-size: cover;
