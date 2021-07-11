@@ -26,6 +26,7 @@ public class BusBooking {
    private String mobileNumber;
    private String source;
    private String destination;
+   private String dateTime;
 public String getName() {
 	return name;
 }
@@ -56,13 +57,20 @@ public String getDestination() {
 public void setDestination(String destination) {
 	this.destination = destination;
 }
-public BusBooking(String name, String email, String mobileNumber, String source, String destination) {
+public String getDate() {
+	return dateTime;
+}
+public void setDate(String dateTime) {
+	this.dateTime = dateTime;
+}
+public BusBooking(String name, String email, String mobileNumber, String source, String destination, String dateTime) {
 	super();
 	this.name = name;
 	this.email = email;
 	this.mobileNumber = mobileNumber;
 	this.source = source;
 	this.destination = destination;
+	this.dateTime = dateTime;
 }
 public BusBooking() {
 	super();
@@ -71,8 +79,10 @@ public BusBooking() {
 @Override
 public String toString() {
 	return "BusBooking [name=" + name + ", email=" + email + ", mobileNumber=" + mobileNumber + ", source=" + source
-			+ ", destination=" + destination + "]";
+			+ ", destination=" + destination + ", date=" + dateTime + "]";
 }
+   
+
 
    
    

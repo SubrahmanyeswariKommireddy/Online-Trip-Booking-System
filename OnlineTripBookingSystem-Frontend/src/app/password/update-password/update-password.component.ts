@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/User';
 import { UserService } from 'src/app/shared/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-update-password',
@@ -17,7 +18,8 @@ export class UpdatePasswordComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private service: UserService) { }
+    private service: UserService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.editForm = this.formBuilder.group({
@@ -37,6 +39,7 @@ export class UpdatePasswordComponent implements OnInit {
     this.service.updatePassword(formValue.newPassword, data).
       subscribe(
         (data) => {
+          this.toastr.success('Password Updated');
           this.user = data;
           if (sessionStorage.getItem('userType') == "ADMIN") {
             this.router.navigate(['/admin'])

@@ -8,10 +8,13 @@
     margin: 10%;
     margin-left: 35%;
     }
+
     .container{
         padding: 25px;
     }
+
     .form-group{
+        
         border-radius: 50px;
     }
     .field input{
@@ -21,8 +24,8 @@
         background-color:darkturquoise ;
         border-width: 0px;
         border-radius: 10px;
-       
     }
+    
     .field{
         padding-top: 15px;
     }

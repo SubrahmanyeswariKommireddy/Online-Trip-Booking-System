@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -6,7 +5,6 @@ import { User } from '../models/User';
 import { LoginService } from '../shared/login.service';
 
 export class JwtResponse {
-
   jwtToken!: string;
   id!: number;
 }
@@ -21,56 +19,55 @@ export class LoginComponent implements OnInit {
   roleData: any[] = ['ADMIN', 'CUSTOMER']
 
   user: User = {
-    id:0,
+    id: 0,
     userName: '',
     password: '',
-    userType: '',
+    userType: 'Select',
     email: '',
     mobileNumber: ''
   }
 
   emailId: string = '';
   password: string = '';
-  userType: string = '';
+  userType: string = 'Select';
   isValidFormSubmitted: boolean = false;
-  
+
   invalidLogin: boolean = false;
   response!: JwtResponse
 
-  constructor(private router: Router,private toastr: ToastrService,
+  constructor(private router: Router, private toastr: ToastrService,
     private loginservice: LoginService) { }
 
   ngOnInit() {
 
   }
 
-  checkLogin(form1:any) {
+  checkLogin(form1: any) {
     var userType = sessionStorage.getItem('userType');
     this.isValidFormSubmitted = false;
-  if (form1.valid) {
-    this.isValidFormSubmitted = true;
-  } else {
-    return;
-  }
+    if (form1.valid) {
+      this.isValidFormSubmitted = true;
+    } else {
+      return;
+    }
 
     (this.loginservice.authenticate(this.user.email, this.user.password, this.user.userType).subscribe(
       (data: any) => {
         this.toastr.success('Login Successful');
-                if (this.user.userType == "ADMIN") {
-                  this.router.navigate(['/admin'])
-                }
-                else if (this.user.userType == "CUSTOMER") {
-                  this.router.navigate([''])
-                }
-                this.invalidLogin = false
-              },
+        if (this.user.userType == "ADMIN") {
+          this.router.navigate(['/admin'])
+        }
+        else if (this.user.userType == "CUSTOMER") {
+          this.router.navigate([''])
+        }
+        this.invalidLogin = false
+      },
       (error: any) => {
         this.toastr.error('Login Failed: Invalid Credentials');
         this.invalidLogin = true
       }
     )
     );
-
   }
 
   setValues(data: any) {

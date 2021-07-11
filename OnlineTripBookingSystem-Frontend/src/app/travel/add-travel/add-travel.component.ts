@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Travel } from 'src/app/models/Travel';
 import { TravelService } from 'src/app/shared/travel.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-travel',
@@ -15,7 +16,8 @@ export class AddTravelComponent implements OnInit {
   id: number = 0;
   addTravelForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private travelService: TravelService) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private travelService: TravelService,
+    private toastr: ToastrService) {
 
   }
 
@@ -30,9 +32,9 @@ export class AddTravelComponent implements OnInit {
     console.log("travel added")
     this.travelService.addTravel(this.addTravelForm.value).subscribe(
       data => {
+        this.toastr.success('Travel Added');
         this.travel = data;
         this.router.navigate(['travellist'])
-        console.log(data);
       },
       err => console.log(err)
     )

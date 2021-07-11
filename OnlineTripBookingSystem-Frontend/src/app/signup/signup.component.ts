@@ -44,7 +44,7 @@ export class SignupComponent implements OnInit {
       .subscribe(
         data => {
           this.toastr.success('Registered Successfully');
-          this.router.navigate([''])
+          this.router.navigate(['login'])
         });
   };
 }
