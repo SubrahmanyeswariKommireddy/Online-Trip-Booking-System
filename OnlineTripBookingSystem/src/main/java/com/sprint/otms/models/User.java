@@ -21,7 +21,7 @@ import com.sun.istack.NotNull;
  *
  */
 @Entity
-@Table(name = "user_table12")
+@Table(name = "user_table121")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class User {
 

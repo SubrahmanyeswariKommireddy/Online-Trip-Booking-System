@@ -28,7 +28,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
  */
 
 @Entity
-@Table(name = "travel_tableOne")
+@Table(name = "travel_tableOne1")
 public class Travel {
 
 	@Id

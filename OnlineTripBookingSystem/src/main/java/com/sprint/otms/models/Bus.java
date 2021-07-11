@@ -23,7 +23,7 @@ import com.sun.istack.NotNull;
  *
  */
 @Entity
-@Table(name = "bus_tableOne")
+@Table(name = "bus_tableOne1")
 public class Bus {
 
 	@Id

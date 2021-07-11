@@ -18,7 +18,7 @@ import com.sun.istack.NotNull;
  *
  */
 @Entity
-@Table(name = "booking_tableOne")
+@Table(name = "booking_tableOne1")
 public class Booking {
 
 	@Id

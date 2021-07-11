@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Booking } from 'src/app/models/Booking';
 import { Customer } from 'src/app/models/Customer';
 import { BookingService } from 'src/app/shared/booking.service';
@@ -17,17 +17,29 @@ export class AddBusBookingComponent implements OnInit {
 booking!:Customer;
 addBookingForm!: FormGroup;
 submitted:boolean=false;
-  constructor(private service:BookingService,private router:Router) { }
+  username: any;
+  emailId:any;
+  phoneNumber: any;
+  sourceplace:any;
+  destinationPlace:any;
+
+  seatsCount:any;
+  amount:any;
+  dateTime:any;
+
+  constructor(private service:BookingService,private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-
+    this.seatsCount = parseInt(this.route.snapshot.paramMap.get('count')!)
+    this.amount = parseInt(this.route.snapshot.paramMap.get('amount')!)
     // var id = sessionStorage.getItem('id');
     this.addBookingForm=new FormGroup({
       name:new FormControl('',Validators.required),
       email:new FormControl('', Validators.required),
       mobileNumber:new FormControl('',Validators.required),
       source:new FormControl('',Validators.required),
-      destination:new FormControl('',Validators.required)
+      destination:new FormControl('',Validators.required),
+      dateTime:new FormControl('',Validators.required)
   });
 
   }
@@ -36,12 +48,20 @@ submitted:boolean=false;
   get f() { return this.addBookingForm.controls; }
 
     onSubmit() {
+
       this.submitted = true;
 
       // stop here if form is invalid
       if (this.addBookingForm.invalid) {
           return;
       }
+
+      this.username = this.addBookingForm.get('name')?.value;
+      this.phoneNumber = this.addBookingForm.get('mobileNumber')?.value;
+      this.emailId = this.addBookingForm.get('email')?.value;
+      this.sourceplace = this.addBookingForm.get('source')?.value;
+      this.destinationPlace=this.addBookingForm.get('destination')?.value;
+      this.dateTime=this.addBookingForm.get('dateTime')?.value;
 
        let id=sessionStorage.getItem('id');
     console.log(this.addBookingForm.value + "from onSubmit of add booking component");
@@ -52,11 +72,15 @@ submitted:boolean=false;
         (data) => {
           this.booking = data;
           console.log(data);
-          this.router.navigate(['/payment']);
+          //this.router.navigate(['/payment']);
         },
         (err) => { }
       )
   }
+    }
+
+    myFunc() {
+      this.router.navigate(['/payment']);
     }
 }
 

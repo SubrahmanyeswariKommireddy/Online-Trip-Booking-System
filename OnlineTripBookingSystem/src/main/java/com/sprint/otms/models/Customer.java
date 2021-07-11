@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
  *
  */
 @Entity
-@Table(name = "cust_table")
+@Table(name = "cust_table11")
 public class Customer extends User {
 
 //	@OneToMany(mappedBy = "customer")

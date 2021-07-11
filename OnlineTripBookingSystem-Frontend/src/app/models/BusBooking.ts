@@ -3,5 +3,6 @@ export class BusBooking{
     mobileNumber:string='';
     email:string='';
     source:string='';
-    destination:string=''
+    destination:string='';
+    dateTime:any;
 }
