@@ -1,58 +1,57 @@
 <div>
-<app-header></app-header>
+  <app-header></app-header>
 </div>
 
-<div>
-<body>
-  <form [formGroup]="addPaymentForm" (ngSubmit)="onSubmit()">
-    <div class="wrap">
-      <div class="face">
-        <div class="holo">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+
+  <body>
+    <form [formGroup]="addPaymentForm" (ngSubmit)="onSubmit()">
+      <div class="wrap">
+        <div class="face">
+          <div class="holo">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+
+          <div class="logo">
+            <img src="http://dariographics.com/DUI/002/visa.svg" alt="" />
+          </div>
+
+          <h5>Payable Amount: {{getAmount}}</h5>
+
+          <div id="number">
+            <input type="text" formControlName="cardNumber" placeholder="Card Number" name="cardNumber"
+              class="form-control" id="cardNumber">
+          </div>
+
+          <div id="holder">
+            <input type="text" formControlName="cardHolder" placeholder="card Holder" name="cardHolder"
+              class="form-control" id="cardHolder">
+          </div>
+
+          <div id="date">
+            <input type="text" formControlName="expMonth" placeholder="MM" name="expMonth" 
+              id="expMonth">
+            <span>/</span>
+            <input type="text" formControlName="expYear" placeholder="YY" name="expYear" 
+              id="expYear">
+          </div>
         </div>
 
-        <div class="logo">
-          <img src="http://dariographics.com/DUI/002/visa.svg" alt="" />
+        <div class="back">
+          <div id="cardline"></div>
+          <div id="cvc-container">
+            <label for="card-cvc">CVV</label>
+            <input type="text" formControlName="cvv" placeholder="CVV" min-length="3" id="cvv">
+          </div>
         </div>
 
-        <h5>Payable Amount: {{getAmount}}</h5>
-
-        <div id="number">
-
-          <input type="text" formControlName="cardNumber" placeholder="Card Number" name="cardNumber"
-            class="form-control" id="cardNumber">
-        </div>
-
-        <div id="holder">
-          <input type="text" formControlName="cardHolder" placeholder="card Holder" name="cardHolder"
-            class="form-control" id="cardHolder">
-        </div>
-
-        <div id="date">
-          <input type="text" formControlName="expMonth" placeholder="MM" name="expMonth" class="form-control"
-            id="expMonth">
-          <span>/</span>
-          <input type="text" formControlName="expYear" placeholder="YY" name="expYear" class="form-control"
-            id="expYear">
-        </div>
+        <button class="sumbit" (click)="pay()">Confirm Payment</button>
       </div>
+    </form>
 
-      <div class="back">
-        <div id="cardline"></div>
-        <div id="cvv">
-          <span>&#x275A;&#x275A;&#x275A;</span>
-          <input type="text" formControlName="cvv" placeholder="CVV" name="cvv" class="form-control" id="cvv" required>
-        </div>
-      </div>
+  </body>
 
-      <button class="sumbit" (click)="pay()">Confirm Payment</button>
-    </div>
-  </form>
-  
-</body>
-</div>
 
 <div>
 <app-footer></app-footer>

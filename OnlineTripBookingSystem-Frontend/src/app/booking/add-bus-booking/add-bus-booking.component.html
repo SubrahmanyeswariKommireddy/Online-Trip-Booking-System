@@ -1,83 +1,91 @@
-<app-header></app-header>
+<div class="bckimg">
 
-  <div class="courses-container">
-    <div class="course">
-        <div class="course-preview">
-            <h1>Booking</h1>
+    <app-header></app-header>
 
-            <form [formGroup]="addBookingForm" (ngSubmit)="onSubmit()">
-               
-              <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" formControlName="name" placeholder="Name" name="name" class="form-control" id="name">
-              </div>
+    <div class="courses-container">
+        <div class="course" style="height: 100%;">
+            <div class="course-preview">
+                <h1>Booking</h1>
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" formControlName="email" placeholder="Email" name="email" class="form-control" id="email">
-                </div>
+                <form [formGroup]="addBookingForm" (ngSubmit)="onSubmit()">
 
-                <div class="form-group">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" formControlName="name" placeholder="Name" name="name" class="form-control"
+                            id="name">
+                    </div>
 
-                    <label for="mobileNumber">Mobile Number</label>
-                    <input type="text" formControlName="mobileNumber" placeholder="Mobile Number" name="mobileNumber" class="form-control" id="mobileNumber">
-                </div>
-              
-              <div class="form-group"> 
-                    <label for="mobileNumber">Source</label>
-                    <input type="source" formControlName="source" placeholder="Source" name="source" class="form-control" id="source">
-                </div>
-              
-              <div class="form-group">   
-                    <label for="mobileNumber">Destination</label>
-                    <input type="text" formControlName="destination" placeholder="Destination" name="destination" class="form-control" id="destination">
-                </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" formControlName="email" placeholder="Email" name="email" class="form-control"
+                            id="email">
+                    </div>
 
-                <div class="form-group">   
-                    <label for="dateTime">Destination</label>
-                    <input type="datetime-local" formControlName="dateTime" placeholder="Date" name="dateTime" class="form-control" id="dateTime">
-                </div>
-              
-                <input style="font-weight: bold;" type="submit" value="Check out" class="btn btn-success">
-            </form>
+                    <div class="form-group">
 
-        </div>
-      
-        <div class="course-info">
-            <div class="detailtitle mt-4" style="margin-left: -12px;">
-                <h1>Details</h1>
+                        <label for="mobileNumber">Mobile Number</label>
+                        <input type="text" formControlName="mobileNumber" placeholder="Mobile Number"
+                            name="mobileNumber" class="form-control" id="mobileNumber">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobileNumber">Source</label>
+                        <input type="source" formControlName="source" placeholder="Source" name="source"
+                            class="form-control" id="source">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobileNumber">Destination</label>
+                        <input type="text" formControlName="destination" placeholder="Destination" name="destination"
+                            class="form-control" id="destination">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dateTime">Date</label>
+                        <input type="date" formControlName="datetime-local" class="form-control">
+                    </div>
+
+                    <input style="font-weight: bold;" type="submit" value="Check out" class="btn btn-success">
+                </form>
+
             </div>
-            <div class="progress-container">
-                <div class="progress" style="margin-top: 8mm;"></div>
-                <span style="font-weight: bold;" class="mt-1">Name</span>
-                <h6>{{username}}</h6>
-                <hr>
 
-                <span style="font-weight: bold;" class="mt-1">Email</span>
-                <h6> {{emailId}}</h6>
-                <hr>
+            <div class="course-info">
+                <div class="detailtitle mt-4" style="margin-left: -12px;">
+                    <h1>Details</h1>
+                </div>
+                <div class="progress-container">
+                    <div class="progress" style="margin-top: 8mm;"></div>
+                    <span style="font-weight: bold;" class="mt-1">Name</span>
+                    <h6>{{username}}</h6>
+                    <hr>
 
-                <span style="font-weight: bold;" class="mt-1">Mobile Number</span>
-                <h6> {{phoneNumber}}</h6>
-                <hr>
-              
-                <span style="font-weight: bold;" class="mt-1">Source</span>
-                <h6>  {{sourceplace}}</h6>
-                <hr>
-              
-                <span style="font-weight: bold;" class="mt-1">Destination</span>
-                <h6> {{destinationPlace}}</h6>
-                <hr>
+                    <span style="font-weight: bold;" class="mt-1">Email</span>
+                    <h6> {{emailId}}</h6>
+                    <hr>
 
-                <span style="font-weight: bold;" class="mt-1">Date</span>
-                <h6> {{dateTime}}</h6>
-                <hr>
+                    <span style="font-weight: bold;" class="mt-1">Mobile Number</span>
+                    <h6> {{phoneNumber}}</h6>
+                    <hr>
 
-                <h5> You have booked {{seatsCount}} seats and amount is {{amount}}</h5>
-                <p class="text">
-                    <button class='btn-2' (click)="myFunc()">
-                        Proceed to payment</button>
-                </p>
+                    <span style="font-weight: bold;" class="mt-1">Source</span>
+                    <h6> {{sourceplace}}</h6>
+                    <hr>
+
+                    <span style="font-weight: bold;" class="mt-1">Destination</span>
+                    <h6> {{destinationPlace}}</h6>
+                    <hr>
+
+                    <span style="font-weight: bold;" class="mt-1">Date</span>
+                    <h6> {{dateTime}}</h6>
+                    <hr>
+
+                    <h5> You have booked {{seatsCount}} seats and amount is {{amount}}</h5>
+                    <p class="text">
+                        <button class='btn-2' (click)="myFunc()">
+                            Proceed to payment</button>
+                    </p>
+                </div>
             </div>
         </div>
     </div>

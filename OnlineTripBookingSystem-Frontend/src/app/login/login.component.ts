@@ -22,14 +22,14 @@ export class LoginComponent implements OnInit {
     id: 0,
     userName: '',
     password: '',
-    userType: '',
+    userType: 'Select',
     email: '',
     mobileNumber: ''
   }
 
   emailId: string = '';
   password: string = '';
-  userType: string = '';
+  userType: string = 'Select';
   isValidFormSubmitted: boolean = false;
 
   invalidLogin: boolean = false;

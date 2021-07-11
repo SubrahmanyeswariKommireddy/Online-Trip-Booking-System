@@ -31,8 +31,8 @@ export class CustomerDetailsComponent implements OnInit {
     );
   }
 
-  onEdit(customer:Customer) {
-    this.router.navigate(['updateCustomer',customer.id]);
+  onEdit(customer: Customer) {
+    this.router.navigate(['updateCustomer', customer.id]);
   }
 
   onBack() {
