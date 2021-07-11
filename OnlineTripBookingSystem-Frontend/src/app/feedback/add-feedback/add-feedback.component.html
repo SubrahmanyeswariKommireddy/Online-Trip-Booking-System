@@ -1,4 +1,4 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 <div class="container">
   
     <h6>Give You Feedback</h6>
@@ -15,4 +15,30 @@
 
 
 
+ -->
+<div>
+ <app-header></app-header>
+</div>
 
+<div class="container">
+    <div class="left">
+        <div class="header">
+            <h2 class="animation a1">Give You Feedback</h2>
+            <h4 class="animation a2">We value your Feedback !</h4>
+        </div>
+        <div class="form">
+            <textarea name="feedback" class="form-field animation a3" placeholder="Write feedback..."></textarea>
+
+            <h4>Rating (select a star amount)</h4>
+           <h3> <ngb-rating [max]="5" [(rate)]="currentRate" [readonly]="false"></ngb-rating></h3>
+           <h4> <p class="animation a5">{{currentRate}} Star</p></h4>
+            <button class="animation a6" (click)="submit()"> Submit</button>
+        </div>
+       
+    </div>
+    <div class="right"></div>
+</div>
+<div>
+    <app-footer></app-footer>
+   </div>
+   
