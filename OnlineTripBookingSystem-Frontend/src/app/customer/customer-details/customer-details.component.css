@@ -8,12 +8,19 @@
 	 display: flex;
 	 justify-content: center;
 	 align-items: center;
-	 height: 100vh;
+	 height: 150vh;
 	 font-family: "Roboto", arial, sans-serif;
 	 color: #222;
+	
+}
+.bgimg{
+	background-image: url(../../../assets/images/profile.jpg);
+	background-size: cover;
+	height: 90vh;
+
 }
  #login-container {
-	 height: 430px;
+	 height: 500px;
 	 width: 370px;
 	 padding: 20px;
 	 border-radius: 5px;
@@ -21,13 +28,13 @@
 	 position: relative;
 	 box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
    	 margin-left: 40%;
-   	 margin-top: 10%;
-   	 transform: translate(-6%,-5%);
+   	 margin-top: 20mm;
+   	 transform: translate(-60%,15%);
 }
  #login-container .profile-img {
 	 height: 100px;
 	 width: 100px;
-	 background: url('https://images.unsplash.com/photo-1504933350103-e840ede978d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80');
+	 background: url("../../../assets/images/avatar1.png");
 	 background-size: cover;
 	 background-position: center;
 	 position: absolute;
