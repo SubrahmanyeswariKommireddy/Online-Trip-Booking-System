@@ -18,17 +18,18 @@ export class BusListComponent implements OnInit {
   buses!: Bus[];
   busId!: number;
   sourceData!: any;
-  destinationData!:any;
-  busSeat:number=0;
+  destinationData!: any;
+  busSeat: number = 0;
 
-  constructor(private _ActivatedRoute: ActivatedRoute, private formBuilder: FormBuilder, private router: Router, private busService: BusService) {
+  constructor(private _ActivatedRoute: ActivatedRoute, private formBuilder: FormBuilder, private router: Router,
+    private busService: BusService) {
 
   }
 
   ngOnInit(): void {
 
     this.sourceData = this._ActivatedRoute.snapshot.paramMap.get('sourcePlace');
-    this.destinationData=this._ActivatedRoute.snapshot.paramMap.get('destinationPlace')
+    this.destinationData = this._ActivatedRoute.snapshot.paramMap.get('destinationPlace')
     console.log(this.sourceData);
     this.busService.getBuses().subscribe(
       (data) => this.buses = data,
@@ -49,25 +50,20 @@ export class BusListComponent implements OnInit {
     }
   }
 
-  // addBus() {
-  //   this.router.navigate(['app-add-bus'])
-  // }
+  checkAvailability(bus: Bus) {
 
-  checkAvailability(bus:Bus) {
+    var busSeatCount = sessionStorage.getItem((bus.busId).toString());
+    if (busSeatCount != null) {
+      this.busSeat = parseInt(busSeatCount);
+    }
+    if (this.busSeat > 0) {
 
-   var busSeatCount = sessionStorage.getItem((bus.busId).toString());
-  //  let busSeat = parseInt(busSeatCount?.toString())
-  if(busSeatCount!=null){
-    this.busSeat= parseInt(busSeatCount);
-  }
-  if(this.busSeat>0){
+    }
+    else {
+      sessionStorage.setItem((bus.busId).toString(), "0")
+    }
 
-  }
-  else{
-    sessionStorage.setItem((bus.busId).toString(),"0")
-  }
-   
-    this.router.navigate(['viewSeats',{fare:bus.fare,id:bus.busId}]);
+    this.router.navigate(['viewSeats', { fare: bus.fare, id: bus.busId }]);
   }
 
   onEdit(bus: Bus) {
@@ -81,7 +77,7 @@ export class BusListComponent implements OnInit {
           this.buses = this.buses.filter(
             b => b !== bus
           )
-          console.log(data)
+        console.log(data)
       }
     )
   }

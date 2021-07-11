@@ -1,26 +1,23 @@
+<div>
+    <app-header></app-header>
+</div>
 
-<div><app-header></app-header></div>
 <div class="container">
-    <!-- <h1>Bus List</h1>
-    <h5>Buses between "{{sourceData}}" and 
-    "{{destinationData}}"</h5> -->
-   
+
     <table class="rwd-table">
         <thead>
             <th>
-            <tr>Bus List</tr>
-            <!-- <tr>Buses between "{{sourceData}}" and 
-                "{{destinationData}}"</tr> -->
+                <tr>Bus List</tr>
             </th>
             <tr>
-               
-               
+
                 <th>Bus Type</th>
                 <th>Fare</th>
                 <th>TotalCapacity</th>
                 <th></th>
             </tr>
         </thead>
+
         <tbody>
             <tr *ngFor="let bus of buses">
                 <td>{{bus.busType}}</td>
@@ -35,5 +32,6 @@
                 </td>
             </tr>
         </tbody>
+
     </table>
 </div>
