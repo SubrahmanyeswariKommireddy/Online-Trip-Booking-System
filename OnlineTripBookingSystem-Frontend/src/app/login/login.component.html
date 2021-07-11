@@ -18,7 +18,7 @@
 
         <div class="log-in-inputs">
           <label>Password</label>
-          <input type="text" [(ngModel)]="user.password" placeholder="Password" name="password" class="form-control"
+          <input type="password" [(ngModel)]="user.password" placeholder="Password" name="password" class="form-control"
             id="password" required minlength="6" #password="ngModel">
           <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
             Password is required
