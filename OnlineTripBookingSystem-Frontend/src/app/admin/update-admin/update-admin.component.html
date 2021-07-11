@@ -1,23 +1,25 @@
 <div class="bgcarding">
-<div class="col-md-8 container">
-    <h2 class="text-center">Update Number</h2>
-    <form [formGroup]="updateAdminForm" (ngSubmit)="onSubmit()">
- 
-       <div class="form-group">
-          <input type="text" formControlName="id" placeholder="id" name="id" class="form-control" id="id" readonly="true">
-        </div>
- 
- 
-       <div class="form-group">
-          <label for="mobileNumber">mobile number</label>
-          <input type="text" formControlName="mobileNumber"  name="mobileNumber" class="form-control" id="mobileNumber">
-       </div> 
- 
- 
-       <div  class="field">
-          <input type="submit" value="update">
-       </div>
- 
-    </form>
- </div>
+   <div class="col-md-8 container">
+      <h2 class="text-center">Update Number</h2>
+      <form [formGroup]="updateAdminForm" (ngSubmit)="onSubmit()">
+
+         <div class="form-group">
+            <input type="text" formControlName="id" placeholder="id" name="id" class="form-control" id="id"
+               readonly="true">
+         </div>
+
+
+         <div class="form-group">
+            <label for="mobileNumber">mobile number</label>
+            <input type="text" formControlName="mobileNumber" name="mobileNumber" class="form-control"
+               id="mobileNumber">
+         </div>
+
+
+         <div class="field">
+            <input type="submit" value="update">
+         </div>
+
+      </form>
+   </div>
 </div>

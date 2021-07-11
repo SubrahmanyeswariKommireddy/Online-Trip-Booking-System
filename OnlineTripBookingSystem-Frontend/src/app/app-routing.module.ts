@@ -22,6 +22,7 @@ import { AddFeedbackComponent } from './feedback/add-feedback/add-feedback.compo
 import { AddBusBookingComponent } from './booking/add-bus-booking/add-bus-booking.component';
 import { BookingListComponent } from './booking/booking-list/booking-list.component';
 import { AdminBuslistComponent } from './admin/admin-buslist/admin-buslist/admin-buslist.component';
+import { AuthGaurdService } from './shared/auth-gaurd.service';
 
 const routes: Routes = [
   {path:'',component:DefaultHomepageComponent},
@@ -47,6 +48,28 @@ const routes: Routes = [
   {path:'bookinglist',component:BookingListComponent},
   {path:'adminBusList',component:AdminBuslistComponent}
 ];
+
+// const routes: Routes = [
+//   {path:'',component:DefaultHomepageComponent,canActivate:[AuthGaurdService]},
+//   {path:'admin',component:AdminHomepageComponent,canActivate:[AuthGaurdService]},
+//   {path:'login',component:LoginComponent},
+//   {path:'signup',component:SignupComponent,canActivate:[AuthGaurdService]},
+//   {path:'viewSeats',component:BusViewComponent,canActivate:[AuthGaurdService]},
+//   {path:'busList',component:BusListComponent,canActivate:[AuthGaurdService]},
+//   {path:'addBus',component:AddBusComponent,canActivate:[AuthGaurdService]},
+//   {path:'addRoute',component:AddRouteComponent,canActivate:[AuthGaurdService]},
+//   {path:'updateCustomer/:id',component:UpdateCustomerComponent,canActivate:[AuthGaurdService]},
+//   {path:'updateAdmin/:id',component:UpdateAdminComponent,canActivate:[AuthGaurdService]},
+//   {path:'addTravel',component:AddTravelComponent,canActivate:[AuthGaurdService]},
+//   {path:'updateBus/:id',component:UpdateBusComponent,canActivate:[AuthGaurdService]},
+//   {path:'booking',component:AddBookingComponent,canActivate:[AuthGaurdService]},
+//   {path:'adminProfile',component:AdminDetailsComponent,canActivate:[AuthGaurdService]},
+//   {path:'customerProfile',component:CustomerDetailsComponent,canActivate:[AuthGaurdService]},
+//   {path:'payment',component:AddPaymentComponent,canActivate:[AuthGaurdService]},
+//   {path:'passwordUpdate',component:UpdatePasswordComponent,canActivate:[AuthGaurdService]},
+//   {path:'travellist',component:TravelListComponent,canActivate:[AuthGaurdService]},
+//   {path:'feedback',component:AddFeedbackComponent,canActivate:[AuthGaurdService]}
+// ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

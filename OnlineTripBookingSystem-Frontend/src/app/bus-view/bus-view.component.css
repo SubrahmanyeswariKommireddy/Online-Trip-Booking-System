@@ -78,8 +78,8 @@ body {
   list-style-type: none;
   display: flex;
   justify-content: center;
-  margin-left: 140mm;
-  margin-top: 20mm;
+  margin-left: 127mm;
+  margin-top: 10mm;
   
 }
 .seat.occupied{
@@ -129,7 +129,7 @@ p.text span {
     box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
     padding-left: 3mm;
     padding-bottom: 2mm;
-    margin-top: 15mm;
+    margin-top: 10mm;
   }
 
   input[type=checkbox]{

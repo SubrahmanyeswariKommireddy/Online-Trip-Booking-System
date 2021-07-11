@@ -1,5 +1,7 @@
+<div>
+    <app-admin-header></app-admin-header>
+</div>
 
-<div><app-header></app-header></div>
 <div class="container">
     <h1>Travel List</h1>
   
@@ -16,12 +18,14 @@
             <tr *ngFor="let travel of travels">
                 <td>{{travel.travelAgentName}}</td>
                 <td>
-                    <button (click)="deleteTravel(travel)">Delete Travel</button>
+                    <button class="btn btn-danger" (click)="deleteTravel(travel)">Delete Travel</button>
                 </td>
                 <td>
-                    <button (click)="addBus()">Add Bus</button>
+                    <button class="btn btn-success" (click)="addBus()">Add Bus</button>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
+
+<app-footer></app-footer>

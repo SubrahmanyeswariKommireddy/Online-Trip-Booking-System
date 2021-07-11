@@ -19,7 +19,7 @@
         <div class="log-in-inputs">
           <label for="mobilenumber">Mobile Number</label>
           <input [(ngModel)]="user.mobileNumber" placeholder="Mobile Number" name="mobileNumber" class="form-control"
-            id="mobileNumber" required #mobileNumber="ngModel">
+            id="mobileNumber" required minlength="10" #mobileNumber="ngModel">
           <div [hidden]="mobileNumber.valid || mobileNumber.pristine" class="alert alert-danger">
             Mobilenumber is required
           </div>

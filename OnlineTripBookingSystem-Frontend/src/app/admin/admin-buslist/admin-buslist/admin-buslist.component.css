@@ -4,36 +4,45 @@
     min-width: 300px;
     margin-left: 25%;
 }
+
 .rwd-table tr {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 }
+
 .rwd-table th {
     display: none;
 }
+
 .rwd-table td {
     display: block;
 }
+
 .rwd-table td:first-child {
     padding-top: 0.5em;
 }
+
 .rwd-table td:last-child {
     padding-bottom: 0.5em;
 }
+
 .rwd-table td:before {
     content: attr(data-th) ": ";
     font-weight: bold;
     width: 6.5em;
     display: inline-block;
 }
+
 @media (min-width: 480px) {
     .rwd-table td:before {
         display: none;
    }
 }
+
 .rwd-table th, .rwd-table td {
     text-align: left;
 }
+
 @media (min-width: 480px) {
     .rwd-table th, .rwd-table td {
         display: table-cell;
@@ -46,6 +55,7 @@
         padding-right: 0;
    }
 }
+
 body {
     padding: 0 2em;
     font-family: Montserrat, sans-serif;
@@ -54,6 +64,7 @@ body {
     color: #444;
     background: #eee;
 }
+
 h1 {
     font-weight: normal;
     letter-spacing: -1px;
@@ -61,9 +72,11 @@ h1 {
     margin-left: 45%;
     margin-top: 25mm;
 }
+
 h5{
    margin-left: 25%;
 }
+
 .rwd-table {
     background: #34495e;
     color: #fff;
@@ -72,17 +85,21 @@ h5{
     margin-top: 10%;
     margin-left: 40px;
 }
+
 .rwd-table tr {
     border-color: #46637f;
 }
+
 .rwd-table th, .rwd-table td {
     margin: 0.5em 1em;
 }
+
 @media (min-width: 480px) {
     .rwd-table th, .rwd-table td {
         padding: 1em !important;
    }
 }
+
 .rwd-table th, .rwd-table td:before {
     color: #dd5;
 }
