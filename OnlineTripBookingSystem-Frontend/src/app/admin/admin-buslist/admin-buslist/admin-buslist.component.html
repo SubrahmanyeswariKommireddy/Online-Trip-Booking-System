@@ -1,5 +1,5 @@
 <div>
-    <app-header></app-header>
+    <app-admin-header></app-admin-header>
 </div>
 
 <div class="container">
@@ -23,7 +23,6 @@
                 <td>{{bus.busType}}</td>
                 <td>{{bus.fare}}</td>
                 <td>{{bus.totalCapacity}}</td>
-                <td><button class="btn btn-success" (click)=checkAvailability(bus)> Check Availability</button></td>
                 <td>
                     <button *ngIf="isAdmin" class="btn btn-success" (click)="onEdit(bus)">Edit</button>
                 </td>
@@ -35,3 +34,5 @@
 
     </table>
 </div>
+
+<app-footer></app-footer>

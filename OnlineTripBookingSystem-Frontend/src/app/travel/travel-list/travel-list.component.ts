@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Travel } from 'src/app/models/Travel';
+import { ToastrService } from 'ngx-toastr';
 import { TravelService } from 'src/app/shared/travel.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class TravelListComponent implements OnInit {
   public isAdmin: boolean = false;
   public isCustomer: boolean = false;
 
-  constructor(private router:Router,private travelService:TravelService) { }
+  constructor(private router:Router,private travelService:TravelService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
@@ -43,7 +44,7 @@ export class TravelListComponent implements OnInit {
 deleteTravel(travel:Travel){
   this.travelService.deleteTravelById(travel.travelId).subscribe(
     (data) => {
-      console.log('travel deleted'),
+      this.toastr.success('Travel Deleted'),
       this.travels=this.travels.filter(
         t => t !== travel
       )

@@ -1,79 +1,8 @@
-
-<!-- <div>
-  <app-header></app-header>
+<div>
+<app-header></app-header>
 </div>
-<body>
-<div class="modal">
-    <div class="modal__container">
-      <div class="modal__featured">
-        <div class="modal__circle"></div>
-        <div class="modal__circles"></div>
-        <img src="" class="modal__product" />
-      </div>
-      <div class="modal__content">
-        <h2>Your payment details</h2><br>
 
-        <form [formGroup]="addPaymentForm" (ngSubmit)="onSubmit()">
-          <ul class="form-list">
-            <li class="form-list__row">
-              <label>Name</label>
-              <input type="text" formControlName="cardHolder" name="cardHolder" class="form-control" id="cardHolder" required="" >
-            </li>
-            <li class="form-list__row">
-              <label>Card Number</label>
-              <div id="input--cc" class="creditcard-icon">
-                <input type="text" formControlName="cardNumber" name="cardNumber" class="form-control" id="cardNumber" required="" >
-              </div>
-            </li>
-            <li class="form-list_row ">
-              <div>
-                <label>Expiration Date</label>
-                <div class="form-list__input-inline">
-                  <input type="text" formControlName="expMonth" name="expMonth" class="form-control" id="expMonth" placeholder="MM"  pattern="\\d*" minlength="2" maxlength="2" required="" >
-                  <input type="text" formControlName="expYear" name="expYear" class="form-control" id="expYear" placeholder="YY"  pattern="\\d*" minlength="2" maxlength="2" required=""><br><br><br>
-              
-                </div>
-
-              </div>
-            </li>
-              <li class="form-list_row ">
-              <div>
-                <label>
-                  cvv
-                </label>
-                <input type="text" formControlName="cvv" name="cvv" class="form-control" id="cvv" placeholder="123" pattern="\\d*" minlength="3" maxlength="4" required=""><br>
-              </div>
-            </li>
-            
-            <li class="form-list__row">
-              <h5>Total Amount Payable : {{getAmount}} </h5>
-            </li>
-            
-            <li>
-              <button class="button" type="submit" (click)="pay()">Pay Now</button>
-            </li>
-          </ul>
-         
-        </form>
-        
-      </div>
-    </div>
-   
-    <app-footer></app-footer>
-  
-  </div> 
-  
-</body> -->
-  
-
-
-
-
-
-
-
-
-
+<div>
 <body>
   <form [formGroup]="addPaymentForm" (ngSubmit)="onSubmit()">
     <div class="wrap">
@@ -92,7 +21,7 @@
 
         <div id="number">
 
-          <input type="text" formControlName="cardNumber" placeholder="CARD NUMBER" name="cardNumber"
+          <input type="text" formControlName="cardNumber" placeholder="Card Number" name="cardNumber"
             class="form-control" id="cardNumber">
         </div>
 
@@ -114,11 +43,17 @@
         <div id="cardline"></div>
         <div id="cvv">
           <span>&#x275A;&#x275A;&#x275A;</span>
-          <input type="text" formControlName="cvv" placeholder="CVV" name="cvv" class="form-control" id="cvv">
+          <input type="text" formControlName="cvv" placeholder="CVV" name="cvv" class="form-control" id="cvv" required>
         </div>
       </div>
 
       <button class="sumbit" (click)="pay()">Confirm Payment</button>
     </div>
   </form>
+  
 </body>
+</div>
+
+<div>
+<app-footer></app-footer>
+</div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Bus } from 'src/app/models/Bus';
+import { ToastrService } from 'ngx-toastr';
 import { BusService } from 'src/app/shared/bus.service';
 
 @Component({
@@ -22,7 +23,7 @@ export class BusListComponent implements OnInit {
   busSeat: number = 0;
 
   constructor(private _ActivatedRoute: ActivatedRoute, private formBuilder: FormBuilder, private router: Router,
-    private busService: BusService) {
+    private busService: BusService, private toastr: ToastrService) {
 
   }
 
@@ -73,7 +74,7 @@ export class BusListComponent implements OnInit {
   onDelete(bus: Bus) {
     this.busService.deleteBusById(bus.busId).subscribe(
       (data) => {
-        console.log('Bus deleted'),
+        this.toastr.success('Travel Deleted'),
           this.buses = this.buses.filter(
             b => b !== bus
           )
