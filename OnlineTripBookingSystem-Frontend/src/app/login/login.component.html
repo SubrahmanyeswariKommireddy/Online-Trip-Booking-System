@@ -28,7 +28,6 @@
         <div class="log-in-inputs">
           <label>User Type</label>
           <select name="userType" placeholder="Usertype" class="form-control" [(ngModel)]="user.userType" id="userType">
-            <option></option>
             <option *ngFor="let item of roleData" [value]="item">
               {{item}}
             </option>

@@ -26,50 +26,31 @@ import { AuthGaurdService } from './shared/auth-gaurd.service';
 
 const routes: Routes = [
   {path:'',component:DefaultHomepageComponent},
-  {path:'admin',component:AdminHomepageComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
-  {path:'viewSeats',component:BusViewComponent},
-  {path:'busList',component:BusListComponent},
-  {path:'addBus',component:AddBusComponent},
-  {path:'addRoute',component:AddRouteComponent},
-  {path:'updateCustomer/:id',component:UpdateCustomerComponent},
-  {path:'updateAdmin/:id',component:UpdateAdminComponent},
-  {path:'addTravel',component:AddTravelComponent},
-  {path:'updateBus/:id',component:UpdateBusComponent},
-  {path:'booking',component:AddBookingComponent},
-  {path:'adminProfile',component:AdminDetailsComponent},
-  {path:'customerProfile',component:CustomerDetailsComponent},
-  {path:'payment',component:AddPaymentComponent},
-  {path:'passwordUpdate',component:UpdatePasswordComponent},
-  {path:'travellist',component:TravelListComponent},
-  {path:'feedback',component:AddFeedbackComponent},
-  {path:'busBooking',component:AddBusBookingComponent},
-  {path:'bookinglist',component:BookingListComponent},
-  {path:'adminBusList',component:AdminBuslistComponent}
-];
 
-// const routes: Routes = [
-//   {path:'',component:DefaultHomepageComponent,canActivate:[AuthGaurdService]},
-//   {path:'admin',component:AdminHomepageComponent,canActivate:[AuthGaurdService]},
-//   {path:'login',component:LoginComponent},
-//   {path:'signup',component:SignupComponent,canActivate:[AuthGaurdService]},
-//   {path:'viewSeats',component:BusViewComponent,canActivate:[AuthGaurdService]},
-//   {path:'busList',component:BusListComponent,canActivate:[AuthGaurdService]},
-//   {path:'addBus',component:AddBusComponent,canActivate:[AuthGaurdService]},
-//   {path:'addRoute',component:AddRouteComponent,canActivate:[AuthGaurdService]},
-//   {path:'updateCustomer/:id',component:UpdateCustomerComponent,canActivate:[AuthGaurdService]},
-//   {path:'updateAdmin/:id',component:UpdateAdminComponent,canActivate:[AuthGaurdService]},
-//   {path:'addTravel',component:AddTravelComponent,canActivate:[AuthGaurdService]},
-//   {path:'updateBus/:id',component:UpdateBusComponent,canActivate:[AuthGaurdService]},
-//   {path:'booking',component:AddBookingComponent,canActivate:[AuthGaurdService]},
-//   {path:'adminProfile',component:AdminDetailsComponent,canActivate:[AuthGaurdService]},
-//   {path:'customerProfile',component:CustomerDetailsComponent,canActivate:[AuthGaurdService]},
-//   {path:'payment',component:AddPaymentComponent,canActivate:[AuthGaurdService]},
-//   {path:'passwordUpdate',component:UpdatePasswordComponent,canActivate:[AuthGaurdService]},
-//   {path:'travellist',component:TravelListComponent,canActivate:[AuthGaurdService]},
-//   {path:'feedback',component:AddFeedbackComponent,canActivate:[AuthGaurdService]}
-// ];
+  {path:'viewSeats',component:BusViewComponent,canActivate:[AuthGaurdService]},
+  {path:'busList',component:BusListComponent,canActivate:[AuthGaurdService]},
+  {path:'addBus',component:AddBusComponent,canActivate:[AuthGaurdService]},
+  {path:'addRoute',component:AddRouteComponent,canActivate:[AuthGaurdService]},
+  {path:'updateCustomer/:id',component:UpdateCustomerComponent,canActivate:[AuthGaurdService]},
+  {path:'updateAdmin/:id',component:UpdateAdminComponent,canActivate:[AuthGaurdService]},
+  {path:'addTravel',component:AddTravelComponent,canActivate:[AuthGaurdService]},
+  {path:'updateBus/:id',component:UpdateBusComponent,canActivate:[AuthGaurdService]},
+  {path:'booking',component:AddBookingComponent,canActivate:[AuthGaurdService]},
+  {path:'adminProfile',component:AdminDetailsComponent,canActivate:[AuthGaurdService]},
+  {path:'customerProfile',component:CustomerDetailsComponent,canActivate:[AuthGaurdService]},
+  {path:'payment',component:AddPaymentComponent,canActivate:[AuthGaurdService]},
+  {path:'travellist',component:TravelListComponent,canActivate:[AuthGaurdService]},
+  {path:'feedback',component:AddFeedbackComponent,canActivate:[AuthGaurdService]},
+  {path:'busBooking',component:AddBusBookingComponent,canActivate:[AuthGaurdService]},
+  {path:'bookinglist',component:BookingListComponent,canActivate:[AuthGaurdService]},
+  {path:'adminBusList',component:AdminBuslistComponent,canActivate:[AuthGaurdService]},
+
+  {path:'admin',component:AdminHomepageComponent,canActivate:[AuthGaurdService],data:{userType:'ADMIN'}},
+  // {path:'',component:DefaultHomepageComponent,canActivate:[AuthGaurdService],data:{role:'CUSTOMER'}},
+  {path:'passwordUpdate',component:UpdatePasswordComponent,canActivate:[AuthGaurdService]}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
