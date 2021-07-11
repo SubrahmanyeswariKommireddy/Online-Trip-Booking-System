@@ -23,6 +23,7 @@ import { AddBusBookingComponent } from './booking/add-bus-booking/add-bus-bookin
 import { BookingListComponent } from './booking/booking-list/booking-list.component';
 import { AdminBuslistComponent } from './admin/admin-buslist/admin-buslist/admin-buslist.component';
 import { AuthGaurdService } from './shared/auth-gaurd.service';
+import { NotFoundComponent } from './notFound/not-found/not-found.component';
 
 const routes: Routes = [
   {path:'',component:DefaultHomepageComponent},
@@ -46,7 +47,8 @@ const routes: Routes = [
   {path:'feedback',component:AddFeedbackComponent},
   {path:'busBooking',component:AddBusBookingComponent},
   {path:'bookinglist',component:BookingListComponent},
-  {path:'adminBusList',component:AdminBuslistComponent}
+  {path:'adminBusList',component:AdminBuslistComponent},
+  {path:'401',component:NotFoundComponent}
 ];
 
 // const routes: Routes = [

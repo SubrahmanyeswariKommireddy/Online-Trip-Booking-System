@@ -40,6 +40,7 @@ import { AddFeedbackComponent } from './feedback/add-feedback/add-feedback.compo
 import { AddBusBookingComponent } from './booking/add-bus-booking/add-bus-booking.component';
 import { BookingListComponent } from './booking/booking-list/booking-list.component';
 import { AdminBuslistComponent } from './admin/admin-buslist/admin-buslist/admin-buslist.component';
+import { NotFoundComponent } from './notFound/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { AdminBuslistComponent } from './admin/admin-buslist/admin-buslist/admin
     AddFeedbackComponent,
     AddBusBookingComponent,
     BookingListComponent,
-    AdminBuslistComponent
+    AdminBuslistComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
