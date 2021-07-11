@@ -36,7 +36,7 @@ export class AddBusBookingComponent implements OnInit {
       mobileNumber: new FormControl('', Validators.required),
       source: new FormControl('', Validators.required),
       destination: new FormControl('', Validators.required),
-      dateTime:new FormControl('',Validators.required)
+      date:new FormControl('',Validators.required)
     });
 
   }
