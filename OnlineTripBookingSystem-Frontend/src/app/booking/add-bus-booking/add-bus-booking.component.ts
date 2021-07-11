@@ -74,6 +74,6 @@ export class AddBusBookingComponent implements OnInit {
   }
 
   myFunc() {
-    this.router.navigate(['/payment']);
+    this.router.navigate(['/payment',{am:this.amount}]);
   }
 }
