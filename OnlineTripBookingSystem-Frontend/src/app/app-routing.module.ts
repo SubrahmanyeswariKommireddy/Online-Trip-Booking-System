@@ -31,7 +31,7 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
 
   {path:'viewSeats',component:BusViewComponent,canActivate:[AuthGaurdService]},
-  {path:'busList',component:BusListComponent,canActivate:[AuthGaurdService]},
+  {path:'busList',component:BusListComponent},
   {path:'addBus',component:AddBusComponent,canActivate:[AuthGaurdService]},
   {path:'addRoute',component:AddRouteComponent,canActivate:[AuthGaurdService]},
   {path:'updateCustomer/:id',component:UpdateCustomerComponent,canActivate:[AuthGaurdService]},
@@ -49,7 +49,6 @@ const routes: Routes = [
   {path:'adminBusList',component:AdminBuslistComponent,canActivate:[AuthGaurdService]},
 
   {path:'admin',component:AdminHomepageComponent,canActivate:[AuthGaurdService],data:{userType:'ADMIN'}},
-  // {path:'',component:DefaultHomepageComponent,canActivate:[AuthGaurdService],data:{role:'CUSTOMER'}},
   {path:'passwordUpdate',component:UpdatePasswordComponent,canActivate:[AuthGaurdService]},
   {path:'404',component:NotFoundComponent}
 ];
