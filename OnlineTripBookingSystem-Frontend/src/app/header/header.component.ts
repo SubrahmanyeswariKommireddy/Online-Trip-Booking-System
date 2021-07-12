@@ -8,9 +8,6 @@ import { LoginService } from '../shared/login.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  
-  // public isAdmin: boolean=false;
-  // public isCustomer: boolean=false;
 
   constructor(private router:Router, public loginService:LoginService) { }
 

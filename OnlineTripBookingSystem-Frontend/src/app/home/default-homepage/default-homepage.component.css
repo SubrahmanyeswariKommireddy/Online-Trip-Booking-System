@@ -1,12 +1,6 @@
 * {
 	box-sizing: border-box;
 }
-/* 
-body {
-	margin-top: 63px;
-} */
-
-/* Main Home Banner and Input Search Container r*/
 .home-banner {
 	/* "../" for back to main folder */
 	background-image: url(/assets/images/bustravel.jpg);
