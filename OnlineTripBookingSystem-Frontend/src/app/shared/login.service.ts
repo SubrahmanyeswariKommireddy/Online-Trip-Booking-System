@@ -3,16 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { User } from '../models/User';
-// import { JwtResponse } from '../login/login.component';
-
-// export class User {
-//   email: string = '';
-//   password: string = '';
-//   userType: string = '';
-//   constructor(
-//     public status: string,
-//   ) { }
-// }
 
 @Injectable({
   providedIn: 'root'
