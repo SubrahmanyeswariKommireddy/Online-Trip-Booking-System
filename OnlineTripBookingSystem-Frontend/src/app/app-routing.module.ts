@@ -51,7 +51,7 @@ const routes: Routes = [
   {path:'admin',component:AdminHomepageComponent,canActivate:[AuthGaurdService],data:{userType:'ADMIN'}},
   // {path:'',component:DefaultHomepageComponent,canActivate:[AuthGaurdService],data:{role:'CUSTOMER'}},
   {path:'passwordUpdate',component:UpdatePasswordComponent,canActivate:[AuthGaurdService]},
-  {path:'401',component:NotFoundComponent}
+  {path:'404',component:NotFoundComponent}
 ];
 
 @NgModule({
