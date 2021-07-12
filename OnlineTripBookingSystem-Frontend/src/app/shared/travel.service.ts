@@ -30,14 +30,4 @@ import { Travel } from "../models/Travel";
       return <Observable<Travel>>this.httpClient.get(this.baseUrl + "/admin/getTravel/" + travelId);
     }
 
-    // getBuses(): Observable<Bus[]> {
-
-    //   return <Observable<Bus[]>>this.httpClient.get(this.baseUrl + "/getBuses")
-    // }
-  
-    // getBusById(busId: number): Observable<Bus> {
-  
-    //   return <Observable<Bus>>this.httpClient.get(this.baseUrl + "/getBus/" + busId)
-    // }
-
   }

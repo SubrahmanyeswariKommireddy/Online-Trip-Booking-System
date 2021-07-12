@@ -13,19 +13,6 @@ import { SeatData } from 'src/app/models/seat-data';
 })
 export class SearchRouteComponent implements OnInit {
 
-  // constructor(private busService:BusService, private router:Router) { }
-
-  // ngOnInit(): void {
-  // }
-  // searchBuses(){
-  //   this.busService.getBuses().subscribe(
-  //     data=>{
-  //       console.log(data);
-  //       this.router.navigate([''])
-  //     }
-  //   );
-  // };
-
   searchData:any={
     source:'',
     destination:'',
@@ -38,15 +25,13 @@ export class SearchRouteComponent implements OnInit {
    
     
   ngOnInit():void {
-    // this.searchData.source=this.route.snapshot.paramMap.get('source');
-    // this.searchData.destination=this.route.snapshot.paramMap.get('destination');
+   
   }
 
   onSubmit(form:any){
     console.log(form.value);
     this.searchData.source=form.value.source;
     this.searchData.destination=form.value.destination;
-   // this.router.navigate(['/busList',{search:this.searchData}]);
    console.log(form.value.date);
    let date = form.value.date;
    
@@ -55,31 +40,8 @@ export class SearchRouteComponent implements OnInit {
    this.seatData.bookingDate.push(dataStore!);
    console.log(this.seatData);
      this.router.navigate(['/busList',{sourcePlace:this.searchData.source,destinationPlace:this.searchData.destination}]);
-    // ,destinationPlace:this.searchData.destination}]);
+  
   }
 
-  // update(source: any,destination: any)
-  // {
-  //   this.routeService.busBetweenValue(source,destination).subscribe(bus =>
-  //     {
-  //       if(bus!=null)
-  //       {
-  //         console.log(bus);
-  //         this.router.navigate([''])
-          
-  //       }
-  //       else{
-  //         console.log(bus)
-  //         // console.log("NO Output");
-  //         alert("ENTER CORRECT CREDENTAILS");
-          
-  //            }
-  //     }
-  //   )
-  
-  // }
 
-  // myFunc(){
-  //   this.router.navigate(['/busList',{sourcePlace:this.searchData.source},{destinationPlace:this.searchData.destination}]);
-  // }
 }

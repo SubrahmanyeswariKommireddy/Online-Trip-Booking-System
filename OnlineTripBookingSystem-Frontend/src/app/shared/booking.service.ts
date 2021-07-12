@@ -18,10 +18,6 @@ export class BookingService {
     private httpClient: HttpClient
   ) { }
 
-  // addBooking(booking: Booking): Observable<Booking> {
-  //   return <Observable<Booking>>this.httpClient.post(this.baseUrl + "/customer/addBooking", booking)
-  // }
-
   addBooking(id:string,booking:BusBooking) : Observable<Customer>{
   return <Observable<Customer>>this.httpClient.post(this.baseUrl+ "/addBusBooking?id=" +id,booking);
   }
@@ -33,13 +29,5 @@ export class BookingService {
   getAllBookings():Observable<BusBooking[]>{
     return <Observable<BusBooking[]>>this.httpClient.get(this.baseUrl + "/getAllBookings")
   }
-  // getBuses(): Observable<Bus[]> {
-
-  //   return <Observable<Bus[]>>this.httpClient.get(this.baseUrl + "/getBuses")
-  // }
-
-  // getBusById(busId: number): Observable<Bus> {
-
-  //   return <Observable<Bus>>this.httpClient.get(this.baseUrl + "/getBus/" + busId)
-  // }
+ 
 }
