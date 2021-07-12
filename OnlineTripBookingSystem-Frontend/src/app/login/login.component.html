@@ -9,8 +9,8 @@
 
         <div class="log-in-inputs">
           <label>Email</label>
-          <input type="email" [(ngModel)]="user.email" placeholder="Email Id" name="email" class="form-control"
-            id="email" required #email="ngModel">
+          <input type="text" [(ngModel)]="user.email" placeholder="Email Id" name="email" class="form-control"
+            id="email" required #email="ngModel" email>
           <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
             Email is required
           </div>

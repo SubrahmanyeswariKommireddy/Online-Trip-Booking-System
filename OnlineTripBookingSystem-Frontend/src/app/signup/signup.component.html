@@ -27,12 +27,13 @@
 
         <div class="log-in-inputs">
           <label for="email">Email Id</label>
-          <input type="email" [(ngModel)]="user.email" placeholder="Email Id" name="email" class="form-control" id="email" required
-            #email="ngModel">
+          <input type="text" [(ngModel)]="user.email" placeholder="Email Id" name="email" class="form-control" id="email" required
+            #email="ngModel" [pattern]="emailPattern" email>
           <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
             Email is required
           </div>
         </div>
+
 
         <div class="log-in-inputs">
           <label for="password">Password</label>

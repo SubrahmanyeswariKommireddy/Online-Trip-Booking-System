@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { User } from '../models/User';
-import { SignupService } from '../shared/signup.service';
+import { SignupService } from 'src/app/shared/signup.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+import { User } from 'src/app/models/User';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: 'app-customer-signup',
+  templateUrl: './customer-signup.component.html',
+  styleUrls: ['./customer-signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class CustomerSignupComponent implements OnInit {
 
-  roleData: any[] = ['ADMIN','CUSTOMER']
-  emailPattern= "^[a-z0-9._%+-]+@otms.com"; 
+  roleData: any[] = ['ADMIN','CUSTOMER'];
+  emailPattern= "^[a-z0-9._%+-]+@gmail.com"; 
 
   user: User = {
     id: 0,
@@ -31,13 +31,13 @@ export class SignupComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+   
   }
 
   createUser(form1: any): void {
     console.log("in create user", form1.value)
     this.isValidFormSubmitted = false;
-
+    
     if (form1.valid) {
       this.isValidFormSubmitted = true;
     } else {

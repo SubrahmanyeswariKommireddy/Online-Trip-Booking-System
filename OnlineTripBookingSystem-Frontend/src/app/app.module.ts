@@ -41,6 +41,7 @@ import { AddBusBookingComponent } from './booking/add-bus-booking/add-bus-bookin
 import { BookingListComponent } from './booking/booking-list/booking-list.component';
 import { AdminBuslistComponent } from './admin/admin-buslist/admin-buslist/admin-buslist.component';
 import { NotFoundComponent } from './notFound/not-found/not-found.component';
+import { CustomerSignupComponent } from './customer/customer-signup/customer-signup.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { NotFoundComponent } from './notFound/not-found/not-found.component';
     AddBusBookingComponent,
     BookingListComponent,
     AdminBuslistComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CustomerSignupComponent
   ],
   imports: [
     BrowserModule,

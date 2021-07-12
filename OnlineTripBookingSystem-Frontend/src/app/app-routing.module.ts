@@ -24,11 +24,13 @@ import { BookingListComponent } from './booking/booking-list/booking-list.compon
 import { AdminBuslistComponent } from './admin/admin-buslist/admin-buslist/admin-buslist.component';
 import { AuthGaurdService } from './shared/auth-gaurd.service';
 import { NotFoundComponent } from './notFound/not-found/not-found.component';
+import { CustomerSignupComponent } from './customer/customer-signup/customer-signup.component';
 
 const routes: Routes = [
   {path:'',component:DefaultHomepageComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
+  {path:'register',component:CustomerSignupComponent},
 
   {path:'viewSeats',component:BusViewComponent,canActivate:[AuthGaurdService]},
   {path:'busList',component:BusListComponent},
