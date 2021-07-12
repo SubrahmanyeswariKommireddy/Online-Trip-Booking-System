@@ -41,6 +41,9 @@
           <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
             Password is required
           </div>
+          <div *ngIf="user.password.length!=6" class="alert alert-danger">
+            Password should be 6 characters
+          </div>
         </div>
 
         <div class="log-in-inputs">
@@ -50,7 +53,6 @@
               {{item}}
             </option>
           </select>
-          <!-- <input [(ngModel)]="user.userType" placeholder="Usertype" name="userType" class="form-control" id="userType"> -->
         </div>
         <button type="submit">Register</button>
       </div>
