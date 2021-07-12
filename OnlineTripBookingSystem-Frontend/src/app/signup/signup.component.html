@@ -27,7 +27,7 @@
 
         <div class="log-in-inputs">
           <label for="email">Email Id</label>
-          <input type="text" [(ngModel)]="user.email" placeholder="Email Id" name="email" class="form-control" id="email" required
+          <input type="email" [(ngModel)]="user.email" placeholder="Email Id" name="email" class="form-control" id="email" required
             #email="ngModel">
           <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
             Email is required
